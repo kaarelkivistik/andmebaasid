@@ -1,0 +1,138 @@
+1. Nimetage vaadeldava organisatsiooni pädevusalad (infosüsteemi kasutajate rollid)(nt üliõpilane, õppejõud, õppetooli juhataja, instituudi direktor, kantselei sekretär jne).
+Kaupade haldur,
+Infosüsteemi administraator,
+Lao töötaja,
+Raamatupidaja,
+Omanik,
+Uudistaja
+
+2. Nimetage organisatsiooni infosüsteemi funktsionaalsed allsüsteemid (nt üliõpilaste arvestus, töötajate arvestus, õppeainete arvestus, õppekavade arvestus, õpingukavade arvestus, tunniplaani arvestus, õppetoetuste arvestus, klassifikaatorite arvestus jne).
+NB!! Üldjuhul võiks funktsionaalsete allsüsteemide ja registrite vahel olla üks ühele vastavus. Seega leidke kõigepealt registrid ning siis registritele vastavad funktsionaalsed allsüsteemid.
+Sisulised allsüsteemid (seotud organisatsiooni 
+põhitegevusega).
+Arvete haldamise funktsionaalne allsüsteem,
+Kaupade arvestamise funktsionaalne allsüsteem,
+Ladude haldamise funktsionaalne allsüsteem,
+Tellimuste haldamise funtsionaalne allsüsteem
+Administratiivsed allsüsteemid (võivad olla kasutusel paljudes 
+erinevates organisatsioonides, mille tegevusalad ja eesmärgid 
+on erinevad).
+Kasutajate haldamise funktsionaalne allsüsteem,
+Klassifikaatorite funktsionaalne allsüsteem
+
+3. Nimetage organisatsiooni andmebaasi moodustavad registrid (nt üliõpilaste register, töötajate register, õppeainete register, õppekavade register, õpingukavade register, tunniplaani register, õppetoetuste register, klassifikaatorite register jne).
+Sisulised registrid (seotud organisatsiooni põhitegevusega).
+
+Kaupade register,
+Tootjate register,
+Tarnijate register,
+Ladude register,
+Tellimuste register,
+Arvete register,
+Administratiivsed registrid :
+
+Kasutajate register,
+Klassifikaatorite registrid,
+
+4. Nimetage ÜKS funktsionaalne allsüsteem (infosüsteemi funktsionaalsete allsüsteemide nimekirjast), mida hakkate oma töös detailselt käsitlema.
+NB!Valitud allsüsteem peab olema seotud organisatsiooni põhitegevusega. Näiteks, kui teete apteegi infosüsteemi, siis tuleks valida kaupade või toimeainete arvestus, mitte aga näiteks töötajate või klassifikaatorite arvestus.
+
+Jälgige, et kasutaksite täpselt sellist nime nagu kasutasite üldises funktsionaalsete allsüsteemide nimekirjas!
+
+Kaupade arvestamise funktsionaalne allsüsteem
+
+5. Nimetage valitud funktsionaalse allsüsteemi eesmärgid (pange tähele, et nende eesmärkide täidetust peab olema võimalik mõõta). Seega eesmärk nagu "süsteem töötab kiiresti" ei ole sobiv, sest pole selge, mida tähendab "kiiresti".
+Eesmärkidest tulenevad funktsionaalsed nõuded, mis kirjeldatakse kasutusjuhtudena (näiteks: süsteem peab võimaldama registreerida elektrooniliselt õpingukavasid) ja mittefunktsionaalsed nõuded (näiteks: elektrooniliste aruannete koostamiseks ei tohi kuluda rohkem kui 5 sekundit). Igale nõudele vastab üks või mitu eesmärki - kui süsteem täidab selle nõude, siis aitab see kaasa nende eesmärkide saavutamisele.
+Võimaldab kaupu:
+   1.lisada
+   2. muuta
+   3. kustutada
+   4. kategoriseerida
+Võimaldab koostada elektroonilisi aruandeid
+
+6. Nimetage valitud funktsionaalset allsüsteemi kasutavad pädevusalad. Pädevusalad peavad olema valitud eelnevalt kirja pandud pädevusalade nimekirjast ning neid peab olema vähemalt kaks.
+Infosüsteemi haldur,
+Kaupade haldur,
+Omanik
+
+7. Nimetage valitud funktsionaalse allsüsteemi poolt kasutatavad registrid. Registrid peavad olema valitud eelnevalt kirja pandud registrite nimekirjast.
+Vihje! Väga suure tõenäosusega on üheks registriks klassifikaatorite register.
+Kaupade register,
+Tootjate register,
+Klassifikaatorite register,
+Tarnijate register,
+Kasutajate register
+
+8. Nimetage funktsionaalse allsüsteemi kasutusjuhtude nimed ja nimetage iga sellise kasutusjuhu primaarne tegutseja. Primaarsed tegutsejad tuleb valida eelnevalt kirja pandud pädevusalade nimekirjast. 
+Näiteks: 
+Õpingukava sisestamine (üliõpilane) 
+Õpingukava kinnitamine (dekanaadi sekretär)
+Iga kasutusjuht peab aitama saavutada mõnda funktsionaalse allsüsteemi eesmärkide nimekirjas nimetatud eesmärki.
+
+Tuleb leida ja kirjeldada kasutusjuhud, millest igaüks vastab mingile elementaarsele äriprotsessile. Iga selline protsess viiakse läbi ühe tegutseja poolt ühel ajahetkel ja ühes kohas. Iga selline kasutusjuht käivitub reaktsioonina mingile sündmusele, selle läbimine annab tegutsejale väärtuse ning selle läbimise järel on süsteemis terviklikud andmed.
+
+Sellest tulenevalt ei kirjelda järgnevad punktid selle projekti jaoks sobivaid kasutusjuhte (neid protsesse VÕIB kasutusjuhtude abil kirjeldada, kuid MITTE selles projektis).
+
+Lepingu üle läbirääkimine (see võtab tunde/päevi/nädalaid/kuid/aastaid, see võib toimuda erinevatel aegadel ja erinevates kohtades ning selles võivad osaleda erinevad osapooled)
+Võileiva tegemine (see ei hõlma arvutisüsteemi kasutamist)
+Vali kauba andmete muutmisel kauba kategooria (kaupade halduri eesmärgiks on tagada, et andmebaasis on ainult korrektsed väited kaupade kohta. Kauba kategooria valimine on sellest väike osa).
+Järgnevad on näited sobilikest kasutusjuhtudest seda tüüpi projektis.
+
+Registreeri leping
+Loe retsepte
+Muuda kauba andmeid
+Kasutusjuhu nimi peab viitama tegevusele. 
+VALE:Raamatute aruanne 
+ÕIGEM:Raamatute aruande vaatamine
+
+Üks kasutusjuht on "Kasutaja tuvastamine".
+vastus:
+
+Kasutaja tuvastamine (süsteemiülene),
+
+Aruande koostamine,
+
+Kauba lisamine,
+
+Kauba aktiivseks seadmine,
+
+Kauba mitteaktiivseks seadmine,
+
+Kauba vaatamine,
+
+Kauba muutmine,
+
+Kauba kustutamine,
+
+Aktiivsete kaupade vaatamine,
+
+9. Nimetage valitud funktsionaalse allsüsteemi poolt kasutatava andmebaasi alamosa andmeobjektid (olemitüübid). Igaühe järel esitage sulgudes nimekiri nende atribuutidest. Esitage olemitüüpide nimed suurtähtedega ja atribuutide nimed väiketähtedega. 
+Näiteks: 
+ÜLIÕPILANE(üliõpilaskood, eesnimi, perenimi, sünniaeg) 
+ÕPPEAINE(õppeaine kood, nimetus, ainepunkte)
+Ärge esitage välisvõtme atribuute (välisvõti on disaini mõiste, mitte analüüsi mõiste). 
+Olemitüüpide nimed peaksid olema ainsuses (näiteks ÜLIÕPILANE, mitte ÜLIÕPILASED). 
+Olemitüüpe peab olema vähemalt seitse.
+
+Kaup,
+Tarnija,
+Tootja,
+Tellimus,
+Ladu,
+Kasutaja,
+Klassifikaator,
+
+10. Millist SQL-andmebaasisüsteemi kasutate iseseisva töö andmebaasi prototüübi tegemiseks (näiteks MS Access, PostgreSQL, Oracle, MySQL, MSSQL Server)?
+MySQl
+
+Saada fail
+11. Millist vahendit kasutate andmeid kasutava rakenduse tegemiseks (näiteks MS Access, PHP, JSP, ASP.NET, Visual Basic, Delphi)?
+Node.js, AngularJS, javascript.
+
+Saada fail
+12. Millise töökoha realiseerite iseseisva töö rakenduses? Siin tuleb nimetada üks pädevusala allsüsteemiga seotud pädevusalade nimekirjast. Rakenduses realiseerite selle pädevusalaga seotud funktsionaalse allsüsteemi kasutusjuhud. Kui pädevusala on üldisema pädevusala täpsustus, siis tuleb realiseerida ka selle üldisema pädevusalaga seotud kasutusjuhud. Kasutaja tuvastamise kasutusjuhtu ei pea realiseerima.
+Valitud töökohal peab toimuma nii andmete lugemine andmebaasist kui ka andmete registreerimine andmebaasis (st töökohta, kus vaadatakse ainult aruandeid, valida ei saa).
+
+Kui kasutate iseseisva töö tegemiseks MS Accessi, siis on Teil võimalik sügisel töötada Accessis tehtud rakendus ümber nii, et see hakkab ODBC andmeühenduse tehnoloogia vahendusel kasutama PostgreSQL andmebaasi. Kui kasutate Accessi ja plaanite ka sügisel projekti rakenduse osa Accessis teha, siis valige kevadises projektis realiseerimiseks töökoht, mis võiks ka reaalses elus kasutada kahekihilist klient/server süsteemi, kus rakendus on kliendi arvutis. Seega ei sobi Accessis realiseerimiseks kõikvõimalikud "kliendi" töökohad, mis kindlasti peavad olema tehtud veebirakendusena. Kui plaanite sügisel kasutada Oracle andmebaasisüsteemi või teha sügisene rakendus veebirakendusena, siis pole vahet.
+
+Kaupade haldur.

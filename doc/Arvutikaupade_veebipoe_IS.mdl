@@ -122,7 +122,12 @@
 				    (object Inheritance_Relationship
 					quid       	"550197AF01CA"
 					supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Tuvastatav subjekt"
-					quidu      	"550194F1007A")))
+					quidu      	"550194F1007A"))
+				visible_modules 	(list dependency_list
+				    (object Dependency_Relationship
+					quid       	"550B19390253"
+					supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aruande koostamine"
+					quidu      	"550B190A02EC")))
 			    (object Class "Laotöötaja"
 				quid       	"550192B20378"
 				stereotype 	"Actor")
@@ -132,7 +137,7 @@
 			    (object Class "Raamatupidaja"
 				quid       	"550192BA039A"
 				stereotype 	"Actor")
-			    (object Class "Juhataja"
+			    (object Class "Omanik"
 				quid       	"550192CB031B"
 				stereotype 	"Actor"
 				superclasses 	(list inheritance_relationship_list
@@ -181,6 +186,8 @@
 					quid       	"55019745021C")
 				    (object UseCase "Aktiivsete kaupade vaatamine"
 					quid       	"5501981803DE")
+				    (object UseCase "Aruande koostamine"
+					quid       	"550B190A02EC")
 				    (object Association "$UNNAMED$0"
 					quid       	"5501941C0235"
 					roles      	(list role_list
@@ -249,46 +256,59 @@
 						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba vaatamine"
 						quidu      	"55019745021C"
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$17"
+					    (object Role "theKaupade haldaja "
 						quid       	"550197540072"
+						label      	"theKaupade haldaja "
 						supplier   	"Use Case View::Use-Case Model::Pädevusalad::Kaupade haldaja"
 						quidu      	"55019284010F")))
-				    (object Association "$UNNAMED$18"
+				    (object Association "$UNNAMED$17"
 					quid       	"550197B2008C"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$19"
+					    (object Role "$UNNAMED$18"
 						quid       	"550197B3001D"
 						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kasutaja tuvastamine"
 						quidu      	"550194D501D4"
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$20"
+					    (object Role "$UNNAMED$19"
 						quid       	"550197B3001F"
 						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Tuvastatav subjekt"
 						quidu      	"550194F1007A")))
-				    (object Association "$UNNAMED$21"
+				    (object Association "$UNNAMED$20"
 					quid       	"5501982B0046"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$22"
+					    (object Role "$UNNAMED$21"
 						quid       	"5501982B02FB"
 						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aktiivsete kaupade vaatamine"
 						quidu      	"5501981803DE"
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$23"
+					    (object Role "$UNNAMED$22"
 						quid       	"5501982B02FD"
 						supplier   	"Use Case View::Use-Case Model::Pädevusalad::Klient"
 						quidu      	"5501929A0197")))
-				    (object Association "$UNNAMED$24"
+				    (object Association "$UNNAMED$23"
 					quid       	"5501982F00E4"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$25"
+					    (object Role "$UNNAMED$24"
 						quid       	"5501982F03AD"
 						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aktiivsete kaupade vaatamine"
 						quidu      	"5501981803DE"
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$26"
+					    (object Role "$UNNAMED$25"
 						quid       	"5501982F03AF"
 						supplier   	"Use Case View::Use-Case Model::Pädevusalad::Uudistaja"
-						quidu      	"550192D00170"))))
+						quidu      	"550192D00170")))
+				    (object Association "$UNNAMED$26"
+					quid       	"550B196E03D3"
+					roles      	(list role_list
+					    (object Role "$UNNAMED$27"
+						quid       	"550B1970032F"
+						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aruande koostamine"
+						quidu      	"550B190A02EC"
+						is_navigable 	TRUE)
+					    (object Role "$UNNAMED$28"
+						quid       	"550B19700331"
+						supplier   	"Use Case View::Use-Case Model::Pädevusalad::Kaupade haldaja"
+						quidu      	"55019284010F"))))
 				logical_presentations 	(list unit_reference_list
 				    (object UseCaseDiagram "Kasutusjuhud"
 					quid       	"55019240014E"
@@ -296,8 +316,8 @@
 					zoom       	90
 					max_height 	28350
 					max_width  	21600
-					origin_x   	0
-					origin_y   	435
+					origin_x   	35
+					origin_y   	62
 					items      	(list diagram_item_list
 					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba lisamine" @1
 						location   	(1888, 768)
@@ -438,269 +458,7 @@
 						fill_color 	13434879
 						quidu      	"55019745021C"
 						height     	118)
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldaja" @7
-						ShowCompartmentStereotypes 	TRUE
-						IncludeAttribute 	TRUE
-						IncludeOperation 	TRUE
-						location   	(1152, 1104)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						label      	(object ItemLabel
-						    Parent_View 	@7
-						    location   	(1152, 1264)
-						    anchor_loc 	1
-						    nlines     	1
-						    max_width  	396
-						    justify    	0
-						    label      	"Kaupade haldaja")
-						icon       	"Actor"
-						icon_style 	"Icon"
-						line_color 	3342489
-						quidu      	"55019284010F"
-						annotation 	8
-						autoResize 	TRUE)
-					    (object AssociationViewNew "$UNNAMED$0" @8
-						location   	(1481, 950)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"5501941C0235"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$1" @9
-							Parent_View 	@8
-							location   	(1017, 406)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501941D00EE"
-							client     	@8
-							supplier   	@1
-							vertices   	(list Points
-							    (1481, 950)
-							    (1567, 909))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$2" @10
-							Parent_View 	@8
-							location   	(1017, 406)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501941D00F0"
-							client     	@8
-							supplier   	@7
-							vertices   	(list Points
-							    (1481, 950)
-							    (1209, 1075))
-							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$3" @11
-						location   	(1549, 1049)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550194200290"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$4" @12
-							Parent_View 	@11
-							location   	(1085, 505)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501942100DE"
-							client     	@11
-							supplier   	@2
-							vertices   	(list Points
-							    (1549, 1049)
-							    (1890, 1003))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$5" @13
-							Parent_View 	@11
-							location   	(1085, 505)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501942100E0"
-							client     	@11
-							supplier   	@7
-							vertices   	(list Points
-							    (1549, 1049)
-							    (1209, 1092))
-							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$6" @14
-						location   	(1597, 1162)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550194230058"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$7" @15
-							Parent_View 	@14
-							location   	(1133, 618)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550194240018"
-							client     	@14
-							supplier   	@3
-							vertices   	(list Points
-							    (1597, 1162)
-							    (1986, 1215))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$8" @16
-							Parent_View 	@14
-							location   	(1133, 618)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"55019424001A"
-							client     	@14
-							supplier   	@7
-							vertices   	(list Points
-							    (1597, 1162)
-							    (1209, 1110))
-							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$9" @17
-						location   	(1503, 1289)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550194260125"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$10" @18
-							Parent_View 	@17
-							location   	(1039, 745)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550194270062"
-							client     	@17
-							supplier   	@4
-							vertices   	(list Points
-							    (1503, 1289)
-							    (1799, 1446))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$11" @19
-							Parent_View 	@17
-							location   	(1039, 745)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550194270064"
-							client     	@17
-							supplier   	@7
-							vertices   	(list Points
-							    (1503, 1289)
-							    (1209, 1133))
-							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$12" @20
-						location   	(1352, 1436)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550194A40294"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$13" @21
-							Parent_View 	@20
-							location   	(968, 700)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550194A5022E"
-							client     	@20
-							supplier   	@5
-							vertices   	(list Points
-							    (1352, 1436)
-							    (1434, 1573))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$14" @22
-							Parent_View 	@20
-							location   	(968, 700)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550194A50230"
-							client     	@20
-							supplier   	@7
-							vertices   	(list Points
-							    (1352, 1436)
-							    (1238, 1246))
-							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$15" @23
-						location   	(1129, 1457)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"5501975300F1"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$16" @24
-							Parent_View 	@23
-							location   	(377, 289)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550197540070"
-							client     	@23
-							supplier   	@6
-							vertices   	(list Points
-							    (1129, 1457)
-							    (1121, 1590))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$17" @25
-							Parent_View 	@23
-							location   	(377, 289)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550197540072"
-							client     	@23
-							supplier   	@7
-							vertices   	(list Points
-							    (1129, 1457)
-							    (1138, 1287))
-							line_style 	0)))
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kasutaja tuvastamine" @26
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kasutaja tuvastamine" @7
 						location   	(304, 528)
 						font       	(object Font
 						    size       	9
@@ -712,7 +470,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@26
+						    Parent_View 	@7
 						    location   	(304, 666)
 						    anchor_loc 	1
 						    nlines     	2
@@ -723,7 +481,7 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"550194D501D4")
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Tuvastatav subjekt" @27
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Tuvastatav subjekt" @8
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -738,7 +496,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@27
+						    Parent_View 	@8
 						    location   	(1104, 624)
 						    anchor_loc 	1
 						    nlines     	2
@@ -751,17 +509,7 @@
 						quidu      	"550194F1007A"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritView "" @28
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550197AF01CA"
-						client     	@7
-						supplier   	@27
-						vertices   	(list Points
-						    (1144, 1024)
-						    (1115, 647))
-						line_style 	0)
-					    (object AssociationViewNew "$UNNAMED$18" @29
+					    (object AssociationViewNew "$UNNAMED$17" @9
 						location   	(728, 490)
 						font       	(object Font
 						    size       	9
@@ -776,31 +524,31 @@
 						line_color 	3342489
 						quidu      	"550197B2008C"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$19" @30
-							Parent_View 	@29
+						    (object RoleView "$UNNAMED$18" @10
+							Parent_View 	@9
 							location   	(24, -38)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550197B3001D"
-							client     	@29
-							supplier   	@26
+							client     	@9
+							supplier   	@7
 							vertices   	(list Points
 							    (728, 490)
 							    (412, 514))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$20" @31
-							Parent_View 	@29
+						    (object RoleView "$UNNAMED$19" @11
+							Parent_View 	@9
 							location   	(24, -38)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550197B3001F"
-							client     	@29
-							supplier   	@27
+							client     	@9
+							supplier   	@8
 							vertices   	(list Points
 							    (728, 490)
 							    (1044, 466))
 							line_style 	0)))
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Klient" @32
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Klient" @12
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -815,11 +563,11 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@32
+						    Parent_View 	@12
 						    location   	(2480, 608)
 						    anchor_loc 	1
 						    nlines     	2
-						    max_width  	327
+						    max_width  	325
 						    justify    	0
 						    label      	"Klient")
 						icon       	"Actor"
@@ -828,17 +576,17 @@
 						quidu      	"5501929A0197"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritView "" @33
+					    (object InheritView "" @13
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550197D00220"
-						client     	@32
-						supplier   	@27
+						client     	@12
+						supplier   	@8
 						vertices   	(list Points
 						    (2419, 448)
 						    (1161, 460))
 						line_style 	0)
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aktiivsete kaupade vaatamine" @34
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aktiivsete kaupade vaatamine" @14
 						location   	(2512, 896)
 						font       	(object Font
 						    size       	9
@@ -850,7 +598,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@34
+						    Parent_View 	@14
 						    location   	(2512, 1034)
 						    anchor_loc 	1
 						    nlines     	2
@@ -862,7 +610,7 @@
 						fill_color 	13434879
 						quidu      	"5501981803DE"
 						height     	118)
-					    (object AssociationViewNew "$UNNAMED$21" @35
+					    (object AssociationViewNew "$UNNAMED$20" @15
 						location   	(2499, 752)
 						font       	(object Font
 						    size       	9
@@ -877,31 +625,31 @@
 						line_color 	3342489
 						quidu      	"5501982B0046"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$22" @36
-							Parent_View 	@35
+						    (object RoleView "$UNNAMED$21" @16
+							Parent_View 	@15
 							location   	(419, 240)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501982B02FB"
-							client     	@35
-							supplier   	@34
+							client     	@15
+							supplier   	@14
 							vertices   	(list Points
 							    (2499, 752)
-							    (2505, 838))
+							    (2505, 837))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$23" @37
-							Parent_View 	@35
+						    (object RoleView "$UNNAMED$22" @17
+							Parent_View 	@15
 							location   	(419, 240)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501982B02FD"
-							client     	@35
-							supplier   	@32
+							client     	@15
+							supplier   	@12
 							vertices   	(list Points
 							    (2499, 752)
-							    (2489, 631))
+							    (2493, 668))
 							line_style 	0)))
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Uudistaja" @38
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Uudistaja" @18
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -916,11 +664,11 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@38
+						    Parent_View 	@18
 						    location   	(2784, 1520)
 						    anchor_loc 	1
 						    nlines     	2
-						    max_width  	327
+						    max_width  	325
 						    justify    	0
 						    label      	"Uudistaja")
 						icon       	"Actor"
@@ -929,7 +677,7 @@
 						quidu      	"550192D00170"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "$UNNAMED$24" @39
+					    (object AssociationViewNew "$UNNAMED$23" @19
 						location   	(2671, 1168)
 						font       	(object Font
 						    size       	9
@@ -944,35 +692,35 @@
 						line_color 	3342489
 						quidu      	"5501982F00E4"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$25" @40
-							Parent_View 	@39
+						    (object RoleView "$UNNAMED$24" @20
+							Parent_View 	@19
 							location   	(191, -112)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501982F03AD"
-							client     	@39
-							supplier   	@34
+							client     	@19
+							supplier   	@14
 							vertices   	(list Points
 							    (2671, 1168)
-							    (2604, 1057))
+							    (2606, 1057))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$26" @41
-							Parent_View 	@39
+						    (object RoleView "$UNNAMED$25" @21
+							Parent_View 	@19
 							location   	(191, -112)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501982F03AF"
-							client     	@39
-							supplier   	@38
+							client     	@19
+							supplier   	@18
 							vertices   	(list Points
 							    (2671, 1168)
-							    (2736, 1280))
+							    (2736, 1279))
 							line_style 	0)))
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Juhataja" @42
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Omanik" @22
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
-						location   	(384, 992)
+						location   	(768, 1488)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -983,34 +731,24 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@42
-						    location   	(384, 1152)
+						    Parent_View 	@22
+						    location   	(768, 1648)
 						    anchor_loc 	1
 						    nlines     	2
-						    max_width  	327
+						    max_width  	324
 						    justify    	0
-						    label      	"Juhataja")
+						    label      	"Omanik")
 						icon       	"Actor"
 						icon_style 	"Icon"
 						line_color 	3342489
 						quidu      	"550192CB031B"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritView "" @43
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"5501954000B6"
-						client     	@42
-						supplier   	@7
-						vertices   	(list Points
-						    (441, 998)
-						    (1091, 1091))
-						line_style 	0)
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldur" @44
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldur" @23
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
-						location   	(352, 1408)
+						location   	(496, 1488)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -1021,8 +759,8 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@44
-						    location   	(352, 1568)
+						    Parent_View 	@23
+						    location   	(496, 1648)
 						    anchor_loc 	1
 						    nlines     	1
 						    max_width  	372
@@ -1034,21 +772,11 @@
 						quidu      	"550198960257"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritView "" @45
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550198AF03C7"
-						client     	@44
-						supplier   	@7
-						vertices   	(list Points
-						    (409, 1383)
-						    (1092, 1122))
-						line_style 	0)
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Infosüsteemi administraator" @46
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Infosüsteemi administraator" @24
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
-						location   	(352, 1776)
+						location   	(224, 1472)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -1059,8 +787,8 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@46
-						    location   	(352, 1936)
+						    Parent_View 	@24
+						    location   	(224, 1632)
 						    anchor_loc 	1
 						    nlines     	2
 						    max_width  	344
@@ -1072,16 +800,420 @@
 						quidu      	"550192A001A7"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritView "" @47
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba lisamine" @25
+						location   	(1888, 768)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@25
+						    location   	(1888, 906)
+						    anchor_loc 	1
+						    nlines     	2
+						    max_width  	630
+						    justify    	0
+						    label      	"Kauba lisamine")
+						icon_style 	"Icon"
+						line_color 	3342489
+						fill_color 	13434879
+						quidu      	"5501937C0332")
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldaja" @26
+						ShowCompartmentStereotypes 	TRUE
+						IncludeAttribute 	TRUE
+						IncludeOperation 	TRUE
+						location   	(1152, 1104)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@26
+						    location   	(1152, 1264)
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	396
+						    justify    	0
+						    label      	"Kaupade haldaja")
+						icon       	"Actor"
+						icon_style 	"Icon"
+						line_color 	3342489
+						quidu      	"55019284010F"
+						annotation 	8
+						autoResize 	TRUE)
+					    (object AssociationViewNew "$UNNAMED$0" @27
+						location   	(1481, 950)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"5501941C0235"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$1" @28
+							Parent_View 	@27
+							location   	(1017, 406)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5501941D00EE"
+							client     	@27
+							supplier   	@1
+							vertices   	(list Points
+							    (1481, 950)
+							    (1754, 826))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$2" @29
+							Parent_View 	@27
+							location   	(1017, 406)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5501941D00F0"
+							client     	@27
+							supplier   	@26
+							vertices   	(list Points
+							    (1481, 950)
+							    (1209, 1074))
+							line_style 	0)))
+					    (object AssociationViewNew "$UNNAMED$3" @30
+						location   	(1549, 1049)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550194200290"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$4" @31
+							Parent_View 	@30
+							location   	(1085, 505)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5501942100DE"
+							client     	@30
+							supplier   	@2
+							vertices   	(list Points
+							    (1549, 1049)
+							    (1890, 1004))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$5" @32
+							Parent_View 	@30
+							location   	(1085, 505)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5501942100E0"
+							client     	@30
+							supplier   	@26
+							vertices   	(list Points
+							    (1549, 1049)
+							    (1209, 1094))
+							line_style 	0)))
+					    (object AssociationViewNew "$UNNAMED$6" @33
+						location   	(1597, 1162)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550194230058"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$7" @34
+							Parent_View 	@33
+							location   	(1133, 618)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550194240018"
+							client     	@33
+							supplier   	@3
+							vertices   	(list Points
+							    (1597, 1162)
+							    (1985, 1214))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$8" @35
+							Parent_View 	@33
+							location   	(1133, 618)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"55019424001A"
+							client     	@33
+							supplier   	@26
+							vertices   	(list Points
+							    (1597, 1162)
+							    (1209, 1110))
+							line_style 	0)))
+					    (object AssociationViewNew "$UNNAMED$9" @36
+						location   	(1576, 1327)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550194260125"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$10" @37
+							Parent_View 	@36
+							location   	(1112, 783)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550194270062"
+							client     	@36
+							supplier   	@4
+							vertices   	(list Points
+							    (1576, 1327)
+							    (1797, 1446))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$11" @38
+							Parent_View 	@36
+							location   	(1112, 783)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550194270064"
+							client     	@36
+							supplier   	@26
+							vertices   	(list Points
+							    (1576, 1327)
+							    (1355, 1209))
+							line_style 	0)))
+					    (object AssociationViewNew "$UNNAMED$12" @39
+						location   	(1348, 1430)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550194A40294"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$13" @40
+							Parent_View 	@39
+							location   	(964, 694)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550194A5022E"
+							client     	@39
+							supplier   	@5
+							vertices   	(list Points
+							    (1348, 1430)
+							    (1435, 1574))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$14" @41
+							Parent_View 	@39
+							location   	(964, 694)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550194A50230"
+							client     	@39
+							supplier   	@26
+							vertices   	(list Points
+							    (1348, 1430)
+							    (1262, 1287))
+							line_style 	0)))
+					    (object AssociationViewNew "$UNNAMED$15" @42
+						location   	(1129, 1438)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"5501975300F1"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$16" @43
+							Parent_View 	@42
+							location   	(377, 270)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550197540070"
+							client     	@42
+							supplier   	@6
+							vertices   	(list Points
+							    (1129, 1438)
+							    (1122, 1590))
+							line_style 	0)
+						    (object RoleView "theKaupade haldaja " @44
+							Parent_View 	@42
+							location   	(377, 270)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	FALSE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550197540072"
+							client     	@42
+							supplier   	@26
+							vertices   	(list Points
+							    (1129, 1438)
+							    (1137, 1287))
+							line_style 	0)))
+					    (object InheritView "" @45
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550197AF01CA"
+						client     	@26
+						supplier   	@8
+						vertices   	(list Points
+						    (1144, 1024)
+						    (1115, 647))
+						line_style 	0)
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aruande koostamine" @46
+						location   	(1616, 592)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@46
+						    location   	(1616, 730)
+						    anchor_loc 	1
+						    nlines     	2
+						    max_width  	630
+						    justify    	0
+						    label      	"Aruande koostamine")
+						icon_style 	"Icon"
+						line_color 	3342489
+						fill_color 	13434879
+						quidu      	"550B190A02EC"
+						height     	118)
+					    (object AssociationViewNew "$UNNAMED$26" @47
+						location   	(1339, 895)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550B196E03D3"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$27" @48
+							Parent_View 	@47
+							location   	(187, -209)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550B1970032F"
+							client     	@47
+							supplier   	@46
+							vertices   	(list Points
+							    (1339, 895)
+							    (1470, 753))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$28" @49
+							Parent_View 	@47
+							location   	(187, -209)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550B19700331"
+							client     	@47
+							supplier   	@26
+							vertices   	(list Points
+							    (1339, 895)
+							    (1209, 1037))
+							line_style 	0)))
+					    (object InheritTreeView "" @50
+						location   	(1152, 929)
+						line_color 	3342489
+						fill_color 	13434879
+						supplier   	@26
+						vertices   	(list Points
+						    (1152, 929)
+						    (1152, 1024)))
+					    (object InheritView "" @51
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"5501954000B6"
+						client     	@22
+						supplier   	@26
+						vertices   	(list Points
+						    (767, 1408)
+						    (767, 929))
+						line_style 	3
+						origin_attachment 	(767, 1408)
+						terminal_attachment 	(767, 929)
+						drawSupplier 	@50)
+					    (object InheritView "" @52
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550198AF03C7"
+						client     	@23
+						supplier   	@26
+						vertices   	(list Points
+						    (450, 1408)
+						    (450, 929))
+						line_style 	3
+						origin_attachment 	(450, 1408)
+						terminal_attachment 	(450, 929)
+						drawSupplier 	@50)
+					    (object InheritView "" @53
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550199090095"
-						client     	@46
-						supplier   	@7
+						client     	@24
+						supplier   	@26
 						vertices   	(list Points
-						    (409, 1725)
-						    (1092, 1150))
-						line_style 	0))))))
+						    (222, 1392)
+						    (222, 929))
+						line_style 	3
+						origin_attachment 	(222, 1392)
+						terminal_attachment 	(222, 929)
+						drawSupplier 	@50))))))
 			logical_presentations 	(list unit_reference_list)))
 		logical_presentations 	(list unit_reference_list
 		    (object UseCaseDiagram "Global View of Actors and Use Cases"
@@ -1094,7 +1226,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @48
+			    (object NoteView @54
 				location   	(448, 304)
 				font       	(object Font
 				    size       	9
@@ -1106,7 +1238,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@48
+				    Parent_View 	@54
 				    location   	(38, 23)
 				    fill_color 	13434879
 				    nlines     	12
@@ -1140,7 +1272,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object CategoryView "Use Case View::Use-Case Model" @49
+		    (object CategoryView "Use Case View::Use-Case Model" @55
 			location   	(384, 880)
 			font       	(object Font
 			    size       	10
@@ -1152,7 +1284,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@49
+			    Parent_View 	@55
 			    location   	(189, 779)
 			    fill_color 	13434879
 			    nlines     	2
@@ -1165,7 +1297,7 @@
 			quidu      	"35B677F4010E"
 			width      	402
 			height     	215)
-		    (object NoteView @50
+		    (object NoteView @56
 			location   	(1040, 560)
 			font       	(object Font
 			    size       	10
@@ -1177,7 +1309,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@50
+			    Parent_View 	@56
 			    location   	(813, 358)
 			    fill_color 	13434879
 			    nlines     	9
@@ -1211,505 +1343,6 @@
 			stereotype 	"layer"
 			exportControl 	"Public"
 			logical_models 	(list unit_reference_list
-			    (object Class_Category "Kauba seisundidiagramm"
-				quid       	"5501864701C9"
-				exportControl 	"Public"
-				logical_models 	(list unit_reference_list)
-				statemachine 	(object State_Machine "State/Activity Model"
-				    quid       	"5501881D00B4"
-				    states     	(list States
-					(object State "$UNNAMED$27"
-					    quid       	"5501882C0285"
-					    type       	"StartState")
-					(object State "$UNNAMED$28"
-					    quid       	"5501882F02E1"
-					    type       	"EndState")
-					(object State "Aktiivne"
-					    quid       	"550188680094"
-					    type       	"Normal")
-					(object State "$UNNAMED$29"
-					    quid       	"550189BB0149"
-					    type       	"EndState")
-					(object State "Mitteaktiivne"
-					    quid       	"550189E200C3"
-					    type       	"Normal")
-					(object State "Kustutatud"
-					    quid       	"550189EF0004"
-					    statemachine 	(object State_Machine "State/Activity Model2"
-						quid       	"55018B1100E6"
-						states     	(list States
-						    (object State "NewState"
-							quid       	"55018B1100E8"
-							type       	"Normal"))
-						partitions 	(list Partitions)
-						objects    	(list Objects)
-						transitions 	(list transition_list)
-						objectflows 	(list objectflow_list)
-						statediagrams 	(list StateDiagrams))
-					    type       	"Normal")
-					(object State "$UNNAMED$30"
-					    quid       	"55018AC202F5"
-					    type       	"EndState"))
-				    partitions 	(list Partitions)
-				    objects    	(list Objects)
-				    transitions 	(list transition_list
-					(object State_Transition
-					    quid       	"550188710395"
-					    label      	""
-					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
-					    supplier_quidu 	"550188680094"
-					    client     	"$UNNAMED$27"
-					    client_quidu 	"5501882C0285"
-					    Event      	(object Event "Kaupade haldur lisab kauba"
-						quid       	"550188710396")
-					    sendEvent  	(object sendEvent
-						quid       	"550188710398"))
-					(object State_Transition
-					    quid       	"550189C20006"
-					    supplier   	"$UNNAMED$29"
-					    supplier_quidu 	"550189BB0149"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
-					    client_quidu 	"550188680094"
-					    sendEvent  	(object sendEvent
-						quid       	"550189C20009"))
-					(object State_Transition
-					    quid       	"55018A1600B7"
-					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
-					    supplier_quidu 	"550189EF0004"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
-					    client_quidu 	"550188680094"
-					    sendEvent  	(object sendEvent
-						quid       	"55018A1600BA"))
-					(object State_Transition
-					    quid       	"55018A1F02AD"
-					    label      	""
-					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
-					    supplier_quidu 	"550189E200C3"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
-					    client_quidu 	"550188680094"
-					    Event      	(object Event "Kaupade haldur peatab probleemide tekkimisel kauba müügi"
-						quid       	"55018A1F02AE")
-					    action     	(object action "kauba seisundi muutmine"
-						quid       	"55018A1F02AF")
-					    sendEvent  	(object sendEvent
-						quid       	"55018A1F02B0"))
-					(object State_Transition
-					    quid       	"55018AE7014C"
-					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
-					    supplier_quidu 	"550189EF0004"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
-					    client_quidu 	"550189E200C3"
-					    sendEvent  	(object sendEvent
-						quid       	"55018AE7014F"))
-					(object State_Transition
-					    quid       	"55018AEC001B"
-					    supplier   	"$UNNAMED$28"
-					    supplier_quidu 	"5501882F02E1"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
-					    client_quidu 	"550189EF0004"
-					    sendEvent  	(object sendEvent
-						quid       	"55018AEC001E"))
-					(object State_Transition
-					    quid       	"55018B48025A"
-					    supplier   	"$UNNAMED$30"
-					    supplier_quidu 	"55018AC202F5"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
-					    client_quidu 	"550189EF0004"
-					    sendEvent  	(object sendEvent
-						quid       	"55018B48025D"))
-					(object State_Transition
-					    quid       	"55018B7D022C"
-					    label      	""
-					    supplier   	"$UNNAMED$28"
-					    supplier_quidu 	"5501882F02E1"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
-					    client_quidu 	"550189E200C3"
-					    Event      	(object Event "Kaupade haldur peatab ärilistel põhjustel kauba müügi"
-						quid       	"55018B7D022D")
-					    action     	(object action "kauba seisundi muutmine"
-						quid       	"55018B7D022E")
-					    sendEvent  	(object sendEvent
-						quid       	"55018B7D022F"))
-					(object State_Transition
-					    quid       	"55018B8002BC"
-					    supplier   	"$UNNAMED$30"
-					    supplier_quidu 	"55018AC202F5"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
-					    client_quidu 	"550188680094"
-					    sendEvent  	(object sendEvent
-						quid       	"55018B8002BF"))
-					(object State_Transition
-					    quid       	"55018CE400E6"
-					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
-					    supplier_quidu 	"550189E200C3"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
-					    client_quidu 	"550189E200C3"
-					    sendEvent  	(object sendEvent
-						quid       	"55018CE400E9"))
-					(object State_Transition
-					    quid       	"55018CF4039F"
-					    label      	""
-					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
-					    supplier_quidu 	"550188680094"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
-					    client_quidu 	"550189E200C3"
-					    Event      	(object Event "Kaupade haldur paneb probleemide lahenemisel kauba taas müüki"
-						quid       	"55018CF403A0")
-					    action     	(object action "kauba seisundi muutmine"
-						quid       	"55018CF403A1")
-					    sendEvent  	(object sendEvent
-						quid       	"55018CF403A2"))
-					(object State_Transition
-					    quid       	"55018FE00043"
-					    label      	""
-					    supplier   	"$UNNAMED$28"
-					    supplier_quidu 	"5501882F02E1"
-					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
-					    client_quidu 	"550188680094"
-					    Event      	(object Event "Kaupade haldur kustutab kauba ärilistel põhjustel"
-						quid       	"55018FE00044")
-					    action     	(object action " kauba seisundi muutmine"
-						quid       	"55018FE00045")
-					    sendEvent  	(object sendEvent
-						quid       	"55018FE00046")))
-				    objectflows 	(list objectflow_list)
-				    statediagrams 	(list StateDiagrams
-					(object State_Diagram "NewDiagram"
-					    quid       	"5501881D00B8"
-					    title      	"NewDiagram"
-					    zoom       	100
-					    max_height 	28350
-					    max_width  	21600
-					    origin_x   	0
-					    origin_y   	0
-					    items      	(list diagram_item_list
-						(object StateView "EndState" "$UNNAMED$28" @51
-						    location   	(1024, 1520)
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object SegLabel @52
-							Parent_View 	@51
-							location   	(1078, 1478)
-							font       	(object Font
-							    size       	9
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	TRUE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							hidden     	TRUE
-							nlines     	1
-							max_width  	60
-							justify    	1
-							label      	""
-							pctDist    	1.000000
-							height     	0
-							orientation 	0)
-						    icon_style 	"Icon"
-						    line_color 	3342489
-						    quidu      	"5501882F02E1"
-						    autoResize 	TRUE)
-						(object StateView "Normal" "Aktiivne" @53
-						    location   	(1024, 527)
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object ItemLabel
-							Parent_View 	@53
-							location   	(1024, 513)
-							fill_color 	13434879
-							anchor_loc 	1
-							nlines     	2
-							max_width  	204
-							justify    	0
-							label      	"Aktiivne")
-						    icon_style 	"Icon"
-						    line_color 	3342489
-						    fill_color 	13434879
-						    quidu      	"550188680094"
-						    height     	134
-						    autoResize 	TRUE)
-						(object StateView "Normal" "Mitteaktiivne" @54
-						    location   	(1024, 1136)
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object ItemLabel
-							Parent_View 	@54
-							location   	(1024, 1122)
-							fill_color 	13434879
-							anchor_loc 	1
-							nlines     	2
-							max_width  	204
-							justify    	0
-							label      	"Mitteaktiivne")
-						    icon_style 	"Icon"
-						    line_color 	3342489
-						    fill_color 	13434879
-						    quidu      	"550189E200C3"
-						    height     	134
-						    autoResize 	TRUE)
-						(object TransView "" @55
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object SegLabel @56
-							Parent_View 	@55
-							location   	(1069, 1340)
-							font       	(object Font
-							    size       	9
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	FALSE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							anchor_loc 	1
-							nlines     	2
-							max_width  	799
-							justify    	0
-							label      	"Kaupade haldur peatab ärilistel põhjustel kauba müügi / kauba seisundi muutmine"
-							pctDist    	0.500000
-							height     	45
-							orientation 	0)
-						    stereotype 	TRUE
-						    line_color 	3342489
-						    quidu      	"55018B7D022C"
-						    client     	@54
-						    supplier   	@51
-						    vertices   	(list Points
-							(1024, 1203)
-							(1024, 1478))
-						    line_style 	0
-						    x_offset   	FALSE)
-						(object TransView "" @57
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object SegLabel @58
-							Parent_View 	@57
-							location   	(455, 826)
-							font       	(object Font
-							    size       	9
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	FALSE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							anchor_loc 	1
-							nlines     	3
-							max_width  	650
-							justify    	0
-							label      	"Kaupade haldur paneb probleemide lahenemisel kauba taas müüki / kauba seisundi muutmine"
-							pctDist    	0.504403
-							height     	327
-							orientation 	0)
-						    stereotype 	TRUE
-						    line_color 	3342489
-						    quidu      	"55018CF4039F"
-						    client     	@54
-						    supplier   	@53
-						    vertices   	(list Points
-							(874, 1134)
-							(781, 1134)
-							(781, 525)
-							(874, 525))
-						    line_style 	0
-						    x_offset   	FALSE)
-						(object StateView "StartState" "$UNNAMED$27" @59
-						    location   	(1024, 112)
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object SegLabel @60
-							Parent_View 	@59
-							location   	(1066, 82)
-							font       	(object Font
-							    size       	9
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	TRUE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							hidden     	TRUE
-							nlines     	2
-							max_width  	600
-							justify    	1
-							label      	""
-							pctDist    	1.000000
-							height     	0
-							orientation 	0)
-						    icon_style 	"Icon"
-						    line_color 	3342489
-						    quidu      	"5501882C0285"
-						    autoResize 	TRUE)
-						(object TransView "" @61
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object SegLabel @62
-							Parent_View 	@61
-							location   	(1069, 301)
-							font       	(object Font
-							    size       	9
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	FALSE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							anchor_loc 	1
-							nlines     	1
-							max_width  	501
-							justify    	0
-							label      	"Kaupade haldur lisab kauba"
-							pctDist    	0.500000
-							height     	45
-							orientation 	0)
-						    stereotype 	TRUE
-						    line_color 	3342489
-						    quidu      	"550188710395"
-						    client     	@59
-						    supplier   	@53
-						    vertices   	(list Points
-							(1024, 142)
-							(1024, 460))
-						    line_style 	0
-						    x_offset   	FALSE)
-						(object TransView "" @63
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object SegLabel @64
-							Parent_View 	@63
-							location   	(1403, 828)
-							font       	(object Font
-							    size       	9
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	FALSE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							anchor_loc 	1
-							nlines     	3
-							max_width  	738
-							justify    	0
-							label      	"Kaupade haldur peatab probleemide tekkimisel kauba müügi / kauba seisundi muutmine"
-							pctDist    	0.493671
-							height     	379
-							orientation 	0)
-						    stereotype 	TRUE
-						    line_color 	3342489
-						    quidu      	"55018A1F02AD"
-						    client     	@53
-						    supplier   	@54
-						    vertices   	(list Points
-							(1024, 594)
-							(1024, 1069))
-						    line_style 	0
-						    x_offset   	FALSE)
-						(object TransView "" @65
-						    font       	(object Font
-							size       	9
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    label      	(object SegLabel @66
-							Parent_View 	@65
-							location   	(2139, 1075)
-							font       	(object Font
-							    size       	9
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	FALSE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							anchor_loc 	1
-							nlines     	2
-							max_width  	825
-							justify    	0
-							label      	"Kaupade haldur kustutab kauba ärilistel põhjustel /  kauba seisundi muutmine"
-							pctDist    	0.500000
-							height     	45
-							orientation 	0)
-						    stereotype 	TRUE
-						    line_color 	3342489
-						    quidu      	"55018FE00043"
-						    client     	@53
-						    supplier   	@51
-						    vertices   	(list Points
-							(1174, 526)
-							(2094, 525)
-							(2094, 1519)
-							(1066, 1519))
-						    line_style 	0
-						    x_offset   	FALSE)))))
-				logical_presentations 	(list unit_reference_list))
 			    (object Class_Category "Kaupade register"
 				quid       	"550ABD9A0199"
 				stereotype 	"subsystem"
@@ -1740,13 +1373,13 @@
 				    (object Association "Omab"
 					quid       	"550AC6AE01A2"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$31"
+					    (object Role "$UNNAMED$29"
 						quid       	"550AC6AF00D3"
 						supplier   	"Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund"
 						quidu      	"550AC2DF0227"
 						client_cardinality 	(value cardinality "1")
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$32"
+					    (object Role "$UNNAMED$30"
 						quid       	"550AC6AF00D5"
 						supplier   	"Logical View::Analysis Model::Registrid::Kaupade register::Kaup"
 						quidu      	"550AC2DD02B3"
@@ -1755,13 +1388,13 @@
 				    (object Association "Omab"
 					quid       	"550AC72A01A2"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$33"
+					    (object Role "$UNNAMED$31"
 						quid       	"550AC72B010A"
 						supplier   	"Logical View::Analysis Model::Registrid::Tarnijate register::Tarnija"
 						quidu      	"550AC6EE025F"
 						client_cardinality 	(value cardinality "1")
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$34"
+					    (object Role "$UNNAMED$32"
 						quid       	"550AC72B010C"
 						supplier   	"Logical View::Analysis Model::Registrid::Kaupade register::Kaup"
 						quidu      	"550AC2DD02B3"
@@ -1770,13 +1403,13 @@
 				    (object Association "Omab"
 					quid       	"550ACB1D03D0"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$35"
+					    (object Role "$UNNAMED$33"
 						quid       	"550ACB1E0327"
 						supplier   	"Logical View::Analysis Model::Registrid::Kaupade register::Kaup"
 						quidu      	"550AC2DD02B3"
 						client_cardinality 	(value cardinality "0..*")
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$36"
+					    (object Role "$UNNAMED$34"
 						quid       	"550ACB1E032A"
 						supplier   	"Logical View::Analysis Model::Registrid::Tootjate register::Tootja"
 						quidu      	"550AC9830013"
@@ -1785,13 +1418,13 @@
 				    (object Association "Haldab"
 					quid       	"550ACB2B0261"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$37"
+					    (object Role "$UNNAMED$35"
 						quid       	"550ACB2C01D9"
 						supplier   	"Logical View::Analysis Model::Registrid::Kaupade register::Kaup"
 						quidu      	"550AC2DD02B3"
 						client_cardinality 	(value cardinality "0..*")
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$38"
+					    (object Role "$UNNAMED$36"
 						quid       	"550ACB2C01DC"
 						supplier   	"Logical View::Analysis Model::Registrid::Kasutajate register::Kasutaja"
 						quidu      	"550AC97E012C"
@@ -1800,13 +1433,13 @@
 				    (object Association "Omab"
 					quid       	"550ACB3B0172"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$39"
+					    (object Role "$UNNAMED$37"
 						quid       	"550ACB3C02E3"
 						supplier   	"Logical View::Analysis Model::Registrid::Kasutajate register::Kasutaja"
 						quidu      	"550AC97E012C"
 						client_cardinality 	(value cardinality "0..*")
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$40"
+					    (object Role "$UNNAMED$38"
 						quid       	"550ACB3C02E5"
 						supplier   	"Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund"
 						quidu      	"550AC980025B"
@@ -1815,40 +1448,40 @@
 				    (object Association "Omab"
 					quid       	"550ACEE000FF"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$41"
+					    (object Role "$UNNAMED$39"
 						quid       	"550ACEE0033C"
 						supplier   	"Logical View::Analysis Model::Registrid::Kaupade register::Kaup"
 						quidu      	"550AC2DD02B3"
 						client_cardinality 	(value cardinality "0..*")
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$42"
+					    (object Role "$UNNAMED$40"
 						quid       	"550ACEE00340"
 						supplier   	"Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria"
 						quidu      	"550ACECA001F"
 						client_cardinality 	(value cardinality "1")
 						is_navigable 	TRUE)))
-				    (object Association "$UNNAMED$43"
+				    (object Association "$UNNAMED$41"
 					quid       	"550AD29F015C"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$44"
+					    (object Role "$UNNAMED$42"
 						quid       	"550AD2A00140"
 						supplier   	"Logical View::Analysis Model::Registrid::Kaupade register::Osapool"
 						quidu      	"550AD29C0140"
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$45"
+					    (object Role "$UNNAMED$43"
 						quid       	"550AD2A00142"
 						supplier   	"Logical View::Analysis Model::Registrid::Tootjate register::Tootja"
 						quidu      	"550AC9830013"
 						is_navigable 	TRUE)))
-				    (object Association "$UNNAMED$46"
+				    (object Association "$UNNAMED$44"
 					quid       	"550AD2AC0398"
 					roles      	(list role_list
-					    (object Role "$UNNAMED$47"
+					    (object Role "$UNNAMED$45"
 						quid       	"550AD2AD0376"
 						supplier   	"Logical View::Analysis Model::Registrid::Kaupade register::Osapool"
 						quidu      	"550AD29C0140"
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$48"
+					    (object Role "$UNNAMED$46"
 						quid       	"550AD2AD0378"
 						supplier   	"Logical View::Analysis Model::Registrid::Tarnijate register::Tarnija"
 						quidu      	"550AC6EE025F"
@@ -1863,7 +1496,7 @@
 					origin_x   	338
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @67
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @57
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1878,7 +1511,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@67
+						    Parent_View 	@57
 						    location   	(1027, 1390)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1886,7 +1519,7 @@
 						    justify    	0
 						    label      	"Kasutaja_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@67
+						    Parent_View 	@57
 						    location   	(1027, 1343)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1903,7 +1536,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @68
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @58
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1918,7 +1551,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@68
+						    Parent_View 	@58
 						    location   	(1667, 510)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1926,7 +1559,7 @@
 						    justify    	0
 						    label      	"Kauba_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@68
+						    Parent_View 	@58
 						    location   	(1667, 463)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1943,7 +1576,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kasutajate register::Kasutaja" @69
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kasutajate register::Kasutaja" @59
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1958,7 +1591,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@69
+						    Parent_View 	@59
 						    location   	(167, 1134)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1966,7 +1599,7 @@
 						    justify    	0
 						    label      	"Kasutaja")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@69
+						    Parent_View 	@59
 						    location   	(167, 1087)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1983,7 +1616,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "Omab" @70
+					    (object AssociationViewNew "Omab" @60
 						location   	(765, 1306)
 						font       	(object Font
 						    size       	9
@@ -1994,8 +1627,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @71
-						    Parent_View 	@70
+						label      	(object SegLabel @61
+						    Parent_View 	@60
 						    location   	(765, 1247)
 						    font       	(object Font
 							size       	9
@@ -2019,8 +1652,8 @@
 						line_color 	3342489
 						quidu      	"550ACB3B0172"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$39" @72
-							Parent_View 	@70
+						    (object RoleView "$UNNAMED$37" @62
+							Parent_View 	@60
 							location   	(-467, -134)
 							font       	(object Font
 							    size       	9
@@ -2034,14 +1667,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB3C02E3"
-							client     	@70
-							supplier   	@69
+							client     	@60
+							supplier   	@59
 							vertices   	(list Points
 							    (765, 1306)
 							    (514, 1234))
 							line_style 	0
-							label      	(object SegLabel @73
-							    Parent_View 	@72
+							label      	(object SegLabel @63
+							    Parent_View 	@62
 							    location   	(607, 1315)
 							    font       	(object Font
 								size       	9
@@ -2061,8 +1694,8 @@
 							    pctDist    	0.581031
 							    height     	52
 							    orientation 	0))
-						    (object RoleView "$UNNAMED$40" @74
-							Parent_View 	@70
+						    (object RoleView "$UNNAMED$38" @64
+							Parent_View 	@60
 							location   	(-467, -134)
 							font       	(object Font
 							    size       	9
@@ -2076,14 +1709,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB3C02E5"
-							client     	@70
-							supplier   	@67
+							client     	@60
+							supplier   	@57
 							vertices   	(list Points
 							    (765, 1306)
 							    (1017, 1378))
 							line_style 	0
-							label      	(object SegLabel @75
-							    Parent_View 	@74
+							label      	(object SegLabel @65
+							    Parent_View 	@64
 							    location   	(977, 1423)
 							    font       	(object Font
 								size       	9
@@ -2103,7 +1736,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	1))))
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @76
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @66
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2118,7 +1751,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@76
+						    Parent_View 	@66
 						    location   	(1732, 1422)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2126,7 +1759,7 @@
 						    justify    	0
 						    label      	"Kategooria")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@76
+						    Parent_View 	@66
 						    location   	(1732, 1375)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2143,7 +1776,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Kaup" @77
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Kaup" @67
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2158,7 +1791,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@77
+						    Parent_View 	@67
 						    location   	(1022, 777)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2166,7 +1799,7 @@
 						    justify    	0
 						    label      	"Kaup")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@77
+						    Parent_View 	@67
 						    location   	(1022, 730)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2180,7 +1813,7 @@
 						fill_color 	255
 						quidu      	"550AC2DD02B3"
 						compartment 	(object Compartment
-						    Parent_View 	@77
+						    Parent_View 	@67
 						    location   	(1022, 835)
 						    font       	(object Font
 							size       	9
@@ -2201,7 +1834,7 @@
 						height     	322
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "Omab" @78
+					    (object AssociationViewNew "Omab" @68
 						location   	(1490, 733)
 						font       	(object Font
 						    size       	9
@@ -2212,8 +1845,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @79
-						    Parent_View 	@78
+						label      	(object SegLabel @69
+						    Parent_View 	@68
 						    location   	(1490, 674)
 						    font       	(object Font
 							size       	9
@@ -2237,8 +1870,8 @@
 						line_color 	3342489
 						quidu      	"550AC6AE01A2"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$31" @80
-							Parent_View 	@78
+						    (object RoleView "$UNNAMED$29" @70
+							Parent_View 	@68
 							location   	(1090, 269)
 							font       	(object Font
 							    size       	9
@@ -2252,14 +1885,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC6AF00D3"
-							client     	@78
-							supplier   	@68
+							client     	@68
+							supplier   	@58
 							vertices   	(list Points
 							    (1490, 733)
-							    (1657, 657))
+							    (1657, 656))
 							line_style 	0
-							label      	(object SegLabel @81
-							    Parent_View 	@80
+							label      	(object SegLabel @71
+							    Parent_View 	@70
 							    location   	(1661, 714)
 							    font       	(object Font
 								size       	9
@@ -2279,8 +1912,8 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$32" @82
-							Parent_View 	@78
+						    (object RoleView "$UNNAMED$30" @72
+							Parent_View 	@68
 							location   	(1090, 269)
 							font       	(object Font
 							    size       	9
@@ -2294,14 +1927,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC6AF00D5"
-							client     	@78
-							supplier   	@77
+							client     	@68
+							supplier   	@67
 							vertices   	(list Points
 							    (1490, 733)
-							    (1323, 809))
+							    (1323, 808))
 							line_style 	0
-							label      	(object SegLabel @83
-							    Parent_View 	@82
+							label      	(object SegLabel @73
+							    Parent_View 	@72
 							    location   	(1363, 850)
 							    font       	(object Font
 								size       	9
@@ -2321,7 +1954,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object AssociationViewNew "Haldab" @84
+					    (object AssociationViewNew "Haldab" @74
 						location   	(763, 1027)
 						font       	(object Font
 						    size       	9
@@ -2332,8 +1965,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @85
-						    Parent_View 	@84
+						label      	(object SegLabel @75
+						    Parent_View 	@74
 						    location   	(763, 968)
 						    font       	(object Font
 							size       	9
@@ -2357,8 +1990,8 @@
 						line_color 	3342489
 						quidu      	"550ACB2B0261"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$37" @86
-							Parent_View 	@84
+						    (object RoleView "$UNNAMED$35" @76
+							Parent_View 	@74
 							location   	(347, -365)
 							font       	(object Font
 							    size       	9
@@ -2372,14 +2005,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB2C01D9"
-							client     	@84
-							supplier   	@77
+							client     	@74
+							supplier   	@67
 							vertices   	(list Points
 							    (763, 1027)
-							    (1012, 937))
+							    (1012, 934))
 							line_style 	0
-							label      	(object SegLabel @87
-							    Parent_View 	@86
+							label      	(object SegLabel @77
+							    Parent_View 	@76
 							    location   	(943, 1018)
 							    font       	(object Font
 								size       	9
@@ -2399,8 +2032,8 @@
 							    pctDist    	0.650513
 							    height     	52
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$38" @88
-							Parent_View 	@84
+						    (object RoleView "$UNNAMED$36" @78
+							Parent_View 	@74
 							location   	(347, -365)
 							font       	(object Font
 							    size       	9
@@ -2414,14 +2047,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB2C01DC"
-							client     	@84
-							supplier   	@69
+							client     	@74
+							supplier   	@59
 							vertices   	(list Points
 							    (763, 1027)
-							    (514, 1118))
+							    (514, 1116))
 							line_style 	0
-							label      	(object SegLabel @89
-							    Parent_View 	@88
+							label      	(object SegLabel @79
+							    Parent_View 	@78
 							    location   	(559, 1159)
 							    font       	(object Font
 								size       	9
@@ -2441,7 +2074,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object AssociationViewNew "Omab" @90
+					    (object AssociationViewNew "Omab" @80
 						location   	(1559, 1181)
 						font       	(object Font
 						    size       	9
@@ -2452,8 +2085,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @91
-						    Parent_View 	@90
+						label      	(object SegLabel @81
+						    Parent_View 	@80
 						    location   	(1559, 1122)
 						    font       	(object Font
 							size       	9
@@ -2477,8 +2110,8 @@
 						line_color 	3342489
 						quidu      	"550ACEE000FF"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$41" @92
-							Parent_View 	@90
+						    (object RoleView "$UNNAMED$39" @82
+							Parent_View 	@80
 							location   	(-377, -291)
 							font       	(object Font
 							    size       	9
@@ -2492,14 +2125,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACEE0033C"
-							client     	@90
-							supplier   	@77
+							client     	@80
+							supplier   	@67
 							vertices   	(list Points
 							    (1559, 1181)
-							    (1323, 999))
+							    (1323, 998))
 							line_style 	0
-							label      	(object SegLabel @93
-							    Parent_View 	@92
+							label      	(object SegLabel @83
+							    Parent_View 	@82
 							    location   	(1393, 1100)
 							    font       	(object Font
 								size       	9
@@ -2519,8 +2152,8 @@
 							    pctDist    	0.612970
 							    height     	38
 							    orientation 	0))
-						    (object RoleView "$UNNAMED$42" @94
-							Parent_View 	@90
+						    (object RoleView "$UNNAMED$40" @84
+							Parent_View 	@80
 							location   	(-377, -291)
 							font       	(object Font
 							    size       	9
@@ -2534,14 +2167,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACEE00340"
-							client     	@90
-							supplier   	@76
+							client     	@80
+							supplier   	@66
 							vertices   	(list Points
 							    (1559, 1181)
 							    (1795, 1363))
 							line_style 	0
-							label      	(object SegLabel @95
-							    Parent_View 	@94
+							label      	(object SegLabel @85
+							    Parent_View 	@84
 							    location   	(1804, 1303)
 							    font       	(object Font
 								size       	9
@@ -2561,7 +2194,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tootjate register::Tootja" @96
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tootjate register::Tootja" @86
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2576,7 +2209,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@96
+						    Parent_View 	@86
 						    location   	(154, 558)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2584,7 +2217,7 @@
 						    justify    	0
 						    label      	"Tootja")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@96
+						    Parent_View 	@86
 						    location   	(154, 511)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2601,7 +2234,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "Omab" @97
+					    (object AssociationViewNew "Omab" @87
 						location   	(737, 744)
 						font       	(object Font
 						    size       	9
@@ -2612,8 +2245,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @98
-						    Parent_View 	@97
+						label      	(object SegLabel @88
+						    Parent_View 	@87
 						    location   	(737, 685)
 						    font       	(object Font
 							size       	9
@@ -2637,8 +2270,8 @@
 						line_color 	3342489
 						quidu      	"550ACB1D03D0"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$35" @99
-							Parent_View 	@97
+						    (object RoleView "$UNNAMED$33" @89
+							Parent_View 	@87
 							location   	(433, 136)
 							font       	(object Font
 							    size       	9
@@ -2652,14 +2285,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB1E0327"
-							client     	@97
-							supplier   	@77
+							client     	@87
+							supplier   	@67
 							vertices   	(list Points
 							    (737, 744)
 							    (1012, 831))
 							line_style 	0
-							label      	(object SegLabel @100
-							    Parent_View 	@99
+							label      	(object SegLabel @90
+							    Parent_View 	@89
 							    location   	(948, 857)
 							    font       	(object Font
 								size       	9
@@ -2679,8 +2312,8 @@
 							    pctDist    	0.815709
 							    height     	44
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$36" @101
-							Parent_View 	@97
+						    (object RoleView "$UNNAMED$34" @91
+							Parent_View 	@87
 							location   	(433, 136)
 							font       	(object Font
 							    size       	9
@@ -2694,14 +2327,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB1E032A"
-							client     	@97
-							supplier   	@96
+							client     	@87
+							supplier   	@86
 							vertices   	(list Points
 							    (737, 744)
 							    (463, 657))
 							line_style 	0
-							label      	(object SegLabel @102
-							    Parent_View 	@101
+							label      	(object SegLabel @92
+							    Parent_View 	@91
 							    location   	(477, 717)
 							    font       	(object Font
 								size       	9
@@ -2721,7 +2354,67 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tarnijate register::Tarnija" @103
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Osapool" @93
+						ShowCompartmentStereotypes 	TRUE
+						IncludeAttribute 	TRUE
+						IncludeOperation 	TRUE
+						location   	(944, 112)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@93
+						    location   	(944, 268)
+						    anchor_loc 	1
+						    nlines     	2
+						    max_width  	426
+						    justify    	0
+						    label      	"Osapool")
+						icon       	"entity"
+						icon_style 	"Icon"
+						line_color 	3342489
+						fill_color 	13434879
+						quidu      	"550AD29C0140"
+						height     	154
+						annotation 	8
+						autoResize 	TRUE)
+					    (object AssociationViewNew "$UNNAMED$41" @94
+						location   	(584, 389)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550AD29F015C"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$42" @95
+							Parent_View 	@94
+							location   	(280, -219)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550AD2A00140"
+							client     	@94
+							supplier   	@93
+							vertices   	(list Points
+							    (584, 389)
+							    (867, 165))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$43" @96
+							Parent_View 	@94
+							location   	(280, -219)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"550AD2A00142"
+							client     	@94
+							supplier   	@86
+							vertices   	(list Points
+							    (584, 389)
+							    (441, 499))
+							line_style 	0)))
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tarnijate register::Tarnija" @97
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2736,7 +2429,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@103
+						    Parent_View 	@97
 						    location   	(1879, 990)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2744,7 +2437,7 @@
 						    justify    	0
 						    label      	"Tarnija")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@103
+						    Parent_View 	@97
 						    location   	(1879, 943)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2761,7 +2454,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "Omab" @104
+					    (object AssociationViewNew "Omab" @98
 						location   	(1596, 958)
 						font       	(object Font
 						    size       	9
@@ -2772,8 +2465,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @105
-						    Parent_View 	@104
+						label      	(object SegLabel @99
+						    Parent_View 	@98
 						    location   	(1596, 899)
 						    font       	(object Font
 							size       	9
@@ -2797,8 +2490,8 @@
 						line_color 	3342489
 						quidu      	"550AC72A01A2"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$33" @106
-							Parent_View 	@104
+						    (object RoleView "$UNNAMED$31" @100
+							Parent_View 	@98
 							location   	(1260, 190)
 							font       	(object Font
 							    size       	9
@@ -2812,14 +2505,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC72B010A"
-							client     	@104
-							supplier   	@103
+							client     	@98
+							supplier   	@97
 							vertices   	(list Points
 							    (1596, 958)
 							    (1869, 1009))
 							line_style 	0
-							label      	(object SegLabel @107
-							    Parent_View 	@106
+							label      	(object SegLabel @101
+							    Parent_View 	@100
 							    location   	(1832, 1057)
 							    font       	(object Font
 								size       	9
@@ -2839,8 +2532,8 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$34" @108
-							Parent_View 	@104
+						    (object RoleView "$UNNAMED$32" @102
+							Parent_View 	@98
 							location   	(1260, 190)
 							font       	(object Font
 							    size       	9
@@ -2854,14 +2547,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC72B010C"
-							client     	@104
-							supplier   	@77
+							client     	@98
+							supplier   	@67
 							vertices   	(list Points
 							    (1596, 958)
-							    (1323, 908))
+							    (1323, 907))
 							line_style 	0
-							label      	(object SegLabel @109
-							    Parent_View 	@108
+							label      	(object SegLabel @103
+							    Parent_View 	@102
 							    location   	(1396, 965)
 							    font       	(object Font
 								size       	9
@@ -2881,92 +2574,32 @@
 							    pctDist    	0.705263
 							    height     	43
 							    orientation 	0))))
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Osapool" @110
-						ShowCompartmentStereotypes 	TRUE
-						IncludeAttribute 	TRUE
-						IncludeOperation 	TRUE
-						location   	(944, 112)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						label      	(object ItemLabel
-						    Parent_View 	@110
-						    location   	(944, 268)
-						    anchor_loc 	1
-						    nlines     	2
-						    max_width  	426
-						    justify    	0
-						    label      	"Osapool")
-						icon       	"entity"
-						icon_style 	"Icon"
-						line_color 	3342489
-						fill_color 	13434879
-						quidu      	"550AD29C0140"
-						height     	154
-						annotation 	8
-						autoResize 	TRUE)
-					    (object AssociationViewNew "$UNNAMED$43" @111
-						location   	(584, 389)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550AD29F015C"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$44" @112
-							Parent_View 	@111
-							location   	(280, -219)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550AD2A00140"
-							client     	@111
-							supplier   	@110
-							vertices   	(list Points
-							    (584, 389)
-							    (725, 280))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$45" @113
-							Parent_View 	@111
-							location   	(280, -219)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"550AD2A00142"
-							client     	@111
-							supplier   	@96
-							vertices   	(list Points
-							    (584, 389)
-							    (443, 499))
-							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$46" @114
+					    (object AssociationViewNew "$UNNAMED$44" @104
 						location   	(1530, 611)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550AD2AC0398"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$47" @115
-							Parent_View 	@114
+						    (object RoleView "$UNNAMED$45" @105
+							Parent_View 	@104
 							location   	(-502, -429)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AD2AD0376"
-							client     	@114
-							supplier   	@110
+							client     	@104
+							supplier   	@93
 							vertices   	(list Points
 							    (1530, 611)
-							    (1155, 291))
+							    (1018, 176))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$48" @116
-							Parent_View 	@114
+						    (object RoleView "$UNNAMED$46" @106
+							Parent_View 	@104
 							location   	(-502, -429)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AD2AD0378"
-							client     	@114
-							supplier   	@103
+							client     	@104
+							supplier   	@97
 							vertices   	(list Points
 							    (1530, 611)
 							    (1905, 931))
@@ -2980,7 +2613,7 @@
 					origin_x   	0
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Klassifikaator" @117
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Klassifikaator" @107
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2995,7 +2628,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@117
+						    Parent_View 	@107
 						    location   	(1192, 276)
 						    fill_color 	13434879
 						    nlines     	1
@@ -3003,7 +2636,7 @@
 						    justify    	0
 						    label      	"Klassifikaator")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@117
+						    Parent_View 	@107
 						    location   	(1192, 229)
 						    fill_color 	13434879
 						    anchor     	10
@@ -3020,7 +2653,7 @@
 						height     	172
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @118
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @108
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -3035,7 +2668,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@118
+						    Parent_View 	@108
 						    location   	(276, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -3043,7 +2676,7 @@
 						    justify    	0
 						    label      	"Kategooria")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@118
+						    Parent_View 	@108
 						    location   	(276, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -3060,7 +2693,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @119
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @109
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -3075,7 +2708,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@119
+						    Parent_View 	@109
 						    location   	(836, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -3083,7 +2716,7 @@
 						    justify    	0
 						    label      	"Kauba_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@119
+						    Parent_View 	@109
 						    location   	(836, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -3100,7 +2733,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @120
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @110
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -3115,7 +2748,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@120
+						    Parent_View 	@110
 						    location   	(1380, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -3123,7 +2756,7 @@
 						    justify    	0
 						    label      	"Kasutaja_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@120
+						    Parent_View 	@110
 						    location   	(1380, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -3140,7 +2773,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_omadus" @121
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_omadus" @111
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -3155,7 +2788,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@121
+						    Parent_View 	@111
 						    location   	(1940, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -3163,7 +2796,7 @@
 						    justify    	0
 						    label      	"Kauba_omadus")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@121
+						    Parent_View 	@111
 						    location   	(1940, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -3180,66 +2813,66 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritTreeView "" @122
+					    (object InheritTreeView "" @112
 						location   	(1328, 525)
 						line_color 	3342489
 						fill_color 	13434879
-						supplier   	@117
+						supplier   	@107
 						vertices   	(list Points
 						    (1328, 525)
 						    (1328, 390)))
-					    (object InheritView "" @123
+					    (object InheritView "" @113
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF020372"
-						client     	@118
-						supplier   	@117
+						client     	@108
+						supplier   	@107
 						vertices   	(list Points
 						    (484, 756)
 						    (484, 525))
 						line_style 	3
 						origin_attachment 	(484, 756)
 						terminal_attachment 	(484, 525)
-						drawSupplier 	@122)
-					    (object InheritView "" @124
+						drawSupplier 	@112)
+					    (object InheritView "" @114
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF3501DC"
-						client     	@119
-						supplier   	@117
+						client     	@109
+						supplier   	@107
 						vertices   	(list Points
 						    (1041, 756)
 						    (1041, 525))
 						line_style 	3
 						origin_attachment 	(1041, 756)
 						terminal_attachment 	(1041, 525)
-						drawSupplier 	@122)
-					    (object InheritView "" @125
+						drawSupplier 	@112)
+					    (object InheritView "" @115
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF3B00FB"
-						client     	@120
-						supplier   	@117
+						client     	@110
+						supplier   	@107
 						vertices   	(list Points
 						    (1584, 756)
 						    (1584, 525))
 						line_style 	3
 						origin_attachment 	(1584, 756)
 						terminal_attachment 	(1584, 525)
-						drawSupplier 	@122)
-					    (object InheritView "" @126
+						drawSupplier 	@112)
+					    (object InheritView "" @116
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF8001C8"
-						client     	@121
-						supplier   	@117
+						client     	@111
+						supplier   	@107
 						vertices   	(list Points
 						    (2145, 756)
 						    (2145, 525))
 						line_style 	3
 						origin_attachment 	(2145, 756)
 						terminal_attachment 	(2145, 525)
-						drawSupplier 	@122)))))
+						drawSupplier 	@112)))))
 			    (object Class_Category "Ladude register"
 				quid       	"550ABDCA0022"
 				stereotype 	"subsystem"
@@ -3322,6 +2955,505 @@
 				    (object Class "Tarnija"
 					quid       	"550AC6EE025F"
 					stereotype 	"entity"))
+				logical_presentations 	(list unit_reference_list))
+			    (object Class_Category "Kauba seisundidiagramm"
+				quid       	"5501864701C9"
+				exportControl 	"Public"
+				logical_models 	(list unit_reference_list)
+				statemachine 	(object State_Machine "State/Activity Model"
+				    quid       	"5501881D00B4"
+				    states     	(list States
+					(object State "$UNNAMED$47"
+					    quid       	"5501882C0285"
+					    type       	"StartState")
+					(object State "$UNNAMED$48"
+					    quid       	"5501882F02E1"
+					    type       	"EndState")
+					(object State "Aktiivne"
+					    quid       	"550188680094"
+					    type       	"Normal")
+					(object State "$UNNAMED$49"
+					    quid       	"550189BB0149"
+					    type       	"EndState")
+					(object State "Mitteaktiivne"
+					    quid       	"550189E200C3"
+					    type       	"Normal")
+					(object State "Kustutatud"
+					    quid       	"550189EF0004"
+					    statemachine 	(object State_Machine "State/Activity Model2"
+						quid       	"55018B1100E6"
+						states     	(list States
+						    (object State "NewState"
+							quid       	"55018B1100E8"
+							type       	"Normal"))
+						partitions 	(list Partitions)
+						objects    	(list Objects)
+						transitions 	(list transition_list)
+						objectflows 	(list objectflow_list)
+						statediagrams 	(list StateDiagrams))
+					    type       	"Normal")
+					(object State "$UNNAMED$50"
+					    quid       	"55018AC202F5"
+					    type       	"EndState"))
+				    partitions 	(list Partitions)
+				    objects    	(list Objects)
+				    transitions 	(list transition_list
+					(object State_Transition
+					    quid       	"550188710395"
+					    label      	""
+					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
+					    supplier_quidu 	"550188680094"
+					    client     	"$UNNAMED$47"
+					    client_quidu 	"5501882C0285"
+					    Event      	(object Event "Kaupade haldur lisab kauba"
+						quid       	"550188710396")
+					    sendEvent  	(object sendEvent
+						quid       	"550188710398"))
+					(object State_Transition
+					    quid       	"550189C20006"
+					    supplier   	"$UNNAMED$49"
+					    supplier_quidu 	"550189BB0149"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
+					    client_quidu 	"550188680094"
+					    sendEvent  	(object sendEvent
+						quid       	"550189C20009"))
+					(object State_Transition
+					    quid       	"55018A1600B7"
+					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
+					    supplier_quidu 	"550189EF0004"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
+					    client_quidu 	"550188680094"
+					    sendEvent  	(object sendEvent
+						quid       	"55018A1600BA"))
+					(object State_Transition
+					    quid       	"55018A1F02AD"
+					    label      	""
+					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
+					    supplier_quidu 	"550189E200C3"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
+					    client_quidu 	"550188680094"
+					    Event      	(object Event "Kaupade haldur peatab probleemide tekkimisel kauba müügi"
+						quid       	"55018A1F02AE")
+					    action     	(object action "kauba seisundi muutmine"
+						quid       	"55018A1F02AF")
+					    sendEvent  	(object sendEvent
+						quid       	"55018A1F02B0"))
+					(object State_Transition
+					    quid       	"55018AE7014C"
+					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
+					    supplier_quidu 	"550189EF0004"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
+					    client_quidu 	"550189E200C3"
+					    sendEvent  	(object sendEvent
+						quid       	"55018AE7014F"))
+					(object State_Transition
+					    quid       	"55018AEC001B"
+					    supplier   	"$UNNAMED$48"
+					    supplier_quidu 	"5501882F02E1"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
+					    client_quidu 	"550189EF0004"
+					    sendEvent  	(object sendEvent
+						quid       	"55018AEC001E"))
+					(object State_Transition
+					    quid       	"55018B48025A"
+					    supplier   	"$UNNAMED$50"
+					    supplier_quidu 	"55018AC202F5"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Kustutatud"
+					    client_quidu 	"550189EF0004"
+					    sendEvent  	(object sendEvent
+						quid       	"55018B48025D"))
+					(object State_Transition
+					    quid       	"55018B7D022C"
+					    label      	""
+					    supplier   	"$UNNAMED$48"
+					    supplier_quidu 	"5501882F02E1"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
+					    client_quidu 	"550189E200C3"
+					    Event      	(object Event "Kaupade haldur peatab ärilistel põhjustel kauba müügi"
+						quid       	"55018B7D022D")
+					    action     	(object action "kauba seisundi muutmine"
+						quid       	"55018B7D022E")
+					    sendEvent  	(object sendEvent
+						quid       	"55018B7D022F"))
+					(object State_Transition
+					    quid       	"55018B8002BC"
+					    supplier   	"$UNNAMED$50"
+					    supplier_quidu 	"55018AC202F5"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
+					    client_quidu 	"550188680094"
+					    sendEvent  	(object sendEvent
+						quid       	"55018B8002BF"))
+					(object State_Transition
+					    quid       	"55018CE400E6"
+					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
+					    supplier_quidu 	"550189E200C3"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
+					    client_quidu 	"550189E200C3"
+					    sendEvent  	(object sendEvent
+						quid       	"55018CE400E9"))
+					(object State_Transition
+					    quid       	"55018CF4039F"
+					    label      	""
+					    supplier   	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
+					    supplier_quidu 	"550188680094"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Mitteaktiivne"
+					    client_quidu 	"550189E200C3"
+					    Event      	(object Event "Kaupade haldur paneb probleemide lahenemisel kauba taas müüki"
+						quid       	"55018CF403A0")
+					    action     	(object action "kauba seisundi muutmine"
+						quid       	"55018CF403A1")
+					    sendEvent  	(object sendEvent
+						quid       	"55018CF403A2"))
+					(object State_Transition
+					    quid       	"55018FE00043"
+					    label      	""
+					    supplier   	"$UNNAMED$48"
+					    supplier_quidu 	"5501882F02E1"
+					    client     	"Logical View::Analysis Model::Registrid::Kauba seisundidiagramm::State/Activity Model::Aktiivne"
+					    client_quidu 	"550188680094"
+					    Event      	(object Event "Kaupade haldur kustutab kauba ärilistel põhjustel"
+						quid       	"55018FE00044")
+					    action     	(object action " kauba seisundi muutmine"
+						quid       	"55018FE00045")
+					    sendEvent  	(object sendEvent
+						quid       	"55018FE00046")))
+				    objectflows 	(list objectflow_list)
+				    statediagrams 	(list StateDiagrams
+					(object State_Diagram "NewDiagram"
+					    quid       	"5501881D00B8"
+					    title      	"NewDiagram"
+					    zoom       	100
+					    max_height 	28350
+					    max_width  	21600
+					    origin_x   	0
+					    origin_y   	869
+					    items      	(list diagram_item_list
+						(object StateView "EndState" "$UNNAMED$48" @117
+						    location   	(1024, 1520)
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object SegLabel @118
+							Parent_View 	@117
+							location   	(1078, 1478)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	TRUE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							hidden     	TRUE
+							nlines     	1
+							max_width  	60
+							justify    	1
+							label      	""
+							pctDist    	1.000000
+							height     	0
+							orientation 	0)
+						    icon_style 	"Icon"
+						    line_color 	3342489
+						    quidu      	"5501882F02E1"
+						    autoResize 	TRUE)
+						(object StateView "Normal" "Aktiivne" @119
+						    location   	(1024, 527)
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object ItemLabel
+							Parent_View 	@119
+							location   	(1024, 513)
+							fill_color 	13434879
+							anchor_loc 	1
+							nlines     	2
+							max_width  	204
+							justify    	0
+							label      	"Aktiivne")
+						    icon_style 	"Icon"
+						    line_color 	3342489
+						    fill_color 	13434879
+						    quidu      	"550188680094"
+						    height     	134
+						    autoResize 	TRUE)
+						(object StateView "Normal" "Mitteaktiivne" @120
+						    location   	(1024, 1136)
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object ItemLabel
+							Parent_View 	@120
+							location   	(1024, 1122)
+							fill_color 	13434879
+							anchor_loc 	1
+							nlines     	2
+							max_width  	204
+							justify    	0
+							label      	"Mitteaktiivne")
+						    icon_style 	"Icon"
+						    line_color 	3342489
+						    fill_color 	13434879
+						    quidu      	"550189E200C3"
+						    height     	134
+						    autoResize 	TRUE)
+						(object TransView "" @121
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object SegLabel @122
+							Parent_View 	@121
+							location   	(1069, 1340)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	FALSE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							anchor_loc 	1
+							nlines     	2
+							max_width  	799
+							justify    	0
+							label      	"Kaupade haldur peatab ärilistel põhjustel kauba müügi / kauba seisundi muutmine"
+							pctDist    	0.500000
+							height     	45
+							orientation 	0)
+						    stereotype 	TRUE
+						    line_color 	3342489
+						    quidu      	"55018B7D022C"
+						    client     	@120
+						    supplier   	@117
+						    vertices   	(list Points
+							(1024, 1203)
+							(1024, 1478))
+						    line_style 	0
+						    x_offset   	FALSE)
+						(object TransView "" @123
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object SegLabel @124
+							Parent_View 	@123
+							location   	(455, 826)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	FALSE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							anchor_loc 	1
+							nlines     	3
+							max_width  	650
+							justify    	0
+							label      	"Kaupade haldur paneb probleemide lahenemisel kauba taas müüki / kauba seisundi muutmine"
+							pctDist    	0.504403
+							height     	327
+							orientation 	0)
+						    stereotype 	TRUE
+						    line_color 	3342489
+						    quidu      	"55018CF4039F"
+						    client     	@120
+						    supplier   	@119
+						    vertices   	(list Points
+							(874, 1134)
+							(781, 1134)
+							(781, 525)
+							(874, 525))
+						    line_style 	0
+						    x_offset   	FALSE)
+						(object StateView "StartState" "$UNNAMED$47" @125
+						    location   	(1024, 112)
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object SegLabel @126
+							Parent_View 	@125
+							location   	(1066, 82)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	TRUE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							hidden     	TRUE
+							nlines     	2
+							max_width  	600
+							justify    	1
+							label      	""
+							pctDist    	1.000000
+							height     	0
+							orientation 	0)
+						    icon_style 	"Icon"
+						    line_color 	3342489
+						    quidu      	"5501882C0285"
+						    autoResize 	TRUE)
+						(object TransView "" @127
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object SegLabel @128
+							Parent_View 	@127
+							location   	(1069, 301)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	FALSE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							anchor_loc 	1
+							nlines     	1
+							max_width  	501
+							justify    	0
+							label      	"Kaupade haldur lisab kauba"
+							pctDist    	0.500000
+							height     	45
+							orientation 	0)
+						    stereotype 	TRUE
+						    line_color 	3342489
+						    quidu      	"550188710395"
+						    client     	@125
+						    supplier   	@119
+						    vertices   	(list Points
+							(1024, 142)
+							(1024, 460))
+						    line_style 	0
+						    x_offset   	FALSE)
+						(object TransView "" @129
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object SegLabel @130
+							Parent_View 	@129
+							location   	(1403, 828)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	FALSE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							anchor_loc 	1
+							nlines     	3
+							max_width  	738
+							justify    	0
+							label      	"Kaupade haldur peatab probleemide tekkimisel kauba müügi / kauba seisundi muutmine"
+							pctDist    	0.493671
+							height     	379
+							orientation 	0)
+						    stereotype 	TRUE
+						    line_color 	3342489
+						    quidu      	"55018A1F02AD"
+						    client     	@119
+						    supplier   	@120
+						    vertices   	(list Points
+							(1024, 594)
+							(1024, 1069))
+						    line_style 	0
+						    x_offset   	FALSE)
+						(object TransView "" @131
+						    font       	(object Font
+							size       	9
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    label      	(object SegLabel @132
+							Parent_View 	@131
+							location   	(2139, 1075)
+							font       	(object Font
+							    size       	9
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	FALSE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							anchor_loc 	1
+							nlines     	2
+							max_width  	825
+							justify    	0
+							label      	"Kaupade haldur kustutab kauba ärilistel põhjustel /  kauba seisundi muutmine"
+							pctDist    	0.500000
+							height     	45
+							orientation 	0)
+						    stereotype 	TRUE
+						    line_color 	3342489
+						    quidu      	"55018FE00043"
+						    client     	@119
+						    supplier   	@117
+						    vertices   	(list Points
+							(1174, 526)
+							(2094, 525)
+							(2094, 1519)
+							(1066, 1519))
+						    line_style 	0
+						    x_offset   	FALSE)))))
 				logical_presentations 	(list unit_reference_list)))
 			logical_presentations 	(list unit_reference_list)))
 		logical_presentations 	(list unit_reference_list)))
@@ -3386,7 +3518,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @127
+			    (object NoteView @133
 				location   	(624, 160)
 				font       	(object Font
 				    size       	9
@@ -3398,7 +3530,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@127
+				    Parent_View 	@133
 				    location   	(21, 26)
 				    fill_color 	13434879
 				    nlines     	5
@@ -3425,7 +3557,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object SubSysView "Component View::Implementation Model" @128
+		    (object SubSysView "Component View::Implementation Model" @134
 			location   	(736, 800)
 			font       	(object Font
 			    size       	9
@@ -3437,7 +3569,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@128
+			    Parent_View 	@134
 			    location   	(552, 713)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3500,7 +3632,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ProcessorView "<processor name>" @129
+		    (object ProcessorView "<processor name>" @135
 			location   	(512, 1056)
 			font       	(object Font
 			    size       	9
@@ -3512,7 +3644,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@129
+			    Parent_View 	@135
 			    location   	(276, 900)
 			    nlines     	2
 			    max_width  	400
@@ -3523,7 +3655,7 @@
 			width      	475
 			height     	381
 			annotation 	3)
-		    (object DeviceView "<device name>" @130
+		    (object DeviceView "<device name>" @136
 			location   	(1040, 1056)
 			font       	(object Font
 			    size       	9
@@ -3535,7 +3667,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@130
+			    Parent_View 	@136
 			    location   	(867, 950)
 			    nlines     	2
 			    max_width  	275
@@ -3546,16 +3678,16 @@
 			width      	350
 			height     	282
 			annotation 	0)
-		    (object ConnectionView "" @131
+		    (object ConnectionView "" @137
 			stereotype 	TRUE
 			quidu      	"34DBBD4B008C"
-			client     	@129
-			supplier   	@130
+			client     	@135
+			supplier   	@136
 			vertices   	(list Points
 			    (718, 1056)
 			    (865, 1056))
 			line_style 	0)
-		    (object NoteView @132
+		    (object NoteView @138
 			location   	(816, 304)
 			font       	(object Font
 			    size       	9
@@ -3567,7 +3699,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@132
+			    Parent_View 	@138
 			    location   	(38, 29)
 			    fill_color 	13434879
 			    nlines     	11
