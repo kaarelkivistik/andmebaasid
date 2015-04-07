@@ -47,6 +47,20 @@
                 </li>
             </ul>
             <h3>Lausendid</h3>
+                <ul> 
+                    <li>Veebipoes müüakse kaupu</li>
+                    <li>Klient ostab kaupu</li>
+                    <li>Ostetavatest kaupadest koostatakse tellimus ehk ostukorv</li>
+                    <li>Lattu tellitakse kaupu tarnijatelt</li>
+                    <li>Igast kauba liikumisest laos jääb alles laoliikumine</li>
+                    <li>Igal kaubal on tootja ja tarnija</li>
+                    <li>Kõik infosüsteemis tegutsejad on osapooled</li>
+                    <li>Igal kaubal on seisund mis väljendab tema olekut ajas</li>
+                    <li>Veebipoel on üks oma ladu</li>
+                    <li>Kaubad toimetavad kohale veebipoe töötajad pannes asjad pakiautomaati, seega kullerit pole</li>
+                    <li>Ostjale väljastatakse ostu eest arve</li>
+                    <li>Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel.</li>
+                </ul>
             <h3>Põhiobjektid</h3>
             <ul>
                 <li>
@@ -79,9 +93,7 @@
                 <li>
                     Inventuur
                 </li>
-                <li>
-                    Inventuur
-                </li>
+                
             </ul>
             <h3>Põhiprotsessid</h3>
             <h3>Põhilised sündmused</h3>
@@ -108,15 +120,19 @@
                 <li>
                     Uudistaja
                 </li>
+
+                <p>  Kulleri pädevusala ei ole, kuna tema infosüsteemis ei tegutse</p>   
+                
             </ul>
             <h3>Asukohad</h3>
             <h3>Terviksüsteemi tükeldus allsüsteemideks</h3>
             <div>
                 <h4>Pädevusalad</h4>
-                <h4>Funktsionaalsed allsüsteemid</h4> Sisulised allsüsteemid (seotud organisatsiooni põhitegevusega).
+                <h4>Funktsionaalsed allsüsteemid</h4>
+                <p> Sisulised allsüsteemid (seotud organisatsiooni põhitegevusega). </p>
                 <ul>
                     <li>
-                        Arvete haldamise funktsionaalne allsüsteem
+                        Arvete ja laoliikumiste haldamise funktsionaalne allsüsteem
                     </li>
                     <li>
                         Kaupade arvestamise funktsionaalne allsüsteem
@@ -126,6 +142,9 @@
                     </li>
                     <li>
                         Tellimuste haldamise funtsionaalne allsüsteem
+                    </li>
+                    <li>
+                        Inventuuri funktsionaalne allsüsteem
                     </li>
                 </ul>
                 Administratiivsed allsüsteemid (võivad olla kasutusel paljudes erinevates organisatsioonides, mille tegevusalad ja eesmärgid on erinevad).
@@ -156,13 +175,16 @@
                         Tellimuste register
                     </li>
                     <li>
-                        Arvete register
+                        Arvete ja laoliikumiste register
+                    </li>
+                    <li>
+                        Inventuuri register
                     </li>
                 </ul>
                 <p>Administratiivsed registrid :</p>
                 <ul>
                     <li>
-                        Kasutajate register
+                        kasutajate register
                     </li>
                     <li>
                         Klassifikaatorite register
@@ -184,6 +206,7 @@
                         </ul>
                     </li>
                     <li>Võimaldab koostada elektroonilisi aruandeid</li>
+                    <li> Muuta kauba seisundit vastavalt selle elutsüklile, et oleks võimalik jälgida, millises elutsükli etapis iga konkreetne kaup parajasti viibib.</li>
                 </ul>
             </div>
             <h3>Allsüsteemi kasutatavad pädevusalad</h3>
@@ -200,60 +223,171 @@
             <h3>Allsüsteemi ühe põhiprotsessi tegevusdiagramm</h3>
             <h3>Allsüsteemi kasutusjuhtude eskiismudel</h3>
             <div>
-                <p><b>Kasutaja tuvastamine</b> (süsteemiülene)</p>
-                <p><b>Aruande koostamine</b></p>
-                <p><b>Kauba lisamine</b></p>
-                <p><b>Kauba aktiivseks seadmine</b></p>
-                <p><b>Kauba mitteaktiivseks seadmine</b></p>
-                <p><b>Kauba vaatamine</b></p>
-                <p><b>Kauba muutmine</b></p>
-                <p><b>Kauba kustutamine</b></p>
-                <p><b>Aktiivsete kaupade vaatamine</b></p>
+                <p><b> Kasutusjuht:</b>Kasutaja tuvastamine (süsteemiülene)</p>
+                <div>
+                    <b>Tegutsejad: </b> 
+                    <p> Infosüsteemi haldur,
+                        Kaupade haldur,
+                        Omanik</p>
+                        <b>Kirjeldus:</b>
+                        <p> Subjekt identifitseerib ennast. Selleks sisestab ta kasutajanime, parooli
+                            ja oma rolli süsteemis. Süsteem autendib subjekti, st. kontrollib subjekti väidetavat
+                            identiteeti. Kui subjekt on identifitseeritud, siis lubatakse subjekt süsteemi
+                            siseneda, vastasel juhul mitte. </p>
+                        </div>
+                        <p><b>Kasutusjuht:</b> Kaupade aruande koostamine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                        <p><b>Kasutusjuht:</b>Kauba lisamine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                        <p><b>Kasutusjuht:</b>Kauba aktiivseks seadmine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                        <p><b>Kasutusjuht:</b>Kauba mitteaktiivseks seadmine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                        <p><b>Kasutusjuht:</b>Kauba vaatamine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                        <p><b>Kasutusjuht:</b>Kauba muutmine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                        <p><b>Kasutusjuht:</b>Kauba kustutamine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                        <p><b>Kasutusjuht:</b>Aktiivsete kaupade vaatamine</p>
+                        <div>
+                            <b>Tegutsejad:</b>
+                            <b>Kirjeldus:</b>
+                        </div>
+                    </div>
+                    <h3>Mittefunktsionaalsed nõuded</h3>
+                </div>
+                <h2>Kaupade register</h2>
+                <div>
+                    <h3>Eesmärgid</h3>
+                    <h3>Registrit kasutavad pädevusalad</h3>
+                    <p> Registrist loevad andmeid ja muudavad andmeid infosüsteemi haldur, kaupade haldur ning omanik</p>
+                    <h3>Registrit teenindavad funktsionaalsed allsüsteemid</h3>
+                    <h3>Infovajadused, mida register aitab rahuldada</h3>
+                    <h3>Seosed teiste registritega</h3>
+                    <h3>Ärireeglid</h3>
+                    <h3>Registri kontseptuaalne eskiismudel</h3>
+                </div>
             </div>
-            <h3>Mittefunktsionaalsed nõuded</h3>
-        </div>
-        <h2>Kaupade register</h2>
-        <div>
-            <h3>Eesmärgid</h3>
-            <h3>Registrit kasutavad pädevusalad</h3>
-            <h3>Registrit teenindavad funktsionaalsed allsüsteemid</h3>
-            <h3>Infovajadused, mida register aitab rahuldada</h3>
-            <h3>Seosed teiste registritega</h3>
-            <h3>Ärireeglid</h3>
-            <h3>Registri kontseptuaalne eskiismudel</h3>
-        </div>
-    </div>
-    <h1>Detailanalüüsi etapp</h1>
-    <div>
-        <h2>Kaupade arvestuse funktsionaalne allsüsteem</h2>
-        <div>
-            <h3>Kasutusjuhtude mudel</h3>
-        </div>
-        <h2>Kaupade register (laiendatud kuju)</h2>
-        <div>
-            <h3>Kontseptuaalne andmemudel</h3>
+            <h1>Detailanalüüsi etapp</h1>
             <div>
-                <h4>Olemi-suhte diagramm</h4>
-                <h4>Olemitüüpide definitsioonid</h4>
-                <h4>Atribuutide definitsioonid</h4>
-            </div>
-            <h3>Andmebaasioperatsioonide lepingud</h3>
-            <h3>Registri põhiobjekti seisundidiagramm</h3>
-        </div>
-        <h2>CRUD-maatriks</h2>
-        <h2>Infosüsteemi rollide kirjeldused</h2>
-    </div>
-    <h1>Loogiline disain</h1>
-    <div>
-        <h2>Laiendatud kaupade registri loogiline disain</h2>
-        <div>
-            <h3>Loogiline andmebaasiskeem</h3>
-            <div>
-                <h4>Andmebaasi diagramm</h4>
-            </div>
-        </div>
-    </div>
-    <h1>Kasutatud materjalid</h1>
-</body>
+                <h2>Kaupade arvestuse funktsionaalne allsüsteem</h2>
+                <div>
+                    <h3>Kasutusjuhtude mudel</h3>
+                </div>
+                <h2>Kaupade register (laiendatud kuju)</h2>
+                <div>
+                    <h3>Kontseptuaalne andmemudel</h3>
+                    <div>
+                        <h4>Olemi-suhte diagramm</h4>
+                        <h4>Olemitüüpide definitsioonid</h4>
+                        <table border="1" style="width:100%">
+                            <tr>
+                                <td>Olemitüübi nimi (aliased)</td> 
+                                <td> Kuuluvus registrisse </td> 
+                                <td> Definitsioon </td>
+                            </tr>
+                            <tr>
+                                <td>Osapool</td>
+                                <td></td>
+                                <td> Osapool on Kasutaja ja Organisatsioon üldistus</td>
+                            </tr>
+                            <tr>
+                                <td>Organisatsioon</td>
+                                <td></td>
+                                <td>Organisatsioon on Tootja ja Tarnija üldistus</td>
+                            </tr>
+                            <tr>
+                                <td>Kaup</td>
+                                <td>Kaupade register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tootja</td>
+                                <td>Tootjate register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tarnija</td>
+                                <td>Tarnijate register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tellimus</td>
+                                <td>Tellimuste register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Ladu</td>
+                                <td>Ladude register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Kasutaja</td>
+                                <td>Kasutajate register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Klassifikaator</td>
+                                <td>Klassifikaatorite register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Arve</td>
+                                <td>Arvete ja laoliikumiste register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Laoliikumine</td>
+                                <td>Arvete ja laoliikumiste register</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Inventuur</td>
+                                <td> Inventuuri register</td>
+                                <td></td>
+                            </tr>
+                            </table>
+                            <h4>Atribuutide definitsioonid</h4>
+                        </div>
+                        <h3>Andmebaasioperatsioonide lepingud</h3>
+                        <h3>Registri põhiobjekti seisundidiagramm</h3>
+                    </div>
+                    <h2>CRUD-maatriks</h2>
+                    <h2>Infosüsteemi rollide kirjeldused</h2>
+                </div>
+                <h1>Loogiline disain</h1>
+                <div>
+                    <h2>Laiendatud kaupade registri loogiline disain</h2>
+                    <div>
+                        <h3>Loogiline andmebaasiskeem</h3>
+                        <div>
+                            <h4>Andmebaasi diagramm</h4>
+                        </div>
+                    </div>
+                </div>
+                <h1>Kasutatud materjalid</h1>
+            </body>
 
-</html>
+            </html>
