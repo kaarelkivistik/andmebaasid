@@ -29,16 +29,13 @@
             <p> Võimaldab: </p>
             <ul>
                 <li>
-                    Ladusid - lisada, muuta ja kustutada.
-                </li>
-                <li>
                     Kaupu - lisada, muuta ja kustutada.
                 </li>
                 <li>
-                    Kasutajaid - lisada, muuta ja kustutada.
+                    Töötajaid - lisada, muuta ja kustutada.
                 </li>
                 <li>
-                    Lisada, muuta ja kustutada ladude, laoliikumiste, kaupade ja kasutajate olekuid.
+                    Lisada, muuta ja kustutada laoliikumiste, kaupade ja töötajate olekuid.
                 </li>
                 <li>
                     Koostada, muuta, kinnitada kättesaamist ja saata tellimusi ning laoliikumisi.
@@ -49,17 +46,17 @@
             <h3>Lausendid</h3>
                 <ul> 
                     <li>Veebipoes müüakse kaupu</li>
-                    <li>Klient ostab kaupu</li>
+                    <li>Veebipoel on <b>üks</b> oma ladu</li>
+                    <li>Uudistajad ostavad kaupu <b>anonüümselt</b></li>
                     <li>Ostetavatest kaupadest koostatakse tellimus ehk ostukorv</li>
                     <li>Lattu tellitakse kaupu tarnijatelt</li>
                     <li>Igast kauba liikumisest laos jääb alles laoliikumine</li>
                     <li>Igal kaubal on tootja ja tarnija</li>
-                    <li>Kõik infosüsteemis tegutsejad on osapooled</li>
+                    <li>Infosüsteemis tegutsejad on uudistajad ja töötajad</li>
                     <li>Igal kaubal on seisund mis väljendab tema olekut ajas</li>
-                    <li>Veebipoel on üks oma ladu</li>
                     <li>Kaubad toimetavad kohale veebipoe töötajad pannes asjad pakiautomaati, seega kullerit pole</li>
                     <li>Ostjale väljastatakse ostu eest arve</li>
-                    <li>Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel.</li>
+                    <li>Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel</li>
                 </ul>
             <h3>Põhiobjektid</h3>
             <ul>
@@ -79,7 +76,7 @@
                     Ladu
                 </li>
                 <li>
-                    Kasutaja
+                    Töötaja
                 </li>
                 <li>
                     Klassifikaator
@@ -150,7 +147,7 @@
                 Administratiivsed allsüsteemid (võivad olla kasutusel paljudes erinevates organisatsioonides, mille tegevusalad ja eesmärgid on erinevad).
                 <ul>
                     <li>
-                        Kasutajate haldamise funktsionaalne allsüsteem
+                        Töötajate haldamise funktsionaalne allsüsteem
                     </li>
                     <li>
                         Klassifikaatorite funktsionaalne allsüsteem
@@ -169,9 +166,6 @@
                         Tarnijate register
                     </li>
                     <li>
-                        Ladude register
-                    </li>
-                    <li>
                         Tellimuste register
                     </li>
                     <li>
@@ -184,7 +178,7 @@
                 <p>Administratiivsed registrid :</p>
                 <ul>
                     <li>
-                        kasutajate register
+                        Töötajate register
                     </li>
                     <li>
                         Klassifikaatorite register
@@ -217,20 +211,20 @@
                     <li>Tootjate register</li>
                     <li>Klassifikaatorite register</li>
                     <li>Tarnijate register</li>
-                    <li>Kasutajate register</li>
+                    <li>Töötajate register</li>
                 </ul>
             </div>
             <h3>Allsüsteemi ühe põhiprotsessi tegevusdiagramm</h3>
             <h3>Allsüsteemi kasutusjuhtude eskiismudel</h3>
             <div>
-                <p><b> Kasutusjuht:</b>Kasutaja tuvastamine (süsteemiülene)</p>
+                <p><b> Kasutusjuht:</b>Töötaja tuvastamine (süsteemiülene)</p>
                 <div>
                     <b>Tegutsejad: </b> 
                     <p> Infosüsteemi haldur,
                         Kaupade haldur,
                         Omanik</p>
                         <b>Kirjeldus:</b>
-                        <p> Subjekt identifitseerib ennast. Selleks sisestab ta kasutajanime, parooli
+                        <p> Subjekt identifitseerib ennast. Selleks sisestab ta Töötajanime, parooli
                             ja oma rolli süsteemis. Süsteem autendib subjekti, st. kontrollib subjekti väidetavat
                             identiteeti. Kui subjekt on identifitseeritud, siis lubatakse subjekt süsteemi
                             siseneda, vastasel juhul mitte. </p>
@@ -305,13 +299,13 @@
                         <table border="1" style="width:100%">
                             <tr>
                                 <td>Olemitüübi nimi (aliased)</td> 
-                                <td> Kuuluvus registrisse </td> 
-                                <td> Definitsioon </td>
+                                <td>Kuuluvus registrisse </td> 
+                                <td>Definitsioon </td>
                             </tr>
                             <tr>
                                 <td>Osapool</td>
                                 <td></td>
-                                <td> Osapool on Kasutaja ja Organisatsioon üldistus</td>
+                                <td>Osapool on Töötaja ja Organisatsioon üldistus</td>
                             </tr>
                             <tr>
                                 <td>Organisatsioon</td>
@@ -339,13 +333,8 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Ladu</td>
-                                <td>Ladude register</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Kasutaja</td>
-                                <td>Kasutajate register</td>
+                                <td>Töötaja</td>
+                                <td>Töötajate register</td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -365,7 +354,7 @@
                             </tr>
                             <tr>
                                 <td>Inventuur</td>
-                                <td> Inventuuri register</td>
+                                <td>Inventuuri register</td>
                                 <td></td>
                             </tr>
                             </table>
@@ -378,13 +367,43 @@
                                     <td>Näiteväärtus </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Osapool</td>
+                                    <td>e_meil</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                  <tr>
+                                    <td>Osapool</td>
+                                    <td>aadress</td>
                                     <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                    <td>Organisatsioon</td>
+                                    <td>registri_nr</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                    <td>Organisatsioon</td>
+                                    <td>nimi</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                    <td>Kaup</td>
+                                    <td>kaubaKood</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                    <td>Kaup</td>
+                                    <td>nimetus</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                    <td>Kaup</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
