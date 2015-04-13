@@ -51,7 +51,7 @@
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"DatabaseCounter"
-	    value      	"0")
+	    value      	"2")
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"DomainPackageCounter"
@@ -67,7 +67,7 @@
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"TableCounter"
-	    value      	1)
+	    value      	10)
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"ViewCounter"
@@ -79,7 +79,7 @@
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"ColumnCounter"
-	    value      	"4")
+	    value      	"30")
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"TriggerCounter"
@@ -91,15 +91,15 @@
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"ConstraintCounter"
-	    value      	0)
+	    value      	13)
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"PrimaryKeyCounter"
-	    value      	0)
+	    value      	8)
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"ForeignKeyCounter"
-	    value      	0)
+	    value      	2)
 	(object Attribute
 	    tool       	"Data Modeler"
 	    name       	"StoredProcedurePackageCounter"
@@ -186,12 +186,7 @@
 				    (object Inheritance_Relationship
 					quid       	"550197AF01CA"
 					supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Tuvastatav subjekt"
-					quidu      	"550194F1007A"))
-				visible_modules 	(list dependency_list
-				    (object Dependency_Relationship
-					quid       	"550B19390253"
-					supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aruande koostamine"
-					quidu      	"550B190A02EC")))
+					quidu      	"550194F1007A")))
 			    (object Class "Laotöötaja"
 				quid       	"550192B20378"
 				stereotype 	"Actor")
@@ -250,8 +245,6 @@
 					quid       	"55019745021C")
 				    (object UseCase "Aktiivsete kaupade vaatamine"
 					quid       	"5501981803DE")
-				    (object UseCase "Aruande koostamine"
-					quid       	"550B190A02EC")
 				    (object Association "$UNNAMED$0"
 					quid       	"5501941C0235"
 					roles      	(list role_list
@@ -362,17 +355,17 @@
 						supplier   	"Use Case View::Use-Case Model::Pädevusalad::Uudistaja"
 						quidu      	"550192D00170")))
 				    (object Association "$UNNAMED$26"
-					quid       	"550B196E03D3"
+					quid       	"552B9C9B03AE"
 					roles      	(list role_list
 					    (object Role "$UNNAMED$27"
-						quid       	"550B1970032F"
-						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aruande koostamine"
-						quidu      	"550B190A02EC"
+						quid       	"552B9C9F000C"
+						supplier   	"Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba vaatamine"
+						quidu      	"55019745021C"
 						is_navigable 	TRUE)
 					    (object Role "$UNNAMED$28"
-						quid       	"550B19700331"
-						supplier   	"Use Case View::Use-Case Model::Pädevusalad::Kaupade haldaja"
-						quidu      	"55019284010F"))))
+						quid       	"552B9C9F000E"
+						supplier   	"Use Case View::Use-Case Model::Pädevusalad::Uudistaja"
+						quidu      	"550192D00170"))))
 				logical_presentations 	(list unit_reference_list
 				    (object UseCaseDiagram "Kasutusjuhud"
 					quid       	"55019240014E"
@@ -410,7 +403,7 @@
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
-						location   	(1104, 464)
+						location   	(1152, 528)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -422,7 +415,7 @@
 						    default_color 	TRUE)
 						label      	(object ItemLabel
 						    Parent_View 	@2
-						    location   	(1104, 624)
+						    location   	(1152, 688)
 						    anchor_loc 	1
 						    nlines     	2
 						    max_width  	445
@@ -435,7 +428,7 @@
 						annotation 	8
 						autoResize 	TRUE)
 					    (object AssociationViewNew "$UNNAMED$17" @3
-						location   	(728, 490)
+						location   	(752, 528)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -451,33 +444,30 @@
 						roleview_list 	(list RoleViews
 						    (object RoleView "$UNNAMED$18" @4
 							Parent_View 	@3
-							location   	(24, -38)
+							location   	(48, 0)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550197B3001D"
 							client     	@3
 							supplier   	@1
 							vertices   	(list Points
-							    (728, 490)
-							    (412, 514))
+							    (752, 528)
+							    (412, 528))
 							line_style 	0)
 						    (object RoleView "$UNNAMED$19" @5
 							Parent_View 	@3
-							location   	(24, -38)
+							location   	(48, 0)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550197B3001F"
 							client     	@3
 							supplier   	@2
 							vertices   	(list Points
-							    (728, 490)
-							    (1044, 466))
+							    (752, 528)
+							    (1092, 528))
 							line_style 	0)))
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Klient" @6
-						ShowCompartmentStereotypes 	TRUE
-						IncludeAttribute 	TRUE
-						IncludeOperation 	TRUE
-						location   	(2480, 448)
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aktiivsete kaupade vaatamine" @6
+						location   	(1664, 224)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -489,42 +479,7 @@
 						    default_color 	TRUE)
 						label      	(object ItemLabel
 						    Parent_View 	@6
-						    location   	(2480, 608)
-						    anchor_loc 	1
-						    nlines     	2
-						    max_width  	325
-						    justify    	0
-						    label      	"Klient")
-						icon       	"Actor"
-						icon_style 	"Icon"
-						line_color 	3342489
-						quidu      	"5501929A0197"
-						annotation 	8
-						autoResize 	TRUE)
-					    (object InheritView "" @7
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550197D00220"
-						client     	@6
-						supplier   	@2
-						vertices   	(list Points
-						    (2419, 448)
-						    (1161, 460))
-						line_style 	0)
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aktiivsete kaupade vaatamine" @8
-						location   	(2512, 896)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						label      	(object ItemLabel
-						    Parent_View 	@8
-						    location   	(2512, 1034)
+						    location   	(1664, 362)
 						    anchor_loc 	1
 						    nlines     	2
 						    max_width  	630
@@ -535,113 +490,7 @@
 						fill_color 	13434879
 						quidu      	"5501981803DE"
 						height     	118)
-					    (object AssociationViewNew "$UNNAMED$20" @9
-						location   	(2499, 752)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"5501982B0046"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$21" @10
-							Parent_View 	@9
-							location   	(419, 240)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501982B02FB"
-							client     	@9
-							supplier   	@8
-							vertices   	(list Points
-							    (2499, 752)
-							    (2505, 838))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$22" @11
-							Parent_View 	@9
-							location   	(419, 240)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501982B02FD"
-							client     	@9
-							supplier   	@6
-							vertices   	(list Points
-							    (2499, 752)
-							    (2489, 631))
-							line_style 	0)))
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Uudistaja" @12
-						ShowCompartmentStereotypes 	TRUE
-						IncludeAttribute 	TRUE
-						IncludeOperation 	TRUE
-						location   	(2784, 1360)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						label      	(object ItemLabel
-						    Parent_View 	@12
-						    location   	(2784, 1520)
-						    anchor_loc 	1
-						    nlines     	2
-						    max_width  	325
-						    justify    	0
-						    label      	"Uudistaja")
-						icon       	"Actor"
-						icon_style 	"Icon"
-						line_color 	3342489
-						quidu      	"550192D00170"
-						annotation 	8
-						autoResize 	TRUE)
-					    (object AssociationViewNew "$UNNAMED$23" @13
-						location   	(2671, 1168)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"5501982F00E4"
-						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$24" @14
-							Parent_View 	@13
-							location   	(191, -112)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501982F03AD"
-							client     	@13
-							supplier   	@8
-							vertices   	(list Points
-							    (2671, 1168)
-							    (2604, 1057))
-							line_style 	0)
-						    (object RoleView "$UNNAMED$25" @15
-							Parent_View 	@13
-							location   	(191, -112)
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"5501982F03AF"
-							client     	@13
-							supplier   	@12
-							vertices   	(list Points
-							    (2671, 1168)
-							    (2736, 1280))
-							line_style 	0)))
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Omanik" @16
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Omanik" @7
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -656,7 +505,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@16
+						    Parent_View 	@7
 						    location   	(768, 1648)
 						    anchor_loc 	1
 						    nlines     	2
@@ -669,7 +518,7 @@
 						quidu      	"550192CB031B"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldur" @17
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldur" @8
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -684,7 +533,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@17
+						    Parent_View 	@8
 						    location   	(496, 1648)
 						    anchor_loc 	1
 						    nlines     	1
@@ -697,7 +546,7 @@
 						quidu      	"550198960257"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Infosüsteemi administraator" @18
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Infosüsteemi administraator" @9
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -712,7 +561,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@18
+						    Parent_View 	@9
 						    location   	(224, 1632)
 						    anchor_loc 	1
 						    nlines     	2
@@ -725,7 +574,7 @@
 						quidu      	"550192A001A7"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba lisamine" @19
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba lisamine" @10
 						location   	(1888, 768)
 						font       	(object Font
 						    size       	9
@@ -737,7 +586,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@19
+						    Parent_View 	@10
 						    location   	(1888, 906)
 						    anchor_loc 	1
 						    nlines     	2
@@ -748,7 +597,7 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"5501937C0332")
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba lisamine" @20
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba lisamine" @11
 						location   	(1888, 768)
 						font       	(object Font
 						    size       	9
@@ -760,7 +609,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@20
+						    Parent_View 	@11
 						    location   	(1888, 906)
 						    anchor_loc 	1
 						    nlines     	2
@@ -771,7 +620,7 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"5501937C0332")
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba kustutamine" @21
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba kustutamine" @12
 						location   	(2000, 992)
 						font       	(object Font
 						    size       	9
@@ -783,7 +632,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@21
+						    Parent_View 	@12
 						    location   	(2000, 1130)
 						    anchor_loc 	1
 						    nlines     	2
@@ -794,7 +643,7 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"5501938303DC")
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba mitteaktiivseks seadmine" @22
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba mitteaktiivseks seadmine" @13
 						location   	(2096, 1232)
 						font       	(object Font
 						    size       	9
@@ -806,7 +655,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@22
+						    Parent_View 	@13
 						    location   	(2096, 1370)
 						    anchor_loc 	1
 						    nlines     	2
@@ -817,7 +666,7 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"5501938D037A")
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba aktiivseks seadmine" @23
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba aktiivseks seadmine" @14
 						location   	(1904, 1504)
 						font       	(object Font
 						    size       	9
@@ -829,7 +678,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@23
+						    Parent_View 	@14
 						    location   	(1904, 1642)
 						    anchor_loc 	1
 						    nlines     	2
@@ -840,7 +689,7 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"550193C60262")
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba muutmine" @24
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba muutmine" @15
 						location   	(1472, 1632)
 						font       	(object Font
 						    size       	9
@@ -852,7 +701,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@24
+						    Parent_View 	@15
 						    location   	(1472, 1770)
 						    anchor_loc 	1
 						    nlines     	2
@@ -863,55 +712,7 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"5501949600DC")
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba vaatamine" @25
-						location   	(1120, 1648)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						label      	(object ItemLabel
-						    Parent_View 	@25
-						    location   	(1120, 1786)
-						    anchor_loc 	1
-						    nlines     	2
-						    max_width  	630
-						    justify    	0
-						    label      	"Kauba vaatamine")
-						icon_style 	"Icon"
-						line_color 	3342489
-						fill_color 	13434879
-						quidu      	"55019745021C"
-						height     	118)
-					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Aruande koostamine" @26
-						location   	(1616, 592)
-						font       	(object Font
-						    size       	9
-						    face       	"Arial"
-						    bold       	FALSE
-						    italics    	FALSE
-						    underline  	FALSE
-						    strike     	FALSE
-						    color      	0
-						    default_color 	TRUE)
-						label      	(object ItemLabel
-						    Parent_View 	@26
-						    location   	(1616, 730)
-						    anchor_loc 	1
-						    nlines     	2
-						    max_width  	630
-						    justify    	0
-						    label      	"Aruande koostamine")
-						icon_style 	"Icon"
-						line_color 	3342489
-						fill_color 	13434879
-						quidu      	"550B190A02EC"
-						height     	118)
-					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldaja" @27
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Kaupade haldaja" @16
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -926,7 +727,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@27
+						    Parent_View 	@16
 						    location   	(1152, 1264)
 						    anchor_loc 	1
 						    nlines     	1
@@ -939,7 +740,7 @@
 						quidu      	"55019284010F"
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "$UNNAMED$0" @28
+					    (object AssociationViewNew "$UNNAMED$0" @17
 						location   	(1481, 950)
 						font       	(object Font
 						    size       	9
@@ -954,31 +755,31 @@
 						line_color 	3342489
 						quidu      	"5501941C0235"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$1" @29
-							Parent_View 	@28
+						    (object RoleView "$UNNAMED$1" @18
+							Parent_View 	@17
 							location   	(1017, 406)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501941D00EE"
-							client     	@28
-							supplier   	@20
+							client     	@17
+							supplier   	@11
 							vertices   	(list Points
 							    (1481, 950)
-							    (1567, 909))
+							    (1754, 826))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$2" @30
-							Parent_View 	@28
+						    (object RoleView "$UNNAMED$2" @19
+							Parent_View 	@17
 							location   	(1017, 406)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501941D00F0"
-							client     	@28
-							supplier   	@27
+							client     	@17
+							supplier   	@16
 							vertices   	(list Points
 							    (1481, 950)
-							    (1209, 1075))
+							    (1209, 1074))
 							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$3" @31
+					    (object AssociationViewNew "$UNNAMED$3" @20
 						location   	(1549, 1049)
 						font       	(object Font
 						    size       	9
@@ -993,31 +794,31 @@
 						line_color 	3342489
 						quidu      	"550194200290"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$4" @32
-							Parent_View 	@31
+						    (object RoleView "$UNNAMED$4" @21
+							Parent_View 	@20
 							location   	(1085, 505)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501942100DE"
-							client     	@31
-							supplier   	@21
+							client     	@20
+							supplier   	@12
 							vertices   	(list Points
 							    (1549, 1049)
-							    (1890, 1003))
+							    (1890, 1004))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$5" @33
-							Parent_View 	@31
+						    (object RoleView "$UNNAMED$5" @22
+							Parent_View 	@20
 							location   	(1085, 505)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"5501942100E0"
-							client     	@31
-							supplier   	@27
+							client     	@20
+							supplier   	@16
 							vertices   	(list Points
 							    (1549, 1049)
-							    (1209, 1092))
+							    (1209, 1094))
 							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$6" @34
+					    (object AssociationViewNew "$UNNAMED$6" @23
 						location   	(1597, 1162)
 						font       	(object Font
 						    size       	9
@@ -1032,32 +833,32 @@
 						line_color 	3342489
 						quidu      	"550194230058"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$7" @35
-							Parent_View 	@34
+						    (object RoleView "$UNNAMED$7" @24
+							Parent_View 	@23
 							location   	(1133, 618)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550194240018"
-							client     	@34
-							supplier   	@22
+							client     	@23
+							supplier   	@13
 							vertices   	(list Points
 							    (1597, 1162)
-							    (1986, 1215))
+							    (1985, 1214))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$8" @36
-							Parent_View 	@34
+						    (object RoleView "$UNNAMED$8" @25
+							Parent_View 	@23
 							location   	(1133, 618)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"55019424001A"
-							client     	@34
-							supplier   	@27
+							client     	@23
+							supplier   	@16
 							vertices   	(list Points
 							    (1597, 1162)
 							    (1209, 1110))
 							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$9" @37
-						location   	(1576, 1327)
+					    (object AssociationViewNew "$UNNAMED$9" @26
+						location   	(1503, 1289)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -1071,32 +872,32 @@
 						line_color 	3342489
 						quidu      	"550194260125"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$10" @38
-							Parent_View 	@37
-							location   	(1112, 783)
+						    (object RoleView "$UNNAMED$10" @27
+							Parent_View 	@26
+							location   	(1039, 745)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550194270062"
-							client     	@37
-							supplier   	@23
+							client     	@26
+							supplier   	@14
 							vertices   	(list Points
-							    (1576, 1327)
-							    (1798, 1445))
+							    (1503, 1289)
+							    (1797, 1446))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$11" @39
-							Parent_View 	@37
-							location   	(1112, 783)
+						    (object RoleView "$UNNAMED$11" @28
+							Parent_View 	@26
+							location   	(1039, 745)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550194270064"
-							client     	@37
-							supplier   	@27
+							client     	@26
+							supplier   	@16
 							vertices   	(list Points
-							    (1576, 1327)
+							    (1503, 1289)
 							    (1209, 1133))
 							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$12" @40
-						location   	(1348, 1430)
+					    (object AssociationViewNew "$UNNAMED$12" @29
+						location   	(1352, 1436)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -1110,32 +911,180 @@
 						line_color 	3342489
 						quidu      	"550194A40294"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$13" @41
-							Parent_View 	@40
-							location   	(964, 694)
+						    (object RoleView "$UNNAMED$13" @30
+							Parent_View 	@29
+							location   	(968, 700)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550194A5022E"
-							client     	@40
-							supplier   	@24
+							client     	@29
+							supplier   	@15
 							vertices   	(list Points
-							    (1348, 1430)
-							    (1434, 1574))
+							    (1352, 1436)
+							    (1435, 1574))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$14" @42
-							Parent_View 	@40
-							location   	(964, 694)
+						    (object RoleView "$UNNAMED$14" @31
+							Parent_View 	@29
+							location   	(968, 700)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550194A50230"
-							client     	@40
-							supplier   	@27
+							client     	@29
+							supplier   	@16
 							vertices   	(list Points
-							    (1348, 1430)
-							    (1238, 1249))
+							    (1352, 1436)
+							    (1270, 1299))
 							line_style 	0)))
-					    (object AssociationViewNew "$UNNAMED$15" @43
-						location   	(1129, 1438)
+					    (object InheritView "" @32
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550197AF01CA"
+						client     	@16
+						supplier   	@2
+						vertices   	(list Points
+						    (1152, 1024)
+						    (1152, 710))
+						line_style 	0)
+					    (object InheritTreeView "" @33
+						location   	(1152, 929)
+						line_color 	3342489
+						fill_color 	13434879
+						supplier   	@16
+						vertices   	(list Points
+						    (1152, 929)
+						    (1152, 1024)))
+					    (object InheritView "" @34
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"5501954000B6"
+						client     	@7
+						supplier   	@16
+						vertices   	(list Points
+						    (767, 1408)
+						    (767, 929))
+						line_style 	3
+						origin_attachment 	(767, 1408)
+						terminal_attachment 	(767, 929)
+						drawSupplier 	@33)
+					    (object InheritView "" @35
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550198AF03C7"
+						client     	@8
+						supplier   	@16
+						vertices   	(list Points
+						    (450, 1408)
+						    (450, 929))
+						line_style 	3
+						origin_attachment 	(450, 1408)
+						terminal_attachment 	(450, 929)
+						drawSupplier 	@33)
+					    (object InheritView "" @36
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"550199090095"
+						client     	@9
+						supplier   	@16
+						vertices   	(list Points
+						    (222, 1392)
+						    (222, 929))
+						line_style 	3
+						origin_attachment 	(222, 1392)
+						terminal_attachment 	(222, 929)
+						drawSupplier 	@33)
+					    (object ClassView "Class" "Use Case View::Use-Case Model::Pädevusalad::Uudistaja" @37
+						ShowCompartmentStereotypes 	TRUE
+						IncludeAttribute 	TRUE
+						IncludeOperation 	TRUE
+						location   	(1088, 160)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@37
+						    location   	(1088, 320)
+						    anchor_loc 	1
+						    nlines     	2
+						    max_width  	325
+						    justify    	0
+						    label      	"Uudistaja")
+						icon       	"Actor"
+						icon_style 	"Icon"
+						line_color 	3342489
+						quidu      	"550192D00170"
+						annotation 	8
+						autoResize 	TRUE)
+					    (object AssociationViewNew "$UNNAMED$23" @38
+						location   	(1349, 185)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"5501982F00E4"
+						roleview_list 	(list RoleViews
+						    (object RoleView "$UNNAMED$24" @39
+							Parent_View 	@38
+							location   	(-1131, -1095)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5501982F03AD"
+							client     	@38
+							supplier   	@6
+							vertices   	(list Points
+							    (1349, 185)
+							    (1553, 207))
+							line_style 	0)
+						    (object RoleView "$UNNAMED$25" @40
+							Parent_View 	@38
+							location   	(-1131, -1095)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5501982F03AF"
+							client     	@38
+							supplier   	@37
+							vertices   	(list Points
+							    (1349, 185)
+							    (1145, 164))
+							line_style 	0)))
+					    (object UseCaseView "Use Case View::Use-Case Model::Funkts allsüsteemid::Kaupade arvestuse f. allsüsteem::Kauba vaatamine" @41
+						location   	(1744, 560)
+						font       	(object Font
+						    size       	9
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@41
+						    location   	(1744, 698)
+						    anchor_loc 	1
+						    nlines     	2
+						    max_width  	630
+						    justify    	0
+						    label      	"Kauba vaatamine")
+						icon_style 	"Icon"
+						line_color 	3342489
+						fill_color 	13434879
+						quidu      	"55019745021C"
+						height     	118)
+					    (object AssociationViewNew "$UNNAMED$15" @42
+						location   	(1400, 874)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -1149,21 +1098,21 @@
 						line_color 	3342489
 						quidu      	"5501975300F1"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$16" @44
-							Parent_View 	@43
-							location   	(377, 270)
+						    (object RoleView "$UNNAMED$16" @43
+							Parent_View 	@42
+							location   	(648, -294)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550197540070"
-							client     	@43
-							supplier   	@25
+							client     	@42
+							supplier   	@41
 							vertices   	(list Points
-							    (1129, 1438)
-							    (1121, 1589))
+							    (1400, 874)
+							    (1592, 699))
 							line_style 	0)
-						    (object RoleView "theKaupade haldaja " @45
-							Parent_View 	@43
-							location   	(377, 270)
+						    (object RoleView "theKaupade haldaja " @44
+							Parent_View 	@42
+							location   	(648, -294)
 							font       	(object Font
 							    size       	9
 							    face       	"Arial"
@@ -1176,24 +1125,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550197540072"
-							client     	@43
-							supplier   	@27
+							client     	@42
+							supplier   	@16
 							vertices   	(list Points
-							    (1129, 1438)
-							    (1138, 1287))
+							    (1400, 874)
+							    (1209, 1049))
 							line_style 	0)))
-					    (object InheritView "" @46
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550197AF01CA"
-						client     	@27
-						supplier   	@2
-						vertices   	(list Points
-						    (1144, 1024)
-						    (1115, 647))
-						line_style 	0)
-					    (object AssociationViewNew "$UNNAMED$26" @47
-						location   	(1339, 895)
+					    (object AssociationViewNew "$UNNAMED$26" @45
+						location   	(1397, 347)
 						font       	(object Font
 						    size       	9
 						    face       	"Arial"
@@ -1205,79 +1144,32 @@
 						    default_color 	TRUE)
 						stereotype 	TRUE
 						line_color 	3342489
-						quidu      	"550B196E03D3"
+						quidu      	"552B9C9B03AE"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$27" @48
-							Parent_View 	@47
-							location   	(187, -209)
+						    (object RoleView "$UNNAMED$27" @46
+							Parent_View 	@45
+							location   	(309, 187)
 							stereotype 	TRUE
 							line_color 	3342489
-							quidu      	"550B1970032F"
-							client     	@47
-							supplier   	@26
+							quidu      	"552B9C9F000C"
+							client     	@45
+							supplier   	@41
 							vertices   	(list Points
-							    (1339, 895)
-							    (1468, 753))
+							    (1397, 347)
+							    (1650, 502))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$28" @49
-							Parent_View 	@47
-							location   	(187, -209)
+						    (object RoleView "$UNNAMED$28" @47
+							Parent_View 	@45
+							location   	(309, 187)
 							stereotype 	TRUE
 							line_color 	3342489
-							quidu      	"550B19700331"
-							client     	@47
-							supplier   	@27
+							quidu      	"552B9C9F000E"
+							client     	@45
+							supplier   	@37
 							vertices   	(list Points
-							    (1339, 895)
-							    (1209, 1037))
-							line_style 	0)))
-					    (object InheritTreeView "" @50
-						location   	(1152, 929)
-						line_color 	3342489
-						fill_color 	13434879
-						supplier   	@27
-						vertices   	(list Points
-						    (1152, 929)
-						    (1152, 1024)))
-					    (object InheritView "" @51
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"5501954000B6"
-						client     	@16
-						supplier   	@27
-						vertices   	(list Points
-						    (767, 1408)
-						    (767, 929))
-						line_style 	3
-						origin_attachment 	(767, 1408)
-						terminal_attachment 	(767, 929)
-						drawSupplier 	@50)
-					    (object InheritView "" @52
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550198AF03C7"
-						client     	@17
-						supplier   	@27
-						vertices   	(list Points
-						    (450, 1408)
-						    (450, 929))
-						line_style 	3
-						origin_attachment 	(450, 1408)
-						terminal_attachment 	(450, 929)
-						drawSupplier 	@50)
-					    (object InheritView "" @53
-						stereotype 	TRUE
-						line_color 	3342489
-						quidu      	"550199090095"
-						client     	@18
-						supplier   	@27
-						vertices   	(list Points
-						    (222, 1392)
-						    (222, 929))
-						line_style 	3
-						origin_attachment 	(222, 1392)
-						terminal_attachment 	(222, 929)
-						drawSupplier 	@50))))))
+							    (1397, 347)
+							    (1145, 192))
+							line_style 	0))))))))
 			logical_presentations 	(list unit_reference_list)))
 		logical_presentations 	(list unit_reference_list
 		    (object UseCaseDiagram "Global View of Actors and Use Cases"
@@ -1290,7 +1182,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @54
+			    (object NoteView @48
 				location   	(448, 304)
 				font       	(object Font
 				    size       	9
@@ -1302,7 +1194,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@54
+				    Parent_View 	@48
 				    location   	(38, 23)
 				    fill_color 	13434879
 				    nlines     	12
@@ -1336,7 +1228,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object CategoryView "Use Case View::Use-Case Model" @55
+		    (object CategoryView "Use Case View::Use-Case Model" @49
 			location   	(384, 880)
 			font       	(object Font
 			    size       	10
@@ -1348,7 +1240,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@55
+			    Parent_View 	@49
 			    location   	(189, 779)
 			    fill_color 	13434879
 			    nlines     	2
@@ -1361,7 +1253,7 @@
 			quidu      	"35B677F4010E"
 			width      	402
 			height     	215)
-		    (object NoteView @56
+		    (object NoteView @50
 			location   	(1040, 560)
 			font       	(object Font
 			    size       	10
@@ -1373,7 +1265,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@56
+			    Parent_View 	@50
 			    location   	(813, 358)
 			    fill_color 	13434879
 			    nlines     	9
@@ -1560,7 +1452,7 @@
 					origin_x   	338
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @57
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @51
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1575,7 +1467,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@57
+						    Parent_View 	@51
 						    location   	(1027, 1390)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1583,7 +1475,7 @@
 						    justify    	0
 						    label      	"Kasutaja_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@57
+						    Parent_View 	@51
 						    location   	(1027, 1343)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1600,7 +1492,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @58
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @52
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1615,7 +1507,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@58
+						    Parent_View 	@52
 						    location   	(1667, 510)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1623,7 +1515,7 @@
 						    justify    	0
 						    label      	"Kauba_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@58
+						    Parent_View 	@52
 						    location   	(1667, 463)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1640,7 +1532,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kasutajate register::Kasutaja" @59
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kasutajate register::Kasutaja" @53
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1655,7 +1547,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@59
+						    Parent_View 	@53
 						    location   	(167, 1134)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1663,7 +1555,7 @@
 						    justify    	0
 						    label      	"Kasutaja")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@59
+						    Parent_View 	@53
 						    location   	(167, 1087)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1680,7 +1572,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "Omab" @60
+					    (object AssociationViewNew "Omab" @54
 						location   	(765, 1306)
 						font       	(object Font
 						    size       	9
@@ -1691,8 +1583,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @61
-						    Parent_View 	@60
+						label      	(object SegLabel @55
+						    Parent_View 	@54
 						    location   	(765, 1247)
 						    font       	(object Font
 							size       	9
@@ -1716,8 +1608,8 @@
 						line_color 	3342489
 						quidu      	"550ACB3B0172"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$37" @62
-							Parent_View 	@60
+						    (object RoleView "$UNNAMED$37" @56
+							Parent_View 	@54
 							location   	(-467, -134)
 							font       	(object Font
 							    size       	9
@@ -1731,14 +1623,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB3C02E3"
-							client     	@60
-							supplier   	@59
+							client     	@54
+							supplier   	@53
 							vertices   	(list Points
 							    (765, 1306)
 							    (514, 1234))
 							line_style 	0
-							label      	(object SegLabel @63
-							    Parent_View 	@62
+							label      	(object SegLabel @57
+							    Parent_View 	@56
 							    location   	(607, 1315)
 							    font       	(object Font
 								size       	9
@@ -1758,8 +1650,8 @@
 							    pctDist    	0.581031
 							    height     	52
 							    orientation 	0))
-						    (object RoleView "$UNNAMED$38" @64
-							Parent_View 	@60
+						    (object RoleView "$UNNAMED$38" @58
+							Parent_View 	@54
 							location   	(-467, -134)
 							font       	(object Font
 							    size       	9
@@ -1773,14 +1665,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB3C02E5"
-							client     	@60
-							supplier   	@57
+							client     	@54
+							supplier   	@51
 							vertices   	(list Points
 							    (765, 1306)
 							    (1017, 1378))
 							line_style 	0
-							label      	(object SegLabel @65
-							    Parent_View 	@64
+							label      	(object SegLabel @59
+							    Parent_View 	@58
 							    location   	(977, 1423)
 							    font       	(object Font
 								size       	9
@@ -1800,7 +1692,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	1))))
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @66
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @60
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1815,7 +1707,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@66
+						    Parent_View 	@60
 						    location   	(1732, 1422)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1823,7 +1715,7 @@
 						    justify    	0
 						    label      	"Kategooria")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@66
+						    Parent_View 	@60
 						    location   	(1732, 1375)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1840,7 +1732,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tootjate register::Tootja" @67
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tootjate register::Tootja" @61
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1855,7 +1747,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@67
+						    Parent_View 	@61
 						    location   	(154, 558)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1863,7 +1755,7 @@
 						    justify    	0
 						    label      	"Tootja")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@67
+						    Parent_View 	@61
 						    location   	(154, 511)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1880,7 +1772,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Kaup" @68
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Kaup" @62
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -1895,7 +1787,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@68
+						    Parent_View 	@62
 						    location   	(1022, 777)
 						    fill_color 	13434879
 						    nlines     	1
@@ -1903,7 +1795,7 @@
 						    justify    	0
 						    label      	"Kaup")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@68
+						    Parent_View 	@62
 						    location   	(1022, 730)
 						    fill_color 	13434879
 						    anchor     	10
@@ -1920,7 +1812,7 @@
 						height     	322
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "Omab" @69
+					    (object AssociationViewNew "Omab" @63
 						location   	(1490, 733)
 						font       	(object Font
 						    size       	9
@@ -1931,8 +1823,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @70
-						    Parent_View 	@69
+						label      	(object SegLabel @64
+						    Parent_View 	@63
 						    location   	(1490, 674)
 						    font       	(object Font
 							size       	9
@@ -1956,8 +1848,8 @@
 						line_color 	3342489
 						quidu      	"550AC6AE01A2"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$29" @71
-							Parent_View 	@69
+						    (object RoleView "$UNNAMED$29" @65
+							Parent_View 	@63
 							location   	(1090, 269)
 							font       	(object Font
 							    size       	9
@@ -1971,14 +1863,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC6AF00D3"
-							client     	@69
-							supplier   	@58
+							client     	@63
+							supplier   	@52
 							vertices   	(list Points
 							    (1490, 733)
 							    (1657, 656))
 							line_style 	0
-							label      	(object SegLabel @72
-							    Parent_View 	@71
+							label      	(object SegLabel @66
+							    Parent_View 	@65
 							    location   	(1661, 714)
 							    font       	(object Font
 								size       	9
@@ -1998,8 +1890,8 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$30" @73
-							Parent_View 	@69
+						    (object RoleView "$UNNAMED$30" @67
+							Parent_View 	@63
 							location   	(1090, 269)
 							font       	(object Font
 							    size       	9
@@ -2013,14 +1905,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC6AF00D5"
-							client     	@69
-							supplier   	@68
+							client     	@63
+							supplier   	@62
 							vertices   	(list Points
 							    (1490, 733)
 							    (1323, 808))
 							line_style 	0
-							label      	(object SegLabel @74
-							    Parent_View 	@73
+							label      	(object SegLabel @68
+							    Parent_View 	@67
 							    location   	(1363, 850)
 							    font       	(object Font
 								size       	9
@@ -2040,7 +1932,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object AssociationViewNew "Haldab" @75
+					    (object AssociationViewNew "Haldab" @69
 						location   	(763, 1027)
 						font       	(object Font
 						    size       	9
@@ -2051,8 +1943,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @76
-						    Parent_View 	@75
+						label      	(object SegLabel @70
+						    Parent_View 	@69
 						    location   	(763, 968)
 						    font       	(object Font
 							size       	9
@@ -2076,8 +1968,8 @@
 						line_color 	3342489
 						quidu      	"550ACB2B0261"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$35" @77
-							Parent_View 	@75
+						    (object RoleView "$UNNAMED$35" @71
+							Parent_View 	@69
 							location   	(347, -365)
 							font       	(object Font
 							    size       	9
@@ -2091,14 +1983,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB2C01D9"
-							client     	@75
-							supplier   	@68
+							client     	@69
+							supplier   	@62
 							vertices   	(list Points
 							    (763, 1027)
 							    (1012, 934))
 							line_style 	0
-							label      	(object SegLabel @78
-							    Parent_View 	@77
+							label      	(object SegLabel @72
+							    Parent_View 	@71
 							    location   	(943, 1018)
 							    font       	(object Font
 								size       	9
@@ -2118,8 +2010,8 @@
 							    pctDist    	0.650513
 							    height     	52
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$36" @79
-							Parent_View 	@75
+						    (object RoleView "$UNNAMED$36" @73
+							Parent_View 	@69
 							location   	(347, -365)
 							font       	(object Font
 							    size       	9
@@ -2133,14 +2025,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB2C01DC"
-							client     	@75
-							supplier   	@59
+							client     	@69
+							supplier   	@53
 							vertices   	(list Points
 							    (763, 1027)
 							    (514, 1116))
 							line_style 	0
-							label      	(object SegLabel @80
-							    Parent_View 	@79
+							label      	(object SegLabel @74
+							    Parent_View 	@73
 							    location   	(559, 1159)
 							    font       	(object Font
 								size       	9
@@ -2160,7 +2052,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object AssociationViewNew "Omab" @81
+					    (object AssociationViewNew "Omab" @75
 						location   	(1559, 1181)
 						font       	(object Font
 						    size       	9
@@ -2171,8 +2063,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @82
-						    Parent_View 	@81
+						label      	(object SegLabel @76
+						    Parent_View 	@75
 						    location   	(1559, 1122)
 						    font       	(object Font
 							size       	9
@@ -2196,8 +2088,8 @@
 						line_color 	3342489
 						quidu      	"550ACEE000FF"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$39" @83
-							Parent_View 	@81
+						    (object RoleView "$UNNAMED$39" @77
+							Parent_View 	@75
 							location   	(-377, -291)
 							font       	(object Font
 							    size       	9
@@ -2211,14 +2103,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACEE0033C"
-							client     	@81
-							supplier   	@68
+							client     	@75
+							supplier   	@62
 							vertices   	(list Points
 							    (1559, 1181)
 							    (1323, 998))
 							line_style 	0
-							label      	(object SegLabel @84
-							    Parent_View 	@83
+							label      	(object SegLabel @78
+							    Parent_View 	@77
 							    location   	(1393, 1100)
 							    font       	(object Font
 								size       	9
@@ -2238,8 +2130,8 @@
 							    pctDist    	0.612970
 							    height     	38
 							    orientation 	0))
-						    (object RoleView "$UNNAMED$40" @85
-							Parent_View 	@81
+						    (object RoleView "$UNNAMED$40" @79
+							Parent_View 	@75
 							location   	(-377, -291)
 							font       	(object Font
 							    size       	9
@@ -2253,14 +2145,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACEE00340"
-							client     	@81
-							supplier   	@66
+							client     	@75
+							supplier   	@60
 							vertices   	(list Points
 							    (1559, 1181)
 							    (1795, 1363))
 							line_style 	0
-							label      	(object SegLabel @86
-							    Parent_View 	@85
+							label      	(object SegLabel @80
+							    Parent_View 	@79
 							    location   	(1804, 1303)
 							    font       	(object Font
 								size       	9
@@ -2280,7 +2172,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object AssociationViewNew "Omab" @87
+					    (object AssociationViewNew "Omab" @81
 						location   	(737, 744)
 						font       	(object Font
 						    size       	9
@@ -2291,8 +2183,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @88
-						    Parent_View 	@87
+						label      	(object SegLabel @82
+						    Parent_View 	@81
 						    location   	(737, 685)
 						    font       	(object Font
 							size       	9
@@ -2316,8 +2208,8 @@
 						line_color 	3342489
 						quidu      	"550ACB1D03D0"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$33" @89
-							Parent_View 	@87
+						    (object RoleView "$UNNAMED$33" @83
+							Parent_View 	@81
 							location   	(433, 136)
 							font       	(object Font
 							    size       	9
@@ -2331,14 +2223,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB1E0327"
-							client     	@87
-							supplier   	@68
+							client     	@81
+							supplier   	@62
 							vertices   	(list Points
 							    (737, 744)
 							    (1012, 831))
 							line_style 	0
-							label      	(object SegLabel @90
-							    Parent_View 	@89
+							label      	(object SegLabel @84
+							    Parent_View 	@83
 							    location   	(948, 857)
 							    font       	(object Font
 								size       	9
@@ -2358,8 +2250,8 @@
 							    pctDist    	0.815709
 							    height     	44
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$34" @91
-							Parent_View 	@87
+						    (object RoleView "$UNNAMED$34" @85
+							Parent_View 	@81
 							location   	(433, 136)
 							font       	(object Font
 							    size       	9
@@ -2373,14 +2265,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550ACB1E032A"
-							client     	@87
-							supplier   	@67
+							client     	@81
+							supplier   	@61
 							vertices   	(list Points
 							    (737, 744)
 							    (463, 657))
 							line_style 	0
-							label      	(object SegLabel @92
-							    Parent_View 	@91
+							label      	(object SegLabel @86
+							    Parent_View 	@85
 							    location   	(477, 717)
 							    font       	(object Font
 								size       	9
@@ -2400,7 +2292,7 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	0))))
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Osapool" @93
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Osapool" @87
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2415,7 +2307,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@93
+						    Parent_View 	@87
 						    location   	(944, 268)
 						    anchor_loc 	1
 						    nlines     	2
@@ -2430,37 +2322,37 @@
 						height     	154
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "$UNNAMED$41" @94
+					    (object AssociationViewNew "$UNNAMED$41" @88
 						location   	(584, 389)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550AD29F015C"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$42" @95
-							Parent_View 	@94
+						    (object RoleView "$UNNAMED$42" @89
+							Parent_View 	@88
 							location   	(280, -219)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AD2A00140"
-							client     	@94
-							supplier   	@93
+							client     	@88
+							supplier   	@87
 							vertices   	(list Points
 							    (584, 389)
 							    (867, 165))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$43" @96
-							Parent_View 	@94
+						    (object RoleView "$UNNAMED$43" @90
+							Parent_View 	@88
 							location   	(280, -219)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AD2A00142"
-							client     	@94
-							supplier   	@67
+							client     	@88
+							supplier   	@61
 							vertices   	(list Points
 							    (584, 389)
 							    (441, 499))
 							line_style 	0)))
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tarnijate register::Tarnija" @97
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Tarnijate register::Tarnija" @91
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2475,7 +2367,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@97
+						    Parent_View 	@91
 						    location   	(1879, 990)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2483,7 +2375,7 @@
 						    justify    	0
 						    label      	"Tarnija")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@97
+						    Parent_View 	@91
 						    location   	(1879, 943)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2500,7 +2392,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "Omab" @98
+					    (object AssociationViewNew "Omab" @92
 						location   	(1596, 958)
 						font       	(object Font
 						    size       	9
@@ -2511,8 +2403,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @99
-						    Parent_View 	@98
+						label      	(object SegLabel @93
+						    Parent_View 	@92
 						    location   	(1596, 899)
 						    font       	(object Font
 							size       	9
@@ -2536,8 +2428,8 @@
 						line_color 	3342489
 						quidu      	"550AC72A01A2"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$31" @100
-							Parent_View 	@98
+						    (object RoleView "$UNNAMED$31" @94
+							Parent_View 	@92
 							location   	(1260, 190)
 							font       	(object Font
 							    size       	9
@@ -2551,14 +2443,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC72B010A"
-							client     	@98
-							supplier   	@97
+							client     	@92
+							supplier   	@91
 							vertices   	(list Points
 							    (1596, 958)
 							    (1869, 1009))
 							line_style 	0
-							label      	(object SegLabel @101
-							    Parent_View 	@100
+							label      	(object SegLabel @95
+							    Parent_View 	@94
 							    location   	(1832, 1057)
 							    font       	(object Font
 								size       	9
@@ -2578,8 +2470,8 @@
 							    pctDist    	0.900000
 							    height     	54
 							    orientation 	1))
-						    (object RoleView "$UNNAMED$32" @102
-							Parent_View 	@98
+						    (object RoleView "$UNNAMED$32" @96
+							Parent_View 	@92
 							location   	(1260, 190)
 							font       	(object Font
 							    size       	9
@@ -2593,14 +2485,14 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AC72B010C"
-							client     	@98
-							supplier   	@68
+							client     	@92
+							supplier   	@62
 							vertices   	(list Points
 							    (1596, 958)
 							    (1323, 907))
 							line_style 	0
-							label      	(object SegLabel @103
-							    Parent_View 	@102
+							label      	(object SegLabel @97
+							    Parent_View 	@96
 							    location   	(1396, 965)
 							    font       	(object Font
 								size       	9
@@ -2620,32 +2512,32 @@
 							    pctDist    	0.705263
 							    height     	43
 							    orientation 	0))))
-					    (object AssociationViewNew "$UNNAMED$44" @104
+					    (object AssociationViewNew "$UNNAMED$44" @98
 						location   	(1530, 611)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550AD2AC0398"
 						roleview_list 	(list RoleViews
-						    (object RoleView "$UNNAMED$45" @105
-							Parent_View 	@104
+						    (object RoleView "$UNNAMED$45" @99
+							Parent_View 	@98
 							location   	(-502, -429)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AD2AD0376"
-							client     	@104
-							supplier   	@93
+							client     	@98
+							supplier   	@87
 							vertices   	(list Points
 							    (1530, 611)
 							    (1018, 176))
 							line_style 	0)
-						    (object RoleView "$UNNAMED$46" @106
-							Parent_View 	@104
+						    (object RoleView "$UNNAMED$46" @100
+							Parent_View 	@98
 							location   	(-502, -429)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"550AD2AD0378"
-							client     	@104
-							supplier   	@97
+							client     	@98
+							supplier   	@91
 							vertices   	(list Points
 							    (1530, 611)
 							    (1905, 931))
@@ -2659,7 +2551,7 @@
 					origin_x   	0
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Klassifikaator" @107
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Kaupade register::Klassifikaator" @101
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2674,7 +2566,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@107
+						    Parent_View 	@101
 						    location   	(1192, 276)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2682,7 +2574,7 @@
 						    justify    	0
 						    label      	"Klassifikaator")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@107
+						    Parent_View 	@101
 						    location   	(1192, 229)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2699,7 +2591,7 @@
 						height     	172
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @108
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kategooria" @102
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2714,7 +2606,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@108
+						    Parent_View 	@102
 						    location   	(276, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2722,7 +2614,7 @@
 						    justify    	0
 						    label      	"Kategooria")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@108
+						    Parent_View 	@102
 						    location   	(276, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2739,7 +2631,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @109
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_seisund" @103
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2754,7 +2646,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@109
+						    Parent_View 	@103
 						    location   	(836, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2762,7 +2654,7 @@
 						    justify    	0
 						    label      	"Kauba_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@109
+						    Parent_View 	@103
 						    location   	(836, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2779,7 +2671,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @110
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kasutaja_seisund" @104
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2794,7 +2686,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@110
+						    Parent_View 	@104
 						    location   	(1380, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2802,7 +2694,7 @@
 						    justify    	0
 						    label      	"Kasutaja_seisund")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@110
+						    Parent_View 	@104
 						    location   	(1380, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2819,7 +2711,7 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_omadus" @111
+					    (object ClassView "Class" "Logical View::Analysis Model::Registrid::Klassifikaatorite register::Kauba_omadus" @105
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -2834,7 +2726,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@111
+						    Parent_View 	@105
 						    location   	(1940, 814)
 						    fill_color 	13434879
 						    nlines     	1
@@ -2842,7 +2734,7 @@
 						    justify    	0
 						    label      	"Kauba_omadus")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@111
+						    Parent_View 	@105
 						    location   	(1940, 767)
 						    fill_color 	13434879
 						    anchor     	10
@@ -2859,66 +2751,66 @@
 						height     	216
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritTreeView "" @112
+					    (object InheritTreeView "" @106
 						location   	(1328, 525)
 						line_color 	3342489
 						fill_color 	13434879
-						supplier   	@107
+						supplier   	@101
 						vertices   	(list Points
 						    (1328, 525)
 						    (1328, 390)))
-					    (object InheritView "" @113
+					    (object InheritView "" @107
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF020372"
-						client     	@108
-						supplier   	@107
+						client     	@102
+						supplier   	@101
 						vertices   	(list Points
 						    (484, 756)
 						    (484, 525))
 						line_style 	3
 						origin_attachment 	(484, 756)
 						terminal_attachment 	(484, 525)
-						drawSupplier 	@112)
-					    (object InheritView "" @114
+						drawSupplier 	@106)
+					    (object InheritView "" @108
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF3501DC"
-						client     	@109
-						supplier   	@107
+						client     	@103
+						supplier   	@101
 						vertices   	(list Points
 						    (1041, 756)
 						    (1041, 525))
 						line_style 	3
 						origin_attachment 	(1041, 756)
 						terminal_attachment 	(1041, 525)
-						drawSupplier 	@112)
-					    (object InheritView "" @115
+						drawSupplier 	@106)
+					    (object InheritView "" @109
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF3B00FB"
-						client     	@110
-						supplier   	@107
+						client     	@104
+						supplier   	@101
 						vertices   	(list Points
 						    (1584, 756)
 						    (1584, 525))
 						line_style 	3
 						origin_attachment 	(1584, 756)
 						terminal_attachment 	(1584, 525)
-						drawSupplier 	@112)
-					    (object InheritView "" @116
+						drawSupplier 	@106)
+					    (object InheritView "" @110
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"550ACF8001C8"
-						client     	@111
-						supplier   	@107
+						client     	@105
+						supplier   	@101
 						vertices   	(list Points
 						    (2145, 756)
 						    (2145, 525))
 						line_style 	3
 						origin_attachment 	(2145, 756)
 						terminal_attachment 	(2145, 525)
-						drawSupplier 	@112)))))
+						drawSupplier 	@106)))))
 			    (object Class_Category "Ladude register"
 				quid       	"550ABDCA0022"
 				stereotype 	"subsystem"
@@ -3174,7 +3066,7 @@
 					    origin_x   	0
 					    origin_y   	869
 					    items      	(list diagram_item_list
-						(object StateView "EndState" "$UNNAMED$48" @117
+						(object StateView "EndState" "$UNNAMED$48" @111
 						    location   	(1024, 1520)
 						    font       	(object Font
 							size       	9
@@ -3185,8 +3077,8 @@
 							strike     	FALSE
 							color      	0
 							default_color 	TRUE)
-						    label      	(object SegLabel @118
-							Parent_View 	@117
+						    label      	(object SegLabel @112
+							Parent_View 	@111
 							location   	(1078, 1478)
 							font       	(object Font
 							    size       	9
@@ -3209,7 +3101,7 @@
 						    line_color 	3342489
 						    quidu      	"5501882F02E1"
 						    autoResize 	TRUE)
-						(object StateView "Normal" "Aktiivne" @119
+						(object StateView "Normal" "Aktiivne" @113
 						    location   	(1024, 527)
 						    font       	(object Font
 							size       	9
@@ -3221,7 +3113,7 @@
 							color      	0
 							default_color 	TRUE)
 						    label      	(object ItemLabel
-							Parent_View 	@119
+							Parent_View 	@113
 							location   	(1024, 513)
 							fill_color 	13434879
 							anchor_loc 	1
@@ -3235,7 +3127,7 @@
 						    quidu      	"550188680094"
 						    height     	134
 						    autoResize 	TRUE)
-						(object StateView "Normal" "Mitteaktiivne" @120
+						(object StateView "Normal" "Mitteaktiivne" @114
 						    location   	(1024, 1136)
 						    font       	(object Font
 							size       	9
@@ -3247,7 +3139,7 @@
 							color      	0
 							default_color 	TRUE)
 						    label      	(object ItemLabel
-							Parent_View 	@120
+							Parent_View 	@114
 							location   	(1024, 1122)
 							fill_color 	13434879
 							anchor_loc 	1
@@ -3261,7 +3153,7 @@
 						    quidu      	"550189E200C3"
 						    height     	134
 						    autoResize 	TRUE)
-						(object TransView "" @121
+						(object TransView "" @115
 						    font       	(object Font
 							size       	9
 							face       	"Arial"
@@ -3271,8 +3163,8 @@
 							strike     	FALSE
 							color      	0
 							default_color 	TRUE)
-						    label      	(object SegLabel @122
-							Parent_View 	@121
+						    label      	(object SegLabel @116
+							Parent_View 	@115
 							location   	(1069, 1340)
 							font       	(object Font
 							    size       	9
@@ -3294,14 +3186,14 @@
 						    stereotype 	TRUE
 						    line_color 	3342489
 						    quidu      	"55018B7D022C"
-						    client     	@120
-						    supplier   	@117
+						    client     	@114
+						    supplier   	@111
 						    vertices   	(list Points
 							(1024, 1203)
 							(1024, 1478))
 						    line_style 	0
 						    x_offset   	FALSE)
-						(object TransView "" @123
+						(object TransView "" @117
 						    font       	(object Font
 							size       	9
 							face       	"Arial"
@@ -3311,8 +3203,8 @@
 							strike     	FALSE
 							color      	0
 							default_color 	TRUE)
-						    label      	(object SegLabel @124
-							Parent_View 	@123
+						    label      	(object SegLabel @118
+							Parent_View 	@117
 							location   	(455, 826)
 							font       	(object Font
 							    size       	9
@@ -3334,8 +3226,8 @@
 						    stereotype 	TRUE
 						    line_color 	3342489
 						    quidu      	"55018CF4039F"
-						    client     	@120
-						    supplier   	@119
+						    client     	@114
+						    supplier   	@113
 						    vertices   	(list Points
 							(874, 1134)
 							(781, 1134)
@@ -3343,7 +3235,7 @@
 							(874, 525))
 						    line_style 	0
 						    x_offset   	FALSE)
-						(object StateView "StartState" "$UNNAMED$47" @125
+						(object StateView "StartState" "$UNNAMED$47" @119
 						    location   	(1024, 112)
 						    font       	(object Font
 							size       	9
@@ -3354,8 +3246,8 @@
 							strike     	FALSE
 							color      	0
 							default_color 	TRUE)
-						    label      	(object SegLabel @126
-							Parent_View 	@125
+						    label      	(object SegLabel @120
+							Parent_View 	@119
 							location   	(1066, 82)
 							font       	(object Font
 							    size       	9
@@ -3378,7 +3270,7 @@
 						    line_color 	3342489
 						    quidu      	"5501882C0285"
 						    autoResize 	TRUE)
-						(object TransView "" @127
+						(object TransView "" @121
 						    font       	(object Font
 							size       	9
 							face       	"Arial"
@@ -3388,8 +3280,8 @@
 							strike     	FALSE
 							color      	0
 							default_color 	TRUE)
-						    label      	(object SegLabel @128
-							Parent_View 	@127
+						    label      	(object SegLabel @122
+							Parent_View 	@121
 							location   	(1069, 301)
 							font       	(object Font
 							    size       	9
@@ -3411,14 +3303,14 @@
 						    stereotype 	TRUE
 						    line_color 	3342489
 						    quidu      	"550188710395"
-						    client     	@125
-						    supplier   	@119
+						    client     	@119
+						    supplier   	@113
 						    vertices   	(list Points
 							(1024, 142)
 							(1024, 460))
 						    line_style 	0
 						    x_offset   	FALSE)
-						(object TransView "" @129
+						(object TransView "" @123
 						    font       	(object Font
 							size       	9
 							face       	"Arial"
@@ -3428,8 +3320,8 @@
 							strike     	FALSE
 							color      	0
 							default_color 	TRUE)
-						    label      	(object SegLabel @130
-							Parent_View 	@129
+						    label      	(object SegLabel @124
+							Parent_View 	@123
 							location   	(1403, 828)
 							font       	(object Font
 							    size       	9
@@ -3451,14 +3343,14 @@
 						    stereotype 	TRUE
 						    line_color 	3342489
 						    quidu      	"55018A1F02AD"
-						    client     	@119
-						    supplier   	@120
+						    client     	@113
+						    supplier   	@114
 						    vertices   	(list Points
 							(1024, 594)
 							(1024, 1069))
 						    line_style 	0
 						    x_offset   	FALSE)
-						(object TransView "" @131
+						(object TransView "" @125
 						    font       	(object Font
 							size       	9
 							face       	"Arial"
@@ -3468,8 +3360,8 @@
 							strike     	FALSE
 							color      	0
 							default_color 	TRUE)
-						    label      	(object SegLabel @132
-							Parent_View 	@131
+						    label      	(object SegLabel @126
+							Parent_View 	@125
 							location   	(2139, 1075)
 							font       	(object Font
 							    size       	9
@@ -3491,8 +3383,8 @@
 						    stereotype 	TRUE
 						    line_color 	3342489
 						    quidu      	"55018FE00043"
-						    client     	@119
-						    supplier   	@117
+						    client     	@113
+						    supplier   	@111
 						    vertices   	(list Points
 							(1174, 526)
 							(2094, 525)
@@ -3563,7 +3455,11 @@
 			    (object Attribute
 				tool       	"Data Modeler"
 				name       	"CodeName"
-				value      	"PostgreSQL"))
+				value      	"")
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"DatabaseID"
+				value      	"55264976027F"))
 			quid       	"552565050191"
 			stereotype 	"Schema"
 			exportControl 	"Public"
@@ -3608,6 +3504,2179 @@
 					value      	"False"))
 				quid       	"5525657A02EF"
 				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "TC_Kaubad5"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Unique")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"TC_Kaubad5")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"55264E3402A6"))
+					quid       	"55264CD700A6"
+					stereotype 	"Unique"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264E3402FC"
+						stereotype 	"Unique"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kaubad::kood"
+						quidu      	"55264E3402A6"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "PK_Kaubad5"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_Kaubad5")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"55264E3402A6"))
+					quid       	"55264CD7011D"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264E340343"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kaubad::kood"
+						quidu      	"55264E3402A6"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264E3402A6"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "nimetus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"nimetus")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	2)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264E340398"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "kogus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kogus")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	3)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264E350010"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "hind"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"hind")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	4)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	2147483647)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264E350072"
+					type       	"NUMBER(2147483647, 0)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "tootja"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"tootja")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264E3500D2"
+					type       	"NUMBER(5, 0)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "tarnija"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"tarnija")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	6)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264E350135"
+					type       	"NUMBER(5, 0)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "kauba_seisundi_kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kauba_seisundi_kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	7)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264E350195"
+					type       	"NUMBER(5, 0)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Omadused"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Omadused")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"552568190003"
+				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "PK_Omadused0"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_Omadused0")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"55264D6302D3"))
+					quid       	"552568A802DE"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264D6401AF"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Omadused::kood"
+						quidu      	"55264D6302D3"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "TC_Omadused6"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Unique")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"TC_Omadused6")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"55264D6302D3"))
+					quid       	"55264D010353"
+					stereotype 	"Unique"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264D63031B"
+						stereotype 	"Unique"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Omadused::kood"
+						quidu      	"55264D6302D3"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264D6302D3"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "nimetus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"nimetus")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	2)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264D630370"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Kauba_Omadused"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Kauba_Omadused")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"552568E70041"
+				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "PK_kauba_omadus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_kauba_omadus")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"552649A203DC,552649A3002A,552649A30019"))
+					quid       	"552570E8039B"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264D2D00E7"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Omadused::kood"
+						quidu      	"552649A203DC")
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"2"))
+						quid       	"55264D2D00EC"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Omadused::kauba_kood"
+						quidu      	"552649A3002A")
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"3"))
+						quid       	"55264D2D00F1"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Omadused::omaduse_kood"
+						quidu      	"552649A30019"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "TC_Kauba_Omadused4"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Unique")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"TC_Kauba_Omadused4")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"552649A203DC"))
+					quid       	"55264CC901CF"
+					stereotype 	"Unique"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264CC9020F"
+						stereotype 	"Unique"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Omadused::kood"
+						quidu      	"552649A203DC"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A203DC"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "omaduse_kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"omaduse_kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	2)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A30019"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "kauba_kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kauba_kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	3)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A3002A"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "väärtus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"väärtus")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	4)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A3003C"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Organisatsioonid"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Organisatsioonid")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"552569BA01BF"
+				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "PK_Organisatsioon1"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_Organisatsioon1")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"552649A2016D"))
+					quid       	"552570B7025A"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"552649A20183"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Organisatsioonid::registri_nr"
+						quidu      	"552649A2016D"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "registri_nr"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"registri_nr")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A2016D"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "nimi"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"nimi")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	2)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A20192"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "aadress"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"aadress")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	3)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A201A4"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Tellimused"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Tellimused")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"5525776A02C3"
+				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "PK_Tellimused3"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_Tellimused3")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"552649A202B4"))
+					quid       	"5525795501F7"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"552649A202C8"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Tellimused::kood"
+						quidu      	"552649A202B4"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A202B4"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "aadress"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"aadress")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	2)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A202D5"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "tellimuse_oleku_kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"tellimuse_oleku_kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	3)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A202E6"
+					type       	"NUMBER(5, 0)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Ostukorvid"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Ostukorvid")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"5525795A0153"
+				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "PK_Ostukorvid4"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_Ostukorvid4")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"552649A2033C"))
+					quid       	"55257A8D036E"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"552649A20351"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Ostukorvid::kood"
+						quidu      	"552649A2033C"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A2033C"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "tellimuse_kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"tellimuse_kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	2)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A20361"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "kauba_kood"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kauba_kood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	3)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A20373"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Neither")
+				    (object ClassAttribute "kogus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"kogus")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	4)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	10)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A20385"
+					type       	"NUMBER(10, 0)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Arved"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Arved")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"55257AF40084"
+				stereotype 	"Table"
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "COL_21"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"COL_21")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552649A2026A"
+					type       	"NUMBER(5, 0)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Kauba_Seisundid"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Kauba_Seisundid")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"55264E840058"
+				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "PK_Kauba_Seisundid6"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_Kauba_Seisundid6")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"55264F16007C"))
+					quid       	"55264F16004B"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264F16008B"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Seisundid::kood"
+						quidu      	"55264F16007C"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "TC_Kauba_Seisundid11"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Unique")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"TC_Kauba_Seisundid11")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"55264F16007C"))
+					quid       	"55264F16005D"
+					stereotype 	"Unique"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55264F160099"
+						stereotype 	"Unique"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Seisundid::kood"
+						quidu      	"55264F16007C"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
 				class_attributes 	(list class_attribute_list
 				    (object ClassAttribute "kood"
 					attributes 	(list Attribute_Set
@@ -3626,6 +5695,63 @@
 					    (object Attribute
 						tool       	"Data Modeler"
 						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"55264F16007C"
+					type       	"NUMBER(5, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "nimetus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"nimetus")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	2)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
 						value      	1)
 					    (object Attribute
 						tool       	"Data Modeler"
@@ -3651,10 +5777,163 @@
 						tool       	"Data Modeler"
 						name       	"DefaultValueType"
 						value      	"No Default Value"))
-					quid       	"552566D4035E"
-					type       	"SMALLINT"
-					exportControl 	"Neither")
-				    (object ClassAttribute "nimetus"
+					quid       	"55264F1600A2"
+					type       	"VARCHAR2(1)"
+					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
+				language   	"Data Modeler")
+			    (object Class "Töötajad"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"IsTable"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"DMName"
+					value      	"Töötajad")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"CodeName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"TableSpaceID"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"HasLikeStatemenet"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeTableName"
+					value      	"")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeIncludeIdentity"
+					value      	"False")
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"LikeColumnAttr"
+					value      	"False"))
+				quid       	"552650890140"
+				stereotype 	"Table"
+				operations 	(list Operations
+				    (object Operation "PK_Töötajad7"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Primary Key")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"PK_Töötajad7")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"552651140166"))
+					quid       	"55265114012A"
+					stereotype 	"PK"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55265114017A"
+						stereotype 	"PK"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Töötajad::isikukood"
+						quidu      	"552651140166"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "TC_Töötajad12"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsConstraint"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ConstraintType"
+						value      	"Unique")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"TC_Töötajad12")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DeferalMode"
+						value      	"Not Deferable")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsCluster"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"FillFactor"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"KeyList"
+						value      	"552651140166"))
+					quid       	"552651140141"
+					stereotype 	"Unique"
+					visible_modules 	(list dependency_list
+					    (object Dependency_Relationship
+						attributes 	(list Attribute_Set
+						    (object Attribute
+							tool       	"Data Modeler"
+							name       	"Order"
+							value      	"1"))
+						quid       	"55265114018A"
+						stereotype 	"Unique"
+						supplier   	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Töötajad::isikukood"
+						quidu      	"552651140166"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "isikukood"
 					attributes 	(list Attribute_Set
 					    (object Attribute
 						tool       	"Data Modeler"
@@ -3663,7 +5942,60 @@
 					    (object Attribute
 						tool       	"Data Modeler"
 						name       	"DMName"
-						value      	"nimetus")
+						value      	"isikukood")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"CodeName"
+						value      	"")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Ordinal"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Length"
+						value      	5)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"Scale"
+						value      	0)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"NullsAllowed"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"IsIdentity"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ForBitData"
+						value      	FALSE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ExplicitNullable"
+						value      	"False")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"ColumnType"
+						value      	"Native")
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DefaultValueType"
+						value      	"No Default Value"))
+					quid       	"552651140166"
+					type       	"NUMBER(5, 0)"
+					exportControl 	"Primary")
+				    (object ClassAttribute "nimi"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"dmItem"
+						value      	TRUE)
+					    (object Attribute
+						tool       	"Data Modeler"
+						name       	"DMName"
+						value      	"nimi")
 					    (object Attribute
 						tool       	"Data Modeler"
 						name       	"CodeName"
@@ -3674,6 +6006,10 @@
 						value      	2)
 					    (object Attribute
 						tool       	"Data Modeler"
+						name       	"Length"
+						value      	1)
+					    (object Attribute
+						tool       	"Data Modeler"
 						name       	"NullsAllowed"
 						value      	FALSE)
 					    (object Attribute
@@ -3696,10 +6032,10 @@
 						tool       	"Data Modeler"
 						name       	"DefaultValueType"
 						value      	"No Default Value"))
-					quid       	"552566D4036F"
-					type       	"SMALLINT"
+					quid       	"552651140196"
+					type       	"VARCHAR2(1)"
 					exportControl 	"Neither")
-				    (object ClassAttribute "kogus"
+				    (object ClassAttribute "parool"
 					attributes 	(list Attribute_Set
 					    (object Attribute
 						tool       	"Data Modeler"
@@ -3708,7 +6044,7 @@
 					    (object Attribute
 						tool       	"Data Modeler"
 						name       	"DMName"
-						value      	"kogus")
+						value      	"parool")
 					    (object Attribute
 						tool       	"Data Modeler"
 						name       	"CodeName"
@@ -3719,53 +6055,8 @@
 						value      	3)
 					    (object Attribute
 						tool       	"Data Modeler"
-						name       	"NullsAllowed"
-						value      	FALSE)
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"IsIdentity"
-						value      	FALSE)
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"ForBitData"
-						value      	FALSE)
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"ExplicitNullable"
-						value      	"False")
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"ColumnType"
-						value      	"Native")
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"DefaultValueType"
-						value      	"No Default Value"))
-					quid       	"552566D4037E"
-					type       	"SMALLINT"
-					exportControl 	"Neither")
-				    (object ClassAttribute "hind"
-					attributes 	(list Attribute_Set
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"dmItem"
-						value      	TRUE)
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"DMName"
-						value      	"hind")
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"CodeName"
-						value      	"")
-					    (object Attribute
-						tool       	"Data Modeler"
-						name       	"Ordinal"
-						value      	4)
-					    (object Attribute
-						tool       	"Data Modeler"
 						name       	"Length"
-						value      	2147483647)
+						value      	1)
 					    (object Attribute
 						tool       	"Data Modeler"
 						name       	"NullsAllowed"
@@ -3790,11 +6081,182 @@
 						tool       	"Data Modeler"
 						name       	"DefaultValueType"
 						value      	"No Default Value"))
-					quid       	"552566D4038E"
-					type       	"FLOAT(2147483647, 0)"
+					quid       	"5526511401A6"
+					type       	"VARCHAR2(1)"
 					exportControl 	"Neither"))
+				module     	"Component View::DB_1::Oracle"
+				quidu      	"55264976027F"
 				language   	"Data Modeler"))
-			logical_presentations 	(list unit_reference_list)))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Diagramm"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Data Modeler"
+					name       	"dmItem"
+					value      	"True"))
+				quid       	"55264BAC0289"
+				title      	"Diagramm"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kaubad" @127
+					ShowCompartmentStereotypes 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1424, 368)
+					font       	(object Font
+					    size       	9
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@127
+					    location   	(1030, 144)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	788
+					    justify    	0
+					    label      	"Kaubad")
+					icon       	"Table"
+					icon_style 	"Decoration"
+					line_color 	3342489
+					fill_color 	13434879
+					quidu      	"5525657A02EF"
+					width      	806
+					height     	646
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Omadused" @128
+					ShowCompartmentStereotypes 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(2352, 496)
+					font       	(object Font
+					    size       	9
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@128
+					    location   	(1955, 343)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	794
+					    justify    	0
+					    label      	"Kauba_Omadused")
+					icon       	"Table"
+					icon_style 	"Decoration"
+					line_color 	3342489
+					fill_color 	13434879
+					quidu      	"552568E70041"
+					width      	812
+					height     	504
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Omadused" @129
+					ShowCompartmentStereotypes 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(2016, 1232)
+					font       	(object Font
+					    size       	9
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@129
+					    location   	(1586, 1032)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	860
+					    justify    	0
+					    label      	"Omadused")
+					icon       	"Table"
+					icon_style 	"Decoration"
+					line_color 	3342489
+					fill_color 	13434879
+					quidu      	"552568190003"
+					width      	878
+					height     	598
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Organisatsioonid" @130
+					ShowCompartmentStereotypes 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(592, 320)
+					font       	(object Font
+					    size       	9
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@130
+					    location   	(263, 214)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	658
+					    justify    	0
+					    label      	"Organisatsioonid")
+					icon       	"Table"
+					icon_style 	"Decoration"
+					line_color 	3342489
+					fill_color 	13434879
+					quidu      	"552569BA01BF"
+					width      	676
+					height     	410
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Seisundid" @131
+					ShowCompartmentStereotypes 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(608, 1136)
+					font       	(object Font
+					    size       	9
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@131
+					    location   	(210, 1030)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	796
+					    justify    	0
+					    label      	"Kauba_Seisundid")
+					icon       	"Table"
+					icon_style 	"Decoration"
+					line_color 	3342489
+					fill_color 	13434879
+					quidu      	"55264E840058"
+					width      	814
+					height     	410
+					annotation 	8
+					autoResize 	TRUE))))))
 		logical_presentations 	(list unit_reference_list)))
 	logical_presentations 	(list unit_reference_list
 	    (object ClassDiagram "Welcome"
@@ -3857,7 +6319,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @133
+			    (object NoteView @132
 				location   	(624, 160)
 				font       	(object Font
 				    size       	9
@@ -3869,7 +6331,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@133
+				    Parent_View 	@132
 				    location   	(21, 26)
 				    fill_color 	13434879
 				    nlines     	5
@@ -3884,7 +6346,91 @@
 				line_color 	3342489
 				fill_color 	13434879
 				width      	1230
-				height     	281))))))
+				height     	281)))))
+	    (object SubSystem "Andmebaasid"
+		quid       	"5525673A0051"
+		physical_models 	(list unit_reference_list
+		    (object module "PostgreSQL" "NotAModuleType" "NotAModulePart"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"dmItem"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"IsDatabase"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"DMName"
+				value      	"PostgreSQL")
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"CodeName"
+				value      	"")
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"Location"
+				value      	"")
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"TargetDatabase"
+				value      	"ANSI SQL"))
+			quid       	"5525673A0055"
+			stereotype 	"Database"
+			language   	"Data Modeler"))
+		physical_presentations 	(list unit_reference_list))
+	    (object SubSystem "DB_1"
+		quid       	"55264976027D"
+		physical_models 	(list unit_reference_list
+		    (object module "Oracle" "NotAModuleType" "NotAModulePart"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"dmItem"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"IsDatabase"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"DMName"
+				value      	"Oracle")
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"CodeName"
+				value      	"")
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"Location"
+				value      	"")
+			    (object Attribute
+				tool       	"Data Modeler"
+				name       	"TargetDatabase"
+				value      	"Oracle 9i"))
+			quid       	"55264976027F"
+			stereotype 	"Database"
+			language   	"Data Modeler"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Organisatsioonid"
+			quidu      	"552569BA01BF"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Arved"
+			quidu      	"55257AF40084"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Tellimused"
+			quidu      	"5525776A02C3"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Ostukorvid"
+			quidu      	"5525795A0153"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Omadused"
+			quidu      	"552568E70041"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Omadused"
+			quidu      	"552568190003"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kaubad"
+			quidu      	"5525657A02EF"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Kauba_Seisundid"
+			quidu      	"55264E840058"
+			class      	"Logical View::Schemas::Andmebaasi diagramm PostgreSQL::Töötajad"
+			quidu      	"552650890140"))
+		physical_presentations 	(list unit_reference_list)))
 	physical_presentations 	(list unit_reference_list
 	    (object Module_Diagram "Main"
 		quid       	"35C6339B029E"
@@ -3896,7 +6442,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object SubSysView "Component View::Implementation Model" @134
+		    (object SubSysView "Component View::Implementation Model" @133
 			location   	(736, 800)
 			font       	(object Font
 			    size       	9
@@ -3908,7 +6454,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@134
+			    Parent_View 	@133
 			    location   	(552, 713)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3971,7 +6517,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ProcessorView "<processor name>" @135
+		    (object ProcessorView "<processor name>" @134
 			location   	(512, 1056)
 			font       	(object Font
 			    size       	9
@@ -3983,7 +6529,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@135
+			    Parent_View 	@134
 			    location   	(276, 900)
 			    nlines     	2
 			    max_width  	400
@@ -3994,7 +6540,7 @@
 			width      	475
 			height     	381
 			annotation 	3)
-		    (object DeviceView "<device name>" @136
+		    (object DeviceView "<device name>" @135
 			location   	(1040, 1056)
 			font       	(object Font
 			    size       	9
@@ -4006,7 +6552,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@136
+			    Parent_View 	@135
 			    location   	(867, 950)
 			    nlines     	2
 			    max_width  	275
@@ -4017,16 +6563,16 @@
 			width      	350
 			height     	282
 			annotation 	0)
-		    (object ConnectionView "" @137
+		    (object ConnectionView "" @136
 			stereotype 	TRUE
 			quidu      	"34DBBD4B008C"
-			client     	@135
-			supplier   	@136
+			client     	@134
+			supplier   	@135
 			vertices   	(list Points
 			    (718, 1056)
 			    (865, 1056))
 			line_style 	0)
-		    (object NoteView @138
+		    (object NoteView @137
 			location   	(816, 304)
 			font       	(object Font
 			    size       	9
@@ -4038,7 +6584,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@138
+			    Parent_View 	@137
 			    location   	(38, 29)
 			    fill_color 	13434879
 			    nlines     	11
