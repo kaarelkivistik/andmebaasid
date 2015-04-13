@@ -353,51 +353,38 @@
                             <tr>
                                 <td>Kaup</td>
                                 <td>Kaupade register</td>
-                                <td></td>
+                                <td>Ostu-müügi objekt, mille tootmise eesmärgiks oli objekti müük, ehk majandusliku kasu saamine tootjale.</td>
                             </tr>
                             <tr>
                                 <td>Tootja</td>
                                 <td>Tootjate register</td>
-                                <td></td>
+                                <td>Tootja on kauba valmistanud äriettevõte.</td>
                             </tr>
                             <tr>
                                 <td>Tarnija</td>
                                 <td>Tarnijate register</td>
-                                <td></td>
+                                <td>Tarnija on ettevõte, kes vahendab kauba tootjalt lõpp-müüjale majandusliku kasu teenimise nimel</td>
                             </tr>
-                            <tr>
-                                <td>Tellimus</td>
-                                <td>Tellimuste register</td>
-                                <td></td>
-                            </tr>
+                           
                             <tr>
                                 <td>Töötaja</td>
                                 <td>Töötajate register</td>
-                                <td></td>
+                                <td>Töötaja on töötegija mingis teatud asutuses või ettevõttes. </td>
                             </tr>
                             <tr>
                                 <td>Klassifikaator</td>
                                 <td>Klassifikaatorite register</td>
-                                <td></td>
+                                <td>Klassifikaatorid on "mistahes andmed, mida kasutatakse andmebaasis teiste andmete liigitamiseks või andmebaasis olevate andmete seostamiseks väljaspool organisatsiooni vastutusala oleva informatsiooniga." (Chisholm, 2000)</td>
                             </tr>
                             <tr>
-                                <td>Arve</td>
-                                <td>Arvete ja laoliikumiste register</td>
-                                <td></td>
+                                <td>Omadus</td>
+                                <td>Kaupade register</td>
+                                <td>Üks konkreetne kaupa kirjeldav omadus.</td>
                             </tr>
-                            <tr>
-                                <td>Laoliikumine</td>
-                                <td>Arvete ja laoliikumiste register</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Inventuur</td>
-                                <td>Inventuuri register</td>
-                                <td></td>
-                            </tr>
+                           
                             </table>
                             <h4>Atribuutide definitsioonid</h4>
-                            <table>
+                            <table border="1" style="width:100%">
                                 <tr>
                                     <td>Olemitüübi nimi </td>
                                     <td>Atribuudi nimi </td>
@@ -407,76 +394,124 @@
                                 <tr>
                                     <td>Osapool</td>
                                     <td>e_meil</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Vastava osapoole kontakt e-mail.</td>
+                                    <td>kontakt@osapool.ee</td>
                                 </tr>
                                  <tr>
                                     <td>Osapool</td>
                                     <td>aadress</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Osapoole kehtiv aadress.</td>
+                                    <td>Akadeemia tee 5, Tallinn 93811</td>
                                 </tr>
                                  <tr>
                                     <td>Organisatsioon</td>
                                     <td>registri_nr</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Osapoole unikaalne registri number.</td>
+                                    <td>11027462</td>
                                 </tr>
                                  <tr>
                                     <td>Organisatsioon</td>
                                     <td>nimi</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Vastava organisatsiooni nimi.</td>
+                                    <td>Samsung</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
                                     <td>kaubaKood</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Kaupa unikaalselt identifitseeriv kood. <p>{Kauba kood peab sisaldama numbreid. Kauba kood ei tohi olla tühi string.}</p></td>
+                                    <td>123456789</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
-                                    <td>nimetus</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>nimi</td>
+                                    <td>Kauba täielik nimetus</td>
+                                    <td>Dell Inspiron 15R n5010</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>hind</td>
+                                    <td>Antud toote hind.</td>
+                                    <td>15.00</td>
                                 </tr>
                                  <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Tootja</td>
+                                    <td>aadress</td>
+                                    <td>Kauba tootja kontaktaadress</td>
+                                    <td>Akadeemia tee 5, Tallinn 93811</td>
                                 </tr>
                                  <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Tootja</td>
+                                    <td>hinne</td>
+                                    <td>Kauba tootjale antud hinnang tema toodete kvaliteedi kohta</td>
+                                    <td>5.0</td>
                                 </tr>
                                  <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Tarnija</td>
+                                    <td>aadress</td>
+                                    <td>Tarnija aadress</td>
+                                    <td>Akadeemia tee 5, Tallinn 93811</td>
                                 </tr>
                                  <tr>   
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Tarnija</td>
+                                    <td>tarneaeg</td>
+                                    <td>Tarnija poolt lubatud maksimaalne tarneaeg päevades.</td>
+                                    <td>5 päeva</td>
                                 </tr>
                                  <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Töötaja</td>
+                                    <td>nimi</td>
+                                    <td>Töötaja ees- ja perekonnanimi</td>
                                     <td></td>
                                 </tr>
-                            </table>
+                                <tr>
+                                    <td>Töötaja</td>
+                                    <td>e_mail</td>
+                                    <td>Töötaja töö e-mail.</td>
+                                    <td>mari.mets@firma.ee</td>
+                                </tr>
+                                <tr>
+                                    <td>Töötaja</td>
+                                    <td>kasutajanimi</td>
+                                    <td>Töötaja kasutajatunnus millega ta veebikeskkonda sisse logib.</td>
+                                    <td>mari.mets</td>
+                                </tr>
+                                <tr>
+                                    <td>Töötaja</td>
+                                    <td>parool</td>
+                                    <td>Töötaja kasutajatunnusega seotud parool.</td>
+                                    <td>marisupertugevparool</td>
+                                </tr>
+                                <tr>
+                                    <td>Klassifikaator</td>
+                                    <td>kood</td>
+                                    <td>Klassifikaatori väärtust esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks. Kood võib olla tekstiline või numbriline väärtus.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Klassifikaator</td>
+                                    <td>nimi</td>
+                                    <td>Klassifikaatori väärtuse ametlik nimetus. <p>{Nimetus ei tohi olla tühi string või ainult tühikutest koosnev string.}</p></td>
+                                    <td>Aktiivne</td>
+                                </tr>
+                                <tr>
+                                    <td>Klassifikaator</td>
+                                    <td>kirjeldus</td>
+                                    <td>Klassifikaatori väärtuse vabatekstiline kirjeldus.</td>
+                                    <td>Kaup on aktiivne</td>
+                                </tr>
+                                <tr>
+                                    <td>Omadus</td>
+                                    <td>kood</td>
+                                    <td>Antud omaduse unikaalne kood, mida saab kasutada omaduse esitamiseks lühidalt</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Omadus</td>
+                                    <td>väärtus</td>
+                                    <td>Antud omadus vabatekstina.</td>
+                                    <td>32Gb</td>
+                                </tr>
+                            </table>   
                         </div>
                         <h3>Andmebaasioperatsioonide lepingud</h3>
                         <h3>Registri põhiobjekti seisundidiagramm</h3>
