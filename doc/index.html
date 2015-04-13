@@ -327,6 +327,56 @@
                 <h2>Kaupade arvestuse funktsionaalne allsüsteem</h2>
                 <div>
                     <h3>Kasutusjuhtude mudel</h3>
+                    <div>
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Töötaja tuvastamine (süsteemiülene)</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad siseneda süsteemi ja teha tegevusi oma volituste piires</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi süsteemi sisenemiseks.</p>
+                            <p><b>Eeltingimused:</b>Subjektil on loodud süsteemi kasutaja.</p>
+                            <p><b>Järeltingimused:</b>Subjekti õigus süsteemi sisenemiseks on tehtud kindlaks. Subjekt on autenditud ning ta saab kasutada süsteemi funktsioone talle määratud volituste piires.</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib siseneda süsteemi.</li>
+                                    <li>Süsteem palub subjektil ennast identifitseerida.</li>
+                                    <li>Subjekt identifitseerib ennast (sisestades kasutajanime, parooli).</li>
+                                    <li>Süsteem kontrollib, kas sisestatud kasutajatunnuse ja parooliga subjekti andmed eksisteerib süsteemis või mitte (OP1.1). </li>
+                                    <li>Süsteem annab subjektile volituse süsteemi kasutada. </li>
+                                    <i>Subjekt võib üritada süsteemi siseneda kuni kolm korda.</i>
+                                </ol>  
+                            <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
+                            <p>5a. Kui süsteem ei leia subjekti sisestatud kasutajatunnuse ja parooliga andmeid süsteemist, ei saa subjekt õigust süsteemi kasutada.</p> 
+                            <ol>
+                                <li>Süsteem annab subjektile teada, et sellist kasutajat pole ja ei anna talle süsteemi kasutamiseks õigust.</li>
+                            </ol>
+                        </div>
+                        <br>
+
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Kauba lisamine</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad lisada uusi kaupu e-poodi, et müüa rohkem ja seeläbi teenida rohkem kasumit</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba lisamiseks.</p>
+                            <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt lisand kaupade nimekirja uue toote.</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib lisada uut kaupa</li>
+                                    <li>Süsteem avab talle kauba lisamise vormi.</li>
+                                    <li>Subjekt lisab kogu uue kauba kohta käiva info ning tema staatuse</li>
+                                    <li>Süsteem kontrollib, kas kaup ei ole juba lisatud.</li>
+                                    <li>Süsteem lisab kaupade nimekirja uue kauba.</li>
+                                </ol>  
+                            <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
+                            <p>5a Kui süsteem näeb, et see kaup on juba olemas, siis ta annab sellest subjektile teada.</p> 
+                            <ol>
+                                <li>Süsteem teavitab subjekti et selline kaup on juba olemas ning soovitab tal vajadusel olemasolevat kaupa vaadata. </li>
+                            </ol>
+                        </div>
+                        <br>
+
+
+                    </div>
                 </div>
                 <h2>Kaupade register (laiendatud kuju)</h2>
                 <div>
@@ -339,11 +389,6 @@
                                 <td>Olemitüübi nimi (aliased)</td> 
                                 <td>Kuuluvus registrisse </td> 
                                 <td>Definitsioon </td>
-                            </tr>
-                            <tr>
-                                <td>Osapool</td>
-                                <td></td>
-                                <td>Osapool on Töötaja ja Organisatsioon üldistus</td>
                             </tr>
                             <tr>
                                 <td>Organisatsioon</td>
@@ -391,18 +436,6 @@
                                     <td>Atribuudi definitsioon </td>
                                     <td>Näiteväärtus </td>
                                 </tr>
-                                <tr>
-                                    <td>Osapool</td>
-                                    <td>e_meil</td>
-                                    <td>Vastava osapoole kontakt e-mail.</td>
-                                    <td>kontakt@osapool.ee</td>
-                                </tr>
-                                 <tr>
-                                    <td>Osapool</td>
-                                    <td>aadress</td>
-                                    <td>Osapoole kehtiv aadress.</td>
-                                    <td>Akadeemia tee 5, Tallinn 93811</td>
-                                </tr>
                                  <tr>
                                     <td>Organisatsioon</td>
                                     <td>registri_nr</td>
@@ -414,6 +447,18 @@
                                     <td>nimi</td>
                                     <td>Vastava organisatsiooni nimi.</td>
                                     <td>Samsung</td>
+                                </tr>
+                                 <tr>
+                                    <td>Organisatsioon</td>
+                                    <td>aadress</td>
+                                    <td>Tarnija aadress</td>
+                                    <td>Akadeemia tee 5, Tallinn 93811</td>
+                                </tr>
+                                <tr>
+                                    <td>Organisatsioon</td>
+                                    <td>e_mail</td>
+                                    <td>Organisatsiooni kontakt e-mail.</td>
+                                    <td>kontakt@org.ru</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
@@ -433,23 +478,12 @@
                                     <td>Antud toote hind.</td>
                                     <td>15.00</td>
                                 </tr>
-                                 <tr>
-                                    <td>Tootja</td>
-                                    <td>aadress</td>
-                                    <td>Kauba tootja kontaktaadress</td>
-                                    <td>Akadeemia tee 5, Tallinn 93811</td>
-                                </tr>
+                                
                                  <tr>
                                     <td>Tootja</td>
                                     <td>hinne</td>
                                     <td>Kauba tootjale antud hinnang tema toodete kvaliteedi kohta</td>
                                     <td>5.0</td>
-                                </tr>
-                                 <tr>
-                                    <td>Tarnija</td>
-                                    <td>aadress</td>
-                                    <td>Tarnija aadress</td>
-                                    <td>Akadeemia tee 5, Tallinn 93811</td>
                                 </tr>
                                  <tr>   
                                     <td>Tarnija</td>
