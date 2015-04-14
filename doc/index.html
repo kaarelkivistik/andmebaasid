@@ -308,7 +308,7 @@
                         </div>
                         <br>
 
-                        <p><b>Kasutusjuht:</b>Kauba muutmine</p>
+                        <p><b>Kasutusjuht:</b>Kauba info muutmine</p>
                         <div>
                            <p><b>Tegutsejad:</b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
                             <p><b>Kirjeldus:</b>Antud allsüsteemis töötav tegutseja muudab/parandab kauba kohta käivaid andmeid.</p>
@@ -328,12 +328,39 @@
                 <h2>Kaupade register</h2>
                 <div>
                     <h3>Eesmärgid</h3>
+                        <div>
+                            <p>
+                                Säilitada informatsiooni kaupade arvestuse kohta sellises mahus, et oleks tagatud kaupade arvestuse funktsionaalses allsüsteemis defineeritud eesmärkide täitmine. 
+                            </p>
+                        </div>
                     <h3>Registrit kasutavad pädevusalad</h3>
-                    <p> Registrist loevad andmeid ja muudavad andmeid infosüsteemi haldur, kaupade haldur ning omanik</p>
+                    <p> Registrist loevad andmeid ja muudavad andmeid infosüsteemi haldur, kaupade haldur ning omanik.</p>
+
                     <h3>Registrit teenindavad funktsionaalsed allsüsteemid</h3>
+                    <p>Kaupade registri andmeid kasutab ja uuendab kaupade arvestuse funktsionaalnse allsüsteem.</p>
+
                     <h3>Infovajadused, mida register aitab rahuldada</h3>
+                     <ul>
+                        <li>Nimekiri veebipoe kaupadest</li>
+                        <li>Nimekiri kaupade omadustest</li>
+                    </ul>
+
                     <h3>Seosed teiste registritega</h3>
+                        <ul>
+                            <li><b>Tootjate register</b> - Seotud olemitüübi <b>Tootja</b> kaudu. Igal kaubal on kindel Tootja.</li>
+                            <li><b>Klassifikaatorite register</b> - Kaubal on erinevaid klassifikaatoreid, näiteks seisund ja kategooria. Seotud olemitüübi <b>Klassifikaator</b> kaudu.</li>
+                            <li><b>Töötajate register</b> - Seotud olemitüübi <b>Töötaja</b> kaudu. Kindel töötaja lisas kauba.</li>
+                            <li><b>Tarnijate register</b> - Seotud olemitüübi <b>Tarnija</b> kaudu. Igal kaubal on tarnija.</li>
+                        </ul>
+
                     <h3>Ärireeglid</h3>
+                        <ul>
+                            <li>Igal kaubal on üks töötaja, kes selle lisas.</li>
+                            <li>Kaubal on üks tootja.</li>
+                            <li>Kaubal on üks tarnija.</li>
+                            <li>Kaupade register tegeleb ainult kauba metaandmetega.</li>
+                            <li>Igal kaubal on üks või rohkem omadust.</li>
+                        </ul>
                     <h3>Registri kontseptuaalne eskiismudel</h3>
                 </div>
             </div>
@@ -381,7 +408,7 @@
                                     <li>Süsteem avab talle kauba lisamise vormi.</li>
                                     <li>Subjekt lisab kogu uue kauba kohta käiva info ning tema staatuse</li>
                                     <li>Süsteem kontrollib, kas kaup ei ole juba lisatud.</li>
-                                    <li>Süsteem lisab kaupade nimekirja uue kauba <font color="blue">(OP(2.1))</font>.</li>
+                                    <li>Süsteem lisab kaupade nimekirja uue kauba <font color="blue">(OP2.1)</font>.</li>
                                 </ol>  
                             <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
                             <p>5a Kui süsteem näeb, et see kaup on juba olemas, siis ta annab sellest subjektile teada.</p> 
@@ -403,7 +430,7 @@
                                     <li>Subjekt soovib muuta kauba staatust</li>
                                     <li>Süsteem avab talle vormi kus saab muuta kauba staatust.</li>
                                     <li>Subjekt avaldab soovi kauba staatuse muutmiseks.</li>
-                                    <li>Süsteem muudab kauba staatust. <font color="blue">(OP(3.1))</font>.</li>
+                                    <li>Süsteem muudab kauba staatust. <font color="blue">(OP3.1)</font>.</li>
                                 </ol> 
                         </div>
                         <br>
@@ -418,14 +445,14 @@
                             <p><b>Stsenaarium</b></p>
                                 <ol>
                                     <li>Subjekt soovib vaadata kaupa.</li>
-                                    <li>Süsteem avab talle kauba detailvaate <font color="red">(OP(4.1))</font>.</li>
+                                    <li>Süsteem avab talle kauba detailvaate <font color="red">(OP4.1)</font>.</li>
                                     <li>Subjekt tutvub kauba kohta käiva infoga.</li>
                                 </ol>  
                         </div>
                         <br>
 
                         <div>
-                            <u><p><b>Kasutusjuht:</b>Kauba muutmine</p></u>
+                            <u><p><b>Kasutusjuht:</b>Kauba info muutmine</p></u>
                             <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
                             <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad muuta kauba kohta käivaid andmeid.</p>
                             <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba andmeid muuta.</p>
@@ -436,7 +463,7 @@
                                     <li>Subjekt soovib muuta kauba andmeid</li>
                                     <li>Süsteem avab talle kauba andmetega vormi, mida saab muuta.</li>
                                     <li>Subjekt teeb vormil soovitud muutused.</li>
-                                    <li>Süsteem muudab andmebaasis kauba kohta käiva info <font color="blue">(OP(5.1))</font>.</li>
+                                    <li>Süsteem muudab andmebaasis kauba kohta käiva info <font color="blue">(OP5.1)</font>.</li>
                                 </ol>  
                         </div>
                         <br>
@@ -453,7 +480,7 @@
                                     <li>Subjekt soovib kustutada kaupa kaupade nimekirjas.</li>
                                     <li>Süsteem küsib kasutajalt kinnitust kustutamise operatsioonile.</li>
                                     <li>Subjekt kinnitab kustutamise.</li>
-                                    <li>Süsteem kustutab kauba <font color="blue">(OP(6.1))</font>.</li>
+                                    <li>Süsteem kustutab kauba <font color="blue">(OP6.1)</font>.</li>
                                 </ol>
                             <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
                             <p>3a Kui kasutaja ei kinnita kustutamist, näiteks vajutas kogemata valesti.</p> 
@@ -635,6 +662,64 @@
                             </table>   
                         </div>
                         <h3>Andmebaasioperatsioonide lepingud</h3>
+                        <div>
+                            <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine()</u></b></p>
+                            <p><b>Eeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Järeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                        </div>
+                        <br>
+
+                        <div>
+                            <p><font color="blue">(OP3.1)</font> <b><u>Kauba staatuse muutmine()</u></b></p>
+                            <p><b>Eeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Järeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                        </div>
+                        <br>
+
+                        <div>
+                            <p><font color="blue">(OP5.1)</font> <b><u>Kauba info muutmine()</u></b></p>
+                            <p><b>Eeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Järeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                        </div>
+                        <br>
+
+                        <div>
+                            <p><font color="blue">(OP6.1)</font> <b><u>Kauba kustutamine()</u></b></p>
+                            <p><b>Eeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Järeltingimused:</b></p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                        </div>
+                        <br>
+
+
+
                         <h3>Registri põhiobjekti seisundidiagramm</h3>
                     </div>
                     <h2>CRUD-maatriks</h2>
