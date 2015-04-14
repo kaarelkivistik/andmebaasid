@@ -576,7 +576,7 @@
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
-                                    <td>kaubaKood</td>
+                                    <td>kauba_kood</td>
                                     <td>Kaupa unikaalselt identifitseeriv kood. <p>{Kauba kood peab sisaldama numbreid. Kauba kood ei tohi olla tühi string.}</p></td>
                                     <td>123456789</td>
                                 </tr>
@@ -592,7 +592,12 @@
                                     <td>Antud toote hind.</td>
                                     <td>15.00</td>
                                 </tr>
-                                
+                                 <tr>
+                                    <td>Kaup</td>
+                                    <td>staatus</td>
+                                    <td>Antud toote staatus.</td>
+                                    <td>Aktiivne</td>
+                                </tr>
                                  <tr>
                                     <td>Tootja</td>
                                     <td>hinne</td>
@@ -666,13 +671,18 @@
                             <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine()</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>Tootja ja Tarnija on registreeritud.</li>
                             </ul>
                             <p><b>Järeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>On loodud uus Kaup.</li>
+                                <li>Kaup.kauba_kood = kauba unikaalne kood.</li>
+                                <li>Kaup.nimi = kauba nimetus.</li>
+                                <li>Omadus.väärtus = uus kauba omadus, neid võib olla mitu.</li>
+                                <li>Kaup on seotud tema tootnud Tootjaga.</li>
+                                <li>Kaup on seotud Tarnijaga, kes ta veebipoele tarnib.</li>
                             </ul>
-                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba lisamine</p>
                         </div>
                         <br>
 
@@ -680,13 +690,13 @@
                             <p><font color="blue">(OP3.1)</font> <b><u>Kauba staatuse muutmine()</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>Kaup on loodud</li>
                             </ul>
                             <p><b>Järeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>Kaup.staatus = uus kauba staatus.</li>
                             </ul>
-                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba staatuse muutmine</p>
                         </div>
                         <br>
 
@@ -694,13 +704,17 @@
                             <p><font color="blue">(OP5.1)</font> <b><u>Kauba info muutmine()</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>Kaup on loodud</li>
                             </ul>
                             <p><b>Järeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>Kaup.kauba_kood = kauba unikaalne kood.</li>
+                                <li>Kaup.nimi = kauba nimetus.</li>
+                                <li>Omadus.väärtus = kauba omadus. Saab muuta vanu ning lisada uusi</li>
+                                <li>Kaup on seotud tema tootnud Tootjaga.</li>
+                                <li>Kaup on seotud Tarnijaga, kes ta veebipoele tarnib.</li>
                             </ul>
-                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba info muutmine</p>
                         </div>
                         <br>
 
@@ -708,13 +722,13 @@
                             <p><font color="blue">(OP6.1)</font> <b><u>Kauba kustutamine()</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>Kaup on loodud</li>
                             </ul>
                             <p><b>Järeltingimused:</b></p>
                             <ul>
-                                <li></li>
+                                <li>Kaup koos kõigi oma muutujate seotud omadustega on kustutatud Kaupade registrist.</li>
                             </ul>
-                            <p><b>Kasutus kasutusjuhtude poolt:</b></p>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba kustutamine</p>
                         </div>
                         <br>
 
