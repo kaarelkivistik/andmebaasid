@@ -1,9 +1,0 @@
-{
-  "development": {
-    "username": "root",
-    "password": "parool",
-    "database": "andmebaas",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}

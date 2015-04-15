@@ -1,3 +1,9 @@
 node_modules
 /config/config.json
 *.md~
+*.bin
+.gradle
+build
+.idea
+*.iml
+src/main/resources/META-INF/persistence.xml
