@@ -59,13 +59,13 @@
                     <li>Uudistaja lisab kaubad ostukorvi</li>
                     <li>Ostukorv omistatakse ostmisel tellimusele</li>
                     <li>Lattu tellitakse kaupu tarnijatelt</li>
-                    <li>Igast kauba liikumisest laos jääb alles laoliikumine</li>
+                    <li>Igast sisse- ja väljaminevast tellimusest salvestatakse laoliikumised</li>
                     <li>Igal kaubal on tootja ja tarnija</li>
                     <li>Infosüsteemis tegutsejad on uudistajad ja töötajad</li>
                     <li>Igal kaubal on seisund mis väljendab tema olekut ajas</li>
                     <li>Kaubad toimetavad kohale veebipoe töötajad pannes asjad pakiautomaati, seega kullerit pole</li>
                     <li>Ostjale väljastatakse ostu eest arve</li>
-                    <li>Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel</li>
+                    <li>!!! Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel</li>
                     <li>Ainukesed salvestatud kasutajad, kes tegutsevad süsteemis on töötajad</li>
                     <li>Uudistajad tegutsevad veebipoes nii, et nende infot ei salvestata</li>
                     <li>Tellimusi on kahte tüüpi - sissetulevad kaubad tarnijatelt ning väljaminevad kaubad e-poe klientidele</li>
@@ -83,9 +83,6 @@
                 </li>
                 <li>
                     Tellimus
-                </li>
-                <li>
-                    Ladu
                 </li>
                 <li>
                     Töötaja
@@ -134,19 +131,16 @@
                     Uudistaja on teostanud makse ja saab maksekinnituse tema sisestatud e-mailile.
                 </li>
                 <li>
-                    Infosüsteemi administraator on kinnitanud tellimuse ning makse.
+                    Veebipoe töötaja kinnitab tellimuse ning makse.
                 </li>
                 <li>
                     Uudistaja kasutab otsingut enda soovitud toote leidmiseks.
                 </li>
                 <li>
-                    Kaupade haldur leiab vigase toote ning eemaldab toote infosüsteemist.
+                    !!! Kaupade haldur leiab vigase toote ning eemaldab toote infosüsteemist.
                 </li>
                 <li>
-                    Veebipoe töötaja paneb kauba pakiautomaati.
-                </li>
-                <li>
-                    Võetakse kasutusele uus klassifikaatori väärtus.
+                    !!! Veebipoe töötaja paneb kauba pakiautomaati.
                 </li>
             </ul>
             <h3>Tegutsejad</h3>
@@ -737,6 +731,80 @@
                         <h3>Registri põhiobjekti seisundidiagramm</h3>
                     </div>
                     <h2>CRUD-maatriks</h2>
+                    <p>See CRUD maatriks esitatakse olemitüüpide ja kasutusjuhtude täpsusega. Maatriksi veergudele vastavad kasutusjuhud ja ridadele olemitüübid. </p>
+                    <p> Oranžil taustal on esitatud olemitüübid, mis kuuluvad vaadeldava allsüsteemi teenindatavasse registrisse.</p>
+                    <table border="1" style="width:50%">
+                        <tr>
+                            <td>Kasutusjuhud<br>Olemitüübid</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>Kokku</td>
+                        </tr>
+                        <tr bgcolor="#EA7B30">
+                            <td>Kaup</td>
+                            <td></td>
+                            <td>CR</td>
+                            <td>RU</td>
+                            <td>R</td>
+                            <td>RU</td>
+                            <td>DU</td>
+                            <td>CRUD</td>
+                        </tr>
+                        <tr>
+                            <td>Organisatsioon</td>
+                            <td></td>
+                            <td>R</td>
+                            <td></td>
+                            <td>R</td>
+                            <td></td>
+                            <td>R</td>
+                            <td>R</td>
+                        </tr>
+                        <tr>
+                            <td>Töötaja</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>R</td>
+                        </tr>
+                        <tr>
+                            <td>Klassifikaator</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td></td>
+                            <td>R</td>
+                            <td>R</td>
+                        </tr>
+                        <tr bgcolor="#EA7B30">
+                            <td>Omadus</td>
+                            <td></td>
+                            <td>CR</td>
+                            <td></td>
+                            <td>R</td>
+                            <td>RU</td>
+                            <td>RD</td>
+                            <td>CRUD</td>
+                        </tr>
+                    </table>
+                    <p>Kasutusjuhtude nimekiri:</p>
+                    <ol>
+                        <li>Töötaja tuvastamine</li>
+                        <li>Kauba lisamine</li>
+                        <li>Kauba staatuse muutmine</li>
+                        <li>Kauba vaatamine</li>
+                        <li>Kauba info muutmine</li>
+                        <li>Kauba kustutamine</li>
+                    </ol>
+
                     <h2>Infosüsteemi rollide kirjeldused</h2>
                 </div>
                 <h1>Loogiline disain</h1>
