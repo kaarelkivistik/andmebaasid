@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html layout:decorator="index">
+<head>
+    <title>Task List</title>
+</head>
+<body>
+<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+<div layout:fragment="content">
+    <h4>Siin on kaubad</h4>
+
+    <div class="table table-responsive">
+        <table class="table">
+            <thead>
+                <th>Kood</th>
+                <th>Nimetus</th>
+                <th>Hind</th>
+            </thead>
+            <tbody>
+                <tr th:each="kaup : ${kaubad}">
+                    <td th:text="${kaup.kood}"></td>
+                    <td th:text="${kaup.nimetus}"></td>
+                    <td th:text="${kaup.hind}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
