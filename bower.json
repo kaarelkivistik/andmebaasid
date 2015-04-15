@@ -1,0 +1,21 @@
+{
+  "name": "Andmebaasid",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kaarelkivistik/andmebaasid",
+  "authors": [
+    "Kaarel Kivistik <kaarelkivistik@gmail.com>"
+  ],
+  "description": "Projekt",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}

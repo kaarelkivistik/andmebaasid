@@ -29,6 +29,8 @@ dependencies {
     compile("org.hibernate:hibernate-core:4.3.8.Final")
     compile("org.hibernate:hibernate-entitymanager:4.3.8.Final")
     compile("postgresql:postgresql:9.1-901-1.jdbc4")
+    compile("mysql:mysql-connector-java:5.1.35")
+    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.7")
     testCompile("junit:junit")
 }
 

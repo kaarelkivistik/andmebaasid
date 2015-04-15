@@ -2,6 +2,7 @@ package garaazh.models;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Collection;
 
 /**
  * Created by kaarel on 12/04/15.

@@ -11,11 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.PostConstruct;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Collection;
 
 /**
  * Created by kaarel on 12/04/15.
@@ -28,22 +26,34 @@ public class KaubaController {
 
     @PostConstruct
     protected void setUp() throws Exception {
-        System.out.println("KaubaController.setUp");
-
         entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnit");
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(new Organisatsioon(1337, "Samyang"));
+        entityManager.persist(new Organisatsioon(1338, "Samsung"));
+        entityManager.persist(new Organisatsioon(1339, "chiPhone Industries Ltd"));
+        entityManager.persist(new Organisatsioon(1340, "Gediminas Transports UAB"));
+        entityManager.persist(new Organisatsioon(1341, "OÜ Huiarid"));
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    @RequestMapping("/kaup-lisa")
+    public String kaupLisa(Model model) {
+        return "kaubad";
     }
 
     @RequestMapping("/kaubad")
-    public @ResponseBody String kaubad(Model model) {
-        System.out.println("KaubaController.kaubad");
-
+    public String kaubad(Model model) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.getTransaction().begin();
-        entityManager.persist(new Kaup("ultrabook", new BigDecimal("9000.0"), new KaubaSeisund("inaktiivne"), new Organisatsioon(1337, "Samsung"), new Organisatsioon(1338, "Samyang")));
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        Query query = entityManager.createQuery("SELECT k FROM Kaup AS k");
+        Collection<Kaup> kaubad = query.getResultList();
 
-        return "a-okay";
+        model.addAttribute("kaubad", kaubad);
+
+        return "kaubad";
     }
 
 }
