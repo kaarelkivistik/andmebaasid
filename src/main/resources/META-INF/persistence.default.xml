@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="persistenceUnit">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <class>garaazh.models.Kaup</class>
+        <class>garaazh.models.KaubaSeisund</class>
+        <class>garaazh.models.Organisatsioon</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="garaazh"/>
+            <property name="javax.persistence.jdbc.password" value="garaazh"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.0.21:3306/garaazh"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"></property>
+        </properties>
+    </persistence-unit>
+</persistence>
