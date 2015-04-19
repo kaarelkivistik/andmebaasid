@@ -37,4 +37,22 @@ public class Organisatsioon {
     public void setNimi(String nimi) {
         this.nimi = nimi;
     }
+
+    @Override
+    public int hashCode() {
+        return (int) registriKood;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Organisatsioon))
+            return false;
+        if(obj == this)
+            return true;
+
+        Organisatsioon other = (Organisatsioon) obj;
+
+        return other.getNimi().equals(getNimi())
+                && other.getRegistriKood() == getRegistriKood();
+    }
 }
