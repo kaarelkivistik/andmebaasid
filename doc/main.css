@@ -19,6 +19,6 @@ table, th, td {
     border-collapse: collapse;
 }
 
-ol{
+#wrapper ol{
     list-style: none;
 }
