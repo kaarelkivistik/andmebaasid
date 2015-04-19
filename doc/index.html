@@ -369,6 +369,9 @@
                 <li>
                     Uudistaja pädevusala
                 </li>
+                <li>
+                    Kaupade halduri pädevusala
+                </li>
             </ul>
             <h3>1.2.3 Allsüsteemi poolt kasutatavad registrid</h3>
             <div>
@@ -382,7 +385,9 @@
                 </ul>
             </div>
             <h3>1.2.4 Allsüsteemi ühe põhiprotsessi tegevusdiagramm</h3>
+            <img src="img/p6hiprotsess.png" alt="põhiprotsessi pilt">
             <h3>1.2.5 Allsüsteemi kasutusjuhtude eskiismudel</h3>
+            <img src="img/kasutusjuhud.png" alt="kasutusjuhtude pilt">
             <div>
                 <p><b> Kasutusjuht:</b>Töötaja tuvastamine (süsteemiülene)</p>
                 <div>
@@ -527,6 +532,7 @@
                             <li>Igal kaubal on üks või rohkem omadust.</li>
                         </ul>
                     <h3>1.3.7 Registri kontseptuaalne eskiismudel</h3>
+                    <img src="img/registri_eskiismudel.png" alt="registri eskiismudeli pilt ">
                 </div>
             </div>
             <h1>2. Detailanalüüsi etapp</h1>
@@ -540,6 +546,7 @@
                     <h3>2.2.1 Kontseptuaalne andmemudel</h3>
                     <div>
                         <h4>2.2.1.1 Olemi-suhte diagramm</h4>
+                        <img src="img/olemi-suhte_diagramm.png" alt="olemi-suhte diagrammi pilt">
                         <h4>2.2.1.2 Olemitüüpide definitsioonid</h4>
                         <table border="1" style="width:100%">
                             <tr>
@@ -579,9 +586,14 @@
                                 <td>Klassifikaatorid on "mistahes andmed, mida kasutatakse andmebaasis teiste andmete liigitamiseks või andmebaasis olevate andmete seostamiseks väljaspool organisatsiooni vastutusala oleva informatsiooniga." (Chisholm, 2000)</td>
                             </tr>
                             <tr>
-                                <td>Omadus</td>
+                                <td>Kauba_omadus</td>
                                 <td>Kaupade register</td>
-                                <td>Üks konkreetne kaupa kirjeldav omadus.</td>
+                                <td>Vahetabeli olem, mis seob kauba ning kõik tema juurde kuuluvad omadused.</td>
+                            </tr>
+                            <tr>
+                                <td>Arvustus</td>
+                                <td>Kaupade register</td>
+                                <td>Arvustus on kauba juurde kuuluv kasutajapoolne kommentaar, kõik kommentaarid on anonüümsed.</td>
                             </tr>
                            
                             </table>
@@ -696,22 +708,34 @@
                                     <td>Kaup on aktiivne</td>
                                 </tr>
                                 <tr>
-                                    <td>Omadus</td>
+                                    <td>Kauba_omadus</td>
                                     <td>kood</td>
-                                    <td>Antud omaduse unikaalne kood, mida saab kasutada omaduse esitamiseks lühidalt</td>
+                                    <td>Antud omadus ja kauba paari unikaalne kood, mida saab kasutada omaduse esitamiseks lühidalt</td>
                                     <td>1</td>
                                 </tr>
                                 <tr>
-                                    <td>Omadus</td>
+                                    <td>Kauba_omadus</td>
                                     <td>väärtus</td>
                                     <td>Antud omadus vabatekstina.</td>
                                     <td>32Gb</td>
+                                </tr>
+                                 <tr>
+                                    <td>Arvustus</td>
+                                    <td>arvustuse_kood</td>
+                                    <td>Antud arvustuse unikaalne kood</td>
+                                    <td>1</td>
+                                </tr>
+                                 <tr>
+                                    <td>Arvustus</td>
+                                    <td>väärtus</td>
+                                    <td>Antud arvustus vabatekstina.</td>
+                                    <td>Väga vägev emaplaat, ostaks veel.</td>
                                 </tr>
                             </table>   
                         </div>
                         <h3>2.2.2 Andmebaasioperatsioonide lepingud</h3>
                         <div>
-                            <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine()</u></b></p>
+                            <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine(kauba_kood, nimi, viide Tootjale, viide Tarnijale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Tootja ja Tarnija on registreeritud.</li>
@@ -721,7 +745,7 @@
                                 <li>On loodud uus Kaup.</li>
                                 <li>Kaup.kauba_kood = kauba unikaalne kood.</li>
                                 <li>Kaup.nimi = kauba nimetus.</li>
-                                <li>Omadus.väärtus = uus kauba omadus, neid võib olla mitu.</li>
+                                <li>Kauba_omadus.väärtus = uus kauba omadus, neid võib olla mitu.</li>
                                 <li>Kaup on seotud tema tootnud Tootjaga.</li>
                                 <li>Kaup on seotud Tarnijaga, kes ta veebipoele tarnib.</li>
                             </ul>
@@ -730,7 +754,7 @@
                         <br>
 
                         <div>
-                            <p><font color="blue">(OP3.1)</font> <b><u>Kauba staatuse muutmine()</u></b></p>
+                            <p><font color="blue">(OP3.1)</font> <b><u>Kauba staatuse muutmine(viide Kaubale, staatus)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Kaup on loodud</li>
@@ -744,7 +768,7 @@
                         <br>
 
                         <div>
-                            <p><font color="blue">(OP5.1)</font> <b><u>Kauba info muutmine()</u></b></p>
+                            <p><font color="blue">(OP5.1)</font> <b><u>Kauba info muutmine(viide Kaubale, kauba_kood, nimi, väärtus, viide Tootjale, viide Tarnijale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Kaup on loodud</li>
@@ -753,7 +777,7 @@
                             <ul>
                                 <li>Kaup.kauba_kood = kauba unikaalne kood.</li>
                                 <li>Kaup.nimi = kauba nimetus.</li>
-                                <li>Omadus.väärtus = kauba omadus. Saab muuta vanu ning lisada uusi</li>
+                                <li>Kauba_omadus.väärtus = kauba omadus. Saab muuta vanu ning lisada uusi</li>
                                 <li>Kaup on seotud tema tootnud Tootjaga.</li>
                                 <li>Kaup on seotud Tarnijaga, kes ta veebipoele tarnib.</li>
                             </ul>
@@ -762,7 +786,7 @@
                         <br>
 
                         <div>
-                            <p><font color="blue">(OP6.1)</font> <b><u>Kauba kustutamine()</u></b></p>
+                            <p><font color="blue">(OP6.1)</font> <b><u>Kauba kustutamine(viide Kaubale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Kaup on loodud</li>
@@ -835,7 +859,7 @@
                             <td>R</td>
                         </tr>
                         <tr bgcolor="#EA7B30">
-                            <td>Omadus</td>
+                            <td>Kauba_omadus</td>
                             <td></td>
                             <td>CR</td>
                             <td></td>
@@ -843,6 +867,16 @@
                             <td>RU</td>
                             <td>RD</td>
                             <td>CRUD</td>
+                        </tr>
+                        <tr bgcolor="#EA7B30">
+                            <td>Arvustus</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>R</td>
+                            <td>RU</td>
+                            <td>RD</td>
+                            <td>RUD</td>
                         </tr>
                     </table>
                     <p>Kasutusjuhtude nimekiri:</p>
