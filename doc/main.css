@@ -22,3 +22,7 @@ table, th, td {
 #wrapper ol{
     list-style: none;
 }
+
+img {
+	max-width: 100%;
+}
