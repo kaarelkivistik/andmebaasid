@@ -96,7 +96,7 @@
     <h1>1. Strateegia etapp</h1>
     <div>
         <h2>1.1 Terviksüsteemi üldvaade</h2>
-        <p>Järgnevalt esitatakse ülevaade anonüümse arvutikaupade veebipoe toimimisest. Antud ettevõttel on üks oma ladu ning klientide privaatsuse huvides nende infot ei salvestata.</p>
+        <p>Järgnevalt esitatakse ülevaade anonüümse arvutikaupade veebipoe toimimisest. Antud ettevõttel on üks oma ladu ning klientide privaatsuse huvides ja turunišši täitmiseks nende infot ei salvestata.</p>
         <div>
             <h3>1.1.1 Organisatsiooni eesmärgid</h3>
             <div>
@@ -110,7 +110,7 @@
                     <li>
                         Organisatsiooni kasumi ning efektiivsuse suurendamiseks on arvutikaupade veebipoe eesmärgiks juurutada võimalikult efektiivne ning produktiivne info- ning juhtimissüsteem.
                     </li>
-                    <li>Arvutikaupade veebipood pakub oma klientidele <b>anonüümset</b> ostukogemust <b>mitte salvestades</b> kasutajainfot, täites seeläbi vastavat turunišši.
+                    <li>Arvutikaupade veebipood pakub oma klientidele <b>anonüümset</b> ostukogemust <b>mitte salvestades</b> kasutajainfot, rahuldades seega tühja koha, mis selles sektoris turul <valitseb class=""></valitseb>
                     </li>
                 </ul>
             </div>
@@ -135,6 +135,7 @@
                 <li>
                     Vaadata arvete ning laoliikumiste põhjal ettevõtte käivet ning rahavoogusid.
                 </li>
+                <li>Viia läbi inventuure.</li>
             </ul>
             <h3>1.1.3Lausendid</h3>
                 <ul> 
@@ -150,7 +151,7 @@
                     <li>Igal kaubal on seisund mis väljendab tema olekut ajas</li>
                     <li>Kaubad toimetavad kohale veebipoe töötajad pannes asjad pakiautomaati, seega kullerit pole</li>
                     <li>Ostjale väljastatakse ostu eest arve</li>
-                    <li>!!! Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel</li>
+                    <li>Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel</li>
                     <li>Ainukesed salvestatud kasutajad, kes tegutsevad süsteemis on töötajad</li>
                     <li>Uudistajad tegutsevad veebipoes nii, et nende infot ei salvestata</li>
                     <li>Tellimusi on kahte tüüpi - sissetulevad kaubad tarnijatelt ning väljaminevad kaubad e-poe klientidele</li>
@@ -171,6 +172,9 @@
                 </li>
                 <li>
                     Töötaja
+                </li>
+                <li>
+                    Organisatsioon
                 </li>
                 <li>
                     Klassifikaator
@@ -222,11 +226,9 @@
                     Uudistaja kasutab otsingut enda soovitud toote leidmiseks.
                 </li>
                 <li>
-                    !!! Kaupade haldur leiab vigase toote ning eemaldab toote infosüsteemist.
+                    Kaupade haldur muudab kauba staatust vastavalt ärilistele ning logistilistele vajadustele.
                 </li>
-                <li>
-                    !!! Veebipoe töötaja paneb kauba pakiautomaati.
-                </li>
+
             </ul>
             <h3>1.1.7 Tegutsejad</h3>
             <ul>
@@ -235,9 +237,6 @@
                 </li>
                 <li>
                     Infosüsteemi administraator
-                </li>
-                <li>
-                    Lao töötaja
                 </li>
                 <li>
                     Raamatupidaja
@@ -249,7 +248,7 @@
                     Uudistaja
                 </li>
 
-                <p>Kulleri pädevusala ei ole, kuna tema infosüsteemis ei tegutse</p>
+                <p>Kulleri pädevusala ei ole, kuna tema infosüsteemis ei tegutse. Kaupade haldurid tegelevad ka kaupade füüsilise liigutamisega laos.</p>
                 <p>Kõik kliendid on uudistajad, kuna anonüümses veebipoes kliendiinfot ei salvestata.</p>   
                 
             </ul>
@@ -273,6 +272,9 @@
                     </li>
                     <li>
                         Omaniku pädevusala
+                    </li>
+                    <li>
+                        Raamatupidaja pädevusala
                     </li>
                 </ul>
                 Organisatsiooni välised pädevusalad:
@@ -381,6 +383,7 @@
                     <li>Klassifikaatorite register</li>
                     <li>Tarnijate register</li>
                     <li>Töötajate register</li>
+                    <li>Organisatsioonide register</li>
                     
                 </ul>
             </div>
@@ -533,6 +536,7 @@
                             <li><b>Klassifikaatorite register</b> - Kaubal on erinevaid klassifikaatoreid, näiteks seisund ja kategooria. Seotud olemitüübi <b>Klassifikaator</b> kaudu.</li>
                             <li><b>Töötajate register</b> - Seotud olemitüübi <b>Töötaja</b> kaudu. Kindel töötaja lisas kauba.</li>
                             <li><b>Tarnijate register</b> - Seotud olemitüübi <b>Tarnija</b> kaudu. Igal kaubal on tarnija.</li>
+                             <li><b>Organisatsioonide register</b> - Seotud olemitüübi <b>Organisatsioon</b> kaudu. Organisatsioon on Tootja ja Tarnija ülemklass.</li>
                         </ul>
 
                     <h3>1.3.6 Ärireeglid</h3>
@@ -568,7 +572,7 @@
                             </tr>
                             <tr>
                                 <td>Organisatsioon</td>
-                                <td></td>
+                                <td>Organisatsioonide register</td>
                                 <td>Organisatsioon on Tootja ja Tarnija üldistus</td>
                             </tr>
                             <tr>
@@ -620,25 +624,29 @@
                                  <tr>
                                     <td>Organisatsioon</td>
                                     <td>registri_nr</td>
-                                    <td>Osapoole unikaalne registri number.</td>
+                                    <td>Osapoole unikaalne registri number.<br>
+                                        {Ettevõtte kui juriidilise keha registrinumber on unikaalne identifikaator.}</td>
                                     <td>11027462</td>
                                 </tr>
                                  <tr>
                                     <td>Organisatsioon</td>
                                     <td>nimi</td>
-                                    <td>Vastava organisatsiooni nimi.</td>
+                                    <td>Vastava organisatsiooni nimi. <br>
+                                        {Nimi ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>Samsung</td>
                                 </tr>
                                  <tr>
                                     <td>Organisatsioon</td>
                                     <td>aadress</td>
-                                    <td>Tarnija aadress</td>
+                                    <td>Tarnija aadress. <br>
+                                        {Aadress ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>Akadeemia tee 5, Tallinn 93811</td>
                                 </tr>
                                 <tr>
                                     <td>Organisatsioon</td>
                                     <td>e_mail</td>
-                                    <td>Organisatsiooni kontakt e-mail.</td>
+                                    <td>Organisatsiooni kontakt e-mail. <br>
+                                    {e_mail peab sisaldama "@" märki}</td>
                                     <td>kontakt@org.ru</td>
                                 </tr>
                                  <tr>
@@ -650,13 +658,15 @@
                                  <tr>
                                     <td>Kaup</td>
                                     <td>nimi</td>
-                                    <td>Kauba täielik nimetus</td>
+                                    <td>Kauba täielik nimetus <br>
+                                        {Nimi ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>Dell Inspiron 15R n5010</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
                                     <td>hind</td>
-                                    <td>Antud toote hind.</td>
+                                    <td>Antud toote hind. <br>
+                                    {Peab sisaldama ainult numbreid}</td>
                                     <td>15.00</td>
                                 </tr>
                                  <tr>
@@ -668,37 +678,41 @@
                                  <tr>
                                     <td>Tootja</td>
                                     <td>hinne</td>
-                                    <td>Kauba tootjale antud hinnang tema toodete kvaliteedi kohta</td>
+                                    <td>Kauba tootjale antud hinnang tema toodete kvaliteedi kohta <br>
+                                    {Peab sisaldama ainult numbreid}</td>
                                     <td>5.0</td>
                                 </tr>
                                  <tr>   
                                     <td>Tarnija</td>
                                     <td>tarneaeg</td>
-                                    <td>Tarnija poolt lubatud maksimaalne tarneaeg päevades.</td>
-                                    <td>5 päeva</td>
+                                    <td>Tarnija poolt lubatud maksimaalne tarneaeg päevades. <br>
+                                    {Peab sisaldama ainult numbreid}</td>
+                                    <td>5</td>
                                 </tr>
                                  <tr>
                                     <td>Töötaja</td>
                                     <td>nimi</td>
-                                    <td>Töötaja ees- ja perekonnanimi</td>
-                                    <td></td>
+                                    <td>Töötaja ees- ja perekonnanimi <br>
+                                        {Ees- ning perenimi ei tohi olla tühi string või ainult tühikutest koosnev string. Perenimi võib sisaldada ainult tähti, tühikuid või kriipse. Ees- ning perenimi algavad mõlemad suure tähega. Ülejäänud tähed on väikesed. Kui inimesel on mitu ees- või perenime, siis need on eraldatud ühe tühiku või kriipsuga. Ka iga järgnev ees- või perenimi algab suure tähega.} </td>
+                                    <td>Mari Mets</td>
                                 </tr>
                                 <tr>
                                     <td>Töötaja</td>
                                     <td>e_mail</td>
-                                    <td>Töötaja töö e-mail.</td>
-                                    <td>mari.mets@firma.ee</td>
+                                    <td>Töötaja töö e-mail. <br>
+                                    {e_mail peab sisaldama "@" märki}</td>
+                                    <td>mari.mets@firma.ee </td>
                                 </tr>
                                 <tr>
                                     <td>Töötaja</td>
                                     <td>kasutajanimi</td>
-                                    <td>Töötaja kasutajatunnus millega ta veebikeskkonda sisse logib.</td>
+                                    <td>Töötaja kasutajatunnus millega ta veebikeskkonda sisse logib. Töötaja saab ise valida.</td>
                                     <td>mari.mets</td>
                                 </tr>
                                 <tr>
                                     <td>Töötaja</td>
                                     <td>parool</td>
-                                    <td>Töötaja kasutajatunnusega seotud parool.</td>
+                                    <td>Töötaja kasutajatunnusega seotud töötaja identsust tõendav teadmuslik (miski, mida töötaja teab) volitustõend. </td>
                                     <td>marisupertugevparool</td>
                                 </tr>
                                 <tr>
@@ -716,31 +730,34 @@
                                 <tr>
                                     <td>Klassifikaator</td>
                                     <td>kirjeldus</td>
-                                    <td>Klassifikaatori väärtuse vabatekstiline kirjeldus.</td>
+                                    <td>Klassifikaatori väärtuse vabatekstiline kirjeldus. <br>
+                                        {Kirjeldus ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>Kaup on aktiivne</td>
                                 </tr>
                                 <tr>
                                     <td>Kauba_omadus</td>
                                     <td>kood</td>
-                                    <td>Antud omadus ja kauba paari unikaalne kood, mida saab kasutada omaduse esitamiseks lühidalt</td>
+                                    <td>Antud omadus ja kauba paari unikaalne kood, mida saab kasutada omaduse esitamiseks lühidalt. Kood võib olla tekstiline või numbriline väärtus. </td>
                                     <td>1</td>
                                 </tr>
                                 <tr>
                                     <td>Kauba_omadus</td>
                                     <td>väärtus</td>
-                                    <td>Antud omadus vabatekstina.</td>
+                                    <td>Antud omadus vabatekstina. <br>
+                                    {Väärtus ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>32Gb</td>
                                 </tr>
                                  <tr>
                                     <td>Arvustus</td>
                                     <td>arvustuse_kood</td>
-                                    <td>Antud arvustuse unikaalne kood</td>
+                                    <td>Antud arvustuse unikaalne kood. Kood võib olla tekstiline või numbriline väärtus.</td>
                                     <td>1</td>
                                 </tr>
                                  <tr>
                                     <td>Arvustus</td>
                                     <td>väärtus</td>
-                                    <td>Antud arvustus vabatekstina.</td>
+                                    <td>Antud arvustus vabatekstina. <br>
+                                    {Väärtus ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>Väga vägev emaplaat, ostaks veel.</td>
                                 </tr>
                             </table>   
