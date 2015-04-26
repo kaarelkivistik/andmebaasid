@@ -1,4 +1,6 @@
-<html layout:decorator="index">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="index">
 <body>
 <div layout:fragment="content">
     <form action="/kaubad/lisa" method="post" th:object="${kaup}">
@@ -22,31 +24,60 @@
         </div>
         <div class="form-group">
             <div class="row">
-                <div class="col-md-2 text-right"><label>Tootja</label></div>
+                <div class="col-md-2 text-right"><label>Tarnija</label></div>
                 <div class="col-md-10">
-                    <select class="form-control" th:field="*{tootja}">
-                        <option th:each="organisatsioon : ${organisatsioonid}" th:value="${organisatsioon.registriKood}"
-                                th:text="${organisatsioon.nimi}"></option>
+                    <select class="form-control" th:field="*{tarnija}">
+                        <option th:each="tarnija : ${tarnijad}" th:value="${tarnija.registriKood}"
+                                th:text="${tarnija.nimi}"></option>
                     </select>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="row">
-                <div class="col-md-2 text-right"><label>Tarnija</label></div>
+                <div class="col-md-2 text-right"><label>Tootja</label></div>
                 <div class="col-md-10">
-                    <select class="form-control" th:field="*{tarnija}">
-                        <option th:each="organisatsioon : ${organisatsioonid}" th:value="${organisatsioon.registriKood}"
-                                th:text="${organisatsioon.nimi}"></option>
+                    <select class="form-control" th:field="*{tootja}">
+                        <option th:each="tootja : ${tootjad}" th:value="${tootja.registriKood}"
+                                th:text="${tootja.nimi}"></option>
                     </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 text-right"><label>Omadused</label></div>
+                <div class="col-md-10">
+                    <div id="omadused">
+                        <div class="form-group" th:each="kaubaOmadus,stat : *{omadused}">
+                            <label th:text="${kaubaOmadus.omadus.nimetus}"></label>
+                            <input type="hidden" th:field="*{omadused[__${stat.index}__].omadus.kood"/>
+                            <input th:field="*{omadused[__${stat.index}__].vaartus}" type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="text-center">
+                        <button class="btn btn-primary"  id="lisa-omadus">Lisa omadus</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="form-group text-center">
-            <button type="submit" class="btn btn-primary">Valmis</button>
+            <button type="submit" class="btn btn-primary">Salvesta</button>
         </div>
     </form>
+
+    <script th:inline="javascript">
+        $(document).ready(function(){
+            $("#lisa-omadus").click(function(event){
+                event.preventDefault();
+                console.log("click clack", event);
+
+
+            });
+        });
+    </script>
 </div>
 </body>
 </html>

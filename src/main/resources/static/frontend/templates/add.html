@@ -1,0 +1,83 @@
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Kood</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" ng-disabled="existingEntity" ng-model="kaup.kood"/></div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Nimetus</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" ng-model="kaup.nimetus"/></div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Hind</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" ng-model="kaup.hind"/></div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Tarnija</label></div>
+        <div class="col-md-10">
+            <select class="form-control" ng-options="tarnija as tarnija.nimi for tarnija in tarnijad" ng-model="kaup.tarnija">
+            </select>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Tootja</label></div>
+        <div class="col-md-10">
+            <select class="form-control" ng-options="tootja as tootja.nimi for tootja in tootjad" ng-model="kaup.tootja">
+            </select>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Seisund</label></div>
+        <div class="col-md-10">
+            <select class="form-control" ng-options="seisund as seisund.nimetus for seisund in seisundid" ng-model="kaup.seisund">
+            </select>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Kategooria</label></div>
+        <div class="col-md-10">
+            <select class="form-control" ng-options="kategooria as kategooria.nimetus for kategooria in kategooriad" ng-model="kaup.kategooria">
+            </select>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-2 text-right"><label>Omadused</label></div>
+        <div class="col-md-10">
+            <div class="form-group" ng-repeat="kaubaOmadus in kaup.omadused">
+                <div class="row">
+                    <div class="col-md-2 text-right"><label ng-bind="kaubaOmadus.omadus.nimetus"></label></div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" ng-model="kaubaOmadus.vaartus"/>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="form-inline text-center">
+                <select class="form-control" ng-options="omadus as omadus.nimetus for omadus in omadused" ng-model="uusOmadus"></select>
+                <button class="btn btn-primary" ng-click="addOmadus()">Lisa omadus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group text-center">
+    <button type="submit" class="btn btn-primary" ng-click="addKaup()">Salvesta</button>
+    <button type="submit" class="btn btn-danger" ng-click="deleteKaup()" ng-show="existingEntity">Kustuta</button>
+</div>
+
+<!--<div class="form-group">
+    <pre>{{ kaup | json }}</pre>
+</div>-->

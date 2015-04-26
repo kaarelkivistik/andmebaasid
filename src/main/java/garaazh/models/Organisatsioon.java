@@ -1,14 +1,15 @@
 package garaazh.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import javax.persistence.*;
 
 /**
  * Created by kaarel on 12/04/15.
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Organisatsioon {
 
     @Id private long registriKood;
@@ -39,20 +40,29 @@ public class Organisatsioon {
     }
 
     @Override
-    public int hashCode() {
-        return (int) registriKood;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Organisatsioon)) return false;
+
+        Organisatsioon that = (Organisatsioon) o;
+
+        if (registriKood != that.registriKood) return false;
+        return nimi.equals(that.nimi);
+
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if(!(obj instanceof Organisatsioon))
-            return false;
-        if(obj == this)
-            return true;
+    public int hashCode() {
+        int result = (int) (registriKood ^ (registriKood >>> 32));
+        result = 31 * result + nimi.hashCode();
+        return result;
+    }
 
-        Organisatsioon other = (Organisatsioon) obj;
-
-        return other.getNimi().equals(getNimi())
-                && other.getRegistriKood() == getRegistriKood();
+    @Override
+    public String toString() {
+        return "Organisatsioon{" +
+                "registriKood=" + registriKood +
+                ", nimi='" + nimi + '\'' +
+                '}';
     }
 }

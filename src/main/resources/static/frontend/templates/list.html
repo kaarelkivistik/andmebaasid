@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <th>Kood</th>
+            <th>Nimetus</th>
+            <th>Hind</th>
+            <th>Tootja</th>
+            <th>Tarnija</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="kaup in kaubad" ui-sref="base.edit({kood:kaup.kood})">
+                <td ng-bind="kaup.kood"></td>
+                <td ng-bind="kaup.nimetus"></td>
+                <td ng-bind="kaup.hind"></td>
+                <td ng-bind="kaup.tootja.nimi"></td>
+                <td ng-bind="kaup.tarnija.nimi"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

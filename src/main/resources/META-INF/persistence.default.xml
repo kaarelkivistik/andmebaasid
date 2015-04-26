@@ -5,7 +5,7 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
         <class>garaazh.models.Kaup</class>
-        <class>garaazh.models.KaubaSeisund</class>
+        <class>garaazh.models.Seisund</class>
         <class>garaazh.models.Organisatsioon</class>
 
         <properties>

@@ -13,12 +13,16 @@
                 <th>Kood</th>
                 <th>Nimetus</th>
                 <th>Hind</th>
+                <th>Tarnija</th>
+                <th>Tootja</th>
             </thead>
             <tbody>
                 <tr th:each="kaup : ${kaubad}">
                     <td th:text="${kaup.kood}"></td>
                     <td th:text="${kaup.nimetus}"></td>
                     <td th:text="${kaup.hind}"></td>
+                    <td th:text="${kaup.tarnija.nimi}"></td>
+                    <td th:text="${kaup.tootja.nimi}"></td>
                 </tr>
             </tbody>
         </table>

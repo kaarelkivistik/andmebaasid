@@ -9,15 +9,19 @@ import javax.persistence.Id;
  * Created by kaarel on 12/04/15.
  */
 @Entity
-public class KaubaSeisund {
+public class Seisund {
 
-    @Id @GeneratedValue private long kood;
-    @Column private String nimetus;
+    @Id
+    @GeneratedValue
+    private long kood;
 
-    public KaubaSeisund() {
+    @Column(unique = true)
+    private String nimetus;
+
+    public Seisund() {
     }
 
-    public KaubaSeisund(String nimetus) {
+    public Seisund(String nimetus) {
         this.nimetus = nimetus;
     }
 

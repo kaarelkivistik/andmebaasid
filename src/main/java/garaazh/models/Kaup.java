@@ -2,7 +2,7 @@ package garaazh.models;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by kaarel on 12/04/15.
@@ -12,26 +12,42 @@ import java.util.Collection;
 // me = "Kaubad", uniqueConstraints = {@UniqueConstraint(columnNames = {"kood"})})
 public class Kaup {
 
-    @Id @GeneratedValue private long kood;
-    @Column private String nimetus;
-    @Column private BigDecimal hind;
-    @ManyToOne(cascade = CascadeType.ALL) private KaubaSeisund seisund;
-    @ManyToOne(cascade = CascadeType.ALL) private Organisatsioon tootja;
-    @ManyToOne(cascade = CascadeType.ALL) private Organisatsioon tarnija;
+    @Id
+    private long kood;
+
+    @Column
+    private String nimetus;
+
+    @Column
+    private BigDecimal hind;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "kaup")
+    private List<KaubaOmadus> omadused;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Seisund seisund;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Kategooria kategooria;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Tootja tootja;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Tarnija tarnija;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Tootaja tootaja;
 
     public Kaup() {
     }
 
-    public Kaup(String nimetus, BigDecimal hind, KaubaSeisund seisund, Organisatsioon tootja, Organisatsioon tarnija) {
-        this.nimetus = nimetus;
-        this.hind = hind;
-        this.seisund = seisund;
-        this.tootja = tootja;
-        this.tarnija = tarnija;
-    }
-
     public long getKood() {
         return kood;
+    }
+
+    public void setKood(long kood) {
+        this.kood = kood;
     }
 
     public String getNimetus() {
@@ -50,27 +66,51 @@ public class Kaup {
         this.hind = hind;
     }
 
-    public KaubaSeisund getSeisund() {
+    public List<KaubaOmadus> getOmadused() {
+        return omadused;
+    }
+
+    public void setOmadused(List<KaubaOmadus> omadused) {
+        this.omadused = omadused;
+    }
+
+    public Seisund getSeisund() {
         return seisund;
     }
 
-    public void setSeisund(KaubaSeisund seisund) {
+    public void setSeisund(Seisund seisund) {
         this.seisund = seisund;
     }
 
-    public Organisatsioon getTootja() {
+    public Kategooria getKategooria() {
+        return kategooria;
+    }
+
+    public void setKategooria(Kategooria kategooria) {
+        this.kategooria = kategooria;
+    }
+
+    public Tootja getTootja() {
         return tootja;
     }
 
-    public void setTootja(Organisatsioon tootja) {
+    public void setTootja(Tootja tootja) {
         this.tootja = tootja;
     }
 
-    public Organisatsioon getTarnija() {
+    public Tarnija getTarnija() {
         return tarnija;
     }
 
-    public void setTarnija(Organisatsioon tarnija) {
+    public void setTarnija(Tarnija tarnija) {
         this.tarnija = tarnija;
+    }
+
+    public Tootaja getTootaja() {
+        return tootaja;
+    }
+
+    public void setTootaja(Tootaja tootaja) {
+        this.tootaja = tootaja;
     }
 }
