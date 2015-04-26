@@ -7,12 +7,18 @@
         <class>garaazh.models.Kaup</class>
         <class>garaazh.models.Seisund</class>
         <class>garaazh.models.Organisatsioon</class>
+        <class>garaazh.models.Tootja</class>
+        <class>garaazh.models.Tarnija</class>
+        <class>garaazh.models.KaubaOmadus</class>
+        <class>garaazh.models.Omadus</class>
+        <class>garaazh.models.Kategooria</class>
+        <class>garaazh.models.Tootaja</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.user" value="garaazh"/>
             <property name="javax.persistence.jdbc.password" value="garaazh"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.0.21:3306/garaazh"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.0.104:3306/garaazh"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
             <property name="hibernate.hbm2ddl.auto" value="create"></property>
         </properties>
