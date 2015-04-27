@@ -11,3 +11,5 @@ Buildimiseks tuleks nüüd käivitada käsk (windowsi all .bat) **gradlew build*
 
 Rakenduse käivitamiseks **java -jar build/libs/garaazh-0.1.0.jar** ning seejärel avada brauseris 
 **http://localhost:8080/frontend/index.html**
+
+SQL lauseid näeb mysqldump käsuga, näiteks on ka fail garaazh_ex.sql
