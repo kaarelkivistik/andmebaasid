@@ -556,6 +556,128 @@
                 <h2>2.1 Kaupade arvestuse funktsionaalne allsüsteem</h2>
                 <div>
                     <h3>2.1.1 Kasutusjuhtude mudel</h3>
+                            <div>
+                        <p>Punasega viidatakse andmebaasioperatsioonidele, mis seisnevad ainult andmete lugemises. Sinisega viidatakse andmebaasioperatsioonidele, mis tegelevad andmebaasis andmete muutmisega. </p>
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Töötaja tuvastamine (süsteemiülene)</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad siseneda süsteemi ja teha tegevusi oma volituste piires</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi süsteemi sisenemiseks.</p>
+                            <p><b>Eeltingimused:</b>Subjektil on loodud süsteemi kasutaja.</p>
+                            <p><b>Järeltingimused:</b>Subjekti õigus süsteemi sisenemiseks on tehtud kindlaks. Subjekt on autenditud ning ta saab kasutada süsteemi funktsioone talle määratud volituste piires.</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib siseneda süsteemi.</li>
+                                    <li>Süsteem palub subjektil ennast identifitseerida.</li>
+                                    <li>Subjekt identifitseerib ennast (sisestades kasutajanime, parooli).</li>
+                                    <li>Süsteem kontrollib, kas sisestatud kasutajatunnuse ja parooliga subjekti andmed eksisteerib süsteemis või mitte <font color="red">(OP1.1)</font>. </li>
+                                    <li>Süsteem annab subjektile volituse süsteemi kasutada. </li>
+                                    <i>Subjekt võib üritada süsteemi siseneda kuni kolm korda.</i>
+                                </ol>  
+                            <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
+                            <p>5a. Kui süsteem ei leia subjekti sisestatud kasutajatunnuse ja parooliga andmeid süsteemist, ei saa subjekt õigust süsteemi kasutada.</p> 
+                            <ol>
+                                <li>Süsteem annab subjektile teada, et sellist kasutajat pole ja ei anna talle süsteemi kasutamiseks õigust.</li>
+                            </ol>
+                        </div>
+                        <br>
+
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Kauba lisamine</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad lisada uusi kaupu e-poodi, et müüa rohkem ja seeläbi teenida rohkem kasumit</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba lisamiseks.</p>
+                            <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt lisand kaupade nimekirja uue toote.</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib lisada uut kaupa</li>
+                                    <li>Süsteem avab talle kauba lisamise vormi.</li>
+                                    <li>Subjekt lisab kogu uue kauba kohta käiva info ning tema staatuse</li>
+                                    <li>Süsteem kontrollib, kas kaup ei ole juba lisatud.</li>
+                                    <li>Süsteem lisab kaupade nimekirja uue kauba <font color="blue">(OP2.1)</font>.</li>
+                                </ol>  
+                            <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
+                            <p>5a Kui süsteem näeb, et see kaup on juba olemas, siis ta annab sellest subjektile teada.</p> 
+                            <ol>
+                                <li>Süsteem teavitab subjekti et selline kaup on juba olemas ning soovitab tal vajadusel olemasolevat kaupa vaadata. </li>
+                            </ol>
+                        </div>
+                        <br>
+
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Kauba staatuse muutmine</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad muuta kauba nähtavaks/mittenähtavaks ostjatele.</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba staatust muuta</p>
+                            <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt muutnud kauba staatuse aktiivseks/mitteaktiivseks</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib muuta kauba staatust</li>
+                                    <li>Süsteem avab talle vormi kus saab muuta kauba staatust.</li>
+                                    <li>Subjekt avaldab soovi kauba staatuse muutmiseks.</li>
+                                    <li>Süsteem muudab kauba staatust. <font color="blue">(OP3.1)</font>.</li>
+                                </ol> 
+                        </div>
+                        <br>
+                        
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Kauba vaatamine</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad vaadata kauba kohta käivat infot.</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kaupa vaadata.</p>
+                            <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt näinud kauba kohta käivat infot.</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib vaadata kaupa.</li>
+                                    <li>Süsteem avab talle kauba detailvaate <font color="red">(OP4.1)</font>.</li>
+                                    <li>Subjekt tutvub kauba kohta käiva infoga.</li>
+                                </ol>  
+                        </div>
+                        <br>
+
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Kauba info muutmine</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad muuta kauba kohta käivaid andmeid.</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba andmeid muuta.</p>
+                            <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt muutnud kauba andmeid.</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib muuta kauba andmeid</li>
+                                    <li>Süsteem avab talle kauba andmetega vormi, mida saab muuta.</li>
+                                    <li>Subjekt teeb vormil soovitud muutused.</li>
+                                    <li>Süsteem muudab andmebaasis kauba kohta käiva info <font color="blue">(OP5.1)</font>.</li>
+                                </ol>  
+                        </div>
+                        <br>
+
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Kauba kustutamine</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad kustutada kaupa.</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba kustutamiseks.</p>
+                            <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt muutnud kauba kustutanud</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib kustutada kaupa kaupade nimekirjas.</li>
+                                    <li>Süsteem küsib kasutajalt kinnitust kustutamise operatsioonile.</li>
+                                    <li>Subjekt kinnitab kustutamise.</li>
+                                    <li>Süsteem kustutab kauba <font color="blue">(OP6.1)</font>.</li>
+                                </ol>
+                            <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
+                            <p>3a Kui kasutaja ei kinnita kustutamist, näiteks vajutas kogemata valesti.</p> 
+                            <ol>
+                                <li>Süsteem ei kustuta kaupa ning midagi ei muutu.</li>
+                            </ol>  
+                        </div>
+                        <br>
+
+                    </div>
                 </div>
                 <h2>2.2 Kaupade register (laiendatud kuju)</h2>
                 <div>
