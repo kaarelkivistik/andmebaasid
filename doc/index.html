@@ -148,7 +148,7 @@
                     <li>Igast sisse- ja väljaminevast tellimusest salvestatakse laoliikumised</li>
                     <li>Igal kaubal on tootja ja tarnija</li>
                     <li>Infosüsteemis tegutsejad on uudistajad ja töötajad</li>
-                    <li>Igal kaubal on seisund mis väljendab tema olekut ajas</li>
+                    <li>Igal kaubal on staatus mis väljendab tema olekut ajas</li>
                     <li>Kaubad toimetavad kohale veebipoe töötajad pannes asjad pakiautomaati, seega kullerit pole</li>
                     <li>Ostjale väljastatakse ostu eest arve</li>
                     <li>Tellimuse ning laoliikumise staatust uuendatakse selle muutumisel</li>
@@ -188,6 +188,9 @@
                 <li>
                     Inventuur
                 </li>
+                <li>
+                    Arvustus
+                </li>
                 
             </ul>
             <h3>1.1.5 Põhiprotsessid</h3>
@@ -206,6 +209,9 @@
                 </li>
                 <li>
                     Arve väljastamine
+                </li>
+                <li>
+                    Arvustuse kirjutamine
                 </li>
                 <li>
                     Klassifikaatori registreerimine
@@ -227,6 +233,9 @@
                 </li>
                 <li>
                     Kaupade haldur muudab kauba staatust vastavalt ärilistele ning logistilistele vajadustele.
+                </li>
+                <li>
+                    Uudistaja kirjutab saadud kauba kohta arvustuse.
                 </li>
 
             </ul>
@@ -301,6 +310,9 @@
                     <li>
                         Inventuuri funktsionaalne allsüsteem
                     </li>
+                    <li>
+                        Arvustuste funktsionaalne allsüsteem
+                    </li>
                 </ul>
                 Administratiivsed allsüsteemid (võivad olla kasutusel paljudes erinevates organisatsioonides, mille tegevusalad ja eesmärgid on erinevad).
                 <ul>
@@ -332,6 +344,9 @@
                     <li>
                         Inventuuri register
                     </li>
+                    <li>
+                        Arvustuste register
+                    </li>
                 </ul>
                 <p>Administratiivsed registrid :</p>
                 <ul>
@@ -357,7 +372,7 @@
                             <li>kategoriseerida</li>
                         </ul>
                     </li>
-                    <li> Muuta kauba seisundit vastavalt selle elutsüklile, et oleks võimalik jälgida, millises elutsükli etapis iga konkreetne kaup parajasti viibib.</li>
+                    <li> Muuta kauba staatus vastavalt selle elutsüklile, et oleks võimalik jälgida, millises elutsükli etapis iga konkreetne kaup parajasti viibib.</li>
                 </ul>
             </div>
             <h3>1.2.2 Allsüsteemi kasutatavad pädevusalad</h3>
@@ -410,10 +425,18 @@
                             <p><b>Kirjeldus:</b> Antud allsüsteemis töötav tegutseja lisab uue kauba koos kogu lisainfoga.</p>
                         </div>
                         <br>
-                        <p><b>Kasutusjuht:</b>Kauba staatuse muutmine</p>
+
+                        <p><b>Kasutusjuht:</b>Kauba aktiivseks seadmine</p>
                         <div>
                            <p><b>Tegutsejad:</b>Infosüsteemi administraator, Kaupade haldur, Omanik</p> 
-                            <p><b>Kirjeldus:</b> Antud allsüsteemis töötav tegutseja seab lisatud kauba kas aktiivseks, mis tähendab seda, et nüüd on kaup klientidele nähtav ning nad saavad seda tellida või mitteaktiivseks, mis tähendab vastupidist.</p>
+                            <p><b>Kirjeldus:</b> Antud allsüsteemis töötav tegutseja seab lisatud kauba aktiivseks, mis tähendab seda, et nüüd on kaup klientidele nähtav ning nad saavad seda tellida.</p>
+                        </div>
+                        <br>
+
+                        <p><b>Kasutusjuht:</b>Kauba mitteaktiivseks seadmine</p>
+                        <div>
+                           <p><b>Tegutsejad:</b>Infosüsteemi administraator, Kaupade haldur, Omanik</p> 
+                            <p><b>Kirjeldus:</b> Antud allsüsteemis töötav tegutseja seab lisatud kauba  mitteaktiivseks, mis tähendab mis tähendab seda, et nüüd kaup ei ole klientidele nähtav ning nad ei saa seda tellida.</p>
                         </div>
                         <br>
 
@@ -533,7 +556,7 @@
                     <h3>1.3.5 Seosed teiste registritega</h3>
                         <ul>
                             <li><b>Tootjate register</b> - Seotud olemitüübi <b>Tootja</b> kaudu. Igal kaubal on kindel Tootja.</li>
-                            <li><b>Klassifikaatorite register</b> - Kaubal on erinevaid klassifikaatoreid, näiteks seisund ja kategooria. Seotud olemitüübi <b>Klassifikaator</b> kaudu.</li>
+                            <li><b>Klassifikaatorite register</b> - Kaubal on erinevaid klassifikaatoreid, näiteks staatus ja kategooria. Seotud olemitüübi <b>Klassifikaator</b> kaudu.</li>
                             <li><b>Töötajate register</b> - Seotud olemitüübi <b>Töötaja</b> kaudu. Kindel töötaja lisas kauba.</li>
                             <li><b>Tarnijate register</b> - Seotud olemitüübi <b>Tarnija</b> kaudu. Igal kaubal on tarnija.</li>
                              <li><b>Organisatsioonide register</b> - Seotud olemitüübi <b>Organisatsioon</b> kaudu. Organisatsioon on Tootja ja Tarnija ülemklass.</li>
@@ -546,6 +569,9 @@
                             <li>Kaubal on üks tarnija.</li>
                             <li>Kaupade register tegeleb ainult kauba metaandmetega.</li>
                             <li>Igal kaubal on üks või rohkem omadust.</li>
+                            <li>Kauba hinne on 0-5 ning võib olla komakohtadega.</li>
+                            <li>Hind on suurem kui null ning komakohtadega</li>
+                            <li>email on unikaalne ning kasutusel kasutajanimena</li>
                         </ul>
                     <h3>1.3.7 Registri kontseptuaalne eskiismudel</h3>
                     <img src="img/Eskiismudel.png" alt="registri eskiismudeli pilt ">
@@ -606,18 +632,35 @@
                         <br>
 
                         <div>
-                            <u><p><b>Kasutusjuht:</b>Kauba staatuse muutmine</p></u>
+                            <u><p><b>Kasutusjuht:</b>Kauba aktiivseks seadmine</p></u>
                             <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
-                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad muuta kauba nähtavaks/mittenähtavaks ostjatele.</p>
-                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba staatust muuta</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad muuta kauba nähtavaks ja ostetavaks ostjatele.</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kauba staatust aktiivseks muuta</p>
                             <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
-                            <p><b>Järeltingimused:</b>Subjekt on edukalt muutnud kauba staatuse aktiivseks/mitteaktiivseks</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt kauba seadnud aktiivseks</p>
                             <p><b>Stsenaarium</b></p>
                                 <ol>
-                                    <li>Subjekt soovib muuta kauba staatust</li>
-                                    <li>Süsteem avab talle vormi kus saab muuta kauba staatust.</li>
-                                    <li>Subjekt avaldab soovi kauba staatuse muutmiseks.</li>
-                                    <li>Süsteem muudab kauba staatust. <font color="blue">(OP3.1)</font>.</li>
+                                    <li>Subjekt soovib muuta kaupa aktiivseks</li>
+                                    <li>Süsteem avab talle vormi kus saab muuta kaupa aktiivseks.</li>
+                                    <li>Subjekt avaldab soovi kaupa aktiivseks muuta</li>
+                                    <li>Süsteem muudab kauba staatuse aktiivseks. <font color="blue">(OP3.1)</font>.</li>
+                                </ol> 
+                        </div>
+                        <br>
+
+                        <div>
+                            <u><p><b>Kasutusjuht:</b>Kauba mitteaktiivseks seadmine</p></u>
+                            <p><b>Primaarne tegutseja: </b>Infosüsteemi haldur, Kaupade haldur, Omanik</p>
+                            <p><b>Osapooled ja nende huvid:</b> Kõik eelnimetatud tegutsejad soovivad muuta kaupa mitteostetavaks ja mittenähtavaks ostjatele.</p>
+                            <p><b>Käivitatav sündmus:</b>Subjekt avaldab soovi kaupa seada mitteaktiivseks/p>
+                            <p><b>Eeltingimused:</b>Subjekt on süsteemi sisse loginud.</p>
+                            <p><b>Järeltingimused:</b>Subjekt on edukalt muutnud kauba staatuse mitteaktiivseks</p>
+                            <p><b>Stsenaarium</b></p>
+                                <ol>
+                                    <li>Subjekt soovib muuta kauba mitteaktiivseks</li>
+                                    <li>Süsteem avab talle vormi kus saab muuta kauba mitteaktiivseks.</li>
+                                    <li>Subjekt avaldab soovi muuta kauba staatus mitteaktiivseks</li>
+                                    <li>Süsteem muudab kauba staatuse mitteaktiivseks <font color="blue">(OP4.1)</font>.</li>
                                 </ol> 
                         </div>
                         <br>
@@ -632,7 +675,7 @@
                             <p><b>Stsenaarium</b></p>
                                 <ol>
                                     <li>Subjekt soovib vaadata kaupa.</li>
-                                    <li>Süsteem avab talle kauba detailvaate <font color="red">(OP4.1)</font>.</li>
+                                    <li>Süsteem avab talle kauba detailvaate <font color="red">(OP5.1)</font>.</li>
                                     <li>Subjekt tutvub kauba kohta käiva infoga.</li>
                                 </ol>  
                         </div>
@@ -650,7 +693,7 @@
                                     <li>Subjekt soovib muuta kauba andmeid</li>
                                     <li>Süsteem avab talle kauba andmetega vormi, mida saab muuta.</li>
                                     <li>Subjekt teeb vormil soovitud muutused.</li>
-                                    <li>Süsteem muudab andmebaasis kauba kohta käiva info <font color="blue">(OP5.1)</font>.</li>
+                                    <li>Süsteem muudab andmebaasis kauba kohta käiva info <font color="blue">(OP6.1)</font>.</li>
                                 </ol>  
                         </div>
                         <br>
@@ -667,7 +710,7 @@
                                     <li>Subjekt soovib kustutada kaupa kaupade nimekirjas.</li>
                                     <li>Süsteem küsib kasutajalt kinnitust kustutamise operatsioonile.</li>
                                     <li>Subjekt kinnitab kustutamise.</li>
-                                    <li>Süsteem kustutab kauba <font color="blue">(OP6.1)</font>.</li>
+                                    <li>Süsteem kustutab kauba <font color="blue">(OP7.1)</font>.</li>
                                 </ol>
                             <p><b>Laiendused (või alternatiivne sündmuste käik):</b></p> 
                             <p>3a Kui kasutaja ei kinnita kustutamist, näiteks vajutas kogemata valesti.</p> 
@@ -724,15 +767,26 @@
                                 <td>Klassifikaatorid on "mistahes andmed, mida kasutatakse andmebaasis teiste andmete liigitamiseks või andmebaasis olevate andmete seostamiseks väljaspool organisatsiooni vastutusala oleva informatsiooniga." (Chisholm, 2000)</td>
                             </tr>
                             <tr>
+                                <td>kauba_staatus</td>
+                                <td>Klassifikaatorite register</td>
+                                <td>Kauba_taatus pärib kõik Klassifikaator atribuudid. Andmebaasis tuleb iga registreeritud kauba korral muuhulgas registreerida selle kauba hetke staatus. Kui kauba staatus muutub, siis tuleb uus staatus andmebaasis registreerida. </td>
+                            </tr>
+                            <tr>
+                                <td>Kategooria</td>
+                                <td>Klassifikaatorite register</td>
+                                <td>Kategooria pärib kõik Klassifikaator atribuudid. Igal kaubal on kategooria, kuhu ta kuulub, mis väljendab tema tüüpi, näiteks kas kaup on emaplaat või termopasta.</td>
+                            </tr>
+                            <tr>
+                                <td>Omadus</td>
+                                <td>Klassifikaatorite register</td>
+                                <td>Igal kaubal on palju erinevaid omadusi, mis väljendavad kõike tema kohta käivat, alates dimensioonidest lõpetades võimsusega. Omadus on konkreetne key-value paar, näiteks pikkus: 12cm.</td>
+                            </tr>
+                            <tr>
                                 <td>Kauba_omadus</td>
                                 <td>Kaupade register</td>
                                 <td>Vahetabeli olem, mis seob kauba ning kõik tema juurde kuuluvad omadused.</td>
                             </tr>
-                            <tr>
-                                <td>Arvustus</td>
-                                <td>Kaupade register</td>
-                                <td>Arvustus on kauba juurde kuuluv kasutajapoolne kommentaar, kõik kommentaarid on anonüümsed.</td>
-                            </tr>
+                            
                            
                             </table>
                             <h4>2.2.1.3 Atribuutide definitsioonid</h4>
@@ -786,14 +840,14 @@
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
-                                    <td>hind</td>
-                                    <td>Antud toote hind. <br>
+                                    <td>valjamuugi_hind</td>
+                                    <td>Antud toote valjamuugi_hind. <br>
                                     {Peab sisaldama ainult numbreid}</td>
                                     <td>15.00</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
-                                    <td>staatus</td>
+                                    <td>kauba_staatus</td>
                                     <td>Antud toote staatus.</td>
                                     <td>Aktiivne</td>
                                 </tr>
@@ -869,24 +923,12 @@
                                     {Väärtus ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>32Gb</td>
                                 </tr>
-                                 <tr>
-                                    <td>Arvustus</td>
-                                    <td>arvustuse_kood</td>
-                                    <td>Antud arvustuse unikaalne kood. Kood võib olla tekstiline või numbriline väärtus.</td>
-                                    <td>1</td>
-                                </tr>
-                                 <tr>
-                                    <td>Arvustus</td>
-                                    <td>väärtus</td>
-                                    <td>Antud arvustus vabatekstina. <br>
-                                    {Väärtus ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
-                                    <td>Väga vägev emaplaat, ostaks veel.</td>
-                                </tr>
+                                 
                             </table>   
                         </div>
                         <h3>2.2.2 Andmebaasioperatsioonide lepingud</h3>
                         <div>
-                            <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine(kauba_kood, nimi, viide Tootjale, viide Tarnijale)</u></b></p>
+                            <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine(kauba_kood, nimi, viide Tootjale, viide Tarnijale, Viide töötajale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Tootja ja Tarnija on registreeritud.</li>
@@ -898,6 +940,7 @@
                                 <li>Kaup.nimi = kauba nimetus.</li>
                                 <li>Kauba_omadus.väärtus = uus kauba omadus, neid võib olla mitu.</li>
                                 <li>Kaup on seotud tema tootnud Tootjaga.</li>
+                                <li>Kaup on seotud tema lisanud Töötajaga.</li>
                                 <li>Kaup on seotud Tarnijaga, kes ta veebipoele tarnib.</li>
                             </ul>
                             <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba lisamine</p>
@@ -905,21 +948,35 @@
                         <br>
 
                         <div>
-                            <p><font color="blue">(OP3.1)</font> <b><u>Kauba staatuse muutmine(viide Kaubale, staatus)</u></b></p>
+                            <p><font color="blue">(OP3.1)</font> <b><u>Kauba aktiivseks seadmine(viide Kaubale, Kauba_staatus)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Kaup on loodud</li>
                             </ul>
                             <p><b>Järeltingimused:</b></p>
                             <ul>
-                                <li>Kaup.staatus = uus kauba staatus.</li>
+                                <li>Kaup.Kauba_staatus = kaup on aktiivne.</li>
                             </ul>
-                            <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba staatuse muutmine</p>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba aktiivseks seadmine</p>
                         </div>
                         <br>
 
                         <div>
-                            <p><font color="blue">(OP5.1)</font> <b><u>Kauba info muutmine(viide Kaubale, kauba_kood, nimi, väärtus, viide Tootjale, viide Tarnijale)</u></b></p>
+                            <p><font color="blue">(OP4.1)</font> <b><u>Kauba mitteaktiivseks seadmine(viide Kaubale, Kauba_staatus)</u></b></p>
+                            <p><b>Eeltingimused:</b></p>
+                            <ul>
+                                <li>Kaup on loodud</li>
+                            </ul>
+                            <p><b>Järeltingimused:</b></p>
+                            <ul>
+                                <li>Kaup.Kauba_staatus = kaup on mitteaktiivne</li>
+                            </ul>
+                            <p><b>Kasutus kasutusjuhtude poolt:</b> Kauba mitteaktiivseks seadmine</p>
+                        </div>
+                        <br>
+
+                        <div>
+                            <p><font color="blue">(OP6.1)</font> <b><u>Kauba info muutmine(viide Kaubale, kauba_kood, nimi, väärtus, viide Tootjale, viide Tarnijale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Kaup on loodud</li>
@@ -937,7 +994,7 @@
                         <br>
 
                         <div>
-                            <p><font color="blue">(OP6.1)</font> <b><u>Kauba kustutamine(viide Kaubale)</u></b></p>
+                            <p><font color="blue">(OP7.1)</font> <b><u>Kauba kustutamine(viide Kaubale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Kaup on loodud</li>
@@ -968,12 +1025,14 @@
                             <td>4</td>
                             <td>5</td>
                             <td>6</td>
+                            <td>7</td>
                             <td>Kokku</td>
                         </tr>
                         <tr bgcolor="#EA7B30">
                             <td>Kaup</td>
                             <td></td>
                             <td>CR</td>
+                            <td>RU</td>
                             <td>RU</td>
                             <td>R</td>
                             <td>RU</td>
@@ -985,6 +1044,7 @@
                             <td></td>
                             <td>R</td>
                             <td></td>
+                            <td></td>
                             <td>R</td>
                             <td></td>
                             <td>R</td>
@@ -994,6 +1054,7 @@
                             <td>Töötaja</td>
                             <td>R</td>
                             <td>R</td>
+                            <td>R</td>  
                             <td>R</td>
                             <td>R</td>
                             <td>R</td>
@@ -1002,6 +1063,7 @@
                         </tr>
                         <tr>
                             <td>Klassifikaator</td>
+                            <td>R</td>
                             <td>R</td>
                             <td>R</td>
                             <td>R</td>
@@ -1015,27 +1077,20 @@
                             <td></td>
                             <td>CR</td>
                             <td></td>
+                            <td></td>   
                             <td>R</td>
-                            <td>RU</td>
+                            <td>CRUD</td>
                             <td>RD</td>
                             <td>CRUD</td>
                         </tr>
-                        <tr bgcolor="#EA7B30">
-                            <td>Arvustus</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>R</td>
-                            <td>RU</td>
-                            <td>RD</td>
-                            <td>RUD</td>
-                        </tr>
+                        
                     </table>
                     <p>Kasutusjuhtude nimekiri:</p>
                     <ol>
                         <li>Töötaja tuvastamine</li>
                         <li>Kauba lisamine</li>
-                        <li>Kauba staatuse muutmine</li>
+                        <li>Kauba aktiivseks seadmine</li>
+                        <li>Kauba mitteaktiivseks seadmine</li>
                         <li>Kauba vaatamine</li>
                         <li>Kauba info muutmine</li>
                         <li>Kauba kustutamine</li>
@@ -1054,7 +1109,7 @@
                             </tr>
                             <tr>
                                 <td>Kaupade haldur</td>
-                                <td>Kaupade haldur on veebipoes töötav ja kaupade haldamisega tegelev isik. Kaupade haldur on õigus kaupu lisada, muuta, kustutada ning staatuseid muuta. Kaupde halduril puudub õigus vaadata kõiki tellimusi ega tellimuste seisundi liiki muuta.</td>
+                                <td>Kaupade haldur on veebipoes töötav ja kaupade haldamisega tegelev isik. Kaupade haldur on õigus kaupu lisada, muuta, kustutada ning staatuseid muuta. Kaupde halduril puudub õigus vaadata kõiki tellimusi ega tellimuste staatuste liiki muuta.</td>
                             </tr>
                             <tr>
                                 <td>Omanik</td>
