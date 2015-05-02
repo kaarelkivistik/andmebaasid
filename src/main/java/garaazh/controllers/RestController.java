@@ -14,7 +14,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceUnit;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,70 +22,58 @@ import java.util.List;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
-    public static final Tootaja defaultTootaja = new Tootaja("39212344321", "Laomees Lagunov", "laomees@hot.ee", "JkbHb7tVt");
+    public static final Tootaja defaultTootaja = new Tootaja(1, "39212344321", "Laomees", "Lagunov", "laomees@hot.ee", "JkbHb7tVt");
 
     @PersistenceUnit
     EntityManagerFactory entityManagerFactory;
 
     @PostConstruct
     protected void setUp() throws Exception {
+        /*Riik eesti = new Riik(6, "Eesti");
+        Riik leedu = new Riik(6, "Leedu");
+        Tootja samyang = new Tootja(1, "89213989", "Samyang", leedu, 3.3f);
+        Tarnija gediminas = new Tarnija(2, "938249842", "Gediminas Transports UAB", leedu, new BigDecimal(10));
+        KaubaKategooria emaplaadid = new KaubaKategooria(1, "Emaplaadid");
+        KaubaStaatus aktiivne = new KaubaStaatus(2, "aktiivne");
+
+        Kaup kaup = new Kaup();
+        kaup.setKaubaKood(7832872);
+        kaup.setNimetus("ABIT eXtreme Gaming Board");
+        kaup.setTarnija(gediminas);
+        kaup.setTootja(samyang);
+        kaup.setKaubaStaatus(aktiivne);
+        kaup.setKaubaKategooria(emaplaadid);
+        kaup.setHind(new BigDecimal("449.90"));
+        kaup.setTootaja(defaultTootaja);
+
         entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnit");
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
 
-        Tootja samyang = new Tootja(1337, "Samyang", 2f);
-        Tarnija gediminas = new Tarnija(1340, "Gediminas Transports UAB", new BigDecimal(10));
+        entityManager.persist(defaultTootaja);
 
         entityManager.persist(samyang);
-        entityManager.persist(new Tootja(1338, "Samsung", 3.7f));
-        entityManager.persist(new Tootja(1339, "chiPhone Industries Ltd", 0.5f));
+        entityManager.persist(new Tootja(3, "93482984239", "Samsung", eesti, 3.7f));
+        entityManager.persist(new Tootja(4, "5982343", "chiPhone Industries Ltd", leedu, 0.5f));
 
         entityManager.persist(gediminas);
-        entityManager.persist(new Tarnija(1341, "OÜ Patsaanid", new BigDecimal(60)));
-        entityManager.persist(new Tarnija(1342, "OÜ Riskikuller", new BigDecimal(1)));
+        entityManager.persist(new Tarnija(5, "39292492", "OÜ Patsaanid", eesti, new BigDecimal(60)));
+        entityManager.persist(new Tarnija(6, "983839498", "OÜ Riskikuller", eesti, new BigDecimal(1)));
 
-        Omadus pikkus = new Omadus("pikkus");
-        Omadus laius = new Omadus("laius");
-        Omadus varv = new Omadus("värv");
-        entityManager.persist(pikkus);
-        entityManager.persist(laius);
-        entityManager.persist(varv);
-        entityManager.persist(new Omadus("sügavus"));
-        entityManager.persist(new Omadus("võimsus"));
-        entityManager.persist(new Omadus("siinikiirus"));
-        entityManager.persist(new Omadus("maht"));
-
-        Kategooria emaplaadid = new Kategooria(null, "Emaplaadid");
         entityManager.persist(emaplaadid);
-        entityManager.persist(new Kategooria(null, "Mälud"));
-        entityManager.persist(new Kategooria(null, "Toiteplokid"));
+        entityManager.persist(new KaubaKategooria(3, "Mälud"));
+        entityManager.persist(new KaubaKategooria(4, "Toiteplokid"));
 
-        Seisund aktiivne = new Seisund("aktiivne");
         entityManager.persist(aktiivne);
-        entityManager.persist(new Seisund("mitteaktiivne"));
-
-        Kaup kaup = new Kaup();
-        kaup.setKood(7832872);
-        kaup.setNimetus("ABIT eXtreme Gaming Board");
-        kaup.setTarnija(gediminas);
-        kaup.setTootja(samyang);
-
-        List<KaubaOmadus> kaubaOmadused = new ArrayList<>();
-        kaubaOmadused.add(new KaubaOmadus(kaup, pikkus, "250mm"));
-        kaubaOmadused.add(new KaubaOmadus(kaup, laius, "180mm"));
-        kaubaOmadused.add(new KaubaOmadus(kaup, varv, "must"));
-        kaup.setOmadused(kaubaOmadused);
-        kaup.setSeisund(aktiivne);
-        kaup.setKategooria(emaplaadid);
-        kaup.setHind(new BigDecimal("449.90"));
+        entityManager.persist(new KaubaStaatus(5, "mitteaktiivne"));
 
         entityManager.persist(kaup);
 
         entityManager.getTransaction().commit();
 
-        entityManager.close();
+        entityManager.close();*/
     }
 
     @RequestMapping("/api/kaubad")
@@ -100,9 +87,7 @@ public class RestController {
     public Kaup kaup(@PathVariable String kood) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        return (Kaup) entityManager.createQuery("SELECT a FROM Kaup AS a WHERE kood = ?1")
-                .setParameter(1, Long.parseLong(kood))
-                .getResultList().get(0);
+        return entityManager.find(Kaup.class, Long.parseLong(kood));
     }
 
     @RequestMapping("/api/tootjad")
@@ -119,33 +104,17 @@ public class RestController {
         return entityManager.createQuery("SELECT a FROM Tarnija AS a").getResultList();
     }
 
-    @RequestMapping("/api/omadused")
-    public List<Omadus> omadused() {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        return entityManager.createQuery("SELECT a FROM Omadus AS a").getResultList();
-    }
-
-    @RequestMapping("/api/seisundid")
-    public List<Omadus> seisundid() {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        return entityManager.createQuery("SELECT a FROM Seisund AS a").getResultList();
-    }
-
     @RequestMapping("/api/kategooriad")
-    public List<Omadus> kategooriad() {
+    public List<KaubaKategooria> kategooriad() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        return entityManager.createQuery("SELECT a FROM Kategooria AS a").getResultList();
+        return entityManager.createQuery("SELECT a FROM KaubaKategooria AS a").getResultList();
     }
 
     @RequestMapping(value = "/api/kaubad", method = RequestMethod.POST)
     public ResponseEntity<Kaup> lisaKaup(@RequestBody Kaup kaup) {
         System.out.println(kaup);
 
-        for(KaubaOmadus kaubaOmadus : kaup.getOmadused())
-            kaubaOmadus.setKaup(kaup);
 
         kaup.setTootaja(defaultTootaja);
 
@@ -165,16 +134,11 @@ public class RestController {
 
         Kaup kaup = entityManager.find(Kaup.class, Long.parseLong(kood));
 
-        kaup.setKategooria(null);
-        kaup.setSeisund(null);
+        kaup.setKaubaKategooria(null);
+        kaup.setKaubaStaatus(null);
         kaup.setTarnija(null);
         kaup.setTootaja(null);
         kaup.setTootja(null);
-
-        if(kaup.getOmadused() != null)
-            for (KaubaOmadus kaubaOmadus : kaup.getOmadused()) {
-                kaubaOmadus.setOmadus(null);
-            }
 
         entityManager.getTransaction().begin();
         entityManager.remove(kaup);

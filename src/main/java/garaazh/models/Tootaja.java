@@ -1,21 +1,32 @@
 package garaazh.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
 
 /**
  * Created by kaarel on 26/04/15.
  */
 @Entity
 public class Tootaja {
+
     @Id
+    private int kood;
+
+    @Column
+    @NotEmpty
     private String isikukood;
 
     @Column
-    private String nimi;
+    private String eesnimi;
 
     @Column
+    private String perenimi;
+
+    @Column(unique = true)
     private String eMail;
 
     @Column
@@ -24,11 +35,17 @@ public class Tootaja {
     public Tootaja() {
     }
 
-    public Tootaja(String isikukood, String nimi, String eMail, String parool) {
+    public Tootaja(int kood, String isikukood, String eesnimi, String perenimi, String eMail, String parool) {
+        this.kood = kood;
         this.isikukood = isikukood;
-        this.nimi = nimi;
+        this.eesnimi = eesnimi;
+        this.perenimi = perenimi;
         this.eMail = eMail;
         this.parool = parool;
+    }
+
+    public int getKood() {
+        return kood;
     }
 
     public String getIsikukood() {
@@ -39,12 +56,20 @@ public class Tootaja {
         this.isikukood = isikukood;
     }
 
-    public String getNimi() {
-        return nimi;
+    public String getEesnimi() {
+        return eesnimi;
     }
 
-    public void setNimi(String nimi) {
-        this.nimi = nimi;
+    public void setEesnimi(String eesnimi) {
+        this.eesnimi = eesnimi;
+    }
+
+    public String getPerenimi() {
+        return perenimi;
+    }
+
+    public void setPerenimi(String perenimi) {
+        this.perenimi = perenimi;
     }
 
     public String geteMail() {

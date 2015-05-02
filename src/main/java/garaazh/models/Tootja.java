@@ -1,11 +1,12 @@
 package garaazh.models;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by kaarel on 20/04/15.
@@ -16,20 +17,16 @@ import javax.persistence.Entity;
 public class Tootja extends Organisatsioon {
 
     @Column
+    @DecimalMin("0.0")
+    @DecimalMax("5.0")
+    @NotNull
     private Float hinne;
 
     public Tootja() {
     }
 
-    public Tootja(long registriKood, String nimi, Float hinne) {
-        super(registriKood, nimi);
+    public Tootja(int organisatsiooniKood, String registriKood, String nimi, Riik riik, Float hinne) {
+        super(organisatsiooniKood, registriKood, nimi, riik);
         this.hinne = hinne;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (hinne != null ? hinne.hashCode() : 0);
-        return result;
     }
 }

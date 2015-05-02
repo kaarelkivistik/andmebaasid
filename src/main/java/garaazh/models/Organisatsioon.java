@@ -1,33 +1,46 @@
 package garaazh.models;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by kaarel on 12/04/15.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance
 public class Organisatsioon {
 
-    @Id private long registriKood;
-    @Column private String nimi;
+    @Id
+    private int organisatsiooniKood;
+
+    @Column
+    @NotNull
+    @NotEmpty
+    private String registriKood;
+
+    @Column
+    @NotNull
+    @NotEmpty
+    private String nimi;
+
+    @ManyToOne
+    @NotNull
+    private Riik riik;
 
     public Organisatsioon() {
     }
 
-    public Organisatsioon(long registriKood, String nimi) {
-        this.registriKood = registriKood;
-        this.nimi = nimi;
+    public int getOrganisatsiooniKood() {
+        return organisatsiooniKood;
     }
 
-    public long getRegistriKood() {
+    public String getRegistriKood() {
         return registriKood;
     }
 
-    public void setRegistriKood(long registriKood) {
+    public void setRegistriKood(String registriKood) {
         this.registriKood = registriKood;
     }
 
@@ -39,30 +52,19 @@ public class Organisatsioon {
         this.nimi = nimi;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Organisatsioon)) return false;
-
-        Organisatsioon that = (Organisatsioon) o;
-
-        if (registriKood != that.registriKood) return false;
-        return nimi.equals(that.nimi);
-
+    public Riik getRiik() {
+        return riik;
     }
 
-    @Override
-    public int hashCode() {
-        int result = (int) (registriKood ^ (registriKood >>> 32));
-        result = 31 * result + nimi.hashCode();
-        return result;
+    public void setRiik(Riik riik) {
+        this.riik = riik;
     }
 
-    @Override
-    public String toString() {
-        return "Organisatsioon{" +
-                "registriKood=" + registriKood +
-                ", nimi='" + nimi + '\'' +
-                '}';
+    public Organisatsioon(int organisatsiooniKood, String registriKood, String nimi, Riik riik) {
+
+        this.organisatsiooniKood = organisatsiooniKood;
+        this.registriKood = registriKood;
+        this.nimi = nimi;
+        this.riik = riik;
     }
 }

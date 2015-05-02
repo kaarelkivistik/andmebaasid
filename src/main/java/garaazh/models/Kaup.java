@@ -1,8 +1,11 @@
 package garaazh.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.List;
 
 /**
  * Created by kaarel on 12/04/15.
@@ -13,41 +16,58 @@ import java.util.List;
 public class Kaup {
 
     @Id
-    private long kood;
+    private int kaubaKood;
 
     @Column
+    @NotEmpty
     private String nimetus;
 
     @Column
+    @NotNull
+    @DecimalMin("0.0")
     private BigDecimal hind;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "kaup")
-    private List<KaubaOmadus> omadused;
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @NotNull
+    private KaubaStaatus kaubaStaatus;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Seisund seisund;
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @NotNull
+    private KaubaKategooria kaubaKategooria;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Kategooria kategooria;
-
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @NotNull
     private Tootja tootja;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @NotNull
     private Tarnija tarnija;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @NotNull
     private Tootaja tootaja;
+
+    @Column
+    private int pikkus;
+
+    @Column
+    private int laius;
+
+    @Column
+    private int korgus;
+
+    @Column
+    private String pildiAadress;
 
     public Kaup() {
     }
 
-    public long getKood() {
-        return kood;
+    public long getKaubaKood() {
+        return kaubaKood;
     }
 
-    public void setKood(long kood) {
-        this.kood = kood;
+    public void setKaubaKood(int kood) {
+        this.kaubaKood = kood;
     }
 
     public String getNimetus() {
@@ -66,28 +86,20 @@ public class Kaup {
         this.hind = hind;
     }
 
-    public List<KaubaOmadus> getOmadused() {
-        return omadused;
+    public KaubaStaatus getKaubaStaatus() {
+        return kaubaStaatus;
     }
 
-    public void setOmadused(List<KaubaOmadus> omadused) {
-        this.omadused = omadused;
+    public void setKaubaStaatus(KaubaStaatus kaubaStaatus) {
+        this.kaubaStaatus = kaubaStaatus;
     }
 
-    public Seisund getSeisund() {
-        return seisund;
+    public KaubaKategooria getKaubaKategooria() {
+        return kaubaKategooria;
     }
 
-    public void setSeisund(Seisund seisund) {
-        this.seisund = seisund;
-    }
-
-    public Kategooria getKategooria() {
-        return kategooria;
-    }
-
-    public void setKategooria(Kategooria kategooria) {
-        this.kategooria = kategooria;
+    public void setKaubaKategooria(KaubaKategooria kaubaKategooria) {
+        this.kaubaKategooria = kaubaKategooria;
     }
 
     public Tootja getTootja() {
@@ -112,5 +124,37 @@ public class Kaup {
 
     public void setTootaja(Tootaja tootaja) {
         this.tootaja = tootaja;
+    }
+
+    public int getPikkus() {
+        return pikkus;
+    }
+
+    public void setPikkus(int pikkus) {
+        this.pikkus = pikkus;
+    }
+
+    public int getLaius() {
+        return laius;
+    }
+
+    public void setLaius(int laius) {
+        this.laius = laius;
+    }
+
+    public int getKorgus() {
+        return korgus;
+    }
+
+    public void setKorgus(int korgus) {
+        this.korgus = korgus;
+    }
+
+    public String getPildiAadress() {
+        return pildiAadress;
+    }
+
+    public void setPildiAadress(String pildiAadress) {
+        this.pildiAadress = pildiAadress;
     }
 }
