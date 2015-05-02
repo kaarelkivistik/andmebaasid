@@ -25,7 +25,8 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    // compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.hibernate:hibernate-core:4.3.8.Final")
     compile("org.hibernate:hibernate-entitymanager:4.3.8.Final")
     compile("postgresql:postgresql:9.1-901-1.jdbc4")

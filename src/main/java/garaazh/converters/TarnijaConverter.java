@@ -21,7 +21,7 @@ public class TarnijaConverter implements Converter<String,Tarnija> {
     public Tarnija convert(String source) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        return (Tarnija) entityManager.createQuery("SELECT a FROM Tarnija AS a WHERE a.registriKood = ?1")
+        return (Tarnija) entityManager.createQuery("SELECT a FROM Tarnija AS a WHERE a.organisatsiooniKood = ?1")
                 .setParameter(1, Long.parseLong(source))
                 .getResultList().get(0);
     }

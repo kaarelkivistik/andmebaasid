@@ -21,7 +21,7 @@ public class TootjaConverter implements Converter<String,Tootja> {
     public Tootja convert(String source) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        return (Tootja) entityManager.createQuery("SELECT a FROM Tootja AS a WHERE a.registriKood = ?1")
+        return (Tootja) entityManager.createQuery("SELECT a FROM Tootja AS a WHERE a.organisatsiooniKood = ?1")
                 .setParameter(1, Long.parseLong(source))
                 .getResultList().get(0);
     }

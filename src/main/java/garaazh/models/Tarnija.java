@@ -1,7 +1,6 @@
 package garaazh.models;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.math.BigDecimal;
 
@@ -10,7 +9,6 @@ import java.math.BigDecimal;
  */
 
 @Entity
-// @DiscriminatorValue("TA")
 public class Tarnija extends Organisatsioon {
 
     @Column
@@ -19,8 +17,8 @@ public class Tarnija extends Organisatsioon {
     public Tarnija() {
     }
 
-    public Tarnija(long registriKood, String nimi, BigDecimal tarneaeg) {
-        super(registriKood, nimi);
+    public Tarnija(int organisatsiooniKood, String registriKood, String nimi, Riik riik, BigDecimal tarneaeg) {
+        super(organisatsiooniKood, registriKood, nimi, riik);
         this.tarneaeg = tarneaeg;
     }
 }
