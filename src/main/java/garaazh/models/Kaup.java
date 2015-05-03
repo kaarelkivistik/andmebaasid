@@ -28,22 +28,27 @@ public class Kaup {
     private BigDecimal hind;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_kauba_staatus"))
     @NotNull
     private KaubaStaatus kaubaStaatus;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_kauba_kategooria"))
     @NotNull
     private KaubaKategooria kaubaKategooria;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_kauba_tootja"))
     @NotNull
     private Tootja tootja;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_kauba_tarnija"))
     @NotNull
     private Tarnija tarnija;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_kauba_tootaja"))
     @NotNull
     private Tootaja tootaja;
 

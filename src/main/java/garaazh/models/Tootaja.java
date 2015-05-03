@@ -14,7 +14,7 @@ import javax.persistence.UniqueConstraint;
 public class Tootaja {
 
     @Id
-    private int kood;
+    private int tootajaKood;
 
     @Column
     @NotEmpty
@@ -35,8 +35,8 @@ public class Tootaja {
     public Tootaja() {
     }
 
-    public Tootaja(int kood, String isikukood, String eesnimi, String perenimi, String eMail, String parool) {
-        this.kood = kood;
+    public Tootaja(int tootajaKood, String isikukood, String eesnimi, String perenimi, String eMail, String parool) {
+        this.tootajaKood = tootajaKood;
         this.isikukood = isikukood;
         this.eesnimi = eesnimi;
         this.perenimi = perenimi;
@@ -44,8 +44,8 @@ public class Tootaja {
         this.parool = parool;
     }
 
-    public int getKood() {
-        return kood;
+    public int getTootajaKood() {
+        return tootajaKood;
     }
 
     public String getIsikukood() {

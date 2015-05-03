@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 public class KaubaKategooria extends Klassifikaator {
     @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_kategooria_ylemkategooria"))
     private KaubaKategooria ylemKategooria;
 
     public KaubaKategooria() {

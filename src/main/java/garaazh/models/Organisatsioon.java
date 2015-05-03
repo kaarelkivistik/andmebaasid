@@ -16,16 +16,23 @@ public class Organisatsioon {
     private int organisatsiooniKood;
 
     @Column
-    @NotNull
     @NotEmpty
     private String registriKood;
 
     @Column
-    @NotNull
     @NotEmpty
     private String nimi;
 
+    @Column
+    @NotEmpty
+    private String aadress;
+
+    @Column
+    @NotEmpty
+    private String eMail;
+
     @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_organisatsiooni_riik"))
     @NotNull
     private Riik riik;
 
