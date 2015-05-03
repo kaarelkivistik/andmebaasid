@@ -2,15 +2,13 @@ package garaazh.models;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
 /**
  * Created by kaarel on 26/04/15.
  */
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(name = "UK_e_mail_on_unikaalne", columnNames = {"e_mail"}))
 public class Tootaja {
 
     @Id

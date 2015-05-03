@@ -9,11 +9,12 @@ import javax.persistence.*;
  */
 @Entity
 @Inheritance
+@Table(uniqueConstraints = @UniqueConstraint(name = "UK_nimetus_on_unikaalne", columnNames = {"nimetus"}))
 public abstract class Klassifikaator {
     @Id
     private int klassifikaatoriKood;
 
-    @Column(unique = true)
+    @Column
     @NotEmpty
     private String nimetus;
 
