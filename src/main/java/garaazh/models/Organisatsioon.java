@@ -1,9 +1,11 @@
 package garaazh.models;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * Created by kaarel on 12/04/15.
@@ -29,6 +31,7 @@ public class Organisatsioon {
     private String aadress;
 
     @Column
+    @Email
     @NotEmpty
     private String eMail;
 
@@ -38,6 +41,14 @@ public class Organisatsioon {
     private Riik riik;
 
     public Organisatsioon() {
+    }
+
+    public Organisatsioon(String registriKood, String nimi, String aadress, String eMail, Riik riik) {
+        this.registriKood = registriKood;
+        this.nimi = nimi;
+        this.aadress = aadress;
+        this.eMail = eMail;
+        this.riik = riik;
     }
 
     public int getOrganisatsiooniKood() {
@@ -68,9 +79,19 @@ public class Organisatsioon {
         this.riik = riik;
     }
 
-    public Organisatsioon(String registriKood, String nimi, Riik riik) {
-        this.registriKood = registriKood;
-        this.nimi = nimi;
-        this.riik = riik;
+    public String getAadress() {
+        return aadress;
+    }
+
+    public void setAadress(String aadress) {
+        this.aadress = aadress;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
     }
 }

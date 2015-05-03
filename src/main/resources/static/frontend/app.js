@@ -2,7 +2,7 @@
  * Created by kaarel on 26/04/15.
  */
 
-angular.module("garaazh", ["ui.router"]);
+angular.module("garaazh", ["ui.router", "ui.bootstrap"]);
 
 angular.module("garaazh").constant("API", "http://localhost:8080/api");
 
@@ -30,7 +30,7 @@ angular.module("garaazh").config(function($stateProvider, $urlRouterProvider, $h
             controller: "AddController"
         });
 
-        $httpProvider.interceptors.push(function(API) {
+        $httpProvider.interceptors.push(function(API, $injector) {
             return {
                 'request': function(config) {
                     if(config.api)
@@ -41,6 +41,26 @@ angular.module("garaazh").config(function($stateProvider, $urlRouterProvider, $h
 
                 'response': function(response) {
                     return response;
+                },
+
+                'responseError': function(rejection) {
+                    $injector.invoke(function($modal, $q){
+                        $modal.open({
+                            templateUrl: "templates/error.html",
+                            controller: function($scope, error){
+                                $scope.error = error;
+                            },
+                            resolve: {
+                                error: function() {
+                                    return rejection.data;
+                                }
+                            }
+                        });
+                    });
+
+                    console.log(rejection.data);
+
+                    return $q.reject(rejection);
                 }
             };
         });
@@ -69,8 +89,6 @@ angular.module("garaazh").controller("AddController", function($scope, $http, $s
             data: $scope.kaup
         }).success(function(response){
             $state.go("base.list");
-        }).error(function(reject){
-            alert("Vigased andmed!");
         });
     };
 
@@ -82,17 +100,7 @@ angular.module("garaazh").controller("AddController", function($scope, $http, $s
             data: $scope.kaup
         }).success(function(response){
             $state.go("base.list");
-        }).error(function(reject){
-            alert("Midagi läks valesti..");
         });
-    };
-
-    $scope.addOmadus = function(){
-        $scope.kaup.omadused.push({
-            omadus: angular.copy($scope.uusOmadus),
-            vaartus: ""
-        });
-        delete $scope.uusOmadus;
     };
 
     var requests = [$http({
@@ -105,11 +113,7 @@ angular.module("garaazh").controller("AddController", function($scope, $http, $s
         api: true
     }), $http({
         method: "GET",
-        url: "/omadused",
-        api: true
-    }), $http({
-        method: "GET",
-        url: "/seisundid",
+        url: "/staatused",
         api: true
     }), $http({
         method: "GET",
@@ -127,12 +131,11 @@ angular.module("garaazh").controller("AddController", function($scope, $http, $s
     $q.all(requests).then(function(responses){
         $scope.tarnijad = responses[0].data;
         $scope.tootjad = responses[1].data;
-        $scope.omadused = responses[2].data;
-        $scope.seisundid = responses[3].data;
-        $scope.kategooriad = responses[4].data;
+        $scope.staatused = responses[2].data;
+        $scope.kategooriad = responses[3].data;
 
-        if(responses[5]) {
-            $scope.kaup = responses[5].data;
+        if(responses[4]) {
+            $scope.kaup = responses[4].data;
 
             for(var i in $scope.tarnijad)
                 if(angular.equals($scope.tarnijad[i], $scope.kaup.tarnija)){
@@ -147,14 +150,14 @@ angular.module("garaazh").controller("AddController", function($scope, $http, $s
                 }
 
             for(var i in $scope.kategooriad)
-                if(angular.equals($scope.kategooriad[i], $scope.kaup.kategooria)){
-                    $scope.kaup.kategooria = $scope.kategooriad[i];
+                if(angular.equals($scope.kategooriad[i], $scope.kaup.kaubaKategooria)){
+                    $scope.kaup.kaubaKategooria = $scope.kategooriad[i];
                     break;
                 }
 
-            for(var i in $scope.seisundid)
-                if(angular.equals($scope.seisundid[i], $scope.kaup.seisund)){
-                    $scope.kaup.seisund = $scope.seisundid[i];
+            for(var i in $scope.staatused)
+                if(angular.equals($scope.staatused[i], $scope.kaup.kaubaStaatus)){
+                    $scope.kaup.kaubaStaatus = $scope.staatused[i];
                     break;
                 }
 

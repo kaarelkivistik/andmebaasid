@@ -25,8 +25,16 @@ public class Tootja extends Organisatsioon {
     public Tootja() {
     }
 
-    public Tootja(int organisatsiooniKood, String registriKood, String nimi, Riik riik, Float hinne) {
-        super(organisatsiooniKood, registriKood, nimi, riik);
+    public Tootja(String registriKood, String nimi, String aadress, String eMail, Riik riik, Float hinne) {
+        super(registriKood, nimi, aadress, eMail, riik);
+        this.hinne = hinne;
+    }
+
+    public Float getHinne() {
+        return hinne;
+    }
+
+    public void setHinne(Float hinne) {
         this.hinne = hinne;
     }
 }

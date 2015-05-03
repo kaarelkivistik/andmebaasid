@@ -8,8 +8,8 @@
             <th>Tarnija</th>
         </thead>
         <tbody>
-            <tr ng-repeat="kaup in kaubad" ui-sref="base.edit({kood:kaup.kood})">
-                <td ng-bind="kaup.kood"></td>
+            <tr ng-repeat="kaup in kaubad" ui-sref="base.edit({kood:kaup.kaubaKood})">
+                <td ng-bind="kaup.kaubaKood"></td>
                 <td ng-bind="kaup.nimetus"></td>
                 <td ng-bind="kaup.hind"></td>
                 <td ng-bind="kaup.tootja.nimi"></td>

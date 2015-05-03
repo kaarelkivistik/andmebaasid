@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
@@ -16,15 +17,16 @@ import java.math.BigDecimal;
 public class Kaup {
 
     @Id
-    private long kaubaKood;
+    @Column(length = 20)
+    private String kaubaKood;
 
     @Column
     @NotEmpty
     private String nimetus;
 
     @Column
-    @NotNull
     @DecimalMin("0.0")
+    @NotNull
     private BigDecimal hind;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
@@ -67,11 +69,37 @@ public class Kaup {
     public Kaup() {
     }
 
-    public long getKaubaKood() {
+    public Kaup(String kaubaKood,
+                String nimetus,
+                BigDecimal hind,
+                KaubaStaatus kaubaStaatus,
+                KaubaKategooria kaubaKategooria,
+                Tootja tootja,
+                Tarnija tarnija,
+                Tootaja tootaja,
+                int pikkus,
+                int laius,
+                int korgus,
+                String pildiAadress) {
+        this.kaubaKood = kaubaKood;
+        this.nimetus = nimetus;
+        this.hind = hind;
+        this.kaubaStaatus = kaubaStaatus;
+        this.kaubaKategooria = kaubaKategooria;
+        this.tootja = tootja;
+        this.tarnija = tarnija;
+        this.tootaja = tootaja;
+        this.pikkus = pikkus;
+        this.laius = laius;
+        this.korgus = korgus;
+        this.pildiAadress = pildiAadress;
+    }
+
+    public String getKaubaKood() {
         return kaubaKood;
     }
 
-    public void setKaubaKood(int kood) {
+    public void setKaubaKood(String kood) {
         this.kaubaKood = kood;
     }
 

@@ -1,8 +1,10 @@
 package garaazh.models;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 /**
  * Created by kaarel on 26/04/15.
@@ -20,15 +22,20 @@ public class Tootaja {
     private String isikukood;
 
     @Column
+    @NotEmpty
     private String eesnimi;
 
     @Column
+    @NotEmpty
     private String perenimi;
 
-    @Column(unique = true)
+    @Column
+    @Email
+    @NotEmpty
     private String eMail;
 
     @Column
+    @NotEmpty
     private String parool;
 
     public Tootaja() {

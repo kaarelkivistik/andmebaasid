@@ -2,7 +2,8 @@ package garaazh.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.math.BigDecimal;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by kaarel on 20/04/15.
@@ -12,13 +13,23 @@ import java.math.BigDecimal;
 public class Tarnija extends Organisatsioon {
 
     @Column
-    private BigDecimal tarneaeg;
+    @DecimalMin("0.0")
+    @NotNull
+    private float tarneaeg;
 
     public Tarnija() {
     }
 
-    public Tarnija(int organisatsiooniKood, String registriKood, String nimi, Riik riik, BigDecimal tarneaeg) {
-        super(organisatsiooniKood, registriKood, nimi, riik);
+    public Tarnija(String registriKood, String nimi, String aadress, String eMail, Riik riik, float tarneaeg) {
+        super(registriKood, nimi, aadress, eMail, riik);
+        this.tarneaeg = tarneaeg;
+    }
+
+    public float getTarneaeg() {
+        return tarneaeg;
+    }
+
+    public void setTarneaeg(float tarneaeg) {
         this.tarneaeg = tarneaeg;
     }
 }
