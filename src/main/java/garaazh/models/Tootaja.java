@@ -8,10 +8,11 @@ import javax.persistence.*;
  * Created by kaarel on 26/04/15.
  */
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(name = "UK_e_mail_on_unikaalne", columnNames = {"e_mail"}))
+@Table(uniqueConstraints = @UniqueConstraint(name = "UK_e_mail_on_unikaalne", columnNames = {"eMail"}))
 public class Tootaja {
 
     @Id
+    @GeneratedValue
     private int tootajaKood;
 
     @Column
@@ -33,8 +34,7 @@ public class Tootaja {
     public Tootaja() {
     }
 
-    public Tootaja(int tootajaKood, String isikukood, String eesnimi, String perenimi, String eMail, String parool) {
-        this.tootajaKood = tootajaKood;
+    public Tootaja(String isikukood, String eesnimi, String perenimi, String eMail, String parool) {
         this.isikukood = isikukood;
         this.eesnimi = eesnimi;
         this.perenimi = perenimi;

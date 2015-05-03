@@ -13,6 +13,7 @@ import javax.validation.constraints.NotNull;
 public class Organisatsioon {
 
     @Id
+    @GeneratedValue
     private int organisatsiooniKood;
 
     @Column
@@ -67,9 +68,7 @@ public class Organisatsioon {
         this.riik = riik;
     }
 
-    public Organisatsioon(int organisatsiooniKood, String registriKood, String nimi, Riik riik) {
-
-        this.organisatsiooniKood = organisatsiooniKood;
+    public Organisatsioon(String registriKood, String nimi, Riik riik) {
         this.registriKood = registriKood;
         this.nimi = nimi;
         this.riik = riik;

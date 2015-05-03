@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class Kaup {
 
     @Id
-    private int kaubaKood;
+    private long kaubaKood;
 
     @Column
     @NotEmpty
