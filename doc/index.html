@@ -769,12 +769,17 @@
                             <tr>
                                 <td>KaubaStaatus</td>
                                 <td>Klassifikaatorite register</td>
-                                <td>Kauba_taatus pärib kõik Klassifikaator atribuudid. Andmebaasis tuleb iga registreeritud kauba korral muuhulgas registreerida selle kauba hetke staatus. Kui kauba staatus muutub, siis tuleb uus staatus andmebaasis registreerida. </td>
+                                <td>Andmebaasis tuleb iga registreeritud kauba korral muuhulgas registreerida selle kauba hetke staatus. Kui kauba staatus muutub, siis tuleb uus staatus andmebaasis registreerida. </td>
                             </tr>
                             <tr>
                                 <td>KaubaKategooria</td>
                                 <td>Klassifikaatorite register</td>
-                                <td>Kategooria pärib kõik Klassifikaator atribuudid. Igal kaubal on kategooria, kuhu ta kuulub, mis väljendab tema tüüpi, näiteks kas kaup on emaplaat või termopasta.</td>
+                                <td>Igal kaubal on kategooria, kuhu ta kuulub, mis väljendab tema tüüpi, näiteks kas kaup on emaplaat või termopasta.</td>
+                            </tr>
+                            <tr>
+                                <td>Riik</td>
+                                <td>Klassifikaatorite register</td>
+                                <td>Iga organisatsioon kuulub ühte riiki.</td>
                             </tr>
                             
                            
@@ -827,8 +832,15 @@
                                     <td>Organisatsioon</td>
                                     <td>e_mail</td>
                                     <td>Organisatsiooni kontakt e-mail. <br>
-                                    {e_mail peab sisaldama "@" märki ning on unikaalne}</td>
+                                        {e_mail peab sisaldama "@" märki ning on unikaalne}</td>
                                     <td>kontakt@org.ru</td>
+                                </tr>
+                                <tr>
+                                    <td>Organisatsioon</td>
+                                    <td>riik</td>
+                                    <td>Riik, kuhu organisatsioon kuulub. Viide riigi klassifikaatorile.<br>
+                                        {Positiivne täiskohaline arv, mis pole NULL ja viitab riigile}</td>
+                                    <td>1</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
@@ -845,7 +857,7 @@
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
-                                    <td>valjamuugi_hind</td>
+                                    <td>hind</td>
                                     <td>Antud toote väljamüügi hind eurodes. <br>
                                     {Peab sisaldama ainult numbreid. Hind on eurodes. Ei tohi olla negatiivne ega null. 
                                     Hind sisaldab käibemaksu. Hind võib sisaldada komakohti.}</td>
@@ -957,35 +969,81 @@
                                     <td>marisupertugevparool</td>
                                 </tr>
                                 <tr>
-                                    <td>Klassifikaator</td>
-                                    <td>klassifikaatori_kood</td>
-                                    <td>Klassifikaatori väärtust esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks. <br>
-                                        {{Kood on numbriline täisarv ning ei ole NULL. Klassifikaatori kood on unikaalne.}}</td>
+                                    <td>KaubaStaatus</td>
+                                    <td>kauba_staatuse_kood</td>
+                                    <td>Kauba staatust esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks.<br>
+                                        {täisarvuline number, primaarvõti}</td>
                                     <td>1</td>
                                 </tr>
                                 <tr>
-                                    <td>Klassifikaator</td>
+                                    <td>KaubaStaatus</td>
                                     <td>nimetus</td>
-                                    <td>Klassifikaatori väärtuse ametlik nimetus. <p>{Nimetus ei tohi olla tühi string või ainult tühikutest koosnev string.}</p></td>
-                                    <td>Aktiivne</td>
+                                    <td>Staatuse nimetus.<br>
+                                        {ei tohi olla tühi ega tühikutest koosnev string, ei tohi olla NULL, on unikaalne}</td>
+                                    <td>aktiivne</td>
                                 </tr>
                                 <tr>
-                                    <td>Klassifikaator</td>
+                                    <td>KaubaStaatus</td>
                                     <td>kirjeldus</td>
-                                    <td>Klassifikaatori väärtuse vabatekstiline kirjeldus. <br>
-                                        {Kirjeldus ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
-                                    <td>Kaup on aktiivne</td>
+                                    <td>Staatuse kirjeldus.</td>
+                                    <td>Kaup on aktiivne ning müügis.</td>
                                 </tr>
                                 <tr>
-                                    <td>Klassifikaator</td>
-                                    <td>ylem_kategooria</td>
-                                    <td>Klassifikaatori ülemkategooriat näitav väärtus, selle puudumisel on ta NULL. Näiteks väljendab, et emaplaadi ülemkategooria on arvutikomponent. <br>
-                                        {Ülemkategooria on täisarvuline number, mis võib olla null.}
-                                    </td>
-                                    <td>2</td>
+                                    <td>KaubaKategooria</td>
+                                    <td>kauba_kategooria_kood</td>
+                                    <td>Kauba kategooriat esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks.<br>
+                                        {täisarvuline number, primaarvõti}</td>
+                                    <td>1</td>
                                 </tr>
-                               
-                                 
+                                <tr>
+                                    <td>KaubaKategooria</td>
+                                    <td>nimetus</td>
+                                    <td>Kategooria nimetus.<br>
+                                        {ei tohi olla tühi ega tühikutest koosnev string, ei tohi olla NULL, on unikaalne}</td>
+                                    <td>aktiivne</td>
+                                </tr>
+                                <tr>
+                                    <td>KaubaKategooria</td>
+                                    <td>kirjeldus</td>
+                                    <td>Kategooria kirjeldus.</td>
+                                    <td>mATX korpusele sobivad emaplaadid.</td>
+                                </tr>
+                                <tr>
+                                    <td>KaubaKategooria</td>
+                                    <td>ylem_kategooria</td>
+                                    <td>Viide ülemkategooriale.<br>
+                                        {täisarvuline number}</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Riik</td>
+                                    <td>riigi_kood</td>
+                                    <td>ISO 3166 standardile vastav riigi kood. <br>
+                                        {täisarvuline number, primaarvõti}</td>
+                                    <td>233</td>
+                                </tr>
+                                <tr>
+                                    <td>Riik</td>
+                                    <td>nimi</td>
+                                    <td>Riigi nimi. <br>
+                                        {ei tohi olla tühi ega tühikutest koosnev string, ei tohi olla NULL, on unikaalne}</td>
+                                    <td>Eesti</td>
+                                </tr>
+                                <tr>
+                                    <td>Riik</td>
+                                    <td>identifikaator_2_tahte</td>
+                                    <td>ISO 3166 standardile vastav 2-täheline riigi identifikaator.<br>
+                                        {peab sisaldama 2 tähte A-Z}</td>
+                                    <td>EE</td>
+                                </tr>
+                                <tr>
+                                    <td>Riik</td>
+                                    <td>identifikaator_3_tahte</td>
+                                    <td>ISO 3166 standardile vastav 3-täheline riigi identifikaator.<br>
+                                        {peab sisaldama 3 tähte A-Z}</td>
+                                    <td>EE</td>
+                                </tr>
+
                             </table>   
                         </div>
                         <h3>2.2.2 Andmebaasioperatsioonide lepingud</h3>
