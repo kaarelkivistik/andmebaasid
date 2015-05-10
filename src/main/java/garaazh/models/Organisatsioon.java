@@ -11,6 +11,7 @@ import javax.validation.constraints.Pattern;
  * Created by kaarel on 12/04/15.
  */
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(name = "UK_org_on_riigiti_unikaalne", columnNames = {"registriKood", "riik"}))
 @Inheritance
 public class Organisatsioon {
 

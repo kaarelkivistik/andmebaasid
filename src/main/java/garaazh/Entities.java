@@ -12,9 +12,9 @@ public class Entities {
     public static final Tootaja TOOTAJA_LAGUNOV = new Tootaja("39212344321", "Laomees", "Lagunov", "laomees@hot.ee", "JkbHb7tVt");
 
 
-    public static final Riik RIIK_EESTI = new Riik((short) 233, "Eesti", "EE", "EST");
+    public static final Riik RIIK_EESTI = new Riik("EE", "Eesti");
 
-    public static final Riik RIIK_LEEDU = new Riik((short) 440, "Leedu", "LT", "LTU");
+    public static final Riik RIIK_LEEDU = new Riik("LT", "Leedu");
 
 
     public static final KaubaStaatus KAUBA_STAATUS_AKTIIVNE =
