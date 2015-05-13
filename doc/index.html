@@ -802,13 +802,7 @@
                                     </td>
                                     <td>110A2746B2C</td>
                                 </tr>
-                                <tr>
-                                    <td>Organisatsioon</td>
-                                    <td>riik</td>
-                                    <td>Vastava organisatsiooni riiki väljendav number <br>
-                                        {Riik on täisarvuline number, mis on igale riigile unikaalne ning seatakse antud veebipoe poolt. Väärtus on kohustuslik ning koosneb ainult numbritest.}</td>
-                                    <td>4</td>
-                                </tr>
+                               
                                  <tr>
                                     <td>Organisatsioon</td>
                                     <td>nimi</td>
@@ -840,7 +834,7 @@
                                     <td>Kaup</td>
                                     <td>nimetus</td>
                                     <td>Kauba täielik nimetus <br>
-                                        {Kohustuslik nimi ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
+                                        {Kohustuslik unikaalne nimi ei tohi olla tühi string või ainult tühikutest koosnev string.}</td>
                                     <td>Dell Inspiron 15R n5010</td>
                                 </tr>
                                  <tr>
@@ -853,51 +847,36 @@
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
-                                    <td>kauba_staatus</td>
-                                    <td>Antud toote staatus numbrina. <br>
-                                        {Kauba_staatus on täisarv, mis koosneb ainult numbritest ning on kohustuslik}</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Kaup</td>
-                                    <td>kauba_kategooria</td>
-                                    <td>Antud toote kategooria numbrina. Näitab näiteks et toode kuulub rüperaalide kategooriasse.<br>
-                                        {Kauba_kategooria on täisarv, mis koosneb ainult numbritest ning on kohustuslik}</td>
-                                    <td>1</td>
-                                </tr>
-                                 <tr>
-                                    <td>Kaup</td>
                                     <td>korgus</td>
                                     <td>Antud toote kõrgus millimeetrites. <br>
-                                        {Kõrgus on kohustuslik täisarvuline number. Ei ole tühi või ainult tühikutest koosnev string. Koosneb ainult numbritest}</td>
+                                        {Kõrgus on positiivne täisarvuline number. }</td>
                                     <td>200</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
                                     <td>laius</td>
                                     <td>Antud toote laius millimeetrites. <br>
-                                        {Laius on kohustuslik täisarvuline number. Ei ole tühi või ainult tühikutest koosnev string. Koosneb ainult numbritest}</td>
+                                        {Kõrgus on positiivne täisarvuline number.}</td>
                                     <td>200</td>
                                 </tr>
                                   <tr>
                                     <td>Kaup</td>
                                     <td>pikkus</td>
                                     <td>Antud toote pikkus millimeetrites. <br>
-                                        {Pikkus on kohustuslik täisarvuline number. Ei ole tühi või ainult tühikutest koosnev string. Koosneb ainult numbritest}</td>
+                                        {Kõrgus on positiivne täisarvuline number.}</td>
                                     <td>200</td>
                                 </tr>
                                  <tr>
                                     <td>Kaup</td>
                                     <td>pildi_aadress</td>
-                                    <td>Antud toote pildi aadress.<br>
-                                        {Aadress koosneb tähtedest ja numbritest. Ei või olla tühi või tühikutest koosnev string}</td>
+                                    <td>Antud toote pildi aadress.</td>
                                     <td>200</td>
                                 </tr>
                                  <tr>
                                     <td>Tootja</td>
                                     <td>hinne</td>
                                     <td>Kauba tootjale antud hinnang tema toodete kvaliteedi kohta <br>
-                                    {Peab sisaldama ainult numbreid, võib olla negatiivne, võib olla komakohtadega.}</td>
+                                    {Peab sisaldama ainult numbreid nullist viieni, võib olla komakohtadega.}</td>
                                     <td>5.0</td>
                                 </tr>
                                  <tr>   
@@ -946,7 +925,8 @@
                                 <tr>
                                     <td>Töötaja</td>
                                     <td>parool</td>
-                                    <td>Töötaja kasutajatunnusega seotud töötaja identsust tõendav teadmuslik (miski, mida töötaja teab) volitustõend. </td>
+                                    <td>Töötaja kasutajatunnusega seotud töötaja identsust tõendav teadmuslik (miski, mida töötaja teab) volitustõend. <br>
+                                        {String ei ole tühi või tühikutest koosnev}</td>
                                     <td>marisupertugevparool</td>
                                 </tr>
                                 <tr>
@@ -980,22 +960,15 @@
                                     <td>Kauba_kategooria</td>
                                     <td>nimetus</td>
                                     <td>Kategooria nimetus.<br>
-                                        {ei tohi olla tühi ega tühikutest koosnev string, on kohustuslik, on unikaalne}</td>
+                                        {ei tohi olla tühi ega tühikutest koosnev string, on kohustuslik}</td>
                                     <td>aktiivne</td>
                                 </tr>
                                 <tr>
                                     <td>Kauba_kategooria</td>
                                     <td>kirjeldus</td>
-                                    <td>Kategooria kirjeldus. <br>
-                                    {String ei ole tühi või tühikutest koosnev}</td>
+                                    <td>Kategooria kirjeldus.
+                                    </td>
                                     <td>mATX korpusele sobivad emaplaadid.</td>
-                                </tr>
-                                <tr>
-                                    <td>Kauba_kategooria</td>
-                                    <td>ylem_kategooria</td>
-                                    <td>Viide ülemkategooriale.<br>
-                                        {täisarvuline positiivne number}</td>
-                                    <td>1</td>
                                 </tr>
                                 <tr>
                                     <td>Riik</td>
@@ -1017,7 +990,7 @@
                         </div>
                         <h3>2.2.2 Andmebaasioperatsioonide lepingud</h3>
                         <div>
-                            <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine((kauba_kood, nimetus, pikkus, kõrgus, laius, pildi aadress, valjamuugi_hind, viide kauba_kategooriale, viide Tootjale, viide Tarnijale, viide Töötajale)</u></b></p>
+                            <p><font color="blue">(OP2.1)</font> <b><u>Kauba loomine((kauba_kood, nimetus, pikkus, kõrgus, laius, pildi aadress, hind, viide kauba_kategooriale, viide Tootjale, viide Tarnijale, viide Töötajale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Tootja ja Tarnija on registreeritud.</li>
@@ -1028,7 +1001,7 @@
                                 <li>On loodud uus Kaup.</li>
                                 <li>Kaup.kauba_kood = kauba unikaalne kood.</li>
                                 <li>Kaup.nimetus = kauba nimetus.</li>
-                                <li>Kaup.valjamuugi_hind = väljamüügi hind.</li>
+                                <li>Kaup.hind = väljamüügi hind.</li>
                                 <li>Kaup on seotud Kauba_staatus’ega „aktiivne“.</li>
                                 <li>Kaup on seotud kauba kategooriaga</li>
                                 <li>Kaubale on seatud pikkus, kõrgus, laius ja pildi aadress.</li>
@@ -1071,7 +1044,7 @@
                         <br>
 
                         <div>
-                            <p><font color="blue">(OP6.1)</font> <b><u>Kauba info muutmine(kauba_kood, valjamuugi_hind, nimetus, pikkus, kõrgus, laius, pildi aadress, viide kauba_kategooriale, viide Tootjale, viide Tarnijale)</u></b></p>
+                            <p><font color="blue">(OP6.1)</font> <b><u>Kauba info muutmine(kauba_kood, hind, nimetus, pikkus, kõrgus, laius, pildi aadress, viide kauba_kategooriale, viide Tootjale, viide Tarnijale)</u></b></p>
                             <p><b>Eeltingimused:</b></p>
                             <ul>
                                 <li>Kaup on loodud</li>
@@ -1080,7 +1053,7 @@
                             <ul>
                                 <li>Kaup.kauba_kood = kauba unikaalne kood.</li>
                                 <li>Kaup.nimetus = kauba nimetus.</li>
-                                <li>Kaup.valjamuugi_hind = väljamüügi hind.</li>
+                                <li>Kaup.hind = väljamüügi hind.</li>
                                 <li>Kaup on seotud kauba staatusega.</li>
                                 <li>Kaup on seotud Kauba kategooria kuhu kaup kuulub</li>
                                 <li>Kaubale on seatud uus pikkus, kõrgus, laius ja pildi aadress.</li>
@@ -1188,7 +1161,7 @@
                             <td>R</td>
                             <td>R</td>
                             <td>R</td>
-                            <td>RU</td>
+                            <td>R</td>
                             <td>R</td>
                             <td>R</td>
                         </tr>
