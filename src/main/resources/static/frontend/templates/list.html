@@ -6,6 +6,7 @@
             <th>Hind</th>
             <th>Tootja</th>
             <th>Tarnija</th>
+            <th>Seisund</th>
         </thead>
         <tbody>
             <tr ng-repeat="kaup in kaubad" ui-sref="base.edit({kood:kaup.kaubaKood})">
@@ -14,6 +15,7 @@
                 <td ng-bind="kaup.hind"></td>
                 <td ng-bind="kaup.tootja.nimi"></td>
                 <td ng-bind="kaup.tarnija.nimi"></td>
+                <td ng-bind="kaup.kaubaStaatus.nimetus"></td>
             </tr>
         </tbody>
     </table>

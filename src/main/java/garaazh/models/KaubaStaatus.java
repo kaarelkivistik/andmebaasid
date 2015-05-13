@@ -2,15 +2,13 @@ package garaazh.models;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by kaarel on 12/04/15.
  */
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(name = "UK_nimetus_on_unikaalne", columnNames = "nimetus"))
 public class KaubaStaatus {
 
     @Id

@@ -22,7 +22,8 @@ CREATE TABLE `kauba_staatus` (
   `kauba_staatuse_kood` smallint(6) NOT NULL,
   `kirjeldus` varchar(255) DEFAULT NULL,
   `nimetus` varchar(255) NOT NULL,
-  PRIMARY KEY (`kauba_staatuse_kood`)
+  PRIMARY KEY (`kauba_staatuse_kood`),
+  UNIQUE KEY `UK_nimetus_on_unikaalne` (`nimetus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,6 +45,7 @@ CREATE TABLE `kaup` (
   `tootaja` int(11) NOT NULL,
   `tootja` int(11) NOT NULL,
   PRIMARY KEY (`kauba_kood`),
+  UNIQUE KEY `UK_nimetus_on_unikaalne` (`nimetus`),
   KEY `FK_kauba_kategooria` (`kauba_kategooria`),
   KEY `FK_kauba_staatus` (`kauba_staatus`),
   KEY `FK_kauba_tarnija` (`tarnija`),
@@ -68,10 +70,11 @@ CREATE TABLE `organisatsioon` (
   `e_mail` varchar(255) NOT NULL,
   `nimi` varchar(255) NOT NULL,
   `registri_kood` varchar(255) NOT NULL,
-  `tarneaeg` float NOT NULL,
-  `hinne` float NOT NULL,
-  `riik` smallint(6) NOT NULL,
+  `tarneaeg` float DEFAULT NULL,
+  `hinne` float DEFAULT NULL,
+  `riik` varchar(2) NOT NULL,
   PRIMARY KEY (`organisatsiooni_kood`),
+  UNIQUE KEY `UK_org_on_riigiti_unikaalne` (`registri_kood`,`riik`),
   KEY `FK_organisatsiooni_riik` (`riik`),
   CONSTRAINT `FK_organisatsiooni_riik` FOREIGN KEY (`riik`) REFERENCES `riik` (`riigi_kood`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
@@ -82,12 +85,10 @@ CREATE TABLE `organisatsioon` (
 
 DROP TABLE IF EXISTS `riik`;
 CREATE TABLE `riik` (
-  `riigi_kood` smallint(6) NOT NULL,
-  `identifikaator2tahte` varchar(2) NOT NULL,
-  `identifikaator3tahte` varchar(3) NOT NULL,
+  `riigi_kood` varchar(2) NOT NULL,
   `nimi` varchar(255) NOT NULL,
   PRIMARY KEY (`riigi_kood`),
-  UNIQUE KEY `UK_riik_on_unikaalne` (`nimi`,`identifikaator2tahte`,`identifikaator3tahte`)
+  UNIQUE KEY `UK_riik_on_unikaalne` (`nimi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

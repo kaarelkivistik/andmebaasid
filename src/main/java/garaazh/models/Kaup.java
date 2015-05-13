@@ -1,10 +1,12 @@
 package garaazh.models;
 
+import garaazh.Entities;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
@@ -13,7 +15,7 @@ import java.math.BigDecimal;
  */
 
 @Entity
-// me = "Kaubad", uniqueConstraints = {@UniqueConstraint(columnNames = {"kood"})})
+@Table(uniqueConstraints = @UniqueConstraint(name = "UK_nimetus_on_unikaalne", columnNames = "nimetus"))
 public class Kaup {
 
     @Id
@@ -55,18 +57,22 @@ public class Kaup {
     private Tootaja tootaja;
 
     @Column
+    @Min(0)
     private int pikkus;
 
     @Column
+    @Min(0)
     private int laius;
 
     @Column
+    @Min(0)
     private int korgus;
 
     @Column
     private String pildiAadress;
 
     public Kaup() {
+        this.kaubaStaatus = Entities.KAUBA_STAATUS_AKTIIVNE;
     }
 
     public Kaup(String kaubaKood,
