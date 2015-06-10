@@ -105,8 +105,8 @@ public class Kaup {
         return kaubaKood;
     }
 
-    public void setKaubaKood(String kood) {
-        this.kaubaKood = kood;
+    public void setKaubaKood(String kaubaKood) {
+        this.kaubaKood = kaubaKood;
     }
 
     public String getNimetus() {
