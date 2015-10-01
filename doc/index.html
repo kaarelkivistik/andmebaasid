@@ -79,11 +79,10 @@
         <li><span><br>2.4 Infosüsteemi rollide kirjeldused</span>
         </ol>
         <ol>
-        <li><span><br><b>3. Loogiline disain</b></span></li>
-        <li><span>3.1 Laiendatud kaupade registri loogiline disain</span>
+        <li><span><br><b>3. Füüsiline disain</b></span></li>
+        <li><span>3.1 Laiendatud kaupade registri füüsiline disain</span>
             <ol>
-                <li>&nbsp;3.1.1 Loogiline andmebaasiskeem<br>
-                &nbsp;&nbsp;3.1.1.1 Andmebaasi diagramm
+                <li>&nbsp;3.1.1 Füüsiline andmebaasiskeem<br>
                 </li>
             </ol>
         </ol>
@@ -330,10 +329,7 @@
                         Kaupade register
                     </li>
                     <li>
-                        Tootjate register
-                    </li>
-                    <li>
-                        Tarnijate register
+                        Organisatsioonide register
                     </li>
                     <li>
                         Tellimuste register
@@ -394,12 +390,9 @@
             <div>
                 <ul>
                     <li>Kaupade register</li>
-                    <li>Tootjate register</li>
                     <li>Klassifikaatorite register</li>
-                    <li>Tarnijate register</li>
                     <li>Töötajate register</li>
                     <li>Organisatsioonide register</li>
-                    
                 </ul>
             </div>
             <h3>1.2.4 Allsüsteemi ühe põhiprotsessi tegevusdiagramm</h3>
@@ -555,11 +548,9 @@
 
                     <h3>1.3.5 Seosed teiste registritega</h3>
                         <ul>
-                            <li><b>Tootjate register</b> - Seotud olemitüübi <b>Tootja</b> kaudu. Igal kaubal on kindel Tootja.</li>
                             <li><b>Klassifikaatorite register</b> - Kaubal on erinevaid klassifikaatoreid, näiteks staatus ja kategooria.</li>
                             <li><b>Töötajate register</b> - Seotud olemitüübi <b>Töötaja</b> kaudu. Kindel töötaja lisas kauba.</li>
-                            <li><b>Tarnijate register</b> - Seotud olemitüübi <b>Tarnija</b> kaudu. Igal kaubal on tarnija.</li>
-                             <li><b>Organisatsioonide register</b> - Seotud olemitüübi <b>Organisatsioon</b> kaudu. Organisatsioon on Tootja ja Tarnija ülemklass.</li>
+                             <li><b>Organisatsioonide register</b> - Seotud olemitüübi <b>Organisatsioon</b> kaudu. Seotud olemitüübi <b>Tootja</b> ja <b>Tarnija</b> kaudu</li>
                         </ul>
 
                     <h3>1.3.6 Ärireeglid</h3>
@@ -747,12 +738,12 @@
                             </tr>
                             <tr>
                                 <td>Tootja</td>
-                                <td>Tootjate register</td>
+                                <td>Organisatsioonide register</td>
                                 <td>Tootja on kauba valmistanud äriettevõte.</td>
                             </tr>
                             <tr>
                                 <td>Tarnija</td>
-                                <td>Tarnijate register</td>
+                                <td>Organisatsioonide register</td>
                                 <td>Tarnija on ettevõte, kes vahendab kauba tootjalt lõpp-müüjale majandusliku kasu teenimise nimel</td>
                             </tr>
                            
@@ -1202,16 +1193,13 @@
                     </div>
 
                 </div>
-                <h1>3. Loogiline disain</h1>
+                <h1>3. Füüsiline disain</h1>
                 <div>
-                    <h2>3.1 Laiendatud kaupade registri loogiline disain</h2>
+                    <h2>3.1 Laiendatud kaupade registri füüsiline disain</h2>
                     <div>
-                        <h3>3.1.1 Loogiline andmebaasiskeem</h3>
+                        <h3>3.1.1 Füüsiline andmebaasiskeem</h3>
                         <div>
-                            <h4>3.1.1.1 Andmebaasi diagramm</h4>
-                            <div>
                                 <img src="img/Andmebaas.png" />
-                            </div>
                         </div>
                     </div>
                 </div>
