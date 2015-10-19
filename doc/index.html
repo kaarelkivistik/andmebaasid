@@ -758,6 +758,16 @@
                                 <td>Andmebaasis tuleb iga registreeritud kauba korral muuhulgas registreerida selle kauba hetke staatus. Kui kauba staatus muutub, siis tuleb uus staatus andmebaasis registreerida. </td>
                             </tr>
                             <tr>
+                                <td>TöötajaStaatus</td>
+                                <td>Klassifikaatorite register</td>
+                                <td>Andmebaasis tuleb iga registreeritud töötaja korral muuhulgas registreerida selle töötaja hetke staatus. Kui töötaja staatus muutub, siis tuleb uus staatus andmebaasis registreerida. </td>
+                            </tr>
+                            <tr>
+                                <td>TöötajaRoll</td>
+                                <td>Klassifikaatorite register</td>
+                                <td>Andmebaasis tuleb iga registreeritud töötaja korral muuhulgas registreerida selle töötaja hetke roll. Kui töötaja roll muutub, siis tuleb uus roll andmebaasis registreerida. </td>
+                            </tr>
+                            <tr>
                                 <td>KaubaKategooria</td>
                                 <td>Klassifikaatorite register</td>
                                 <td>Igal kaubal on kategooria, kuhu ta kuulub, mis väljendab tema tüüpi, näiteks kas kaup on emaplaat või termopasta.</td>
@@ -867,14 +877,14 @@
                                     <td>Tootja</td>
                                     <td>hinne</td>
                                     <td>Kauba tootjale antud hinnang tema toodete kvaliteedi kohta <br>
-                                    {Peab sisaldama ainult numbreid nullist viieni, võib olla komakohtadega.}</td>
+                                    {Peab sisaldama ainult numbreid nullist viieni, võib olla kuni kahe komakohaga.}</td>
                                     <td>5.0</td>
                                 </tr>
                                  <tr>   
                                     <td>Tarnija</td>
                                     <td>tarneaeg</td>
                                     <td>Tarnija poolt lubatud maksimaalne tarneaeg päevades. <br>
-                                    {Peab sisaldama ainult numbreid. Võib sisaldada komakohti. Ei tohi olla negatiivne}</td>
+                                    {Peab sisaldama ainult numbreid. Võib sisaldada kuni kahte komakohta. Ei tohi olla negatiivne}</td>
                                     <td>5.0</td>
                                 </tr>
                                 <tr>
@@ -901,7 +911,7 @@
                                  <tr>
                                     <td>Töötaja</td>
                                     <td>isikukood</td>
-                                    <td>Tootaja isikukood või sellele vastav kood olenevalt riigist. Koosneb tähtedest ja numbritest. Pole unikaalne, kuna riigiti võib kattuda. <br>
+                                    <td>Tootaja Eesti isikukood koosneb tähtedest ja numbritest. On unikaalne. Vastab Eesti isikoodi formaadile. <br>
                                         {String ei ole tühi või tühikutest koosnev}</td>
                                     <td>1123adsa21312</td>
                                 </tr>
@@ -912,50 +922,90 @@
                                     {e_mail peab sisaldama "@" märki. E-mail on unikaalne, kasutatakse kasutajatunnusena}</td>
                                     <td>mari.mets@firma.ee </td>
                                 </tr>
-                               
                                 <tr>
                                     <td>Töötaja</td>
                                     <td>parool</td>
                                     <td>Töötaja kasutajatunnusega seotud töötaja identsust tõendav teadmuslik (miski, mida töötaja teab) volitustõend. <br>
-                                        {String on vähemalt kuus tähemärki ja pole tühi või tühikutest koosnev}</td>
+                                        {String pole tühi või tühikutest koosnev, parooliväljal hoitakse andmebaasis hashi.}</td>
                                     <td>marisupertugevparool</td>
                                 </tr>
+
                                 <tr>
-                                    <td>Kauba_staatus</td>
-                                    <td>kauba_staatuse_kood</td>
-                                    <td>Kauba staatust esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks.<br>
+                                    <td>TöötajaStaatus</td>
+                                    <td>töötaja_staatuse_kood</td>
+                                    <td>Töötaja staatust esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks.<br>
                                         {Täisarvuline unikaalne kohustuslik number}</td>
                                     <td>1</td>
                                 </tr>
                                 <tr>
-                                    <td>Kauba_staatus</td>
+                                    <td>TöötajaStaatus</td>
                                     <td>nimetus</td>
                                     <td>Staatuse nimetus.<br>
                                         {Ei tohi olla tühi ega tühikutest koosnev string on unikaalne ja kohustuslik}</td>
                                     <td>aktiivne</td>
                                 </tr>
                                 <tr>
-                                    <td>Kauba_staatus</td>
+                                    <td>TöötajaStaatus</td>
+                                    <td>kirjeldus</td>
+                                    <td>Staatuse kirjeldus.</td>
+                                    <td>Töötaja on mitteaktiivne ja ei saa süsteemi opereerida.</td>
+                                </tr>
+                                <tr>
+                                    <td>TöötajaRoll</td>
+                                    <td>töötaja_rolli_kood</td>
+                                    <td>Töötaja rolli esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks.<br>
+                                        {Täisarvuline unikaalne kohustuslik number}</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>TöötajaRoll</td>
+                                    <td>nimetus</td>
+                                    <td>Rolli nimetus.<br>
+                                        {Ei tohi olla tühi ega tühikutest koosnev string on unikaalne ja kohustuslik}</td>
+                                    <td>Kaupade haldaja</td>
+                                </tr>
+                                <tr>
+                                    <td>TöötajaRoll</td>
+                                    <td>kirjeldus</td>
+                                    <td>Rolli kirjeldus.</td>
+                                    <td>Halduril on ligipääs kogu süsteemile.</td>
+                                </tr>
+                                <tr>
+                                    <td>KaubaStaatus</td>
+                                    <td>kauba_staatuse_kood</td>
+                                    <td>Kauba staatust esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks.<br>
+                                        {Täisarvuline unikaalne kohustuslik number}</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>KaubaStaatus</td>
+                                    <td>nimetus</td>
+                                    <td>Staatuse nimetus.<br>
+                                        {Ei tohi olla tühi ega tühikutest koosnev string on unikaalne ja kohustuslik}</td>
+                                    <td>aktiivne</td>
+                                </tr>
+                                <tr>
+                                    <td>KaubaStaatus</td>
                                     <td>kirjeldus</td>
                                     <td>Staatuse kirjeldus.</td>
                                     <td>Kaup on aktiivne ning müügis.</td>
                                 </tr>
                                 <tr>
-                                    <td>Kauba_kategooria</td>
+                                    <td>KaubaKategooria</td>
                                     <td>kauba_kategooria_kood</td>
                                     <td>Kauba kategooriat esitav kood, mida saab kasutada selle väärtuse lühidalt esitamiseks.<br>
                                         {Täisarvuline unikaalne kohustuslik number, primaarvõti}</td>
                                     <td>1</td>
                                 </tr>
                                 <tr>
-                                    <td>Kauba_kategooria</td>
+                                    <td>KaubaKategooria</td>
                                     <td>nimetus</td>
                                     <td>Kategooria nimetus.<br>
                                         {ei tohi olla tühi ega tühikutest koosnev string, on kohustuslik}</td>
-                                    <td>aktiivne</td>
+                                    <td>emaplaadid</td>
                                 </tr>
                                 <tr>
-                                    <td>Kauba_kategooria</td>
+                                    <td>KaubaKategooria</td>
                                     <td>kirjeldus</td>
                                     <td>Kategooria kirjeldus.
                                     </td>
@@ -1227,6 +1277,7 @@
                 4. Chisholm, M. (2000). Managing Reference Data in Enterprise Databases:
                    Binding Corporate Data to the Wider World. Morgan Kaufmann.
                </p> 
+               <p>5. Isikukoodide moodustamise, väljajagamise ja andmise kord. Elektrooniline Riigi Teataja. [WWW] https://www.riigiteataja.ee/akt/838530</p>
             </body>
 
             </html>
