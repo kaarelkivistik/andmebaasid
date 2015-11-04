@@ -74,12 +74,12 @@ INSERT INTO kaup(kauba_kood, hind, korgus, laius, nimetus, pikkus, pildi_aadress
 
 #Tootaja
 
-INSERT INTO kaup(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (1, 'hans@mets.ee', 'Hans', '38503053399', 'parool1', 'Mets');
+INSERT INTO tootaja(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (1, 'hans@mets.ee', 'Hans', '38503053399', 'parool1', 'Mets');
 
-INSERT INTO kaup(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (2, 'jaan@koer.ee', 'Jaan', '38404053539', 'parool2', 'Koer');
+INSERT INTO tootaja(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (2, 'jaan@koer.ee', 'Jaan', '38404053539', 'parool2', 'Koer');
 
-INSERT INTO kaup(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (3, 'nele@keel.ee', 'Nele', '49011124567', 'parool3', 'Keel');
+INSERT INTO tootaja(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (3, 'nele@keel.ee', 'Nele', '49011124567', 'parool3', 'Keel');
 
-INSERT INTO kaup(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (4, 'ingrid@leht.ee', 'Ingrid', '48503058475', 'parool4', 'Leht');
+INSERT INTO tootaja(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (4, 'ingrid@leht.ee', 'Ingrid', '48503058475', 'parool4', 'Leht');
 
-INSERT INTO kaup(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (5, 'jaanus@paber.ee', 'Jaanus', '38803084390', 'parool5', 'Paber');
+INSERT INTO tootaja(tootaja_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (5, 'jaanus@paber.ee', 'Jaanus', '38803084390', 'parool5', 'Paber');
