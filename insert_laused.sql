@@ -36,28 +36,28 @@ INSERT INTO garaazh.tootaja_staatus(tootaja_staatuse_kood, nimetus, kirjeldus) V
 
 #Riik
 
-INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES (1, 'EE', 'Eesti');
+INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES ('EE', 'Eesti');
 
-INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES (2, 'RU', 'Venemaa');
+INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES ('RU', 'Venemaa');
 
-INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES (3, 'LV', 'Läti');
+INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES ('LV', 'Läti');
 
-INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES (4, 'LT', 'Leedu');
+INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES ('LT', 'Leedu');
 
-INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES (5, 'FI', 'Soome');
+INSERT INTO garaazh.riik(riigi_kood, nimi) VALUES ('FI', 'Soome');
 
 
 #Organisatsioon
 
-INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027462, 'Akadeemia tee 5, Tallinn 93811, Eesti', 'info@samsung.com', 'Samsung','110A2746B2C', 5.0, 5.0, 'EE', );
+INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027462, 'Akadeemia tee 5, Tallinn 93811, Eesti', 'info@samsung.com', 'Samsung','110A2746B2C', 5.0, 5.0, 'EE');
 
-INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027463, 'Hobujaama 3, Tallinn 15334, Eesti', 'info@nokia.com', 'Nokia','210A2746B3D', 5.0, 5.0, 'EE', );
+INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027463, 'Hobujaama 3, Tallinn 15334, Eesti', 'info@nokia.com', 'Nokia','210A2746B3D', 5.0, 5.0, 'EE');
 
-INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027464, 'Vilde tee 18, Tallinn 13545, Eesti', 'info@dell.com', 'Dell','310A2746B4E', 5.0, 5.0, 'EE', );
+INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027464, 'Vilde tee 18, Tallinn 13545, Eesti', 'info@dell.com', 'Dell','310A2746B4E', 5.0, 5.0, 'EE');
 
-INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027465, 'Müürivahe 33, Tallinn 85773, Eesti', 'info@asus.com', 'Asus','410A2746B5F', 5.0, 5.0, 'EE', );
+INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027465, 'Müürivahe 33, Tallinn 85773, Eesti', 'info@asus.com', 'Asus','410A2746B5F', 5.0, 5.0, 'EE');
 
-INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027466, 'Viru tn 9, Tallinn 34283, Eesti', 'info@intel.com', 'Intel','510A2746B6G', 5.0, 5.0, 'EE', );
+INSERT INTO garaazh.organisatsioon(organisatsiooni_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (11027466, 'Viru tn 9, Tallinn 34283, Eesti', 'info@intel.com', 'Intel','510A2746B6G', 5.0, 5.0, 'EE');
 
 
 #Kaup 
