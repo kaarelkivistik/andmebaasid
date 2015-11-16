@@ -6,36 +6,36 @@
 
 /* Drop Tables */
 
-DROP TABLE IF EXISTS garaazh.tootaja_staatus CASCADE
+DROP TABLE IF EXISTS tootaja_staatus CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.tootaja_roll CASCADE
+DROP TABLE IF EXISTS tootaja_roll CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.tootaja CASCADE
+DROP TABLE IF EXISTS tootaja CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.riik CASCADE
+DROP TABLE IF EXISTS riik CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.organisatsiooni_tyyp CASCADE
+DROP TABLE IF EXISTS organisatsiooni_tyyp CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.organisatsioon CASCADE
+DROP TABLE IF EXISTS organisatsioon CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.kaup CASCADE
+DROP TABLE IF EXISTS kaup CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.kauba_staatus CASCADE
+DROP TABLE IF EXISTS kauba_staatus CASCADE
 ;
 
-DROP TABLE IF EXISTS garaazh.kauba_kategooria CASCADE
+DROP TABLE IF EXISTS kauba_kategooria CASCADE
 ;
 
 /* Create Tables */
 
-CREATE TABLE garaazh.tootaja_staatus
+CREATE TABLE tootaja_staatus
 (
 	tootaja_staatuse_kood smallint NOT NULL,
 	nimetus varchar(50)	 NULL,
@@ -46,7 +46,7 @@ CREATE TABLE garaazh.tootaja_staatus
 )
 ;
 
-CREATE TABLE garaazh.tootaja_roll
+CREATE TABLE tootaja_roll
 (
 	tootaja_rolli_kood integer NOT NULL,
 	nimetus varchar(50)	 NULL,
@@ -56,7 +56,7 @@ CREATE TABLE garaazh.tootaja_roll
 )
 ;
 
-CREATE TABLE garaazh.tootaja
+CREATE TABLE tootaja
 (
 	tootaja_kood serial NOT NULL,
 	isikukood char(11)	 NOT NULL,
@@ -73,12 +73,12 @@ CREATE TABLE garaazh.tootaja
 	CONSTRAINT CHK_isikukood_on_11_numbrit CHECK (isikukood ~ '^[0-9]{11}$'),
 	CONSTRAINT CHK_email_on_korrektses_formaadis CHECK (e_mail ~* '^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$'),
 	CONSTRAINT CHK_perenimi_on_tahed CHECK (perenimi ~ '^[[:alpha:] \-]+$'),
-	CONSTRAINT FK_tootaja_tootaja_roll FOREIGN KEY (tootaja_rolli_kood) REFERENCES garaazh.tootaja_roll (tootaja_rolli_kood) ON DELETE Cascade ON UPDATE Cascade,
-	CONSTRAINT FK_tootaja_tootaja_staatus FOREIGN KEY (tootaja_staatuse_kood) REFERENCES garaazh.tootaja_staatus (tootaja_staatuse_kood) ON DELETE Cascade ON UPDATE Cascade
+	CONSTRAINT FK_tootaja_tootaja_roll FOREIGN KEY (tootaja_rolli_kood) REFERENCES tootaja_roll (tootaja_rolli_kood) ON DELETE Cascade ON UPDATE Cascade,
+	CONSTRAINT FK_tootaja_tootaja_staatus FOREIGN KEY (tootaja_staatuse_kood) REFERENCES tootaja_staatus (tootaja_staatuse_kood) ON DELETE Cascade ON UPDATE Cascade
 )
 ;
 
-CREATE TABLE garaazh.riik
+CREATE TABLE riik
 (
 	riigi_kood char(2)	 NOT NULL,
 	nimi varchar(70)	 NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE garaazh.riik
 )
 ;
 
-CREATE TABLE garaazh.organisatsiooni_tyyp
+CREATE TABLE organisatsiooni_tyyp
 (
 	organisatsiooni_tyybi_kood smallint NOT NULL,
 	organisatsiooni_tyybi_nimetus varchar(50)	 NULL,
@@ -99,7 +99,7 @@ CREATE TABLE garaazh.organisatsiooni_tyyp
 )
 ;
 
-CREATE TABLE garaazh.organisatsioon
+CREATE TABLE organisatsioon
 (
 	organisatsiooni_kood serial NOT NULL,
 	organisatsiooni_tyybi_kood smallint NULL,
@@ -117,12 +117,36 @@ CREATE TABLE garaazh.organisatsioon
 	CONSTRAINT CHK_organisatsiooni_email_on_korrektne CHECK (e_mail ~* '^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$'),
 	CONSTRAINT CHK_organisatsiooni_registri_kood_on_alphanum CHECK (registri_kood ~ '^[A-Z0-9]+$'),
 	CONSTRAINT CHK_tarneaeg_ja_hinne_not_null CHECK (tarneaeg IS NOT NULL OR hinne IS NOT NULL),
-	CONSTRAINT FK_organisatsioon_organisatsiooni_tyyp FOREIGN KEY (organisatsiooni_tyybi_kood) REFERENCES garaazh.organisatsiooni_tyyp (organisatsiooni_tyybi_kood) ON DELETE Cascade ON UPDATE Cascade,
-	CONSTRAINT FK_organisatsiooni_riik FOREIGN KEY (riik) REFERENCES garaazh.riik (riigi_kood) ON DELETE No Action ON UPDATE No Action
+	CONSTRAINT FK_organisatsioon_organisatsiooni_tyyp FOREIGN KEY (organisatsiooni_tyybi_kood) REFERENCES organisatsiooni_tyyp (organisatsiooni_tyybi_kood) ON DELETE Cascade ON UPDATE Cascade,
+	CONSTRAINT FK_organisatsiooni_riik FOREIGN KEY (riik) REFERENCES riik (riigi_kood) ON DELETE No Action ON UPDATE No Action
 )
 ;
 
-CREATE TABLE garaazh.kaup
+CREATE TABLE kauba_staatus
+(
+	kauba_staatuse_kood smallint NOT NULL,
+	nimetus varchar(255)	 NOT NULL,
+	kirjeldus varchar(255)	 NULL,
+	CONSTRAINT PK_kauba_staatus PRIMARY KEY (kauba_staatuse_kood),
+	CONSTRAINT UK_kauba_staatuse_nimetus_on_unikaalne UNIQUE (nimetus),
+	CONSTRAINT CHK_kauba_staatuse_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$')
+)
+;
+
+CREATE TABLE kauba_kategooria
+(
+	kauba_kategooria_kood integer NOT NULL,
+	ylem_kategooria integer NULL,
+	nimetus varchar(255)	 NOT NULL,
+	kirjeldus varchar(255)	 NULL,
+	CONSTRAINT PK_kauba_kategooria PRIMARY KEY (kauba_kategooria_kood),
+	CONSTRAINT UK_kauba_kategooria_nimetus_ja_ylemk_on_unikaalne UNIQUE (ylem_kategooria,nimetus),
+	CONSTRAINT CHK_kauba_kategooria_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$'),
+	CONSTRAINT FK_kauba_ylemkategooria FOREIGN KEY (ylem_kategooria) REFERENCES kauba_kategooria (kauba_kategooria_kood) ON DELETE Cascade ON UPDATE Cascade
+)
+;
+
+CREATE TABLE kaup
 (
 	kauba_kood varchar(20)	 NOT NULL,
 	kauba_staatus smallint NOT NULL,
@@ -137,77 +161,53 @@ CREATE TABLE garaazh.kaup
 	pikkus integer NULL,
 	pildi_aadress varchar(255)	 NULL,
 	CONSTRAINT PK_kaup PRIMARY KEY (kauba_kood),
-	CONSTRAINT UK_nimetus_on_unikaalne UNIQUE (nimetus),
+	CONSTRAINT UK_kauba_nimetus_on_unikaalne UNIQUE (nimetus),
 	CONSTRAINT CHK_kauba_kood CHECK (kauba_kood ~ '^\d+^$'),
 	CONSTRAINT CHK_kauba_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$'),
 	CONSTRAINT CHK_kauba_hind_pole_negatiivne CHECK (hind >= 0),
 	CONSTRAINT CHK_kauba_mootmed_on_positiivsed CHECK (korgus > 0 AND pikkus > 0 AND laius > 0),
-	CONSTRAINT FK_kauba_tootja FOREIGN KEY (tootja) REFERENCES garaazh.organisatsioon (organisatsiooni_kood) ON DELETE Cascade ON UPDATE Cascade,
-	CONSTRAINT FK_kauba_kategooria FOREIGN KEY (kauba_kategooria) REFERENCES garaazh.kauba_kategooria (kauba_kategooria_kood) ON DELETE Restrict ON UPDATE Restrict,
-	CONSTRAINT FK_kauba_staatus FOREIGN KEY (kauba_staatus) REFERENCES garaazh.kauba_staatus (kauba_staatuse_kood) ON DELETE Restrict ON UPDATE Restrict,
-	CONSTRAINT FK_kauba_tarnija FOREIGN KEY (tarnija) REFERENCES garaazh.organisatsioon (organisatsiooni_kood) ON DELETE Cascade ON UPDATE Cascade,
-	CONSTRAINT FK_kauba_tootaja FOREIGN KEY (tootaja) REFERENCES garaazh.tootaja (tootaja_kood) ON DELETE Restrict ON UPDATE Restrict
-)
-;
-
-CREATE TABLE garaazh.kauba_staatus
-(
-	kauba_staatuse_kood smallint NOT NULL,
-	nimetus varchar(255)	 NOT NULL,
-	kirjeldus varchar(255)	 NULL,
-	CONSTRAINT PK_kauba_staatus PRIMARY KEY (kauba_staatuse_kood),
-	CONSTRAINT UK_nimetus_on_unikaalne UNIQUE (nimetus),
-	CONSTRAINT CHK_kauba_staatuse_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$')
-)
-;
-
-CREATE TABLE garaazh.kauba_kategooria
-(
-	kauba_kategooria_kood integer NOT NULL,
-	ylem_kategooria integer NULL,
-	nimetus varchar(255)	 NOT NULL,
-	kirjeldus varchar(255)	 NULL,
-	CONSTRAINT PK_kauba_kategooria PRIMARY KEY (kauba_kategooria_kood),
-	CONSTRAINT UK_kauba_kategooria_nimetus_ja_ylemk_on_unikaalne UNIQUE (ylem_kategooria,nimetus),
-	CONSTRAINT CHK_kauba_kategooria_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$'),
-	CONSTRAINT FK_kauba_ylemkategooria FOREIGN KEY (ylem_kategooria) REFERENCES garaazh.kauba_kategooria (kauba_kategooria_kood) ON DELETE Cascade ON UPDATE Cascade
+	CONSTRAINT FK_kauba_tootja FOREIGN KEY (tootja) REFERENCES organisatsioon (organisatsiooni_kood) ON DELETE Cascade ON UPDATE Cascade,
+	CONSTRAINT FK_kauba_kategooria FOREIGN KEY (kauba_kategooria) REFERENCES kauba_kategooria (kauba_kategooria_kood) ON DELETE Restrict ON UPDATE Restrict,
+	CONSTRAINT FK_kauba_staatus FOREIGN KEY (kauba_staatus) REFERENCES kauba_staatus (kauba_staatuse_kood) ON DELETE Restrict ON UPDATE Restrict,
+	CONSTRAINT FK_kauba_tarnija FOREIGN KEY (tarnija) REFERENCES organisatsioon (organisatsiooni_kood) ON DELETE Cascade ON UPDATE Cascade,
+	CONSTRAINT FK_kauba_tootaja FOREIGN KEY (tootaja) REFERENCES tootaja (tootaja_kood) ON DELETE Restrict ON UPDATE Restrict
 )
 ;
 
 /* Create Primary Keys, Indexes, Uniques, Checks */
 
-CREATE INDEX IXFK_tootaja_tootaja_roll ON garaazh.tootaja (tootaja_rolli_kood ASC)
+CREATE INDEX IXFK_tootaja_tootaja_roll ON tootaja (tootaja_rolli_kood ASC)
 ;
 
-CREATE INDEX IXFK_tootaja_tootaja_staatus ON garaazh.tootaja (tootaja_staatuse_kood ASC)
+CREATE INDEX IXFK_tootaja_tootaja_staatus ON tootaja (tootaja_staatuse_kood ASC)
 ;
 
-CREATE INDEX INDEX_tootaja_eesnimi ON garaazh.tootaja (eesnimi ASC)
+CREATE INDEX INDEX_tootaja_eesnimi ON tootaja (eesnimi ASC)
 ;
 
-CREATE INDEX INDEX_tootaja_perenimi ON garaazh.tootaja (perenimi ASC)
+CREATE INDEX INDEX_tootaja_perenimi ON tootaja (perenimi ASC)
 ;
 
-CREATE INDEX IXFK_organisatsioon_organisatsiooni_tyyp ON garaazh.organisatsioon (organisatsiooni_tyybi_kood ASC)
+CREATE INDEX IXFK_organisatsioon_organisatsiooni_tyyp ON organisatsioon (organisatsiooni_tyybi_kood ASC)
 ;
 
-CREATE INDEX FK_organisatsiooni_riik ON garaazh.organisatsioon (riik ASC)
+CREATE INDEX FK_organisatsiooni_riik ON organisatsioon (riik ASC)
 ;
 
-CREATE INDEX FK_kauba_kategooria ON garaazh.kaup (kauba_kategooria ASC)
+CREATE INDEX FK_kauba_kategooria ON kaup (kauba_kategooria ASC)
 ;
 
-CREATE INDEX FK_kauba_staatus ON garaazh.kaup (kauba_staatus ASC)
+CREATE INDEX FK_kauba_staatus ON kaup (kauba_staatus ASC)
 ;
 
-CREATE INDEX FK_kauba_tarnija ON garaazh.kaup (tarnija ASC)
+CREATE INDEX FK_kauba_tarnija ON kaup (tarnija ASC)
 ;
 
-CREATE INDEX FK_kauba_tootaja ON garaazh.kaup (tootaja ASC)
+CREATE INDEX FK_kauba_tootaja ON kaup (tootaja ASC)
 ;
 
-CREATE INDEX FK_kauba_tootja ON garaazh.kaup (tootja ASC)
+CREATE INDEX FK_kauba_tootja ON kaup (tootja ASC)
 ;
 
-CREATE INDEX IXFK_kauba_ylemkategooria ON garaazh.kauba_kategooria (ylem_kategooria ASC)
+CREATE INDEX IXFK_kauba_ylemkategooria ON kauba_kategooria (ylem_kategooria ASC)
 ;
