@@ -85,7 +85,7 @@ CREATE TABLE riik
 	CONSTRAINT PK_riik PRIMARY KEY (riigi_kood),
 	CONSTRAINT UK_riik_on_unikaalne UNIQUE (nimi),
 	CONSTRAINT CHK_riigi_nimi_ei_ole_tyhi CHECK (nimi !~ '^\s*$'),
-	CONSTRAINT CHK_riigi_kood_on_2_tahte CHECK (nimi ~ '^[A-Z]{2}$')
+	CONSTRAINT CHK_riigi_kood_on_2_tahte CHECK (riigi_kood ~ '^[A-Z]{2}$')
 )
 ;
 
