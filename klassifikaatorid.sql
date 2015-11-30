@@ -17,3 +17,7 @@ INSERT INTO tootaja_staatus(tootaja_staatuse_kood, nimetus, kirjeldus) VALUES (1
 INSERT INTO tootaja_staatus(tootaja_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Töötaja ei ole tegev.');
 
 INSERT INTO riik(riigi_kood, nimi) VALUES ('EE', 'Eesti');
+INSERT INTO riik(riigi_kood, nimi) VALUES ('RU', 'Venemaa');
+INSERT INTO riik(riigi_kood, nimi) VALUES ('LV', 'Läti');
+INSERT INTO riik(riigi_kood, nimi) VALUES ('LT', 'Leedu');
+INSERT INTO riik(riigi_kood, nimi) VALUES ('FI', 'Soome');
