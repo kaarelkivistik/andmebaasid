@@ -65,7 +65,7 @@ CREATE TABLE tootaja
 	e_mail varchar(255)	 NOT NULL,
 	eesnimi varchar(50)	 NOT NULL,
 	perenimi varchar(50)	 NOT NULL,
-	parool varchar(50)	 NOT NULL,
+	parool varchar(60)	 NOT NULL,
 	CONSTRAINT PK_tootaja PRIMARY KEY (tootaja_kood),
 	CONSTRAINT UK_e_mail_on_unikaalne UNIQUE (e_mail),
 	CONSTRAINT UK_isikukood_on_unikaalne UNIQUE (isikukood),
