@@ -92,7 +92,7 @@ CREATE TABLE riik
 CREATE TABLE organisatsiooni_tyyp
 (
 	organisatsiooni_tyybi_kood smallint NOT NULL,
-	organisatsiooni_tyybi_nimetus varchar(50)	 NULL,
+	organisatsiooni_tyybi_nimetus varchar(50) NOT NULL,
 	CONSTRAINT PK_organisatsiooni_tyyp PRIMARY KEY (organisatsiooni_tyybi_kood),
 	CONSTRAINT UK_organisatsiooni_tyybi_nimetus_on_unikaalne UNIQUE (organisatsiooni_tyybi_nimetus),
 	CONSTRAINT CHK_organisatsiooni_tyybi_nimetus_ei_ole_tyhi CHECK (organisatsiooni_tyybi_nimetus !~ '^\s*$')
@@ -102,7 +102,7 @@ CREATE TABLE organisatsiooni_tyyp
 CREATE TABLE organisatsioon
 (
 	organisatsiooni_kood serial NOT NULL,
-	organisatsiooni_tyybi_kood smallint NULL,
+	organisatsiooni_tyybi_kood smallint NOT NULL,
 	riik char(2)	 NOT NULL,
 	aadress varchar(255)	 NOT NULL,
 	e_mail varchar(255)	 NOT NULL,
