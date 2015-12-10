@@ -9,3 +9,4 @@ src/main/resources/META-INF/persistence.xml
 .idea/libraries/*.xml
 frontend/bower_components
 bower_components
+*.laccdb
