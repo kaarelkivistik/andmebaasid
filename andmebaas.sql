@@ -60,7 +60,7 @@ CREATE TABLE tootaja
 (
 	tootaja_kood serial NOT NULL,
 	isikukood char(11)	 NOT NULL,
-	tootaja_rolli_kood integer NULL,
+	tootaja_rolli_kood integer NOT NULL,
 	tootaja_staatuse_kood smallint NOT NULL DEFAULT 1,
 	e_mail varchar(255)	 NOT NULL,
 	eesnimi varchar(50)	 NOT NULL,
