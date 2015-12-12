@@ -30,7 +30,7 @@ CREATE VIEW ylemkategooriad WITH (security_barrier) AS
 
 COMMENT ON VIEW ylemkategooriad IS 'Selles tabelis on kõikide kaubaliikide ülemkategooriad';
 
-
+DROP VIEW IF EXISTS aktiivne_tootaja;
 CREATE VIEW aktiivne_tootaja WITH (security_barrier) AS
   SELECT tootaja.tootaja_kood AS tootaja_kood,
          tootaja.isikukood AS isikukood,
@@ -44,6 +44,7 @@ CREATE VIEW aktiivne_tootaja WITH (security_barrier) AS
 
 COMMENT ON VIEW aktiivne_tootaja IS 'Aktiivse töötaja vaatamine';
 
+DROP VIEW IF EXISTS kaupade_haldaja;
 CREATE VIEW kaupade_haldaja WITH (security_barrier) AS
   SELECT tootaja.tootaja_kood AS tootaja_kood,
          tootaja.isikukood AS isikukood,
@@ -56,3 +57,19 @@ CREATE VIEW kaupade_haldaja WITH (security_barrier) AS
   WHERE tootaja_rolli_kood = 1;
 
 COMMENT ON VIEW kaupade_haldaja IS 'Kaupade haldajate vaatamine';
+
+DROP VIEW IF EXISTS tarnija;
+CREATE VIEW tarnija WITH (security_barrier) AS
+  SELECT *
+  FROM organisatsioon
+  WHERE organisatsiooni_tyybi_kood = 1;
+
+COMMENT ON VIEW tarnija IS 'Vaade leiab andmed kõikide tarnijate kohta';
+
+DROP VIEW IF EXISTS tootja;
+CREATE VIEW tootja WITH (security_barrier) AS
+  SELECT *
+  FROM organisatsioon
+  WHERE organisatsiooni_tyybi_kood = 2;
+
+COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';
