@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION f_on_kaupade_haldaja(text, text)
+CREATE OR REPLACE FUNCTION on_kaupade_haldaja(text, text)
 RETURNS boolean AS $$
 DECLARE
 rslt boolean;
@@ -11,6 +11,6 @@ END;
 $$ LANGUAGE plpgsql SECURITY DEFINER STABLE
 SET search_path = public, pg_temp;
 
-COMMENT ON FUNCTION f_on_kaupade_haldaja(text, text) IS '(OP1.1) Selle funktsiooni abil autenditakse kaupade haldaja. Funktsiooni 
+COMMENT ON FUNCTION on_kaupade_haldaja(text, text) IS '(OP1.1) Selle funktsiooni abil autenditakse kaupade haldaja. Funktsiooni 
 väljakutsel on esimene argument e-mail ja teine argument parool. Kaupade halduril on õigus süsteemi siseneda,
 vaid siis kui tema seisundiks on aktiivne';
