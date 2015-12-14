@@ -19,8 +19,8 @@ CREATE VIEW kauba_kuvatav_info WITH (security_barrier) AS
 
 COMMENT ON VIEW kauba_kuvatav_info IS 'Selles tabelis on kogu info, mida kasutaja peaks veebilehel nägema.';
 
-DROP VIEW IF EXISTS ylemkategooriad;
-CREATE VIEW ylemkategooriad WITH (security_barrier) AS
+DROP VIEW IF EXISTS ylemkategooria;
+CREATE VIEW ylemkategooria WITH (security_barrier) AS
   SELECT
     kategooria.kauba_kategooria_kood AS kategooria_kood,
     kategooria.nimetus,
@@ -28,7 +28,7 @@ CREATE VIEW ylemkategooriad WITH (security_barrier) AS
   FROM kauba_kategooria AS kategooria
   WHERE kategooria.ylem_kategooria IS NULL;
 
-COMMENT ON VIEW ylemkategooriad IS 'Selles tabelis on kõikide kaubaliikide ülemkategooriad';
+COMMENT ON VIEW ylemkategooria IS 'Selles tabelis on kõikide kaubaliikide ülemkategooriad';
 
 DROP VIEW IF EXISTS aktiivne_tootaja;
 CREATE VIEW aktiivne_tootaja WITH (security_barrier) AS
