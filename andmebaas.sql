@@ -140,7 +140,7 @@ CREATE TABLE kauba_kategooria
 	nimetus varchar(255)	 NOT NULL,
 	kirjeldus varchar(255)	 NULL,
 	CONSTRAINT PK_kauba_kategooria PRIMARY KEY (kauba_kategooria_kood),
-	CONSTRAINT UK_kauba_kategooria_nimetus_ja_ylemk_on_unikaalne UNIQUE (ylem_kategooria,nimetus),
+	CONSTRAINT UK_kauba_kategooria_nimetus_ja_ylemk_on_unikaalne UNIQUE (nimetus, ylem_kategooria),
 	CONSTRAINT CHK_kauba_kategooria_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$'),
 	CONSTRAINT FK_kauba_ylemkategooria FOREIGN KEY (ylem_kategooria) REFERENCES kauba_kategooria (kauba_kategooria_kood) ON DELETE Cascade ON UPDATE Cascade
 )
