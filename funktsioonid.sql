@@ -7,7 +7,7 @@ SET nimetus = _nimetus, hind = _hind, pikkus = _pikkus, korgus = _korgus, pildi_
 
 $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;
 
-COMMENT ON FUNCTION uuenda_kauba_staatus_mitteaktiivseks (VARCHAR) IS '(OP6.1) Muudab kauba infot.';
+COMMENT ON FUNCTION uuenda_kaupa (VARCHAR, VARCHAR, NUMERIC, INT, INT, INT, VARCHAR, INT, INT, INT) IS '(OP6.1) Muudab kauba infot.';
 
 
 CREATE OR REPLACE FUNCTION kustuta_kaup(kauba_kood VARCHAR) 
