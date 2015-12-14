@@ -38,8 +38,8 @@ DROP TABLE IF EXISTS kauba_kategooria CASCADE
 CREATE TABLE tootaja_staatus
 (
 	tootaja_staatuse_kood smallint NOT NULL,
-	nimetus varchar(50)	 NULL,
-	kirjeldus varchar(50)	 NULL,
+	nimetus varchar(50)	 NOT NULL,
+	kirjeldus varchar(50)	 NOT NULL,
 	CONSTRAINT PK_tootaja_staatus PRIMARY KEY (tootaja_staatuse_kood),
 	CONSTRAINT UK_tootaja_staatus_on_unikaalne UNIQUE (nimetus),
 	CONSTRAINT CHK_tootaja_staatuse_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$')
@@ -49,10 +49,10 @@ CREATE TABLE tootaja_staatus
 CREATE TABLE tootaja_roll
 (
 	tootaja_rolli_kood integer NOT NULL,
-	nimetus varchar(50)	 NULL,
-	kirjeldus varchar(50)	 NULL,
+	nimetus varchar(50)	NOT NULL,
+	kirjeldus varchar(50)	 NOT NULL,
 	CONSTRAINT PK_tootaja_roll PRIMARY KEY (tootaja_rolli_kood),
-	CONSTRAINT UK_tootaja_rolli_nimetus_on_unikaalne UNIQUE (tootaja_rolli_kood)
+	CONSTRAINT UK_tootaja_rolli_nimetus_on_unikaalne UNIQUE (nimetus)
 )
 ;
 
