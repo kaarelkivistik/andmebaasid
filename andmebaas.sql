@@ -118,7 +118,7 @@ CREATE TABLE organisatsioon
 	CONSTRAINT CHK_organisatsiooni_registri_kood_on_alphanum CHECK (registri_kood ~ '^[A-Z0-9]+$'),
 	CONSTRAINT CHK_tarneaeg_ja_hinne_not_null CHECK (tarneaeg IS NOT NULL OR hinne IS NOT NULL),
 	CONSTRAINT FK_organisatsioon_organisatsiooni_tyyp FOREIGN KEY (organisatsiooni_tyybi_kood) REFERENCES organisatsiooni_tyyp (organisatsiooni_tyybi_kood) ON DELETE Cascade ON UPDATE Cascade,
-	CONSTRAINT FK_organisatsiooni_riik FOREIGN KEY (riik) REFERENCES riik (riigi_kood) ON DELETE No Action ON UPDATE No Action
+	CONSTRAINT FK_organisatsiooni_riik FOREIGN KEY (riik) REFERENCES riik (riigi_kood) ON DELETE Cascade ON UPDATE Cascade
 )
 ;
 
