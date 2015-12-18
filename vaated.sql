@@ -1,6 +1,7 @@
 DROP VIEW IF EXISTS kauba_kuvatav_info;
 CREATE VIEW kauba_kuvatav_info WITH (security_barrier) AS
   SELECT
+    kaup.kauba_kood,
     kaup.nimetus                                                       AS kauba_nimi,
     kaup.hind,
     kaup.korgus,
