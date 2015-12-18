@@ -7,7 +7,7 @@ SET nimetus = _nimetus, hind = _hind, pikkus = _pikkus, korgus = _korgus, laius 
 
 $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;
 
-COMMENT ON FUNCTION uuenda_kaupa(VARCHAR, VARCHAR, NUMERIC, INT, INT, INT, VARCHAR, INT, INT, INT) IS '(OP6.1) Muudab kauba infot.';
+COMMENT ON FUNCTION f_uuenda_kaupa(VARCHAR, VARCHAR, NUMERIC, INT, INT, INT, VARCHAR, INT, INT, INT) IS '(OP6.1) Muudab kauba infot.';
 
 
 CREATE OR REPLACE FUNCTION f_kustuta_kaup(kauba_kood VARCHAR) 
@@ -20,7 +20,7 @@ $$ LANGUAGE SQL SECURITY DEFINER
 
 SET search_path = public, pg_temp;
 
-COMMENT ON FUNCTION kustuta_kaup(kauba_kood VARCHAR) IS '(OP7.1) Kauba kustutamisel muutub kauba staatus 0-ks.';
+COMMENT ON FUNCTION f_kustuta_kaup(kauba_kood VARCHAR) IS '(OP7.1) Kauba kustutamisel muutub kauba staatus 0-ks.';
 
 
 CREATE OR REPLACE FUNCTION f_uuenda_kauba_staatus_aktiivseks(uuendatava_kauba_kood VARCHAR(20))
@@ -33,7 +33,7 @@ WHERE kauba_kood = uuendatava_kauba_kood AND kauba_staatus = 2;
 
 $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;
 
-COMMENT ON FUNCTION uuenda_kauba_staatus_aktiivseks (VARCHAR) IS '(OP3.1) Seab kauba aktiivseks.';
+COMMENT ON FUNCTION f_uuenda_kauba_staatus_aktiivseks (VARCHAR) IS '(OP3.1) Seab kauba aktiivseks.';
 
 
 CREATE OR REPLACE FUNCTION f_uuenda_kauba_staatus_mitteaktiivseks(uuendatava_kauba_kood VARCHAR(20))
@@ -46,4 +46,4 @@ WHERE kauba_kood = uuendatava_kauba_kood AND kauba_staatus = 1;
 
 $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;
 
-COMMENT ON FUNCTION uuenda_kauba_staatus_mitteaktiivseks (VARCHAR) IS '(OP4.1) Seab kauba mitteaktiivseks.';
+COMMENT ON FUNCTION f_uuenda_kauba_staatus_mitteaktiivseks (VARCHAR) IS '(OP4.1) Seab kauba mitteaktiivseks.';
