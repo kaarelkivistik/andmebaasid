@@ -5,7 +5,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-COMMENT ON FUNCTION kaupa_ei_loodud_aktiivsena(*) IS 'Kui kauba staatus pole loomisel aktiivne, siis visatakse selle funktsiooniga erand.';
+COMMENT ON FUNCTION kaupa_ei_loodud_aktiivsena() IS 'Kui kauba staatus pole loomisel aktiivne, siis visatakse selle funktsiooniga erand.';
 
 
 CREATE TRIGGER kaup_insert BEFORE INSERT ON kaup
@@ -20,7 +20,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-COMMENT ON FUNCTION kaupa_yritati_kustutada(*) IS 'Kauba kustutamisel visatakse selle funktsiooniga erand.';
+COMMENT ON FUNCTION kaupa_yritati_kustutada() IS 'Kauba kustutamisel visatakse selle funktsiooniga erand.';
 
 
 CREATE TRIGGER kaup_delete BEFORE DELETE ON kaup
