@@ -79,15 +79,50 @@
         <li><span><br>2.4 Infosüsteemi rollide kirjeldused</span>
         </ol>
         <ol>
-        <li><span><br><b>3. Füüsiline disain</b></span></li>
+        <li><span><br><b>3. FÜÜSILINE DISAIN</b></span></li>
         <li><span>3.1 Laiendatud kaupade registri füüsiline disain</span>
             <ol>
                 <li>&nbsp;3.1.1 Füüsiline andmebaasiskeem<br>
                 </li>
             </ol>
         </ol>
+         <ol>
+        <li><span><br><b>4 REALISATSIOON POSTGRESQLIS</b></span></li><br>
+        <li><span>4.1 Andmebaasi loomine</span></li>
+        <li><span>4.2 Skeemid</span></li>
+        <li><span>4.3 Domeenid</span></li>
+        <li><span>4.4 Tabelid ja arvujada generaatorid</span></li>
+        <li><span>4.5 Vaated</span></li>
+        <li><span>4.6 Protseduursed keeled</span></li>
+        <li><span>4.7 Trigeri funktsioonid ja trigerid</span></li>
+        <li><span>4.8 Reeglid</span></li>
+        <li><span>4.9 Funktsioonid</span></li>
+        <li><span>4.10 Indeksid</span></li>
         <ol>
-        <li><span><br><b>4 Kasutatud materjalid</b></span></li>
+        &nbsp;4.10.1 Välisvõtmetele lisatavad indeksid <br>
+        &nbsp;4.10.2 Täiendavad sekundaarsed indeksid<br>
+        &nbsp;4.10.3 Funktsioonil põhinevad indeksid<br>
+        </ol>
+        <li><span>4.11 Klassifikaatorite väärtustamine SQL laused</span></li>
+        <li><span>4.12 Täiendavate testandmete lisamine</span></li>
+        <li><span>4.13 Andmebaasi statistika kogumine</span></li>
+        <li><span>4.14 Päringu täitmisplaani näide</span></li>
+        <li><span>4.15 Rollid ja kasutajad</span></li>
+        <li><span>4.16 Õiguste jagamine</span></li>
+        <li><span>4.17 Andmebaasiobjektide kustutamine</span></li>
+         <ol>
+        &nbsp;4.17.1  Domeenide kustutamine<br>
+        &nbsp;4.17.2 Tabelite kustutamine<br>
+        &nbsp;4.17.3 Arvujada generaatorite kustutamine<br>
+        &nbsp;4.17.4  Vaadete kustutamine <br>
+        &nbsp;4.17.5 Indeksite kustutamine<br>
+        &nbsp;4.17.6 Funktsioonide ja trigerite kustutamine<br>
+        &nbsp;4.17.7  Reeglite kustutamine<br>
+        &nbsp;4.17.8 Kasutajate ja rollide kustutamine<br>
+        </ol>
+        </ol>
+        <ol>
+        <li><span><br><b>5 KASUTATUD MATERJALID</b></span></li>
     </ol>
 </ol>
 </div>
@@ -1249,21 +1284,565 @@
                     <div>
                         <h3>3.1.1 Füüsiline andmebaasiskeem</h3>
                         <div>
-								<img src="img/Kaupade register.png" /><br/>
-								<h4>Joonis 1. Kaupade registri füüsiline disaini andmebaasi diagramm</h4>
-								
-								<img src="img/Klassifikaatorite register.png" /><br/>
-								<h4>Joonis 2. Klassifikaatorite registri füüsiline disaini andmebaasi diagramm</h4>
-								
-								<img src="img/Organisatsioonide register.png" /><br/>
-								<h4>Joonis 3. Organisatsioonide registri füüsiline disaini andmebaasi diagramm</h4>
-								
-								<img src="img/Töötajate register.png" /><br/>
-								<h4>Joonis 4. Töötajate registri füüsiline disaini andmebaasi diagramm</h4>
+                                <img src="img/Kaupade register.png" /><br/>
+                                <h4>Joonis 1. Kaupade registri füüsiline disaini andmebaasi diagramm</h4>
+                                
+                                <img src="img/Klassifikaatorite register.png" /><br/>
+                                <h4>Joonis 2. Klassifikaatorite registri füüsiline disaini andmebaasi diagramm</h4>
+                                
+                                <img src="img/Organisatsioonide register.png" /><br/>
+                                <h4>Joonis 3. Organisatsioonide registri füüsiline disaini andmebaasi diagramm</h4>
+                                
+                                <img src="img/Töötajate register.png" /><br/>
+                                <h4>Joonis 4. Töötajate registri füüsiline disaini andmebaasi diagramm</h4>
                         </div>
                     </div>
                 </div>
-                <h1>4 Kasutatud materjalid</h1>
+                  <h1>4 Realisatsioon PostgreSQLis</h1>
+                  <div>
+                  Andmebaasi loomiseks kasutatakse andmebaasisüsteemi <b>PostgreSQL (9.4)</b>. 
+                  <div>
+                        <h2>4.1 Andmebaasi loomine</h2>
+                        Andmebaasis <i>kaupade arvestus</i> kasutatav märkide klassifikatsioon ja märkide
+                        võrdlusreeglistik vastavad eesti keele reeglitele. <br>
+
+                        <br>createdb -l et_EE.utf8 -T template0 kaupade arvestus <br>
+
+                       <br> Järgnevalt esitatakse SQL laused selle andmebaasiobjektide loomiseks
+                  </div>
+                        <h2>4.2 Skeemid</h2>
+                  <div>
+                    Loon skeemiobjektid skeemis nimega public, mis loodi andmebaasi loomisel automaatselt. 
+                </div>
+                     <h2>4.3 Domeenid</h2>
+                <div>
+                    DROP DOMAIN IF EXISTS d_nimetus;<br>
+CREATE DOMAIN <b>d_nimetus</b> varchar(100) NOT NULL DEFAULT 'nimetu'
+    CHECK (VALUE !~ '^\s*$');<br><br>
+    
+ALTER TABLE kauba_kategooria DROP CONSTRAINT IF EXISTS CHK_kauba_kategooria_nimetus_ei_ole_tyhi;<br>
+ALTER TABLE kauba_staatus DROP CONSTRAINT IF EXISTS CHK_kauba_staatuse_nimetus_ei_ole_tyhi;<br>
+ALTER TABLE tootaja_staatus DROP CONSTRAINT IF EXISTS CHK_tootaja_staatuse_nimetus_ei_ole_tyhi;<br>
+ALTER TABLE tootaja_roll DROP CONSTRAINT IF EXISTS CHK_tootaja_rolli_nimetus_ei_ole_tyhi;<br>
+ALTER TABLE organisatsiooni_tyyp DROP CONSTRAINT IF EXISTS CHK_organisatsiooni_tyybi_nimetus_ei_ole_tyhi;<br><br>
+
+ALTER TABLE kauba_kategooria ALTER COLUMN nimetus TYPE d_nimetus;<br>
+ALTER TABLE kauba_staatus ALTER COLUMN nimetus TYPE d_nimetus;<br>
+ALTER TABLE tootaja_staatus ALTER COLUMN nimetus TYPE d_nimetus;<br>
+ALTER TABLE tootaja_roll ALTER COLUMN nimetus TYPE d_nimetus;<br>
+ALTER TABLE organisatsiooni_tyyp ALTER COLUMN organisatsiooni_tyybi_nimetus TYPE d_nimetus;<br>
+                </div>
+                <h2>4.4 Tabelid ja arvujada generaatorid</h2>
+                <div>
+
+CREATE TABLE tootaja_staatus<br>
+(<br>
+    tootaja_staatuse_kood smallint NOT NULL,<br>
+    nimetus varchar(50)  NOT NULL,<br>
+    kirjeldus varchar(50)    NOT NULL,<br>
+    CONSTRAINT PK_tootaja_staatus PRIMARY KEY (tootaja_staatuse_kood),<br>
+    CONSTRAINT UK_tootaja_staatus_on_unikaalne UNIQUE (nimetus),<br>
+    CONSTRAINT CHK_tootaja_staatuse_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$')<br>
+)<br>
+;<br><br>
+
+CREATE TABLE tootaja_roll<br>
+(<br>
+    tootaja_rolli_kood integer NOT NULL,<br>
+    nimetus varchar(50) NOT NULL,<br>
+    kirjeldus varchar(50)    NOT NULL,<br>
+    CONSTRAINT PK_tootaja_roll PRIMARY KEY (tootaja_rolli_kood),<br>
+    CONSTRAINT UK_tootaja_rolli_nimetus_on_unikaalne UNIQUE (nimetus)<br>
+)<br>
+;<br><br>
+
+CREATE TABLE tootaja<br>
+(<br>
+    tootaja_kood serial NOT NULL,<br>
+    isikukood char(11)   NOT NULL,<br>
+    tootaja_rolli_kood integer NOT NULL,<br>
+    tootaja_staatuse_kood smallint NOT NULL DEFAULT 1,<br>
+    e_mail varchar(255)  NOT NULL,<br>
+    eesnimi varchar(50)  NOT NULL,<br>
+    perenimi varchar(50)     NOT NULL,<br>
+    parool varchar(60)   NOT NULL,<br>
+    CONSTRAINT PK_tootaja PRIMARY KEY (tootaja_kood),<br>
+    CONSTRAINT UK_e_mail_on_unikaalne UNIQUE (e_mail),<br>
+    CONSTRAINT UK_isikukood_on_unikaalne UNIQUE (isikukood),<br>
+    CONSTRAINT CHK_eesnimi_on_tahed CHECK (eesnimi ~ '^[[:alpha:] \-]+$'),<br>
+    CONSTRAINT CHK_isikukood_on_11_numbrit CHECK (isikukood ~ '^[0-9]{11}$'),
+    CONSTRAINT CHK_email_on_korrektses_formaadis CHECK (e_mail ~* '^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$'),<br>
+    CONSTRAINT CHK_perenimi_on_tahed CHECK (perenimi ~ '^[[:alpha:] \-]+$'),<br>
+    CONSTRAINT FK_tootaja_tootaja_roll FOREIGN KEY (tootaja_rolli_kood) REFERENCES tootaja_roll (tootaja_rolli_kood) ON DELETE Cascade ON UPDATE Cascade,<br>
+    CONSTRAINT FK_tootaja_tootaja_staatus FOREIGN KEY (tootaja_staatuse_kood) REFERENCES tootaja_staatus (tootaja_staatuse_kood) ON DELETE Cascade ON UPDATE Cascade<br>
+)<br>
+;<br><br>
+
+CREATE TABLE riik<br>
+(<br>
+    riigi_kood char(2)   NOT NULL,<br>
+    nimi varchar(70)     NOT NULL,<br>
+    CONSTRAINT PK_riik PRIMARY KEY (riigi_kood),<br>
+    CONSTRAINT UK_riik_on_unikaalne UNIQUE (nimi),<br>
+    CONSTRAINT CHK_riigi_nimi_ei_ole_tyhi CHECK (nimi !~ '^\s*$'),<br>
+    CONSTRAINT CHK_riigi_kood_on_2_tahte CHECK (riigi_kood ~ '^[A-Z]{2}$')<br>
+)<br>
+;<br><br>
+
+CREATE TABLE organisatsiooni_tyyp<br>
+(<br>
+    organisatsiooni_tyybi_kood smallint NOT NULL,<br>
+    organisatsiooni_tyybi_nimetus varchar(50) NOT NULL,<br>
+    CONSTRAINT PK_organisatsiooni_tyyp PRIMARY KEY (organisatsiooni_tyybi_kood),<br>
+    CONSTRAINT UK_organisatsiooni_tyybi_nimetus_on_unikaalne UNIQUE (organisatsiooni_tyybi_nimetus),<br>
+    CONSTRAINT CHK_organisatsiooni_tyybi_nimetus_ei_ole_tyhi CHECK (organisatsiooni_tyybi_nimetus !~ '^\s*$')<br>
+)<br>
+;<br><br>
+
+CREATE TABLE organisatsioon<br>
+(<br>
+    organisatsiooni_kood serial NOT NULL,<br>
+    organisatsiooni_tyybi_kood smallint NOT NULL,<br>
+    riik char(2)     NOT NULL,<br>
+    aadress varchar(255)     NOT NULL,<br>
+    e_mail varchar(255)  NOT NULL,<br>
+    nimi varchar(255)    NOT NULL,<br>
+    registri_kood varchar(255)   NOT NULL,<br>
+    tarneaeg decimal(4,2) NULL,<br>
+    hinne decimal(3,2) NULL,<br>
+    CONSTRAINT PK_organisatsioon PRIMARY KEY (organisatsiooni_kood),<br>
+    CONSTRAINT UK_org_on_riigiti_unikaalne UNIQUE (registri_kood,riik),<br>
+    CONSTRAINT CHK_organisatsiooni_tarneaeg_pole_negatiivne CHECK (tarneaeg >= 0),<br>
+    CONSTRAINT CHK_organisatsiooni_hinne_on_0_kuni_5 CHECK (hinne >= 0 AND hinne <= 5),<br>
+    CONSTRAINT CHK_organisatsiooni_email_on_korrektne CHECK (e_mail ~* '^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$'),<br>
+    CONSTRAINT CHK_organisatsiooni_registri_kood_on_alphanum CHECK (registri_kood ~ '^[A-Z0-9]+$'),<br>
+    CONSTRAINT CHK_tarneaeg_ja_hinne_not_null CHECK (tarneaeg IS NOT NULL OR hinne IS NOT NULL),<br>
+    CONSTRAINT FK_organisatsioon_organisatsiooni_tyyp FOREIGN KEY (organisatsiooni_tyybi_kood) REFERENCES organisatsiooni_tyyp (organisatsiooni_tyybi_kood) ON DELETE Cascade ON UPDATE Cascade,<br>
+    CONSTRAINT FK_organisatsiooni_riik FOREIGN KEY (riik) REFERENCES riik (riigi_kood) ON DELETE Cascade ON UPDATE Cascade<br>
+)<br>
+;<br><br>
+
+CREATE TABLE kauba_staatus<br>
+(<br>
+    kauba_staatuse_kood smallint NOT NULL,<br>
+    nimetus varchar(255)     NOT NULL,<br>
+    kirjeldus varchar(255)   NULL,<br>
+    CONSTRAINT PK_kauba_staatus PRIMARY KEY (kauba_staatuse_kood),<br>
+    CONSTRAINT UK_kauba_staatuse_nimetus_on_unikaalne UNIQUE (nimetus),<br>
+    CONSTRAINT CHK_kauba_staatuse_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$')<br>
+)<br>
+;<br><br>
+
+CREATE TABLE kauba_kategooria<br>
+(<br>
+    kauba_kategooria_kood integer NOT NULL,<br>
+    ylem_kategooria integer NULL,<br>
+    nimetus varchar(255)     NOT NULL,<br>
+    kirjeldus varchar(255)   NULL,<br>
+    CONSTRAINT PK_kauba_kategooria PRIMARY KEY (kauba_kategooria_kood),<br>
+    CONSTRAINT UK_kauba_kategooria_nimetus_ja_ylemk_on_unikaalne UNIQUE (nimetus, ylem_kategooria),<br>
+    CONSTRAINT CHK_kauba_kategooria_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$'),<br>
+    CONSTRAINT FK_kauba_ylemkategooria FOREIGN KEY (ylem_kategooria) REFERENCES kauba_kategooria (kauba_kategooria_kood) ON DELETE Cascade ON UPDATE Cascade<br>
+)<br>
+;<br><br>
+
+CREATE TABLE kaup<br>
+(<br>
+    kauba_kood varchar(20)   NOT NULL,<br>
+    kauba_staatus smallint NOT NULL,<br>
+    kauba_kategooria integer NOT NULL,<br>
+    tarnija integer NOT NULL,<br>
+    tootja integer NOT NULL,<br>
+    tootaja integer NOT NULL,<br>
+    nimetus varchar(255) NOT NULL,<br>
+    hind decimal(19,2) NOT NULL,<br>
+    korgus integer NULL,<br>
+    laius integer NULL,<br>
+    pikkus integer NULL,<br>
+    pildi_aadress varchar(255)   NULL,<br>
+    CONSTRAINT PK_kaup PRIMARY KEY (kauba_kood),<br>
+    CONSTRAINT UK_kauba_nimetus_on_unikaalne UNIQUE (nimetus),<br>
+    CONSTRAINT CHK_kauba_kood CHECK (kauba_kood ~ '^\d+$'),<br>
+    CONSTRAINT CHK_kauba_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$'),<br>
+    CONSTRAINT CHK_kauba_hind_pole_negatiivne CHECK (hind >= 0),<br>
+    CONSTRAINT CHK_kauba_mootmed_on_positiivsed CHECK (korgus > 0 AND pikkus > 0 AND laius > 0),<br>
+    CONSTRAINT CHK_kauba_pildi_aadress_on_url CHECK (pildi_aadress ~* '^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$'),<br>
+    CONSTRAINT FK_kauba_tootja FOREIGN KEY (tootja) REFERENCES organisatsioon (organisatsiooni_kood) ON DELETE Cascade ON UPDATE Cascade,<br>
+    CONSTRAINT FK_kauba_kategooria FOREIGN KEY (kauba_kategooria) REFERENCES kauba_kategooria (kauba_kategooria_kood) ON DELETE Restrict ON UPDATE Restrict,<br>
+    CONSTRAINT FK_kauba_staatus FOREIGN KEY (kauba_staatus) REFERENCES kauba_staatus (kauba_staatuse_kood) ON DELETE Restrict ON UPDATE Restrict,<br>
+    CONSTRAINT FK_kauba_tarnija FOREIGN KEY (tarnija) REFERENCES organisatsioon (organisatsiooni_kood) ON DELETE Cascade ON UPDATE Cascade,<br>
+    CONSTRAINT FK_kauba_tootaja FOREIGN KEY (tootaja) REFERENCES tootaja (tootaja_kood) ON DELETE Restrict ON UPDATE Restrict<br>
+)<br>
+;<br><br>
+                </div>
+                <h2>4.5 Vaated</h2>
+                <div>
+CREATE VIEW kauba_kuvatav_info WITH (security_barrier) AS<br>
+  SELECT<br>
+    kaup.nimetus                                                       AS kauba_nimi,<br>
+    kaup.hind,<br>
+    kaup.korgus,<br>
+    kaup.laius,<br>
+    kaup.pikkus,<br>
+    kategooria.nimetus                                                 AS kategooria_nimi,<br>
+    tootja.nimi || ', ' || tootja.registri_kood || ', ' || tootja.riik AS tootja,<br>
+    tootja.hinne                                                       AS tootja_reiting,<br>
+    tarnija.nimi                                                       AS tarnija,<br>
+    tarnija.tarneaeg                                                   AS tarnija_tarneaeg<br>
+  FROM kaup AS kaup<br>
+    INNER JOIN organisatsioon AS tootja ON kaup.tootja = tootja.organisatsiooni_kood<br>
+    INNER JOIN kauba_kategooria AS kategooria ON kaup.kauba_kategooria = kategooria.kauba_kategooria_kood<br>
+    INNER JOIN organisatsioon AS tarnija ON kaup.tarnija = tarnija.organisatsiooni_kood<br>
+  WHERE kaup.kauba_staatus = 1;<br><br>
+
+COMMENT ON VIEW kauba_kuvatav_info IS 'Selles tabelis on kogu info, mida kasutaja peaks veebilehel nägema.';<br><br><br>
+
+CREATE VIEW ylemkategooria WITH (security_barrier) AS<br>
+  SELECT<br>
+    kategooria.kauba_kategooria_kood AS kategooria_kood,<br>
+    kategooria.nimetus,<br>
+    kategooria.kirjeldus<br>
+  FROM kauba_kategooria AS kategooria<br>
+  WHERE kategooria.ylem_kategooria IS NULL;<br><br>
+
+COMMENT ON VIEW ylemkategooria IS 'Selles tabelis on kõikide kaubaliikide ülemkategooriad';<br><br><br>
+
+CREATE VIEW aktiivne_tootaja WITH (security_barrier) AS<br>
+  SELECT tootaja.tootaja_kood AS tootaja_kood,<br>
+         tootaja.isikukood AS isikukood,<br>
+         tootaja.tootaja_rolli_kood AS tootaja_rolli_kood,<br>
+         tootaja.tootaja_staatuse_kood AS tootaja_staatuse_kood,<br>
+         tootaja.e_mail AS e_mail,<br>
+         tootaja.eesnimi AS eesnimi,<br>
+         tootaja.perenimi AS perenimi<br>
+  FROM tootaja AS tootaja<br>
+  WHERE tootaja_staatuse_kood = 1;<br><br>
+
+COMMENT ON VIEW aktiivne_tootaja IS 'Aktiivse töötaja vaatamine';<br><br><br>
+
+CREATE VIEW kaupade_haldaja WITH (security_barrier) AS<br>
+  SELECT tootaja.tootaja_kood AS tootaja_kood,<br>
+         tootaja.isikukood AS isikukood,<br>
+         tootaja.tootaja_rolli_kood AS tootaja_rolli_kood,<br>
+         tootaja.tootaja_staatuse_kood AS tootaja_staatuse_kood,<br>
+         tootaja.e_mail AS e_mail,<br>
+         tootaja.eesnimi AS eesnimi,<br>
+         tootaja.perenimi AS perenimi<br>
+  FROM tootaja AS tootaja<br>
+  WHERE tootaja_rolli_kood = 1;<br><br>
+
+COMMENT ON VIEW kaupade_haldaja IS 'Kaupade haldajate vaatamine';<br><br><br>
+
+CREATE VIEW tarnija WITH (security_barrier) AS<br>
+  SELECT *<br>
+  FROM organisatsioon<br>
+  WHERE organisatsiooni_tyybi_kood = 1;<br><br>
+
+COMMENT ON VIEW tarnija IS 'Vaade leiab andmed kõikide tarnijate kohta';<br><br><br>
+
+CREATE VIEW tootja WITH (security_barrier) AS<br>
+  SELECT *<br>
+  FROM organisatsioon<br>
+  WHERE organisatsiooni_tyybi_kood = 2;<br><br>
+
+COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';<br><br>
+                </div>
+                <h2>4.6 Protseduursed keeled</h2>
+                <div>
+                    Käesolevas projektis kasutatakse funktsioonide loomiseks PL/pgSQL keelt. PostgreSQL 9.4
+                    andmebaasisüsteemis installeeritakse PL/pgSQL keel vaikimisi kõikidesse andmebaasidesse
+                </div>
+                <h2>4.7 Trigeri funktsioonid ja trigerid</h2>
+                <div>
+                    CREATE OR REPLACE FUNCTION kaupa_ei_loodud_aktiivsena()<br>
+                      RETURNS TRIGGER AS $$<br>
+                    BEGIN<br>
+                      RAISE EXCEPTION 'Kauba loomisel saab staatus olla ainult aktiivne!';<br>
+                    END;<br>
+                    $$ LANGUAGE plpgsql;<br><br>
+
+                    COMMENT ON FUNCTION kaupa_ei_loodud_aktiivsena(*) IS 'Kui kauba staatus pole loomisel aktiivne, siis visatakse selle funktsiooniga erand.';<br><br><br>
+
+
+                    CREATE TRIGGER kaup_insert BEFORE INSERT ON kaup<br>
+                      FOR EACH ROW WHEN (NEW.kauba_staatus != 1) EXECUTE PROCEDURE kaupa_ei_loodud_aktiivsena();<br><br>
+
+                    COMMENT ON TRIGGER kaup_insert ON kaup IS 'Kauba loomisel kontrollitakse kas loodav kaup on aktiivne';<br><br><br>
+
+                    CREATE OR REPLACE FUNCTION kaupa_yritati_kustutada()<br>
+                      RETURNS TRIGGER AS $$<br>
+                    BEGIN<br>
+                      RAISE EXCEPTION 'Kaupa ei saa kustutada! Mitte kunagi! Jäta see meelde!';<br>
+                    END;<br>
+                    $$ LANGUAGE plpgsql;<br><br>
+
+                    COMMENT ON FUNCTION kaupa_yritati_kustutada(*) IS 'Kauba kustutamisel visatakse selle funktsiooniga erand.';<br><br><br>
+
+
+                    CREATE TRIGGER kaup_delete BEFORE DELETE ON kaup<br>
+                      FOR EACH ROW EXECUTE PROCEDURE kaupa_yritati_kustutada();<br><br>
+
+                    COMMENT ON TRIGGER kaup_delete ON kaup IS 'Kauba kustutamist jälgitakse ning enne seda visatakse erand.';<br><br>
+                </div>
+                <h2> 4.8 Reeglid</h2>
+                <div>
+                    Reegleid käesolevas projektis ei looda. 
+                </div>
+                <h2>4.9 Funktsioonid</h2>
+                <div>
+                    CREATE OR REPLACE FUNCTION uuenda_kaupa(uuendatava_kauba_kood VARCHAR(20), _nimetus VARCHAR(255), _hind NUMERIC(19), _pikkus INT, _korgus INT, laius INT, _pildi_aadress VARCHAR(255), _kauba_kategooria INT, _tootja INT, _tarnija INT)<br>
+
+                    RETURNS VOID AS $$<br><br>
+
+                    UPDATE kaup as k<br>
+                    SET nimetus = _nimetus, hind = _hind, pikkus = _pikkus, korgus = _korgus, pildi_aadress = _pildi_aadress, kauba_kategooria = _kauba_kategooria, tootja = _tootja, tarnija = _tarnija WHERE kauba_kood = uuendatava_kauba_kood AND kauba_staatus != 3;<br><br>
+
+                    $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;<br><br>
+
+                    COMMENT ON FUNCTION uuenda_kaupa(VARCHAR, VARCHAR, NUMERIC, INT, INT, INT, VARCHAR, INT, INT, INT) IS '(OP6.1) Muudab kauba infot.';<br><br><br>
+
+
+                    CREATE OR REPLACE FUNCTION kustuta_kaup(kauba_kood VARCHAR) <br><br>
+
+                    RETURNS void AS $$<br><br>
+
+                    UPDATE kaup SET kauba_staatus = 0 WHERE kauba_kood = $1 AND kauba_staatus = 1; <br><br>
+
+                    $$ LANGUAGE SQL SECURITY DEFINER<br><br>
+
+                    SET search_path = public, pg_temp;<br><br>
+
+                    COMMENT ON FUNCTION kustuta_kaup(kauba_kood VARCHAR) IS '(OP7.1) Kauba kustutamisel muutub kauba staatus 0-ks.';<br><br><br>
+
+
+                    CREATE OR REPLACE FUNCTION uuenda_kauba_staatus_aktiivseks(uuendatava_kauba_kood VARCHAR(20))<br><br>
+
+                    RETURNS VOID AS $$<br><br>
+
+                    UPDATE kaup<br>
+                    SET kauba_staatus = 1<br>
+                    WHERE kauba_kood = uuendatava_kauba_kood AND kauba_staatus = 2;<br><br>
+
+                    $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;<br><br>
+
+                    COMMENT ON FUNCTION uuenda_kauba_staatus_aktiivseks (VARCHAR) IS '(OP3.1) Seab kauba aktiivseks.';<br><br><br>
+
+
+                    CREATE OR REPLACE FUNCTION uuenda_kauba_staatus_mitteaktiivseks(uuendatava_kauba_kood VARCHAR(20))<br><br>
+
+                    RETURNS VOID AS $$<br><br>
+
+                    UPDATE kaup<br>
+                    SET kauba_staatus = 2<br>
+                    WHERE kauba_kood = uuendatava_kauba_kood AND kauba_staatus = 1;<br><br>
+
+                    $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;<br><br>
+
+                    COMMENT ON FUNCTION uuenda_kauba_staatus_mitteaktiivseks (VARCHAR) IS '(OP4.1) Seab kauba mitteaktiivseks.';<br><br>
+                </div>
+                <h2> 4.10Indeksid</h2>
+                <div>
+                    <h3>4.10.1Välisvõtmetele lisatavad indeksid</h3>
+                <div>
+
+                        CREATE INDEX IXFK_tootaja_tootaja_roll ON tootaja (tootaja_rolli_kood ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX IXFK_tootaja_tootaja_staatus ON tootaja (tootaja_staatuse_kood ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX INDEX_tootaja_eesnimi ON tootaja (eesnimi ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX INDEX_tootaja_perenimi ON tootaja (perenimi ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX IXFK_organisatsioon_organisatsiooni_tyyp ON organisatsioon (organisatsiooni_tyybi_kood ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX FK_organisatsiooni_riik ON organisatsioon (riik ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX FK_kauba_kategooria ON kaup (kauba_kategooria ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX FK_kauba_staatus ON kaup (kauba_staatus ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX FK_kauba_tarnija ON kaup (tarnija ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX FK_kauba_tootaja ON kaup (tootaja ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX FK_kauba_tootja ON kaup (tootja ASC)<br>
+                        ;<br><br>
+
+                        CREATE INDEX IXFK_kauba_ylemkategooria ON kauba_kategooria (ylem_kategooria ASC)<br>
+                </div>
+                <h3>4.10.2 Täiendavad sekundaarsed indeksid </h3>
+                <div>
+                    Täiendavaid sekundaarseid indekseid käesolevas projektis ei looda. 
+                </div>
+                <h3>4.10.3 Funktsioonil põhinevad indeksid </h3>
+                <div>
+                    Funktsioonil põhinevaid indekseid käesolevas projektis ei looda. 
+                </div>
+                </div>
+                <h2>4.11 Klassifikaatorite väärtustamise SQL laused </h2>
+                <div>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (1, NULL, 'Arvutikomponendid', 'Erinevad komponendid arvutitele.');<br>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (2, 1, 'Kõvakettad', 'SSD ning HDD kõvakettad.');<br>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (3, 1, 'Mälud', 'Operatiivmälud.');<br>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (4, NULL, 'Telefonid', 'Erinevad nuti- ning mobiiltelefonid.');<br>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (5, 4, 'Samsung Galaxy 6', 'Samsung Galaxy 6 nutitelefon.');<br>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (6, 1, 'Emaplaadid', 'Valik erinevaid emaplaate.');<br>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (7, NULL, 'Mängukonsoolid', 'Valik erinevaid mängukonsoole.');<br>
+                    INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (8, 7, 'Sony Playstation 4', 'Sony Playstation 4 mängukonsool.');<br><br>
+
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Lenovo IdeaPad sülearvuti Intel i3 protsessoriga.');<br>
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Playstation 3 mängukonsool.');<br><br>
+
+                    INSERT INTO tootaja_roll(tootaja_rolli_kood, nimetus, kirjeldus) VALUES (1, 'kaupade_haldaja', 'See annab õiguse teha mida iganes.');<br><br>
+
+                    INSERT INTO tootaja_staatus(tootaja_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Töötaja on tegev.');<br>
+                    INSERT INTO tootaja_staatus(tootaja_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Töötaja ei ole tegev.');<br><br>
+
+                    INSERT INTO organisatsiooni_tyyp(organisatsiooni_tyybi_kood, organisatsiooni_tyybi_nimetus) VALUES (1, 'tarnija');<br>
+                    INSERT INTO organisatsiooni_tyyp(organisatsiooni_tyybi_kood, organisatsiooni_tyybi_nimetus) VALUES (2, 'tootja');<br><br>
+
+                    INSERT INTO riik(riigi_kood, nimi) VALUES ('EE', 'Eesti');<br>
+                    INSERT INTO riik(riigi_kood, nimi) VALUES ('RU', 'Venemaa');<br>
+                    INSERT INTO riik(riigi_kood, nimi) VALUES ('LV', 'Läti');<br>
+                    INSERT INTO riik(riigi_kood, nimi) VALUES ('LT', 'Leedu');<br>
+                    INSERT INTO riik(riigi_kood, nimi) VALUES ('FI', 'Soome');<br>
+                                    </div>
+                <h2>4.12 Täiendavate testandmete lisamine</h2>
+                <div>
+                    INSERT INTO organisatsioon(organisatsiooni_kood, organisatsiooni_tyybi_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (1, 2, 'Akadeemia tee 5, Tallinn 93811, Eesti', 'info@samsung.com', 'Samsung','110A2746B2C',   5.0, 5.0, 'EE');
+                    <br>INSERT INTO organisatsioon(organisatsiooni_kood, organisatsiooni_tyybi_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (2, 2, 'Hobujaama 3, Tallinn 15334, Eesti', 'info@nokia.com', 'Nokia','210A2746B3D',           5.0, 5.0, 'EE');
+                    <br>INSERT INTO organisatsioon(organisatsiooni_kood, organisatsiooni_tyybi_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (3, 2, 'Vilde tee 18, Tallinn 13545, Eesti', 'info@dell.com', 'Dell','310A2746B4E',            5.0, 5.0, 'EE');
+                    <br>INSERT INTO organisatsioon(organisatsiooni_kood, organisatsiooni_tyybi_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (4, 2, 'Müürivahe 33, Tallinn 85773, Eesti', 'info@asus.com', 'Asus','410A2746B5F',            5.0, 5.0, 'EE');
+                    <br>INSERT INTO organisatsioon(organisatsiooni_kood, organisatsiooni_tyybi_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (5, 2, 'Viru tn 9, Tallinn 34283, Eesti', 'info@intel.com', 'Intel','510A2746B6G',                 5.0, 5.0, 'EE');
+                    <br>INSERT INTO organisatsioon(organisatsiooni_kood, organisatsiooni_tyybi_kood, aadress, e_mail, nimi, registri_kood, tarneaeg, hinne, riik) VALUES (6, 1, 'Kopli liinid, Tallinn 01337, Eesti', 'mart@hot.ee', 'Mardi Kiirkuller','43J2HJHJH23',  5.0, 5.0, 'EE');
+
+                    <br><br>INSERT INTO tootaja(tootaja_kood, tootaja_rolli_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (1, 1, 'hans@mets.ee', 'Hans', '38503053399', public.crypt('parool1', public.gen_salt('bf', 11)), 'Mets');
+                    <br>INSERT INTO tootaja(tootaja_kood, tootaja_rolli_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (2, 1, 'jaan@koer.ee', 'Jaan', '38404053539', public.crypt('parool2', public.gen_salt('bf', 11)), 'Koer');
+                    <br>INSERT INTO tootaja(tootaja_kood, tootaja_rolli_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (3, 1, 'nele@keel.ee', 'Nele', '49011124567', <br>public.crypt('parool3', public.gen_salt('bf', 11)), 'Keel');
+                    <br>INSERT INTO tootaja(tootaja_kood, tootaja_rolli_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (4, 1, 'ingrid@leht.ee', 'Ingrid', '48503058475', public.crypt('parool4', public.gen_salt('bf', 11)), 'Leht');
+                    <br>INSERT INTO tootaja(tootaja_kood, tootaja_rolli_kood, e_mail, eesnimi, isikukood, parool, perenimi) VALUES (5, 1, 'jaanus@paber.ee', 'Jaanus', '38803084390', public.crypt('parool5', public.gen_salt('bf', 11)), 'Paber');
+
+                    <br><br>INSERT INTO kaup(kauba_kood, hind, korgus, laius, nimetus, pikkus, kauba_kategooria, kauba_staatus, tootaja, tarnija, tootja) VALUES ('123456789', 15.5, 200, 200, 'DELL 90W AC Adapter',           200, 1, 1, 1, 6, 1);
+                    <br>INSERT INTO kaup(kauba_kood, hind, korgus, laius, nimetus, pikkus, kauba_kategooria, kauba_staatus, tootaja, tarnija, tootja) VALUES ('987654321', 20.5, 250, 250, 'Playstation 4',                 250, 7, 1, 1, 6, 2);
+                    <br>INSERT INTO kaup(kauba_kood, hind, korgus, laius, nimetus, pikkus, kauba_kategooria, kauba_staatus, tootaja, tarnija, tootja) VALUES ('483659682', 25.5, 100, 50, 'iPhone 6',                       10,  4, 1, 1, 6, 3);
+                    <br>INSERT INTO kaup(kauba_kood, hind, korgus, laius, nimetus, pikkus, kauba_kategooria, kauba_staatus, tootaja, tarnija, tootja) VALUES ('759384627', 35.5, 220, 200, 'Samsung 3.5 D3 Station 5TB',    200, 1, 1, 1, 6, 4);
+                    <br>INSERT INTO kaup(kauba_kood, hind, korgus, laius, nimetus, pikkus, kauba_kategooria, kauba_staatus, tootaja, tarnija, tootja) VALUES ('649027384', 45.5, 100, 50, 'Samsung Galaxy S6',              10,  4, 1, 1, 6, 5);<br>
+                </div>
+                <h2>4.13 Andmebaasi statistika kogumine </h2>
+                <div>
+                    VACUUM ANALYZE;<br><br>
+PostgreSQLis jäävad kustutatud ridade või muutmise tulemusena üleliigseks muutunud ridade
+andmed andmebaasi sisemisele tasemele alles. Nende lõplikuks kustutamiseks sisemiselt tasemelt
+tuleb käivitada prügikoristus – VACUUM lause. ANALYZE määrang lauses tagab, et lisaks
+prügikoristusele värskendatakse ka andmebaasi statistikat. Tabeliga saab siduda ka korralduse
+käivitada prügikoristus ning statistika kogumine automaatselt (autovacuum), kui tabelisse lisatud,
+muudetud või kustutatud ridade arv ületab ettemääratud lävendi. Käesolevas projektis seda
+võimalust ei kasutata. Käesolevas jaotises toodud lauset tuleks käivitada vähemalt kord päevas,
+soovitavalt siis, kui andmebaasi kasutamise koormus on madal (näiteks öösel).<br>
+                </div>
+                <h2>4.14 Päringu täitmisplaani näide</h2>
+                <div>
+                   <b> Hetkel tegemata !!! </b>
+                </div>
+                <h2>4.15 Rollid ja kasutajad</h2>
+                <div>
+                    Käesolevas töös rolle ei looda. Luuakse rakendusele vastav kasutaja. <br>
+
+                   <b> Siia lisada CREATE USER lause !!! </b>
+                </div>
+                <h2>4.16 Õiguste jagamine </h2>
+                <div>
+                    Laiale avalikkusele (PUBLIC) vaikimisi antud õiguste äravõtmine. <br>
+
+                    <b>Hetkel tegemata !!! </b>
+                </div>   
+                <h2>4.17 Andmebaasiobjektide kustutamine </h2>
+                <div>
+                    <h3>4.17.1Domeenide kustutamine</h3>
+                    <div>
+                        DROP DOMAIN IF EXISTS d_nimetus;
+                    </div>
+                    <h3>4.17.2Tabelite kustutamine</h3>
+                    <div>
+                        DROP TABLE IF EXISTS tootaja_staatus CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS tootaja_roll CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS tootaja CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS riik CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS organisatsiooni_tyyp CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS organisatsioon CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS kaup CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS kauba_staatus CASCADE<br>
+                        ;<br><br>
+
+                        DROP TABLE IF EXISTS kauba_kategooria CASCADE<br>
+                        ;<br><br>
+                    </div>
+                    <h3>4.17.3Arvujada generaatorite kustutamine</h3>
+                    <div>
+                        Kuna arvujada generaatorid loodi SERIAL tüübi kasutamise abil, siis kustutas andmebaasisüsteem
+                        tabelite kustutamisel automaatselt nendega seotud arvujada generaatorid. 
+                    </div>
+                    <h3>4.17.4 Vaadete kustutamine </h3>
+                    <div>
+
+                        DROP VIEW IF EXISTS kauba_kuvatav_info;<br>
+                        DROP VIEW IF EXISTS ylemkategooria; <br>
+                        DROP VIEW IF EXISTS aktiivne_tootaja;<br>
+                        DROP VIEW IF EXISTS kaupade_haldaja;<br>
+                        DROP VIEW IF EXISTS tarnija;<br>
+                        DROP VIEW IF EXISTS tootja;<br><br>
+                    </div>
+                    <h3>4.17.5 Indeksite kustutamine </h3>
+                    <div>
+                        <b>Ei leidnud hetkel</b>
+                    </div>
+                    <h3>4.17.6 Funktsioonide ja trigerite kustutamine</h3>
+                    <div>
+                        DROP TRIGGER kaup_insert ON kaup;<br>
+                        DROP TRIGGER kaup_delete ON kaup;<br><br>
+
+                        DROP FUNCTION uuenda_kaupa(uuendatava_kauba_kood VARCHAR(20), _nimetus VARCHAR(255), _hind NUMERIC(19), _pikkus INT, _korgus INT, laius INT, _pildi_aadress VARCHAR(255), _kauba_kategooria INT, _tootja INT, _tarnija INT);<br>
+                        DROP FUNCTION kustuta_kaup(kauba_kood VARCHAR);<br>
+                        DROP FUNCTION uuenda_kauba_staatus_aktiivseks(uuendatava_kauba_kood VARCHAR(20));<br>
+                        DROP FUNCTION uuenda_kauba_staatus_mitteaktiivseks(uuendatava_kauba_kood VARCHAR(20));<br><br>
+                    </div>
+                    <h3>4.17.7 Reeglite kustutamine</h3>
+                    <div>
+                        Kuna projektis reegleid ei kasutata, siis ei esitata ka reeglite kustutamise lauseid. 
+                    </div>
+                    <h3>4.17.8 Kasutajate ja rollide kustutamine</h3>
+                    <div>
+                        Kuna projektis rolle ei kasutata, siis ei esitata ka rollide kustutamise lauseid.
+                        Enne kasutaja kustutamist tuleb ära võtta sellele antud õigused. 
+                        <b> REVOKE laused tegemata !!!</b>
+                    </div>
+                </div>
+                </div>
+                <h1>5 Kasutatud materjalid</h1>
                <p> 1. Ehitusseadus. Elektrooniline Riigi Teataja. [WWW]
                 https://www.riigiteataja.ee/akt/728982?leiaKehtiv (08.02.2015) 
                </p>
