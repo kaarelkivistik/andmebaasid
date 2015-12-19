@@ -1343,7 +1343,6 @@
                 </div>
                      <h2>4.3 Domeenid</h2>
                 <div>
-                    DROP DOMAIN IF EXISTS d_nimetus;<br>
 CREATE DOMAIN <b>d_nimetus</b> varchar(100) NOT NULL DEFAULT 'nimetu'
     CHECK (VALUE !~ '^\s*$');<br><br>
     
@@ -1579,7 +1578,7 @@ COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';<br><br>
                     Käesolevas projektis kasutatakse funktsioonide loomiseks PL/pgSQL keelt. PostgreSQL 9.4
                     andmebaasisüsteemis installeeritakse PL/pgSQL keel vaikimisi kõikidesse andmebaasidesse
                 </div>
-                <h2>4.7 Trigeri funktsioonid ja trigerid</h2>
+                    <h2>4.7 Trigeri funktsioonid ja trigerid</h2>
                 <div>
                     CREATE OR REPLACE FUNCTION kaupa_ei_loodud_aktiivsena()<br>
                       RETURNS TRIGGER AS $$<br>
@@ -1672,40 +1671,29 @@ COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';<br><br>
                     <h3>4.10.1Välisvõtmetele lisatavad indeksid</h3>
                 <div>
 
-                        CREATE INDEX IXFK_tootaja_tootaja_roll ON tootaja (tootaja_rolli_kood ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX IXFK_tootaja_tootaja_roll ON tootaja (tootaja_rolli_kood ASC);<br>
 
-                        CREATE INDEX IXFK_tootaja_tootaja_staatus ON tootaja (tootaja_staatuse_kood ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX IXFK_tootaja_tootaja_staatus ON tootaja (tootaja_staatuse_kood ASC);<br>
 
-                        CREATE INDEX INDEX_tootaja_eesnimi ON tootaja (eesnimi ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX INDEX_tootaja_eesnimi ON tootaja (eesnimi ASC);<br>
 
-                        CREATE INDEX INDEX_tootaja_perenimi ON tootaja (perenimi ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX INDEX_tootaja_perenimi ON tootaja (perenimi ASC);<br>
 
-                        CREATE INDEX IXFK_organisatsioon_organisatsiooni_tyyp ON organisatsioon (organisatsiooni_tyybi_kood ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX IXFK_organisatsioon_organisatsiooni_tyyp ON organisatsioon (organisatsiooni_tyybi_kood ASC);<br>
 
-                        CREATE INDEX FK_organisatsiooni_riik ON organisatsioon (riik ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX FK_organisatsiooni_riik ON organisatsioon (riik ASC);<br>
 
-                        CREATE INDEX FK_kauba_kategooria ON kaup (kauba_kategooria ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX FK_kauba_kategooria ON kaup (kauba_kategooria ASC);<br>
 
-                        CREATE INDEX FK_kauba_staatus ON kaup (kauba_staatus ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX FK_kauba_staatus ON kaup (kauba_staatus ASC);<br>
 
-                        CREATE INDEX FK_kauba_tarnija ON kaup (tarnija ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX FK_kauba_tarnija ON kaup (tarnija ASC);<br>
 
-                        CREATE INDEX FK_kauba_tootaja ON kaup (tootaja ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX FK_kauba_tootaja ON kaup (tootaja ASC);<br>
 
-                        CREATE INDEX FK_kauba_tootja ON kaup (tootja ASC)<br>
-                        ;<br><br>
+                        CREATE INDEX FK_kauba_tootja ON kaup (tootja ASC);<br>
 
-                        CREATE INDEX IXFK_kauba_ylemkategooria ON kauba_kategooria (ylem_kategooria ASC)<br>
+                        CREATE INDEX IXFK_kauba_ylemkategooria ON kauba_kategooria (ylem_kategooria ASC);<br>
                 </div>
                 <h3>4.10.2 Täiendavad sekundaarsed indeksid </h3>
                 <div>
@@ -1727,8 +1715,9 @@ COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';<br><br>
                     INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (7, NULL, 'Mängukonsoolid', 'Valik erinevaid mängukonsoole.');<br>
                     INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (8, 7, 'Sony Playstation 4', 'Sony Playstation 4 mängukonsool.');<br><br>
 
-                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Lenovo IdeaPad sülearvuti Intel i3 protsessoriga.');<br>
-                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Playstation 3 mängukonsool.');<br><br>
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (0, 'kustutatud', 'Kaup on kustutatud, kuid säilib siiski süsteemis.');<br>
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Kaup on müügil.');<br>
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Kaup ei ole müügil.');<br><br>
 
                     INSERT INTO tootaja_roll(tootaja_rolli_kood, nimetus, kirjeldus) VALUES (1, 'kaupade_haldaja', 'See annab õiguse teha mida iganes.');<br><br>
 
@@ -1784,8 +1773,8 @@ soovitavalt siis, kui andmebaasi kasutamise koormus on madal (näiteks öösel).
                 <h2>4.15 Rollid ja kasutajad</h2>
                 <div>
                     Käesolevas töös rolle ei looda. Luuakse rakendusele vastav kasutaja. <br>
-
-                   <b> Siia lisada CREATE USER lause !!! </b>
+            
+                    CREATE USER garaazh_rakendus WITH PASSWORD 'TF36GH1';
                 </div>
                 <h2>4.16 Õiguste jagamine </h2>
                 <div>
@@ -1801,32 +1790,23 @@ soovitavalt siis, kui andmebaasi kasutamise koormus on madal (näiteks öösel).
                     </div>
                     <h3>4.17.2Tabelite kustutamine</h3>
                     <div>
-                        DROP TABLE IF EXISTS tootaja_staatus CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS tootaja_staatus CASCADE;<br>
 
-                        DROP TABLE IF EXISTS tootaja_roll CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS tootaja_roll CASCADE;<br>
 
-                        DROP TABLE IF EXISTS tootaja CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS tootaja CASCADE;<br>
 
-                        DROP TABLE IF EXISTS riik CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS riik CASCADE;<br>
 
-                        DROP TABLE IF EXISTS organisatsiooni_tyyp CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS organisatsiooni_tyyp CASCADE;<br>
 
-                        DROP TABLE IF EXISTS organisatsioon CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS organisatsioon CASCADE;<br>
 
-                        DROP TABLE IF EXISTS kaup CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS kaup CASCADE;<br>
 
-                        DROP TABLE IF EXISTS kauba_staatus CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS kauba_staatus CASCADE;<br>
 
-                        DROP TABLE IF EXISTS kauba_kategooria CASCADE<br>
-                        ;<br><br>
+                        DROP TABLE IF EXISTS kauba_kategooria CASCADE;<br>
                     </div>
                     <h3>4.17.3Arvujada generaatorite kustutamine</h3>
                     <div>
@@ -1845,7 +1825,29 @@ soovitavalt siis, kui andmebaasi kasutamise koormus on madal (näiteks öösel).
                     </div>
                     <h3>4.17.5 Indeksite kustutamine </h3>
                     <div>
-                        <b>Ei leidnud hetkel</b>
+                        DROP INDEX IF EXISTS IXFK_tootaja_tootaja_roll;<br>
+
+                        DROP INDEX IF EXISTS IXFK_tootaja_tootaja_staatus;<br>
+
+                        DROP INDEX IF EXISTS INDEX_tootaja_eesnimi;<br>
+
+                        DROP INDEX IF EXISTS INDEX_tootaja_perenimi;<br>
+
+                        DROP INDEX IF EXISTS IXFK_organisatsioon_organisatsiooni_tyyp;<br>
+
+                        DROP INDEX IF EXISTS FK_organisatsiooni_riik;<br>
+
+                        DROP INDEX IF EXISTS FK_kauba_kategooria;<br>
+
+                        DROP INDEX IF EXISTS FK_kauba_staatus;<br>
+
+                        DROP INDEX IF EXISTS FK_kauba_tarnija;<br>
+
+                        DROP INDEX IF EXISTS FK_kauba_tootaja;<br>
+
+                        DROP INDEX IF EXISTS FK_kauba_tootja;<br>
+
+                        DROP INDEX IF EXISTS IXFK_kauba_ylemkategooria;<br>
                     </div>
                     <h3>4.17.6 Funktsioonide ja trigerite kustutamine</h3>
                     <div>
