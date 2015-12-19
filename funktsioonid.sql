@@ -3,7 +3,7 @@ CREATE OR REPLACE FUNCTION f_uuenda_kaupa(uuendatava_kauba_kood VARCHAR(20), _ni
 RETURNS VOID AS $$
 
 UPDATE kaup as k
-SET nimetus = _nimetus, hind = _hind, pikkus = _pikkus, korgus = _korgus, laius = _laius, pildi_aadress = _pildi_aadress, kauba_kategooria = _kauba_kategooria, tootja = _tootja, tarnija = _tarnija WHERE kauba_kood = uuendatava_kauba_kood AND kauba_staatus != 3;
+SET nimetus = _nimetus, hind = _hind, pikkus = _pikkus, korgus = _korgus, laius = _laius, pildi_aadress = _pildi_aadress, kauba_kategooria = _kauba_kategooria, tootja = _tootja, tarnija = _tarnija WHERE kauba_kood = uuendatava_kauba_kood AND kauba_staatus != 0;
 
 $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;
 
