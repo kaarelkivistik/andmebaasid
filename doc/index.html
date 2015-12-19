@@ -598,6 +598,11 @@
                             <li>Hind on suurem kui null ning komakohtadega</li>
                             <li>email on unikaalne ning kasutusel kasutajanimena</li>
                             <li>Kauba kood on unikaalne</li>
+                            <li>Organisatsioon peab olema kas tootja või tarnija</li>
+                            <li>Kaupa saab luua ainult aktiivsena</li>
+                            <li>Kaupa ei saa kustutada andmebaasist, saab ainult teha nö "soft delete-i"</li>
+                            
+
                         </ul>
                     <h3>1.3.7 Registri kontseptuaalne eskiismudel</h3>
                     <img src="img/Eskiismudel.png" alt="registri eskiismudeli pilt ">
@@ -762,55 +767,60 @@
                                 <td><b>Definitsioon</b> </td>
                             </tr>
                             <tr>
-                                <td>Organisatsioon</td>
+                                <td>organisatsioon</td>
                                 <td>Organisatsioonide register</td>
                                 <td>Organisatsioon on Tootja ja Tarnija üldistus</td>
                             </tr>
                             <tr>
-                                <td>Kaup</td>
+                                <td>kaup</td>
                                 <td>Kaupade register</td>
                                 <td>Ostu-müügi objekt, mille tootmise eesmärgiks oli objekti müük, ehk majandusliku kasu saamine tootjale.</td>
                             </tr>
                             <tr>
-                                <td>Tootja</td>
+                                <td>tootja</td>
                                 <td>Organisatsioonide register</td>
                                 <td>Tootja on kauba valmistanud äriettevõte.</td>
                             </tr>
                             <tr>
-                                <td>Tarnija</td>
+                                <td>tarnija</td>
                                 <td>Organisatsioonide register</td>
                                 <td>Tarnija on ettevõte, kes vahendab kauba tootjalt lõpp-müüjale majandusliku kasu teenimise nimel</td>
                             </tr>
                            
                             <tr>
-                                <td>Töötaja</td>
+                                <td>tootaja</td>
                                 <td>Töötajate register</td>
                                 <td>Töötaja on töötegija mingis teatud asutuses või ettevõttes. Antud veebipoe puhul kaupade haldur, omanik ning infosüsteemi administraator</td>
                             </tr>
                             <tr>
-                                <td>KaubaStaatus</td>
+                                <td>kauba_staatus</td>
                                 <td>Klassifikaatorite register</td>
                                 <td>Andmebaasis tuleb iga registreeritud kauba korral muuhulgas registreerida selle kauba hetke staatus. Kui kauba staatus muutub, siis tuleb uus staatus andmebaasis registreerida. </td>
                             </tr>
                             <tr>
-                                <td>TöötajaStaatus</td>
+                                <td>tootaja_staatus</td>
                                 <td>Klassifikaatorite register</td>
                                 <td>Andmebaasis tuleb iga registreeritud töötaja korral muuhulgas registreerida selle töötaja hetke staatus. Kui töötaja staatus muutub, siis tuleb uus staatus andmebaasis registreerida. </td>
                             </tr>
                             <tr>
-                                <td>TöötajaRoll</td>
+                                <td>tootaja_roll</td>
                                 <td>Klassifikaatorite register</td>
                                 <td>Andmebaasis tuleb iga registreeritud töötaja korral muuhulgas registreerida selle töötaja hetke roll. Kui töötaja roll muutub, siis tuleb uus roll andmebaasis registreerida. </td>
                             </tr>
                             <tr>
-                                <td>KaubaKategooria</td>
+                                <td>kauba_kategooria</td>
                                 <td>Klassifikaatorite register</td>
                                 <td>Igal kaubal on kategooria, kuhu ta kuulub, mis väljendab tema tüüpi, näiteks kas kaup on emaplaat või termopasta.</td>
                             </tr>
                             <tr>
-                                <td>Riik</td>
+                                <td>riik</td>
                                 <td>Klassifikaatorite register</td>
                                 <td>Iga organisatsioon kuulub ühte riiki.</td>
+                            </tr>
+                            <tr>
+                                <td>organisatsiooni_tyyp</td>
+                                <td>Klassifikaatorite register</td>
+                                <td>Iga organisatsioon on kas tootja või tarnija tüüpi.</td>
                             </tr>
                             
                            
