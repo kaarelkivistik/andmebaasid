@@ -18,7 +18,7 @@ CREATE VIEW kauba_kuvatav_info WITH (security_barrier) AS
     INNER JOIN organisatsioon AS tarnija ON kaup.tarnija = tarnija.organisatsiooni_kood
   WHERE kaup.kauba_staatus = 1;
 
-COMMENT ON VIEW kauba_kuvatav_info IS 'Selles tabelis on kogu info, mida kasutaja peaks veebilehel nägema.';
+COMMENT ON VIEW kauba_kuvatav_info IS 'Vaade implementeerib lugemisoperatsiooni, mille käigus tagastatakse kõikide aktiivsete kaupade info, mida näidatakse rakenduses kaupade loetelu vormis.';
 
 DROP VIEW IF EXISTS ylemkategooria;
 CREATE VIEW ylemkategooria WITH (security_barrier) AS
@@ -29,7 +29,7 @@ CREATE VIEW ylemkategooria WITH (security_barrier) AS
   FROM kauba_kategooria AS kategooria
   WHERE kategooria.ylem_kategooria IS NULL;
 
-COMMENT ON VIEW ylemkategooria IS 'Selles tabelis on kõikide kaubaliikide ülemkategooriad';
+COMMENT ON VIEW ylemkategooria IS 'Vaade implementeerib lugemisoperatsiooni, mille käigus tagastatakse kõik ülemkategooriad ehk kategooriad, millel puudub esivanem.';
 
 DROP VIEW IF EXISTS aktiivne_tootaja;
 CREATE VIEW aktiivne_tootaja WITH (security_barrier) AS
@@ -43,7 +43,7 @@ CREATE VIEW aktiivne_tootaja WITH (security_barrier) AS
   FROM tootaja AS tootaja
   WHERE tootaja_staatuse_kood = 1;
 
-COMMENT ON VIEW aktiivne_tootaja IS 'Aktiivse töötaja vaatamine';
+COMMENT ON VIEW aktiivne_tootaja IS 'Vaade implementeerib lugemisoperatsiooni, mille käigus tagastatakse kõik aktiivsed töötajad.';
 
 DROP VIEW IF EXISTS kaupade_haldur;
 CREATE VIEW kaupade_haldur WITH (security_barrier) AS
@@ -57,7 +57,7 @@ CREATE VIEW kaupade_haldur WITH (security_barrier) AS
   FROM tootaja AS tootaja
   WHERE tootaja_rolli_kood = 1;
 
-COMMENT ON VIEW kaupade_haldur IS 'Kaupade haldurite vaatamine';
+COMMENT ON VIEW kaupade_haldur IS 'Vaade implementeerib lugemisoperatsiooni, mille käigus tagastatakse kõik töötajad, kelle rolliks on kaupade haldur.';
 
 DROP VIEW IF EXISTS tarnija;
 CREATE VIEW tarnija WITH (security_barrier) AS
@@ -65,7 +65,7 @@ CREATE VIEW tarnija WITH (security_barrier) AS
   FROM organisatsioon
   WHERE organisatsiooni_tyybi_kood = 1;
 
-COMMENT ON VIEW tarnija IS 'Vaade leiab andmed kõikide tarnijate kohta';
+COMMENT ON VIEW tarnija IS 'Vaade implementeerib lugemisoperatsiooni, mille käigus tagastatakse kõik tarnija-tüüpi organisatsioonid.';
 
 DROP VIEW IF EXISTS tootja;
 CREATE VIEW tootja WITH (security_barrier) AS
@@ -73,4 +73,4 @@ CREATE VIEW tootja WITH (security_barrier) AS
   FROM organisatsioon
   WHERE organisatsiooni_tyybi_kood = 2;
 
-COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';
+COMMENT ON VIEW tootja IS 'Vaade implementeerib lugemisoperatsiooni, mille käigus tagastatakse kõik tootja-tüüpi organisatsioonid.';
