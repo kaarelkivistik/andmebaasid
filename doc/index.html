@@ -2130,6 +2130,23 @@
         $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;<br><br>
 
         COMMENT ON FUNCTION uuenda_kauba_staatus_mitteaktiivseks (VARCHAR) IS '(OP4.1) Seab kauba mitteaktiivseks.';<br><br>
+        
+        CREATE OR REPLACE FUNCTION f_on_kaupade_haldur(text, text)<br>
+        RETURNS boolean AS $$<br>
+        DECLARE<br>
+        rslt boolean;<br>
+        BEGIN<br>
+        SELECT INTO rslt (parool = public.crypt($2, parool))<br>
+        FROM tootaja WHERE e_mail=$1 AND tootaja_rolli_kood IN<br>
+        (1) AND tootaja_staatuse_kood IN (1);<br>
+        RETURN coalesce(rslt, FALSE);<br>
+        END;<br>
+        $$ LANGUAGE plpgsql SECURITY DEFINER STABLE<br>
+        SET search_path = public, pg_temp;<br><br>
+        
+        COMMENT ON FUNCTION f_on_kaupade_haldur(text, text) IS '(OP1.1) Selle funktsiooni abil autenditakse kaupade haldur. Funktsiooni
+        väljakutsel on esimene argument e-mail ja teine argument parool. Kaupade halduril on õigus süsteemi siseneda,
+        vaid siis kui tema seisundiks on aktiivne';<br><br>
     </div>
     <h2> 4.10Indeksid</h2>
 
