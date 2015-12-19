@@ -163,7 +163,6 @@ CREATE TABLE kaup
 	CONSTRAINT PK_kaup PRIMARY KEY (kauba_kood),
 	CONSTRAINT UK_kauba_nimetus_on_unikaalne UNIQUE (nimetus),
 	CONSTRAINT CHK_kauba_kood CHECK (kauba_kood ~ '^\d+$'),
-	CONSTRAINT CHK_kauba_nimetus_ei_ole_tyhi CHECK (nimetus !~ '^\s*$'),
 	CONSTRAINT CHK_kauba_hind_pole_negatiivne CHECK (hind >= 0),
 	CONSTRAINT CHK_kauba_mootmed_on_positiivsed CHECK (korgus > 0 AND pikkus > 0 AND laius > 0),
 	CONSTRAINT CHK_kauba_pildi_aadress_on_url CHECK (pildi_aadress ~* '^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$'),
