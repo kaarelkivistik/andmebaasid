@@ -1561,7 +1561,7 @@ COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';<br><br>
                     Käesolevas projektis kasutatakse funktsioonide loomiseks PL/pgSQL keelt. PostgreSQL 9.4
                     andmebaasisüsteemis installeeritakse PL/pgSQL keel vaikimisi kõikidesse andmebaasidesse
                 </div>
-                <h2>4.7 Trigeri funktsioonid ja trigerid</h2>
+                    <h2>4.7 Trigeri funktsioonid ja trigerid</h2>
                 <div>
                     CREATE OR REPLACE FUNCTION kaupa_ei_loodud_aktiivsena()<br>
                       RETURNS TRIGGER AS $$<br>
@@ -1698,8 +1698,9 @@ COMMENT ON VIEW tootja IS 'Vaade leiab andmed kõikide tootjate kohta';<br><br>
                     INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (7, NULL, 'Mängukonsoolid', 'Valik erinevaid mängukonsoole.');<br>
                     INSERT INTO kauba_kategooria(kauba_kategooria_kood, ylem_kategooria, nimetus, kirjeldus) VALUES (8, 7, 'Sony Playstation 4', 'Sony Playstation 4 mängukonsool.');<br><br>
 
-                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Lenovo IdeaPad sülearvuti Intel i3 protsessoriga.');<br>
-                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Playstation 3 mängukonsool.');<br><br>
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (0, 'kustutatud', 'Kaup on kustutatud, kuid säilib siiski süsteemis.');<br>
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Kaup on müügil.');<br>
+                    INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Kaup ei ole müügil.');<br><br>
 
                     INSERT INTO tootaja_roll(tootaja_rolli_kood, nimetus, kirjeldus) VALUES (1, 'kaupade_haldaja', 'See annab õiguse teha mida iganes.');<br><br>
 
