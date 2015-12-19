@@ -2281,7 +2281,111 @@
     <h2>4.14 Päringu täitmisplaani näide</h2>
 
     <div>
-        <b> Hetkel tegemata !!! </b>
+         Analüüsin päringut, mis on tehtud vaate kauba_kuvatav_info põhjal. <br><br>
+                    CREATE VIEW kauba_kuvatav_info AS<br>
+                    SELECT<br>
+                    kaup.nimetus AS kauba_nimi,<br>
+                    kaup.hind,<br>
+                    kaup.korgus,<br>
+                    kaup.laius,<br>
+                    kaup.pikkus,<br>
+                    kategooria.nimetus AS kategooria_nimi,<br>
+                    tootja.nimi || ', ' || tootja.registri_kood || ', ' || tootja.riik AS tootja,<br>
+                    tootja.hinne AS tootja_reiting,<br>
+                    tarnija.nimi AS tarnija,<br>
+                    tarnija.tarneaeg AS tarnija_tarneaeg<br>
+                    FROM kaup AS kaup<br>
+                    INNER JOIN organisatsioon AS tootja ON kaup.tootja = tootja.organisatsiooni_kood<br>
+                    INNER JOIN kauba_kategooria AS kategooria ON kaup.kauba_kategooria = kategooria.kauba_kategooria_kood<br>
+                    INNER JOIN organisatsioon AS tarnija ON kaup.tarnija = tarnija.organisatsiooni_kood<br>
+                    WHERE kaup.kauba_staatus = 1;<br><br>
+
+                    ANALYZE<br>
+                    EXPLAIN SELECT * FROM kauba_kuvatav_info;<br><br>
+                    <div>
+                  <table class="query plan">
+                    <tr>
+                        <th><div>QUERY PLAN</div></th>
+                    </tr>
+                    <tr>
+                        <td><div>1&nbsp; Hash Join  (cost=22.38..34.60 rows=5 width=1661)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>2&nbsp;  Hash Cond: (kategooria.kauba_kategooria_kood = kaup.kauba_kategooria)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>3&nbsp;  -&gt;&nbsp;  Seq Scan on kauba_kategooria kategooria  (cost=0.00..11.30 rows=130 width=36)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>4&nbsp;  -&gt;&nbsp;  Hash  (cost=22.31..22.31 rows=5 width=1633)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>5&nbsp;        -&gt;&nbsp;  Hash Join  (cost=11.70..22.31 rows=5 width=1633)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>6&nbsp;              Hash Cond: (tarnija.organisatsiooni_kood = kaup.tarnija)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>7&nbsp;              -&gt;&nbsp;  Seq Scan on organisatsioon tarnija  (cost=0.00..10.30 rows=30 width=532)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>8&nbsp;              -&gt;&nbsp;  Hash  (cost=11.64..11.64 rows=5 width=1109)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>9&nbsp;                    -&gt;&nbsp;  Hash Join  (cost=1.14..11.64 rows=5 width=1109)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>10&nbsp;                          Hash Cond: (tootja.organisatsiooni_kood = kaup.tootja)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>11&nbsp;                          -&gt;&nbsp;  Seq Scan on organisatsioon tootja  (cost=0.00..10.30 rows=30 width=1060)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>12&nbsp;                          -&gt;&nbsp;  Hash  (cost=1.07..1.07 rows=5 width=57)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>13&nbsp;                                -&gt;&nbsp;  Seq Scan on kaup  (cost=0.00..1.07 rows=5 width=57)</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>14&nbsp;                                      Filter: (kauba_staatus = 1)</div></td>
+                    </tr>
+                </table>
+                <br>14 row(s)<br><br>
+
+                Enne täitmisplaani koostamist värskendasin ANALYZE lause abil andmebaasi statistikat, et
+                andmebaasisüsteemil oleks täitmisplaani koostamiseks võimalikult täpne sisendinformatsioon.
+                Täitmisplaani tuleb lugeda alt üles ja seest välja (paremalt vasakule). Allpool/seespool esitatud
+                operatsiooni tulemus on sisendiks ülalpool/väljaspool esitatud operatsioonile. Täitmisplaani
+                koostamise ajal olid tabelid peaaegu tühjad ja see võib mõjutada plaani valikut (näiteks antud juhul
+                eelistatakse tabeli täielikku läbiskaneerimist indeksi kasutamisele). Kuna EXPLAIN lauses ei
+                kasutatud ANALYZE määrangut, siis uuritavat lauset tegelikult ei täidetud ning seega pole näha
+                terve lause ning selle täitmiseks vajalike üksikute operatsioonide tegelikke täitmisaegu ning samuti
+                plaani koostamiseks kulunud aega. <br><br>
+
+                1-4 -Tabelid Kategooria ja Kaup ühendatakse  kasutades hash join algoritmi.  Ühendamise tulemusena loodud tabel, kui oodatavalt väiksem 
+                tabel, valiti sisemiseks tabeliks. Ühendamise tulemusena leitud tabelist loetud Kauba_kategooria_kood
+                väärtuste alusel leitakse räsiväärtused ja moodustatakse mällu ajutine räsitabel. Räsitabelis
+                olevaid väärtuseid hakatakse võrdlema tabelist Kauba_kategooria loetud väärtustega. Selle ühendamise
+                kontekstis on Kauba_kategooria väline tabel. Kauba_kategooria_kood väärtused tabelist Kauba_kategooria leitakse tabelite täielikku
+                läbiskaneerimist kasutades. <br><br>
+
+                5-8 - Tabelid Tarbija ja Kaup ühendatakse  kasutades hash join algoritmi.  Ühendamise tulemusena loodud tabel, kui oodatavalt väiksem 
+                tabel, valiti sisemiseks tabeliks. Ühendamise tulemusena leitud tabelist loetud Organisatsiooni_kood
+                väärtuste alusel leitakse räsiväärtused ja moodustatakse mällu ajutine räsitabel. Räsitabelis
+                olevaid väärtuseid hakatakse võrdlema tabelist Tarnija loetud väärtustega. Selle ühendamise
+                kontekstis on Tarnija väline tabel. Organisatsiooni_kood väärtused tabelist Tarnija leitakse tabelite täielikku
+                läbiskaneerimist kasutades. <br><br>
+
+                9-12 - Tabelid Tootja ja Kaup ühendatakse  kasutades hash join algoritmi.  Ühendamise tulemusena loodud tabel, kui oodatavalt väiksem 
+                tabel, valiti sisemiseks tabeliks. Ühendamise tulemusena leitud tabelist loetud Organisatsiooni_kood
+                väärtuste alusel leitakse räsiväärtused ja moodustatakse mällu ajutine räsitabel. Räsitabelis
+                olevaid väärtuseid hakatakse võrdlema tabelist Tootja loetud väärtustega. Selle ühendamise
+                kontekstis on Tootja väline tabel. Organisatsiooni_kood väärtused tabelist Tootja leitakse tabelite täielikku
+                läbiskaneerimist kasutades. <br><br>
+
+                13-14 - Tabeli Kaup läbiskaneerimisel leitakse vaid read, mis rahuldavad tingimust
+                (kauba_staatus = 1) - kaup on aktiivne. <br>
+                
     </div>
     <h2>4.15 Rollid ja kasutajad</h2>
 
