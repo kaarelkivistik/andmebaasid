@@ -11,7 +11,7 @@ INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (0, 'k
 INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Kaup on müügil.');
 INSERT INTO kauba_staatus(kauba_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Kaup ei ole müügil.');
 
-INSERT INTO tootaja_roll(tootaja_rolli_kood, nimetus, kirjeldus) VALUES (1, 'kaupade_haldaja', 'See annab õiguse teha mida iganes.');
+INSERT INTO tootaja_roll(tootaja_rolli_kood, nimetus, kirjeldus) VALUES (1, 'kaupade_haldur', 'See annab õiguse teha mida iganes.');
 
 INSERT INTO tootaja_staatus(tootaja_staatuse_kood, nimetus, kirjeldus) VALUES (1, 'aktiivne', 'Töötaja on tegev.');
 INSERT INTO tootaja_staatus(tootaja_staatuse_kood, nimetus, kirjeldus) VALUES (2, 'mitteaktiivne', 'Töötaja ei ole tegev.');

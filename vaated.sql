@@ -45,8 +45,8 @@ CREATE VIEW aktiivne_tootaja WITH (security_barrier) AS
 
 COMMENT ON VIEW aktiivne_tootaja IS 'Aktiivse töötaja vaatamine';
 
-DROP VIEW IF EXISTS kaupade_haldaja;
-CREATE VIEW kaupade_haldaja WITH (security_barrier) AS
+DROP VIEW IF EXISTS kaupade_haldur;
+CREATE VIEW kaupade_haldur WITH (security_barrier) AS
   SELECT tootaja.tootaja_kood AS tootaja_kood,
          tootaja.isikukood AS isikukood,
          tootaja.tootaja_rolli_kood AS tootaja_rolli_kood,
@@ -57,7 +57,7 @@ CREATE VIEW kaupade_haldaja WITH (security_barrier) AS
   FROM tootaja AS tootaja
   WHERE tootaja_rolli_kood = 1;
 
-COMMENT ON VIEW kaupade_haldaja IS 'Kaupade haldajate vaatamine';
+COMMENT ON VIEW kaupade_haldur IS 'Kaupade haldurite vaatamine';
 
 DROP VIEW IF EXISTS tarnija;
 CREATE VIEW tarnija WITH (security_barrier) AS
