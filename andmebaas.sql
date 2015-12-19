@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS kauba_kategooria CASCADE
 CREATE TABLE tootaja_staatus
 (
 	tootaja_staatuse_kood smallint NOT NULL,
-	nimetus varchar(50)	 NOT NULL,
+	nimetus varchar(50)	 NULL,
 	kirjeldus varchar(50)	 NOT NULL,
 	CONSTRAINT PK_tootaja_staatus PRIMARY KEY (tootaja_staatuse_kood),
 	CONSTRAINT UK_tootaja_staatus_on_unikaalne UNIQUE (nimetus),
@@ -49,7 +49,7 @@ CREATE TABLE tootaja_staatus
 CREATE TABLE tootaja_roll
 (
 	tootaja_rolli_kood integer NOT NULL,
-	nimetus varchar(50)	NOT NULL,
+	nimetus varchar(50)	NULL,
 	kirjeldus varchar(50)	 NOT NULL,
 	CONSTRAINT PK_tootaja_roll PRIMARY KEY (tootaja_rolli_kood),
 	CONSTRAINT UK_tootaja_rolli_nimetus_on_unikaalne UNIQUE (nimetus)
@@ -92,7 +92,7 @@ CREATE TABLE riik
 CREATE TABLE organisatsiooni_tyyp
 (
 	organisatsiooni_tyybi_kood smallint NOT NULL,
-	organisatsiooni_tyybi_nimetus varchar(50) NOT NULL,
+	organisatsiooni_tyybi_nimetus varchar(50) NULL,
 	CONSTRAINT PK_organisatsiooni_tyyp PRIMARY KEY (organisatsiooni_tyybi_kood),
 	CONSTRAINT UK_organisatsiooni_tyybi_nimetus_on_unikaalne UNIQUE (organisatsiooni_tyybi_nimetus),
 	CONSTRAINT CHK_organisatsiooni_tyybi_nimetus_ei_ole_tyhi CHECK (organisatsiooni_tyybi_nimetus !~ '^\s*$')
@@ -125,7 +125,7 @@ CREATE TABLE organisatsioon
 CREATE TABLE kauba_staatus
 (
 	kauba_staatuse_kood smallint NOT NULL,
-	nimetus varchar(255)	 NOT NULL,
+	nimetus varchar(255) NULL,
 	kirjeldus varchar(255)	 NULL,
 	CONSTRAINT PK_kauba_staatus PRIMARY KEY (kauba_staatuse_kood),
 	CONSTRAINT UK_kauba_staatuse_nimetus_on_unikaalne UNIQUE (nimetus),
@@ -137,7 +137,7 @@ CREATE TABLE kauba_kategooria
 (
 	kauba_kategooria_kood integer NOT NULL,
 	ylem_kategooria integer NULL,
-	nimetus varchar(255)	 NOT NULL,
+	nimetus varchar(255) NULL,
 	kirjeldus varchar(255)	 NULL,
 	CONSTRAINT PK_kauba_kategooria PRIMARY KEY (kauba_kategooria_kood),
 	CONSTRAINT UK_kauba_kategooria_nimetus_ja_ylemk_on_unikaalne UNIQUE (nimetus, ylem_kategooria),
@@ -154,7 +154,7 @@ CREATE TABLE kaup
 	tarnija integer NOT NULL,
 	tootja integer NOT NULL,
 	tootaja integer NOT NULL,
-	nimetus varchar(255) NOT NULL,
+	nimetus varchar(255) NULL,
 	hind decimal(19,2) NOT NULL,
 	korgus integer NULL,
 	laius integer NULL,

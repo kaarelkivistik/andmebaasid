@@ -13,3 +13,4 @@ ALTER TABLE kauba_staatus ALTER COLUMN nimetus TYPE d_nimetus;
 ALTER TABLE tootaja_staatus ALTER COLUMN nimetus TYPE d_nimetus;
 ALTER TABLE tootaja_roll ALTER COLUMN nimetus TYPE d_nimetus;
 ALTER TABLE organisatsiooni_tyyp ALTER COLUMN organisatsiooni_tyybi_nimetus TYPE d_nimetus;
+ALTER TABLE kaup ALTER COLUMN nimetus TYPE d_nimetus;
