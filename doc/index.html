@@ -2095,12 +2095,11 @@
         UPDATE kaup as k<br>
         SET nimetus = _nimetus, hind = _hind, pikkus = _pikkus, korgus = _korgus, pildi_aadress = _pildi_aadress,
         kauba_kategooria = _kauba_kategooria, tootja = _tootja, tarnija = _tarnija WHERE kauba_kood =
-        uuendatava_kauba_kood AND kauba_staatus != 3;<br><br>
+        uuendatava_kauba_kood AND kauba_staatus != 0;<br><br>
 
         $$ LANGUAGE SQL SECURITY DEFINER SET SEARCH_PATH = public, pg_temp;<br><br>
 
-        COMMENT ON FUNCTION uuenda_kaupa(VARCHAR, VARCHAR, NUMERIC, INT, INT, INT, VARCHAR, INT, INT, INT) IS '(OP6.1)
-        Muudab kauba infot.';<br><br><br>
+        COMMENT ON FUNCTION uuenda_kaupa(VARCHAR, VARCHAR, NUMERIC, INT, INT, INT, VARCHAR, INT, INT, INT) IS '(OP6.1) Funktsioon uuendab kauba metaandmete paketi, kui kaup pole kustutatud.';<br><br><br>
 
 
         CREATE OR REPLACE FUNCTION kustuta_kaup(kauba_kood VARCHAR) <br><br>
