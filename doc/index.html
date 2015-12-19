@@ -192,23 +192,9 @@
             <td>Ekraanivormil Sissereg pöördutakse nupule
                 Jätka vajutamise järel kasutaja-defineeritud
                 funktsiooni f_on_kaupade_haldur poole. Funktsioon
-                on mõeldud töötaja identifitseerimiseks.
-
-                <!-- TODO: parandada.. -->
-                Ekraanivormil Loo_vastuvott pöördutakse
-                nupule Salvesta vajutamise järel kasutaja-defineeritud funktsiooni
-                f_loo_vastuvott poole. Funktsioon on mõeldud
-                uue vastuvõtu registreerimiseks.
-                Ekraanivormil Vastuvotu_haldamine
-                pöördutakse nupule Tühista vajutamise järel
-                kasutaja-defineeritud funktsiooni
-                f_tyhista_vastuvott poole. Funktsioon on
-                mõeldud vastuvõtu tühistamiseks.
-                Ekraanivormil Vastuvotu_haldamine_alamvorm
-                pöördutakse nupule Tühista vajutamise järel
-                kasutaja-defineeritud funktsiooni
-                f_tyhista_vastuvotuaeg poole. Funktsioon on
-                mõeldud vastuvõtuaja tühistamiseks.
+                on mõeldud töötaja identifitseerimiseks.<br>
+                Ekraanivormil Kauba_info_muutmine pöördutakse nupule Salvesta vajutamise järel kasutaja-defineeritud
+                funktsiooni f_uuenda_kaupa poole, nupule Kustuta vajutamise järel kasutaja-defineeritud funktsiooni f_kustuta_kaup poole.
             </td>
         </tr>
 
@@ -218,23 +204,10 @@
                 puhul palun näidata ka kataloog.
             </td>
             <td>
-                <!-- TODO: parandada.. -->
-
-                Ekraanivormil
-                Oppejou_aktiivsete_vastuvottude_nimekiri
-                olevad andmed leitakse vaatest
-                Oppejou_aktiivsete_vastuvottude_nimekiri
-                Ekraanivormil
-                Oppejou_mitteaktiivsete_vastuvottude_nimekiri
-                olevad andmed leitakse vaatest
-                Oppejou_mitteaktiivsete_vastuvottude_nimekiri
-                Ekraanivormil Vastuvott_vaatamiseks olevad
-                andmed leitakse vaadetest
-                Vastuvott_vaatamiseks ja
-                Vastuvotuajad_koos_tulijatega
-                Ekraanivormil Loo_vastuvott olevasse ruumi
-                valiku liitboksi leitakse andmed vaatest
-                cmb_ruum.
+                Ekraanivormil Kaupade_haldamine olevad andmed leitakse vaatest kauba_kuvatav_info.<br/>
+                Tootja liitboksi leitakse andmed vaatest tootja.<br/>
+                Tarnia liitboksi leitakse andmed tarnija.<br/>
+                Töötaja liitboksi leitakse andmed aktiivne_tootaja.<br/>
             </td>
         </tr>
         <tr>
@@ -243,9 +216,8 @@
                 palun näidata ka kataloog.
             </td>
             <td>
-                <!-- TODO: parandada.. -->
                 Andmebaasisüsteemiga ühenduse loomiseks
-                kasutatav kasutajanimi (oppejoud_vastuvotud)
+                kasutatav kasutajanimi (garaazh_rakendus)
                 on kirjutatud mooduli Refreshing algusesse
                 (konstandi username väärtuseks).
             </td>
@@ -2417,14 +2389,46 @@
     <div>
         Käesolevas töös rolle ei looda. Luuakse rakendusele vastav kasutaja. <br>
 
-        CREATE USER garaazh_rakendus WITH PASSWORD 'TF36GH1';
+        CREATE USER garaazh_rakendus WITH PASSWORD 'garaga';
     </div>
     <h2>4.16 Õiguste jagamine </h2>
 
     <div>
-        Laiale avalikkusele (PUBLIC) vaikimisi antud õiguste äravõtmine. <br>
+        <pre>
+DROP USER IF EXISTS garaazh_rakendus;
+CREATE USER garaazh_rakendus WITH PASSWORD 'garaga';
 
-        <b>Hetkel tegemata !!! </b>
+REVOKE CONNECT, TEMP ON DATABASE t123665 FROM PUBLIC; 
+REVOKE CREATE, USAGE ON SCHEMA public FROM PUBLIC;
+REVOKE USAGE ON LANGUAGE plpgsql FROM PUBLIC;
+
+REVOKE EXECUTE ON FUNCTION
+f_uuenda_kaupa(uuendatava_kauba_kood VARCHAR(20), _nimetus VARCHAR(255), 
+_hind NUMERIC(19), _pikkus INT, _korgus INT, _laius INT, 
+_pildi_aadress VARCHAR(255), _kauba_kategooria INT, _tootja INT, _tarnija INT),
+f_kustuta_kaup(kauba_kood VARCHAR),
+f_uuenda_kauba_staatus_aktiivseks(uuendatava_kauba_kood VARCHAR(20)),
+f_uuenda_kauba_staatus_mitteaktiivseks(uuendatava_kauba_kood VARCHAR(20)) FROM PUBLIC;
+
+GRANT CONNECT ON DATABASE t123665 TO garaazh_rakendus; 
+GRANT USAGE ON SCHEMA public TO garaazh_rakendus;
+
+GRANT SELECT, UPDATE ON TABLE kaup TO garaazh_rakendus;
+GRANT SELECT ON TABLE kauba_kategooria TO garaazh_rakendus;
+GRANT SELECT ON TABLE tootja TO garaazh_rakendus;
+GRANT SELECT ON TABLE tarnija TO garaazh_rakendus;
+GRANT SELECT ON TABLE tootaja TO garaazh_rakendus;
+
+GRANT EXECUTE ON FUNCTION
+f_on_kaupade_haldur(text, text),
+f_uuenda_kaupa(uuendatava_kauba_kood VARCHAR(20), _nimetus VARCHAR(255), 
+_hind NUMERIC(19), _pikkus INT, _korgus INT, _laius INT, 
+_pildi_aadress VARCHAR(255), _kauba_kategooria INT, _tootja INT, _tarnija INT),
+f_kustuta_kaup(kauba_kood VARCHAR),
+f_uuenda_kauba_staatus_aktiivseks(uuendatava_kauba_kood VARCHAR(20)),
+f_uuenda_kauba_staatus_mitteaktiivseks(uuendatava_kauba_kood VARCHAR(20))
+TO garaazh_rakendus;
+        </pre>
     </div>
     <h2>4.17 Andmebaasiobjektide kustutamine </h2>
 

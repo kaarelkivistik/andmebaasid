@@ -7,4 +7,5 @@ psql $DB < funktsioonid.sql
 psql $DB < trigerid.sql
 psql $DB < vaated.sql
 psql $DB < klassifikaatorid.sql
+psql $DB < oigused.sql
 psql $DB < andmed.sql
